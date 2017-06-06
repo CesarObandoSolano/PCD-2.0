@@ -3,13 +3,7 @@
 }
         <h2>PIMAS - Plataforma de Contenidos Digitales</h2>
         @if (Session["usuario"] == null)
-            {
-            <p>
-                En la plataforma de contenidos digitales (PCD) de PIMAS tendrás acceso a material didactico complementario
-                diseñado para mejorar el proceso de aprendizaje de matematica de calidad
-            </p>
+        {
+            Response.Redirect("~/PCD/Account/LogIn");
         }
-    @if (Session["usuario"] == null)
-    {
-        @Html.Partial("~/Areas/PCD/Views/Account/LoginForm.cshtml");
-    }
+

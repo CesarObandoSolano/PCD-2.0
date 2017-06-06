@@ -26,7 +26,7 @@
     <script src="~/Scripts/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="~/Scripts/jquery.table.hpaging.min.js"></script>
-    
+
 
     <title>@ViewBag.Title -Plataforma de contenidos digitales</title>
 </head>
@@ -240,19 +240,19 @@
                                             </li>
                                         }
                                     </div>
-                                        <li>
-                                            @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
-                                            {
-                                                @Html.AntiForgeryToken()
-                                                <a class="cerrar" href="javascript:document.getElementById('logoutForm').submit()">
-                                                    <span>
-                                                        <i class="fa fa-window-close" aria-hidden="true"></i>
-                                                        &nbsp;Cerrar Sesión
-                                                    </span>
-                                                </a>
-                                            }
-                                        </li>
-                                    </ul>
+                                    <li>
+                                        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                                        {
+                                            @Html.AntiForgeryToken()
+                                            <a class="cerrar" href="javascript:document.getElementById('logoutForm').submit()">
+                                                <span>
+                                                    <i class="fa fa-window-close" aria-hidden="true"></i>
+                                                    &nbsp;Cerrar Sesión
+                                                </span>
+                                            </a>
+                                        }
+                                    </li>
+                                </ul>
 
 
                                 @if (usuario.roles.FirstOrDefault().rol.Equals(Plataforma.App_Start.Constantes.PROFESOR_PREMIUM) || usuario.roles.FirstOrDefault().rol.Equals(Plataforma.App_Start.Constantes.ESTUDIANTE_PREMIUM))
@@ -309,7 +309,7 @@
                                                     </li>
                                                 }
                                             </ul>
-                                            </div>
+                                        </div>
                                     }
                                 }
                                 else
@@ -327,7 +327,7 @@
                                                     </span>
                                                 </li>
                                             </ul>
-                                            </div>
+                                        </div>
                                     }
                                     else
                                     {
@@ -345,25 +345,12 @@
                                                     </li>
                                                 }
                                             </ul>
-                                            </div>
-                                            }
-
-                                            }
-
-
                                         </div>
+                                    }
+
+                                }
+                            </div>
                         </div>
-
-
-                        <div class="col-md-9">
-                            <ul class="breadcrumb">
-                                <li class="breadcrumb-item"> <a href="~/PCD/"> Home </a> </li>
-                            </ul>
-
-                        </div>
-                        <div class="col-md-9">
-                        </div>
-
                     }
                 }
                 <div class="col-md-9">
@@ -516,9 +503,9 @@
             <p class="text-xs-center">COPYRIGHT © 2017 Pimas. ALL RIGHTS RESERVED. Design by EduCalvo</p>
         </div>
     </footer>
-    @*@Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/bundles/jquery")
-    @RenderSection("scripts", required: false)*@
+    @*Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/bundles/jquery")*@
+    @RenderSection("scripts", required: false)
     <script src="~/scripts/assets/web/assets/jquery/jquery.min.js"></script>
     <script src="~/scripts/assets/tether/tether.min.js"></script>
     <script src="~/scripts/assets/bootstrap/js/bootstrap.min.js"></script>
@@ -528,7 +515,7 @@
     <script src="~/scripts/assets/viewportChecker/jquery.viewportchecker.js"></script>
     <script src="~/scripts/assets/theme/js/script.js"></script>
     <script src="~/scripts/comprimir-menu.js"></script>
-    
+
     <input name="animation" type="hidden">
 </body>
 </html>

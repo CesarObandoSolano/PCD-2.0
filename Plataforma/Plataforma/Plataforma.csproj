@@ -612,6 +612,7 @@
     <Content Include="Areas\PCD\Models\ModelPimas.edmx.diagram">
       <DependentUpon>ModelPimas.edmx</DependentUpon>
     </Content>
+    <Content Include="Areas\PCD\Views\usuarios\SolicitudInscripcion.cshtml" />
     <None Include="job_scheduling_data_2_0.xsd">
       <SubType>Designer</SubType>
     </None>

@@ -200,7 +200,15 @@ namespace Plataforma.Areas.PCD.Controllers
                 db.usuarios.Add(usuario);
                 db.SaveChanges();
                 Utilitarios.EnviarCorreo(destinatarios, asunto, cuerpo);
-                return RedirectToAction("Index");
+                if(usuario.roles.FirstOrDefault().rol.Equals("Perfil Libre"))
+                {
+                    return RedirectToAction("SolicitudInscripcion");
+                }
+                else
+                {
+                    return RedirectToAction("Index");
+                }
+                
             }
 
             ViewBag.id = new SelectList(db.notificaciones, "id_usuario", "id_usuario", usuario.id);
@@ -936,6 +944,11 @@ namespace Plataforma.Areas.PCD.Controllers
         }
         [AllowAnonymous]
         public ActionResult UsuarioIncorrecto()
+        {
+            return View();
+        }
+
+        public ActionResult SolicitudInscripcion()
         {
             return View();
         }
