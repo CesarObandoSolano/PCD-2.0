@@ -1,0 +1,61 @@
+﻿@model Plataforma.Areas.PCD.Models.role
+
+@{
+    ViewBag.Title = "Detalles";
+}
+<link rel="stylesheet" type="text/css" href="~/Content/custombootstrap.css" />
+<h2>Detalles</h2>
+
+<div class="col-lg-9">
+    <h4>Rol</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Rol
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rol)
+        </dd>
+
+        <dt>
+            Cantidad de usuarios de este tipo
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.usuarios.Count)
+        </dd>
+        @if (Model.cursos.Count > 0)
+        {
+
+            <dt>
+                Cursos
+            </dt>
+
+            <dd>
+                @foreach (var item in Model.cursos)
+                {
+                    @item.curso1<br />
+                }
+            </dd>
+        }
+        <dt>
+            Permisos
+        </dt>
+
+        <dd>
+            @foreach (var item in Model.permisos)
+            {
+                @item.descripcion<br />
+            }
+        </dd>
+
+    </dl>
+
+    <div class="col-lg-9">
+        <p>
+            @Html.ActionLink("Editar", "Edit", new { id = Model.id }) |
+            @Html.ActionLink("Volver al indice", "Index")
+        </p>
+    </div>
+</div>

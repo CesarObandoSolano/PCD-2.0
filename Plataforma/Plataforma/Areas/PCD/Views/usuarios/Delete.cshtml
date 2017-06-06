@@ -1,0 +1,57 @@
+﻿@model Plataforma.Areas.PCD.Models.usuario
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+<h1 class="class-forms">Eliminar</h1>
+
+<h3 class="class-forms">Estas seguro de que deseas eliminar este usuario?</h3>
+<div class="col-md-12">
+    <h4 class="class-forms">Usuario</h4>
+    <dl class="dl-horizontal">
+        <dt>
+            Nombre
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+            @Html.DisplayFor(model => model.apellidos)
+        </dd>
+
+        <dt>
+            Usuario
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.username)
+        </dd>
+
+        <dt>
+            Telefono
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefono)<br />
+            @Html.DisplayFor(model => model.telefono_2)
+        </dd>
+
+        <dt>
+            Correo
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.correo)<br />
+            @Html.DisplayFor(model => model.correo_2)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+            @Html.ActionLink("Volver al indice", "Index")
+        </div>
+    }
+</div>

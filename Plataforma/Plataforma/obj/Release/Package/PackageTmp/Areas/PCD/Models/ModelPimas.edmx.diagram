@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e88d46ba62c94071baada0f015f299ef" Name="Diagram1" ZoomLevel="63">
+        <EntityTypeShape EntityType="pimasModel.admin" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="pimasModel.Articulo" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="pimasModel.colegio" Width="1.5" PointX="8.25" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="pimasModel.comentario" Width="1.5" PointX="5.25" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="pimasModel.curso" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="pimasModel.documento" Width="1.5" PointX="3.75" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="pimasModel.documentos_curso" Width="1.5" PointX="0.5" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="pimasModel.documentos_profe" Width="1.5" PointX="15.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="pimasModel.grupos" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="pimasModel.libro" Width="1.5" PointX="6" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="pimasModel.log_visitas" Width="1.5" PointX="12.75" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="pimasModel.log_visitas_cursousuario" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="pimasModel.log_visitas_documentousuario" Width="1.5" PointX="15.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="pimasModel.nivele" Width="1.5" PointX="8.25" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="pimasModel.notificacione" Width="1.5" PointX="12.75" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="pimasModel.pais" Width="1.5" PointX="6" PointY="23" IsExpanded="true" />
+        <EntityTypeShape EntityType="pimasModel.permiso" Width="1.5" PointX="5.25" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="pimasModel.profesores_temporal" Width="1.5" PointX="5.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="pimasModel.respuesta" Width="1.5" PointX="12.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="pimasModel.role" Width="1.5" PointX="7.5" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="pimasModel.sysdiagram" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="pimasModel.tipo_colegio" Width="1.5" PointX="6" PointY="25.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="pimasModel.tipo_documento" Width="1.5" PointX="1.5" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="pimasModel.unidade" Width="1.5" PointX="1.5" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="pimasModel.usuario" Width="1.5" PointX="10.5" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="pimasModel.Venta" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="pimasModel.FK_Articulo_Venta" ManuallyRouted="false" />
+        <AssociationConnector Association="pimasModel.FK_colegio_tipo" ManuallyRouted="false" />
+        <AssociationConnector Association="pimasModel.FKcolegio605212" ManuallyRouted="false" />
+        <AssociationConnector Association="pimasModel.FK_comentarios_documentos" ManuallyRouted="false" />
+        <AssociationConnector Association="pimasModel.FK_comentarios_grupo" ManuallyRouted="false" />
+        <AssociationConnector Association="pimasModel.FK_comentarios_usuarios" ManuallyRouted="false" />
+        <AssociationConnector Association="pimasModel.FK_respuestas_comentario" ManuallyRouted="false" />
+        <AssociationConnector Association="pimasModel.FK_cursousuario_curso" ManuallyRouted="false" />
+        <AssociationConnector Association="pimasModel.FK_grupo_curso" ManuallyRouted="false" />
+        <AssociationConnector Association="pimasModel.FKdocumentos613860" ManuallyRouted="false" />
+        <AssociationConnector Association="pimasModel.FK_documento_tipo" ManuallyRouted="false" />
+        <AssociationConnector Association="pimasModel.FK_documento_unidad" ManuallyRouted="false" />
+        <AssociationConnector Association="pimasModel.FK_documentousuario_documento" ManuallyRouted="false" />
+        <AssociationConnector Association="pimasModel.FK_documento_profesor" ManuallyRouted="false" />
+        <AssociationConnector Association="pimasModel.FKlog_visita318727" ManuallyRouted="false" />
+        <AssociationConnector Association="pimasModel.FK_cursousuario_usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="pimasModel.FK_documentousuario_usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="pimasModel.FKnotificaci133407" ManuallyRouted="false" />
+        <AssociationConnector Association="pimasModel.FK_respuestas_usuarios" ManuallyRouted="false" />
+        <AssociationConnector Association="pimasModel.colegio_profesores" ManuallyRouted="false" />
+        <AssociationConnector Association="pimasModel.curso_usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="pimasModel.cursos_rol" ManuallyRouted="false" />
+        <AssociationConnector Association="pimasModel.documentos_libro" ManuallyRouted="false" />
+        <AssociationConnector Association="pimasModel.libros_colegio" ManuallyRouted="false" />
+        <AssociationConnector Association="pimasModel.libros_profesor" ManuallyRouted="false" />
+        <AssociationConnector Association="pimasModel.niveles_documento" ManuallyRouted="false" />
+        <AssociationConnector Association="pimasModel.niveles_usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="pimasModel.permisos_grupo" ManuallyRouted="false" />
+        <AssociationConnector Association="pimasModel.permisos_rol" ManuallyRouted="false" />
+        <AssociationConnector Association="pimasModel.permisos_usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="pimasModel.roles_usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="pimasModel.usuarios_grupo" ManuallyRouted="false" />
+        <AssociationConnector Association="pimasModel.FK_documentos_curso_cursos" />
+        <AssociationConnector Association="pimasModel.FK_documentos_curso_documentos" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,229 @@
+
+-------------------------------------------------------------------------------
+   ROBOCOPY     ::     Robust File Copy for Windows                              
+-------------------------------------------------------------------------------
+
+  Started : Wednesday, February 15, 2017 1:51:40 PM
+   Source : C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\
+     Dest : C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\Umbraco_Client\
+
+    Files : *.*
+	    
+  Options : *.* /S /E /DCOPY:DA /COPY:DAT /IS /IT /R:1000000 /W:30 
+
+------------------------------------------------------------------------------
+
+	                   0	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\
+	                   7	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Application\
+	                  12	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Application\JQuery\
+	                   3	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\CodeArea\
+	                   0	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Colorpicker\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Colorpicker\Css\
+	                  26	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Colorpicker\Images\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Colorpicker\Js\
+	                   0	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\ContextMenu\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\ContextMenu\Css\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\ContextMenu\Js\
+	                   0	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Datepicker\
+	                  10	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Datepicker\Aqua\
+	                   2	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Datepicker\Images\
+	                   3	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\DateTimePicker\
+	                   3	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\DateTimePicker\Images\
+	                  10	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Dialogs\
+	                   9	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Editors\
+	                   0	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\FileUploader\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\FileUploader\Js\
+	                   0	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\FolderBrowser\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\FolderBrowser\Css\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\FolderBrowser\Js\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\IconPicker\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Imagecropper\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Images\
+	                   0	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Installer\
+	                   5	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Installer\Css\
+	                  98	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Installer\Images\
+	                   4	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Installer\Js\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Jeditable\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\MacroContainer\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\MaskedInput\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Menuicon\
+	                   3	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Menuicon\Images\
+	                   5	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Modal\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Mousewheel\
+	                   2	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Panel\
+	                   6	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Panel\Images\
+	                   2	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Preview\
+	                   2	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\ProgressBar\
+	                   3	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\ProgressBar\Images\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Propertypane\
+	                   2	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Propertypane\Images\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\PunyCode\
+	                   2	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Scrollingmenu\
+	                   3	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Scrollingmenu\Images\
+	                   2	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Scrollingmenu\Images\Button\
+	                   0	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\SimpleEditor\
+	                   3	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\SimpleEditor\Images\
+	                   3	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Splitbutton\
+	                   2	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Splitbutton\Images\
+	                   4	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tablesorting\
+	                   3	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tablesorting\img\
+	                   3	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tabview\
+	                   7	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tabview\Images\
+	                   0	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tags\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tags\Css\
+	                   2	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tags\Js\
+	                   4	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\
+	                  16	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Langs\
+	                   0	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\
+	                   3	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Advhr\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Advhr\Css\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Advhr\Js\
+	                  16	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Advhr\Langs\
+	                   3	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Advimage\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Advimage\Css\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Advimage\Img\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Advimage\Js\
+	                  16	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Advimage\Langs\
+	                   3	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Advlink\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Advlink\Css\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Advlink\Js\
+	                  16	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Advlink\Langs\
+	                   2	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Advlist\
+	                   2	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Autolink\
+	                   2	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Autoresize\
+	                   2	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Autosave\
+	                   2	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Autosave\Langs\
+	                   2	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Bbcode\
+	                   2	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Contextmenu\
+	                   2	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Directionality\
+	                   3	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Emotions\
+	                  16	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Emotions\Img\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Emotions\Js\
+	                  16	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Emotions\Langs\
+	                   3	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Example\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Example\Img\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Example\Js\
+	                   2	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Example\Langs\
+	                   2	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\example_dependency\
+	                   3	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Fullpage\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Fullpage\Css\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Fullpage\Js\
+	                  16	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Fullpage\Langs\
+	                   3	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Fullscreen\
+	                   2	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Iespell\
+	                   3	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Inlinepopups\
+	                   0	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Inlinepopups\Skins\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Inlinepopups\Skins\Clearlooks2\
+	                   7	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Inlinepopups\Skins\Clearlooks2\Img\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Inlinepopups\Skins\Umbraco\
+	                   8	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Inlinepopups\Skins\Umbraco\Img\
+	                   2	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Insertdatetime\
+	                   2	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Layer\
+	                   2	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Legacyoutput\
+	                   2	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Lists\
+	                   4	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Media\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Media\Css\
+	                   2	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Media\Js\
+	                  18	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Media\Langs\
+	                   2	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Nonbreaking\
+	                   2	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Noneditable\
+	                   2	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Pagebreak\
+	                   4	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Paste\
+	                   2	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Paste\Js\
+	                  16	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Paste\Langs\
+	                   4	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Preview\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Preview\Jscripts\
+	                   2	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Print\
+	                   2	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Save\
+	                   3	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Searchreplace\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Searchreplace\Css\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Searchreplace\Js\
+	                  16	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Searchreplace\Langs\
+	                   2	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Spellchecker\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Spellchecker\Css\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Spellchecker\Img\
+	                   4	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Style\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Style\Css\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Style\Js\
+	                  16	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Style\Langs\
+	                   2	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Tabfocus\
+	                   6	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Table\
+	                   3	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Table\Css\
+	                   4	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Table\Js\
+	                  16	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Table\Langs\
+	                   4	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Template\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Template\Css\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Template\Js\
+	                  16	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Template\Langs\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Umbracocontextmenu\
+	                   2	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Umbracocss\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Umbracocss\Img\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Umbracocss\Js\
+	                  14	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Umbracocss\Langs\
+	                   3	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Umbracoembed\
+	                   2	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Umbracoembed\Img\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Umbracoembed\Js\
+	                  18	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Umbracoembed\Langs\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Umbracoimg\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Umbracoimg\Js\
+	                   8	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Umbracoimg\Langs\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Umbracolink\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Umbracolink\Js\
+	                  16	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Umbracolink\Langs\
+	                   2	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Umbracomacro\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Umbracomacro\Img\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Umbracomacro\Js\
+	                  14	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Umbracomacro\Langs\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Umbracopaste\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Umbracoshortcut\
+	                   2	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Visualblocks\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Visualblocks\Css\
+	                   2	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Visualchars\
+	                   2	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Wordcount\
+	                   8	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Xhtmlxtras\
+	                   2	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Xhtmlxtras\Css\
+	                   7	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Xhtmlxtras\Js\
+	                  16	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Plugins\Xhtmlxtras\Langs\
+	                   0	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Themes\
+	                  10	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Themes\Advanced\
+	                  11	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Themes\Advanced\Img\
+	                   7	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Themes\Advanced\Js\
+	                  28	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Themes\Advanced\Langs\
+	                   0	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Themes\Advanced\Skins\
+	                   3	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Themes\Advanced\Skins\Default\
+	                   6	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Themes\Advanced\Skins\Default\Img\
+	                   3	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Themes\Advanced\Skins\Highcontrast\
+	                   5	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Themes\Advanced\Skins\O2k7\
+	                   3	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Themes\Advanced\Skins\O2k7\Img\
+	                   2	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Themes\Simple\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Themes\Simple\Img\
+	                  14	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Themes\Simple\Langs\
+	                   0	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Themes\Simple\Skins\
+	                   2	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Themes\Simple\Skins\Default\
+	                   2	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Themes\Simple\Skins\O2k7\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Themes\Simple\Skins\O2k7\Img\
+	                   9	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Themes\Umbraco\
+	                  11	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Themes\Umbraco\Img\
+	                   7	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Themes\Umbraco\Js\
+	                  30	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Themes\Umbraco\Langs\
+	                   0	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Themes\Umbraco\Skins\
+	                   3	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Themes\Umbraco\Skins\Umbraco\
+	                   6	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Themes\Umbraco\Skins\Umbraco\Img\
+	                   4	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tinymce3\Utils\
+	                  11	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tree\
+	                   5	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tree\Themes\
+	                   4	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tree\Themes\Default\
+	                  21	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Tree\Themes\Umbraco\
+	                  14	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Ui\
+	                   1	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Ui\ui-lightness\
+	                  14	C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\packages\UmbracoCms.7.5.9\UmbracoFiles\Umbraco_Client\Ui\ui-lightness\images\
+
+------------------------------------------------------------------------------
+
+               Total    Copied   Skipped  Mismatch    FAILED    Extras
+    Dirs :       204         0       204         0         0         0
+   Files :       999         0       999         0         0         0
+   Bytes :    6.14 m         0    6.14 m         0         0         0
+   Times :   0:00:00   0:00:00                       0:00:00   0:00:00
+   Ended : Wednesday, February 15, 2017 1:51:40 PM
+

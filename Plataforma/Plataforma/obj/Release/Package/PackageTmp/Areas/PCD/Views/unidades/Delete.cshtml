@@ -1,0 +1,42 @@
+﻿@model Plataforma.Areas.PCD.Models.unidade
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+
+<h2>Eliminar</h2>
+<link rel="stylesheet" type="text/css" href="~/Content/custombootstrap.css" />
+<h3>Estas seguro de que deseas eliminar esta unidad?</h3>
+<div class="col-lg-9">
+    <h4>Unidad</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.unidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.unidad)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        if (Model.documentos.Count <= 0)
+        {
+            <div class="form-actions no-color">
+                <input type="submit" value="Eliminar" class="btn btn-default" /> |
+                @Html.ActionLink("Volver al indice", "Index")
+            </div>
+        }
+        else
+        {
+            <div class="form-actions no-color">
+                <p>Este elemento no puede ser eliminado.</p> |
+                @Html.ActionLink("Volver al indice", "Index")
+            </div>
+        }
+    }
+</div>

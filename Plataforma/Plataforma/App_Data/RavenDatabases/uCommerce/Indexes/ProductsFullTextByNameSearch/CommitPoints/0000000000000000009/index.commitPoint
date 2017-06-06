@@ -1,0 +1,1 @@
+{"HighestCommitedETag":{"Restarts":72057594037927940,"Changes":17},"SegmentsInfo":{"Generation":9,"SegmentsFileName":"segments_9","ReferencedFiles":["_0.cfs","_1.cfs","_1_1.del","_2.cfs","_2_1.del","_3.cfs","_3_1.del","_4.cfs","_4_1.del","_5.cfs","_5_1.del","_6.cfs","_6_1.del","_7.cfs"],"IsIndexCorrupted":false},"TimeStamp":"2017-03-16T23:25:01.5995218Z"}

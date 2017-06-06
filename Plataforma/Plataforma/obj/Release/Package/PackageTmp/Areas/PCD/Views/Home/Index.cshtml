@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Inicio";
+}
+<link rel="stylesheet" type="text/css" href="~/Content/custombootstrap.css" />
+<div class="col-lg-9">
+    <div id="contenido">
+        <section class="jumbo">
+            <h2>PIMAS - Plataforma de Contenidos Digitales</h2>
+            @if (Session["usuario"] == null)
+            {
+                <p>
+                    En la plataforma de contenidos digitales (PCD) de PIMAS tendrás acceso a material didactico complementario
+                    diseñado para mejorar el proceso de aprendizaje de matematica de calidad
+                </p>
+            }
+        </section>
+        @if (Session["usuario"] == null)
+        {
+                <div id="login">
+                    @Html.Partial("~/Areas/PCD/Views/Account/LoginForm.cshtml");
+                </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,31 @@
+﻿@model Plataforma.Areas.PCD.Models.permiso
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<div class="col-lg-9">
+
+    <h1 class="class-forms">
+        <i class="fa fa-user-circle" aria-hidden="true"></i>
+        Detalles
+    </h1>
+    <h4 class="class-forms">Permiso</h4>
+    <dl class="dl-horizontal">
+        <dt>
+            Descripción
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcion)
+        </dd>
+
+    </dl>
+
+    <div class="col-lg-9">
+        <p>
+            @Html.ActionLink("Editar", "Edit", new { id = Model.id }) |
+            @Html.ActionLink("Volver al indice", "Index")
+        </p>
+    </div>
+</div>

@@ -1,0 +1,334 @@
+﻿* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Verdana;
+    color: #bcbcbc;
+}
+
+
+#contenedor-banner {
+    position: relative;
+    padding-left: 5px;
+    padding-right: -30px;
+    border-left: solid;
+    border-left-color: lightgray;
+    height: 100%;
+    width: 280px;
+    color: black;
+    margin-left: auto;
+    float: right;
+}
+
+
+
+
+#contenido {
+    float: left;
+}
+
+#contenedor-banner > div {
+    background: #bcbcbc;
+    margin: 20px;
+    padding: 20px;
+}
+
+#contenedor-banner > a.logo {
+    width: 230px;
+    height: 90px;
+    display: inline-block;
+}
+
+#contenedor-banner > ul {
+    list-style: none;
+}
+
+    #contenedor-banner > ul > li {
+        text-indent: 1px;
+    }
+
+        #contenedor-banner > ul > li:before {
+            color: black;
+            content: "\25BA";
+        }
+
+        #contenedor-banner > ul > li > a {
+        }
+
+
+
+body {
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+#icono {
+    max-width: 100px;
+    max-height: 65px;
+}
+
+#lista-documentos {
+    max-width: 100%;
+    max-height: 100%;
+    color: black;
+}
+
+    #lista-documentos option {
+        color: black;
+        padding: 10px;
+        background-size: 20px;
+    }
+
+        #lista-documentos option img {
+        }
+
+.barra-busqueda {
+    margin-bottom: 10px;
+}
+
+    .barra-busqueda input {
+        color: black;
+        width: 50%;
+    }
+
+.visualizador {
+    height: 680px;
+    width: 100%;
+}
+
+.vista {
+}
+
+    .vista div {
+    }
+
+    .vista .encabezado {
+        max-height: 80px;
+    }
+
+    .vista .documento {
+        width: 130px;
+        display: inline-block;
+    }
+
+    .vista a {
+        margin: 10px;
+    }
+
+    .vista image {
+        max-height: 100px;
+        max-width: 100px;
+        min-height: 32px;
+        min-width: 32px;
+    }
+
+    .vista p {
+        color: blue;
+        text-align: center;
+        display: table-cell;
+    }
+
+.lista-usuarios {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+    .lista-usuarios option {
+        color: black;
+    }
+
+#inicio-sesion {
+    position: relative;
+    top: -30px;
+    height: 25px;
+    border-radius: 5px;
+    margin: 1px;
+    padding: 2px;
+}
+
+    #inicio-sesion ul {
+        height: 25px;
+    }
+
+    #inicio-sesion li {
+        border-radius: 5px;
+        background-color: lightblue;
+        height: 25px;
+        margin: 1px;
+        align-content: center;
+    }
+
+        #inicio-sesion li > a {
+            height:25px;
+            color: black;
+            top: -14px;
+            font-size: small;
+        }
+
+.navegador {
+    position: inherit;
+    height: 25px;
+}
+
+.navegador-anterior {
+    position: initial;
+}
+
+.navegador-siguiente {
+    position: absolute;
+    right: 0px;
+    padding: inherit;
+}
+
+
+.jumbo {
+    padding: 30px;
+    margin-bottom: 30px;
+    margin-top: 0px;
+    font-size: 21px;
+    font-weight: 200;
+    line-height: 2.1428571435;
+    color: inherit;
+    background-color: #eeeeee;
+}
+
+    .jumbo h1 {
+        line-height: 1;
+        color: black;
+    }
+
+    .jumbo p {
+        line-height: 1.4;
+        color: black;
+        font-size: 17px;
+    }
+
+.container .jumbo {
+    border-radius: 6px;
+}
+
+@media screen and (min-width: 768px) {
+    .jumbo {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+
+    .container .jumbo {
+        padding-right: 50px;
+        padding-left: 50px;
+    }
+
+    .jumbo h1 {
+        font-size: 63px;
+    }
+
+    .enlaces > li > a {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-size: 20px;
+    }
+
+
+
+}
+
+@media screen and (max-width: 767px) {
+    #contenedor-banner {
+        position: center;
+        padding: 5px;
+        height: 100%;
+        width: 100%;
+        color: black;
+        margin-left: auto;
+    }
+
+        #inicio-sesion{
+        height: 13px;
+        border-radius: 5px;
+        margin-bottom: 5px;
+    }
+
+    #inicio-sesion ul {
+        height: 13px;
+    }
+
+    #inicio-sesion li {
+        border-radius: 5px;
+        background-color: lightblue;
+        height: 13px;
+        margin: 1px;
+        align-content: center;
+    }
+
+        #inicio-sesion li > a {
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            width:100%;
+            height:12px;
+            color: black;
+            font-size: 12px;
+            top:-3px;
+        }
+}
+
+.seccion-comentarios {
+    width: 100%;
+    border: outset;
+    border-color: transparent;
+    display: table-cell;
+}
+
+.comentario {
+    background-color: #EAEAEA;
+    width: 90%;
+    margin: 5px;
+}
+
+    .comentario label {
+        color: black;
+    }
+
+    .comentario p {
+        color: black;
+    }
+
+    .comentario a {
+        float: right;
+        cursor: pointer;
+    }
+
+.respuesta {
+    width: 85%;
+    margin: 5px;
+    margin-left: 50px;
+}
+
+    .respuesta label {
+        color: black;
+    }
+
+    .respuesta p {
+        color: black;
+    }
+
+

@@ -1,0 +1,362 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelPimasStoreContainer" CdmEntityContainer="pimasEntities2">
+    <EntitySetMapping Name="admins">
+      <EntityTypeMapping TypeName="ModelPimas.admin">
+        <MappingFragment StoreEntitySet="admin">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="colegios">
+      <EntityTypeMapping TypeName="ModelPimas.colegio">
+        <MappingFragment StoreEntitySet="colegio">
+          <ScalarProperty Name="id_tipo_colegio" ColumnName="id_tipo_colegio" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_pais" ColumnName="id_pais" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cursos">
+      <EntityTypeMapping TypeName="ModelPimas.curso">
+        <MappingFragment StoreEntitySet="cursos">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="curso1" ColumnName="curso" />
+          <ScalarProperty Name="contador_visitas" ColumnName="contador_visitas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="documentos">
+      <EntityTypeMapping TypeName="ModelPimas.documento">
+        <MappingFragment StoreEntitySet="documentos">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_tipo" ColumnName="id_tipo" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="contador_visitas" ColumnName="contador_visitas" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="descripcion_corta" ColumnName="descripcion_corta" />
+          <ScalarProperty Name="descripcion_detallada" ColumnName="descripcion_detallada" />
+          <ScalarProperty Name="fecha_publicacion" ColumnName="fecha_publicacion" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="imagen" ColumnName="imagen" />
+          <ScalarProperty Name="historial_version" ColumnName="historial_version" />
+          <ScalarProperty Name="numero_version" ColumnName="numero_version" />
+          <ScalarProperty Name="unidad" ColumnName="unidad" />
+          <ScalarProperty Name="capitulo" ColumnName="capitulo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="documentos_curso">
+      <EntityTypeMapping TypeName="ModelPimas.documentos_curso">
+        <MappingFragment StoreEntitySet="documentos_curso">
+          <ScalarProperty Name="id_curso" ColumnName="id_curso" />
+          <ScalarProperty Name="id_documento" ColumnName="id_documento" />
+          <ScalarProperty Name="visibilidad" ColumnName="visibilidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="documentos_profe">
+      <EntityTypeMapping TypeName="ModelPimas.documentos_profe">
+        <MappingFragment StoreEntitySet="documentos_profe">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_curso" ColumnName="id_curso" />
+          <ScalarProperty Name="id_profesor" ColumnName="id_profesor" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="visibilidad" ColumnName="visibilidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="grupos">
+      <EntityTypeMapping TypeName="ModelPimas.grupos">
+        <MappingFragment StoreEntitySet="grupos">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_curso" ColumnName="id_curso" />
+          <ScalarProperty Name="grupo" ColumnName="grupo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="libros">
+      <EntityTypeMapping TypeName="ModelPimas.libro">
+        <MappingFragment StoreEntitySet="libros">
+          <ScalarProperty Name="solicitado" ColumnName="solicitado" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="log_visitas">
+      <EntityTypeMapping TypeName="ModelPimas.log_visitas">
+        <MappingFragment StoreEntitySet="log_visitas">
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+          <ScalarProperty Name="fecha_hora" ColumnName="fecha_hora" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="niveles">
+      <EntityTypeMapping TypeName="ModelPimas.nivele">
+        <MappingFragment StoreEntitySet="niveles">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nivel" ColumnName="nivel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="notificaciones">
+      <EntityTypeMapping TypeName="ModelPimas.notificacione">
+        <MappingFragment StoreEntitySet="notificaciones">
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+          <ScalarProperty Name="fecha_hora" ColumnName="fecha_hora" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="paises">
+      <EntityTypeMapping TypeName="ModelPimas.pais">
+        <MappingFragment StoreEntitySet="paises">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="pais1" ColumnName="pais" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="permisos">
+      <EntityTypeMapping TypeName="ModelPimas.permiso">
+        <MappingFragment StoreEntitySet="permisos">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="profesores_temporal">
+      <EntityTypeMapping TypeName="ModelPimas.profesores_temporal">
+        <MappingFragment StoreEntitySet="profesores_temporal">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="colegio" ColumnName="colegio" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="informacion_opcional" ColumnName="informacion_opcional" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="roles">
+      <EntityTypeMapping TypeName="ModelPimas.role">
+        <MappingFragment StoreEntitySet="roles">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="rol" ColumnName="rol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="ModelPimas.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipo_documento">
+      <EntityTypeMapping TypeName="ModelPimas.tipo_documento">
+        <MappingFragment StoreEntitySet="tipo_documento">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tipo_documento1" ColumnName="tipo_documento" />
+          <ScalarProperty Name="icono" ColumnName="icono" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuarios">
+      <EntityTypeMapping TypeName="ModelPimas.usuario">
+        <MappingFragment StoreEntitySet="usuarios">
+          <ScalarProperty Name="logueado" ColumnName="logueado" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="telefono_2" ColumnName="telefono_2" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="correo_2" ColumnName="correo_2" />
+          <ScalarProperty Name="informacion_opcional" ColumnName="informacion_opcional" />
+          <ScalarProperty Name="fecha_primer_ingreso" ColumnName="fecha_primer_ingreso" />
+          <ScalarProperty Name="bloqueado" ColumnName="bloqueado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="unidades">
+      <EntityTypeMapping TypeName="ModelPimas.unidade">
+        <MappingFragment StoreEntitySet="unidades">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="unidad" ColumnName="unidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="colegio_profesores" TypeName="ModelPimas.colegio_profesores" StoreEntitySet="colegio_profesores">
+      <EndProperty Name="colegio">
+        <ScalarProperty Name="id" ColumnName="id_colegio" />
+      </EndProperty>
+      <EndProperty Name="usuarios">
+        <ScalarProperty Name="id" ColumnName="id_profesor" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="curso_usuario" TypeName="ModelPimas.curso_usuario" StoreEntitySet="curso_usuario">
+      <EndProperty Name="cursos">
+        <ScalarProperty Name="id" ColumnName="id_curso" />
+      </EndProperty>
+      <EndProperty Name="usuarios">
+        <ScalarProperty Name="id" ColumnName="id_usuario" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="documentos_libro" TypeName="ModelPimas.documentos_libro" StoreEntitySet="documentos_libro">
+      <EndProperty Name="documentos">
+        <ScalarProperty Name="id" ColumnName="id_documento" />
+      </EndProperty>
+      <EndProperty Name="libros">
+        <ScalarProperty Name="id" ColumnName="id_libro" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="libros_colegio" TypeName="ModelPimas.libros_colegio" StoreEntitySet="libros_colegio">
+      <EndProperty Name="libros">
+        <ScalarProperty Name="id" ColumnName="id_libro" />
+      </EndProperty>
+      <EndProperty Name="colegio">
+        <ScalarProperty Name="id" ColumnName="id_colegio" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="libros_profesor" TypeName="ModelPimas.libros_profesor" StoreEntitySet="libros_profesor">
+      <EndProperty Name="libros">
+        <ScalarProperty Name="id" ColumnName="id_libro" />
+      </EndProperty>
+      <EndProperty Name="usuarios">
+        <ScalarProperty Name="id" ColumnName="id_profesor" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="niveles_documento" TypeName="ModelPimas.niveles_documento" StoreEntitySet="niveles_documento">
+      <EndProperty Name="documentos">
+        <ScalarProperty Name="id" ColumnName="id_documento" />
+      </EndProperty>
+      <EndProperty Name="niveles">
+        <ScalarProperty Name="id" ColumnName="id_nivel" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="permisos_grupo" TypeName="ModelPimas.permisos_grupo" StoreEntitySet="permisos_grupo">
+      <EndProperty Name="grupos">
+        <ScalarProperty Name="id" ColumnName="id_grupo" />
+      </EndProperty>
+      <EndProperty Name="permisos">
+        <ScalarProperty Name="id" ColumnName="id_permiso" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="permisos_rol" TypeName="ModelPimas.permisos_rol" StoreEntitySet="permisos_rol">
+      <EndProperty Name="permisos">
+        <ScalarProperty Name="id" ColumnName="id_permiso" />
+      </EndProperty>
+      <EndProperty Name="roles">
+        <ScalarProperty Name="id" ColumnName="id_rol" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="permisos_usuario" TypeName="ModelPimas.permisos_usuario" StoreEntitySet="permisos_usuario">
+      <EndProperty Name="permisos">
+        <ScalarProperty Name="id" ColumnName="id_permiso" />
+      </EndProperty>
+      <EndProperty Name="usuarios">
+        <ScalarProperty Name="id" ColumnName="id_usuario" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="roles_usuario" TypeName="ModelPimas.roles_usuario" StoreEntitySet="roles_usuario">
+      <EndProperty Name="usuarios">
+        <ScalarProperty Name="id" ColumnName="id_usuario" />
+      </EndProperty>
+      <EndProperty Name="roles">
+        <ScalarProperty Name="id" ColumnName="id_rol" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="usuarios_grupo" TypeName="ModelPimas.usuarios_grupo" StoreEntitySet="usuarios_grupo">
+      <EndProperty Name="usuarios">
+        <ScalarProperty Name="id" ColumnName="id_usuario" />
+      </EndProperty>
+      <EndProperty Name="grupos">
+        <ScalarProperty Name="id" ColumnName="id_grupo" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="cursos_rol" TypeName="ModelPimas.cursos_rol" StoreEntitySet="cursos_rol">
+      <EndProperty Name="role">
+        <ScalarProperty Name="id" ColumnName="id_rol" />
+      </EndProperty>
+      <EndProperty Name="curso">
+        <ScalarProperty Name="id" ColumnName="id_curso" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <EntitySetMapping Name="comentarios">
+      <EntityTypeMapping TypeName="ModelPimas.comentario">
+        <MappingFragment StoreEntitySet="comentarios">
+          <ScalarProperty Name="fecha_publicacion" ColumnName="fecha_publicacion" />
+          <ScalarProperty Name="comentario1" ColumnName="comentario" />
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+          <ScalarProperty Name="id_grupo" ColumnName="id_grupo" />
+          <ScalarProperty Name="id_documento" ColumnName="id_documento" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="respuestas">
+      <EntityTypeMapping TypeName="ModelPimas.respuesta">
+        <MappingFragment StoreEntitySet="respuestas">
+          <ScalarProperty Name="fecha_publicacion" ColumnName="fecha_publicacion" />
+          <ScalarProperty Name="respuesta1" ColumnName="respuesta" />
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+          <ScalarProperty Name="id_comentario" ColumnName="id_comentario" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipo_colegio">
+      <EntityTypeMapping TypeName="ModelPimas.tipo_colegio">
+        <MappingFragment StoreEntitySet="tipo_colegio">
+          <ScalarProperty Name="tipo_institucion" ColumnName="tipo_institucion" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="niveles_usuario" TypeName="ModelPimas.niveles_usuario" StoreEntitySet="niveles_usuario">
+      <EndProperty Name="usuario">
+        <ScalarProperty Name="id" ColumnName="id_usuario" />
+      </EndProperty>
+      <EndProperty Name="nivele">
+        <ScalarProperty Name="id" ColumnName="id_nivel" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <EntitySetMapping Name="log_visitas_documentousuario">
+      <EntityTypeMapping TypeName="ModelPimas.log_visitas_documentousuario">
+        <MappingFragment StoreEntitySet="log_visitas_documentousuario">
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+          <ScalarProperty Name="id_documento" ColumnName="id_documento" />
+          <ScalarProperty Name="contador" ColumnName="contador" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="log_visitas_cursousuario">
+      <EntityTypeMapping TypeName="ModelPimas.log_visitas_cursousuario">
+        <MappingFragment StoreEntitySet="log_visitas_cursousuario">
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+          <ScalarProperty Name="id_curso" ColumnName="id_curso" />
+          <ScalarProperty Name="contador" ColumnName="contador" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

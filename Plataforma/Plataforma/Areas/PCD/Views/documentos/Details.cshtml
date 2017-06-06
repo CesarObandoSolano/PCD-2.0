@@ -1,0 +1,131 @@
+﻿@model Plataforma.Areas.PCD.Models.documento
+@{
+    ViewBag.Title = "Detalles";
+}
+<div class="col-md-12">
+    <h1 class="class-forms">
+        <i class="fa fa-user-circle" aria-hidden="true"></i>
+        Detalles
+    </h1>
+    <h4 class="class-forms">Documento</h4>
+    <dl class="dl-horizontal">
+        <dt>
+            Titulo
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.titulo)
+        </dd>
+        <dt>
+            Tipo de documento
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.tipo_documento.tipo_documento1)
+        </dd>
+
+        <dt>
+            Niveles
+        </dt>
+        <dd>
+            @foreach (var item in Model.niveles)
+            {
+                @item.nivel<br />
+            }
+        </dd>
+        <dt>
+            Unidad
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.unidade.unidad)
+        </dd>
+        <dt>
+            Capitulo
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.capitulo)
+        </dd>
+        <dt>
+            Descripción
+        </dt>
+        <dd>
+            @if (Model.descripcion_corta != null && Model.descripcion_corta != "")
+            {
+                @Html.DisplayFor(model => model.descripcion_corta)
+            }
+            else
+            {
+                <p>--</p>
+            }
+        </dd>
+        <dt>
+            Detalle
+        </dt>
+        <dd>
+            @if (Model.descripcion_detallada != null && Model.descripcion_detallada != "")
+            {
+                @Html.DisplayFor(model => model.descripcion_detallada)
+            }
+            else
+            {
+                <p>--</p>
+            }
+        </dd>
+        <dt>
+            Fecha de publicación
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.fecha_publicacion)
+        </dd>
+        <dt>
+            Estado
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.status)
+        </dd>
+        <dt>
+            Numero de versión
+        </dt>
+        <dd>
+            @if (Model.numero_version != null && Model.numero_version.ToString() != "")
+            {
+                @Html.DisplayFor(model => model.numero_version)
+            }
+            else
+            {
+                <p>--</p>
+            }
+
+        </dd>
+        <dt>
+            Historial de cambios
+        </dt>
+        <dd>
+            @if (Model.historial_version != null && Model.historial_version != "")
+            {
+                @Html.DisplayFor(model => model.historial_version)
+            }
+            else
+            {
+                <p>--</p>
+            }
+        </dd>
+        <dt>
+            Visitas
+        </dt>
+        <dd>
+            @if (Model.contador_visitas != null && Model.contador_visitas.ToString() != "")
+            {
+                @Html.DisplayFor(model => model.contador_visitas)
+            }
+            else
+            {
+                <p>--</p>
+            }
+        </dd>
+    </dl>
+    <div class="col-lg-9">
+        <p>
+            @Html.ActionLink("Editar", "Edit", new { id = Model.id }) |
+            @Html.ActionLink("Volver al indice", "Index")
+        </p>
+    </div>
+</div>

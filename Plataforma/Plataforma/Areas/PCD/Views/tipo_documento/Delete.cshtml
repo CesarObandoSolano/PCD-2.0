@@ -1,0 +1,52 @@
+﻿@model Plataforma.Areas.PCD.Models.tipo_documento
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+
+<h1 class="class-forms">Eliminar</h1>
+<h3 class="class-forms">¿Estas seguro de que quieres eliminar este tipo de documento?</h3>
+<div class="col-md-12">
+    <h4 class="class-forms">Tipo de Documento</h4>
+    <dl class="dl-horizontal">
+        <dt>
+            Tipo de Documento
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipo_documento1)
+        </dd>
+
+        <dt>
+            Icono
+        </dt>
+
+        <dd>
+            @Html.HiddenFor(model => model.icono)
+            <img src="@Url.Content(@Model.icono)" alt="Image" id="icono" />
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        if (Model.documentos.Count <= 0)
+        {
+            <div class="form-actions no-color">
+                <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+                @Html.ActionLink("Volver al indice", "Index")
+            </div>
+        }
+        else
+        {
+            <div class="form-actions no-color">
+                <p>Este elemento no puede ser eliminado.</p> |
+                @Html.ActionLink("Volver al indice", "Index")
+            </div>
+        }
+
+
+    }
+</div>

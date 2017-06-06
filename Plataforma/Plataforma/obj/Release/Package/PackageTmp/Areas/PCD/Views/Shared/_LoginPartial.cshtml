@@ -1,0 +1,43 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated && Session["usuario"] != null)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+        <ul id="inicio-sesion" class="nav navbar-nav navbar-right">
+
+            @{
+                Plataforma.Areas.PCD.Models.usuario usuario = (Plataforma.Areas.PCD.Models.usuario)Session["usuario"];
+                if (usuario == null)
+                {
+                    <li>
+
+                    </li>
+                }
+                else
+                {
+                    <li>
+                        @Html.ActionLink("Bienvenido " + User.Identity.GetUserName() + "!", "Details", "usuarios", routeValues: new { id = usuario.id }, htmlAttributes: new { title = "Manage" })
+                    </li>
+                }
+
+
+            }
+
+            <li><a href="javascript:document.getElementById('logoutForm').submit()" class="btn">Cerrar sesión</a></li>
+        </ul>
+
+                    }
+                }
+                else
+                {
+                    <ul id="inicio-sesion" class="nav navbar-nav navbar-right">
+                        <li>
+                            @Html.ActionLink("Registrarse como profesor", "Create", "profesores_temporal", routeValues: null, htmlAttributes: new { id = "" })
+                        </li>
+                        <li>
+                            @Html.ActionLink("Registrarse como usuario", "Create", "usuarios", routeValues: null, htmlAttributes: new { id = "" })
+                        </li>
+                        <li>@Html.ActionLink("Iniciar sesión", "Login", "Account", routeValues: null, htmlAttributes: new { id = "" })</li>
+                    </ul>
+                }

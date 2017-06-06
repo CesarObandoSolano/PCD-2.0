@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Plataforma.Areas.PCD.Models.profesores_temporal>
+
+@{
+    ViewBag.Title = "Indice";
+}
+<head>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script>
+        function Buscar() {
+            var nombre = document.getElementById('nombre').value;
+            $("#tabla-profesores").load("../profesores_temporal/Index/?nombre=" + nombre + " #tabla-profesores");
+            return false;
+        }
+        function confirmacion() {
+            return confirm("¿Estas seguro de que deseas eliminar este profesor?");
+        }
+    </script>
+</head>
+
+<h2>Indice</h2>
+
+
+<div class="col-lg-9">
+    <p>
+        @Html.ActionLink("Insertar un profesor nuevo", "Create")
+    </p>
+    <div class="col-lg-9 barra-busqueda form-group">
+        @Html.Label("Buscar:", htmlAttributes: new { @class = "col-md-2" })
+        <input type="text" id="nombre" name="nombre" placeholder="Nombre del profesor" class="form-control" onkeypress="Buscar()" />
+    </div>
+    <table class="table" id="tabla-profesores">
+        <tr>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Usuario
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombre)
+                    @Html.DisplayFor(modelItem => item.apellidos)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.username)
+                </td>
+                <td>
+                    @Html.ActionLink("Ver Detalles", "Details", new { id = item.id }) |
+                    @Html.ActionLink("Aceptar", "Registrar", new { id = item.id }, new { onclick = "return confirm('¿Estas seguro de que deseas aceptar este profesor ? ');" }) |
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.id }, new { onclick = "return confirm('¿Estas seguro de que deseas eliminar este profesor ? ');" })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

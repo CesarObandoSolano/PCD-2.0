@@ -1,0 +1,312 @@
+﻿@model Plataforma.Areas.PCD.Models.grupos
+
+@{
+    ViewBag.Title = "Administrar Curso";
+}
+
+<head>
+
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script>
+
+        function desmatricularUsuario(id) {
+            $(document).ready(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "/PCD/grupos/DesmatricularUsuario",
+                    data: '{"id":"' + id + '", "idGrupo":"' + @Model.id + '"}',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (data) {
+                        if (data === "Exito") {
+                            alert("Modificación exitosa");
+                            $('#usuarios').load('../AdministrarCurso/@Model.id_curso #usuarios');
+                        }
+                    },
+                    error: errores
+                });
+                function errores(data) {
+                    alert(data);
+                }
+                return false;
+            });
+        }
+
+        function OcultarDocumento(idCurso, idDocumento) {
+            $(document).ready(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "/PCD/documentos/OcultarDocumento",
+                    data: '{"idCurso":"' + idCurso + '", "idDocumento":"' + idDocumento + '"}',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (data) {
+                        if (data === "Exito") {
+                            alert("Modificación exitosa");
+                            $('#documentos').load('../AdministrarCurso/@Model.id_curso #documentos');
+                        }
+                    },
+                    error: errores
+                });
+                function errores(data) {
+                    alert(data);
+                }
+                return false;
+            });
+        }
+
+        $(document).ready(function () {
+
+            //Busqueda usuarios
+
+            $("#nombre_usuario").change(function () {
+                var nombre = document.getElementById('nombre_usuario').value;
+
+                    $("#usuarios").load("/PCD/cursos/AdministrarCurso/?id=" + @Model.id + "&nombre=" + nombre + " #usuarios");
+                return false;
+            });
+
+            //Busqueda documentos
+            $("#categorias").change(function () {
+                var categoria = document.getElementById("categorias").value;
+                if (categoria != "") {
+                    if (categoria == "nivel") {
+                        document.getElementById("buscar_nivel").hidden = false;
+                        document.getElementById("buscar_unidad").hidden = true;
+                        document.getElementById("buscar_tipo").hidden = true;
+                    }
+                    else if (categoria == "unidad") {
+                        document.getElementById("buscar_nivel").hidden = true;
+                        document.getElementById("buscar_unidad").hidden = false;
+                        document.getElementById("buscar_tipo").hidden = true;
+                    } else if (categoria == "tipo") {
+                        document.getElementById("buscar_nivel").hidden = true;
+                        document.getElementById("buscar_unidad").hidden = true;
+                        document.getElementById("buscar_tipo").hidden = false;
+                    }
+                } else {
+                    document.getElementById("buscar_nivel").hidden = true;
+                    document.getElementById("buscar_unidad").hidden = true;
+                    document.getElementById("buscar_tipo").hidden = true;
+                }
+                return false;
+            });
+
+            $("#nombre").change(function () {
+                var nombre = document.getElementById('nombre').value;
+                var unidad = document.getElementById('unidad').value;
+                var nivel = document.getElementById('nivel').value;
+                var tipo = document.getElementById('tipo').value;
+                if (unidad != "0") {
+                    $("#tabla-documento").load("/PCD/cursos/AdministrarCurso/?id=" + @Model.id + "&nombreDoc=" + nombre + "&unidad=" + unidad + " #tabla-documento");
+                } else if (nivel != "0") {
+                    $("#tabla-documento").load("/PCD/cursos/AdministrarCurso/?id=" + @Model.id + "&nombreDoc=" + nombre + "&nivel=" + nivel + " #tabla-documento");
+                } else if (tipo != "0") {
+                    $("#tabla-documento").load("/PCD/cursos/AdministrarCurso/?id=" + @Model.id + "&nombreDoc=" + nombre + "&tipo=" + tipo + " #tabla-documento");
+                } else {
+                    $("#tabla-documento").load("/PCD/cursos/AdministrarCurso/?id=" + @Model.id + "&nombreDoc=" + nombre + " #tabla-documento");
+                }
+                return false;
+            });
+
+            $("#nivel").change(function () {
+                var nombre = document.getElementById('nombre').value;
+                var nivel = document.getElementById('nivel').value;
+                if (nivel != "0") {
+                    $("#tabla-documento").load("/PCD/cursos/AdministrarCurso/?id=" + @Model.id + "&nombreDoc=" + nombre + "&nivel=" + nivel + " #tabla-documento");
+                }
+                return false;
+            });
+
+            $("#unidad").change(function () {
+                var nombre = document.getElementById('nombre').value;
+                var unidad = document.getElementById('unidad').value;
+                if (unidad != "0") {
+                    $("#tabla-documento").load("/PCD/cursos/AdministrarCurso/?id=" + @Model.id + "&nombreDoc=" + nombre + "&unidad=" + unidad + " #tabla-documento");
+                }
+                return false;
+            });
+
+            $("#tipo").change(function () {
+                var nombre = document.getElementById('nombre').value;
+                var tipo = document.getElementById('tipo').value;
+                if (tipo != "0") {
+                    $("#tabla-documento").load("/PCD/cursos/AdministrarCurso/?id=" + @Model.id + "&nombreDoc=" + nombre + "&tipo=" + tipo + " #tabla-documento");
+                }
+                return false;
+            });
+        });
+        
+    </script>
+</head>
+
+
+<h1 class="class-forms">
+    <i class="fa fa-user-circle" aria-hidden="true"></i>
+    Detalles
+</h1>
+
+<div class="col-md-12">
+    <h4 class="class-forms">Grupo</h4>
+       <dl class="dl-horizontal">
+        <dt>
+            Grupo
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.grupo)
+        </dd>
+
+        <dt>
+            Curso
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.curso.curso1)
+        </dd>
+    </dl>
+
+    <div class="form-group">
+        @Html.Label("Buscar:", htmlAttributes: new { @class = "control-label col-md-4", style = "top: 10px;" })
+        <div class="col-md-10">
+            <input type="text" id="nombre_usuario" name="nombre_usuario" placeholder="Nombre del usuario" class="form-control text-box single-line" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAfBJREFUWAntVk1OwkAUZkoDKza4Utm61iP0AqyIDXahN2BjwiHYGU+gizap4QDuegWN7lyCbMSlCQjU7yO0TOlAi6GwgJc0fT/fzPfmzet0crmD7HsFBAvQbrcrw+Gw5fu+AfOYvgylJ4TwCoVCs1ardYTruqfj8fgV5OUMSVVT93VdP9dAzpVvm5wJHZFbg2LQ2pEYOlZ/oiDvwNcsFoseY4PBwMCrhaeCJyKWZU37KOJcYdi27QdhcuuBIb073BvTNL8ln4NeeR6NRi/wxZKQcGurQs5oNhqLshzVTMBewW/LMU3TTNlO0ieTiStjYhUIyi6DAp0xbEdgTt+LE0aCKQw24U4llsCs4ZRJrYopB6RwqnpA1YQ5NGFZ1YQ41Z5S8IQQdP5laEBRJcD4Vj5DEsW2gE6s6g3d/YP/g+BDnT7GNi2qCjTwGd6riBzHaaCEd3Js01vwCPIbmWBRx1nwAN/1ov+/drgFWIlfKpVukyYihtgkXNp4mABK+1GtVr+SBhJDbBIubVw+Cd/TDgKO2DPiN3YUo6y/nDCNEIsqTKH1en2tcwA9FKEItyDi3aIh8Gl1sRrVnSDzNFDJT1bAy5xpOYGn5fP5JuL95ZjMIn1ya7j5dPGfv0A5eAnpZUY3n5jXcoec5J67D9q+VuAPM47D3XaSeL4AAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;" />
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <h3>Lista de Usuarios</h3>
+        <table class="table" id="usuarios">
+            <tr>
+                <th>
+                    Usuario
+                </th>
+                <th>
+                    Notificaciones
+                </th>
+                <th></th>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <a href="~/PCD/usuarios/EnviarNotificaciones/?idGrupo=@Model.id">Enviar Notificacion a todos los usuarios</a>
+                </td>
+                <td></td>
+            </tr>
+
+            @foreach (var item in Model.usuarios)
+            {
+                <tr>
+                    <td>
+                        <a href="~/PCD/usuarios/details/@item.id">
+                            @Html.DisplayFor(modelItem => item.nombre)
+                            @Html.DisplayFor(modelItem => item.apellidos)
+                        </a>
+                    </td>
+                    <td>
+                        @if (@item.notificacione.correo == true)
+                        {
+                            <a href="~/PCD/usuarios/EnviarNotificaciones/@item.id">Enviar Notificacion</a>
+                        }
+                        else
+                        {
+                            <p>Este usuario no desea recibir notificaciones por correo</p>
+                        }
+                    </td>
+                    <td>
+                        <a onclick="desmatricularUsuario(@item.id)">Desmatricular</a>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+
+    <br /><br />
+    
+    <div class="col-md-12 barra-busqueda form-group">
+        @Html.Label("Buscar:", htmlAttributes: new { @class = "col-md-2", style = "top: 10px;" })
+        <input type="text" id="nombre" name="nombre" placeholder="Titulo del documento" class="form-control" />
+        @Html.Label("Ordenar por:", htmlAttributes: new { @class = "col-md-2", style = "top: 10px;" })
+        <select id="categorias" name="categorias" class="form-control">
+            <option value="">Seleccione una categoria...</option>
+            <option value="nivel">Nivel</option>
+            <option value="unidad">Unidad</option>
+            <option value="tipo">Tipo</option>
+        </select>
+        <div id="buscar_unidad" hidden class="col-md-12" style="top: 5px; left: 15px; width:1150px;">
+            <select id="unidad" name="unidad" class="form-control">
+                <option value="0">Seleccione una unidad...</option>
+                @foreach (var item in ViewBag.unidades)
+                {
+                    <option value="@item.id">
+                        @item.unidad
+                    </option>
+                }
+            </select>
+        </div>
+        <div id="buscar_nivel" hidden class="col-md-12" style="top: 5px; left: 15px; width:1150px;">
+            <select id="nivel" name="nivel" class="form-control">
+                <option value="0">Seleccione un nivel...</option>
+                @foreach (var item in ViewBag.niveles)
+                {
+                    <option value="@item.id">
+                        @item.nivel
+                    </option>
+                }
+            </select>
+        </div>
+        <div id="buscar_tipo" hidden class="col-md-12" style="top: 5px; left: 15px; width:1150px;">
+            <select id="tipo" name="tipo" class="form-control">
+                <option value="0">Seleccione un tipo...</option>
+                @foreach (var item in ViewBag.tipos)
+                {
+                    <option value="@item.id">
+                        @item.tipo_documento1
+                    </option>
+                }
+            </select>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <h3>Lista de Documentos</h3>
+        <table class="table" id="tabla-documento">
+            <tr>
+
+                <th>
+                    Titulo
+                </th>
+                <th>
+                    Descripción
+                </th>
+                <th>
+                    Formato
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model.curso.documentos_curso)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.documento.titulo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.documento.descripcion_corta)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.documento.tipo_documento.tipo_documento1)
+                    </td>
+                    <td>
+                        @if (item.visibilidad == true)
+                        {
+                            <a onclick="OcultarDocumento(@item.id_curso, @item.id_documento)">Ocultar</a>
+                        }
+                        else
+                        {
+                            <a onclick="OcultarDocumento(@item.id_curso, @item.id_documento)">Mostrar</a>
+                        }
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

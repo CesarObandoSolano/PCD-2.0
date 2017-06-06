@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Plataforma.Areas.PCD.Models.profesores_temporal>
+
+@{
+    ViewBag.Title = "Indice";
+}
+<head>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script>
+        function Buscar() {
+            var nombre = document.getElementById('nombre').value;
+            $("#tabla-profesores").load("../profesores_temporal/Index/?nombre=" + nombre + " #tabla-profesores");
+            return false;
+        }
+        function confirmacion() {
+            return confirm("¿Estas seguro de que deseas eliminar este profesor?");
+        }
+    </script>
+</head>
+
+<h1 class="class-forms"><i class="fa fa-graduation-cap" aria-hidden="true"></i> &nbsp;Profesores</h1><br><br>
+<div class="col-md-12">
+    <p>
+        @Html.ActionLink("Insertar un profesor nuevo", "Create")
+    </p>
+    <div class="form-group">
+        @Html.Label("Buscar:", htmlAttributes: new { @class = "control-label col-md-4", style = "top: 10px;" })
+        <div class="col-md-10">
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre del profesor" class="form-control text-box single-line" onkeypress="Buscar()" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAfBJREFUWAntVk1OwkAUZkoDKza4Utm61iP0AqyIDXahN2BjwiHYGU+gizap4QDuegWN7lyCbMSlCQjU7yO0TOlAi6GwgJc0fT/fzPfmzet0crmD7HsFBAvQbrcrw+Gw5fu+AfOYvgylJ4TwCoVCs1ardYTruqfj8fgV5OUMSVVT93VdP9dAzpVvm5wJHZFbg2LQ2pEYOlZ/oiDvwNcsFoseY4PBwMCrhaeCJyKWZU37KOJcYdi27QdhcuuBIb073BvTNL8ln4NeeR6NRi/wxZKQcGurQs5oNhqLshzVTMBewW/LMU3TTNlO0ieTiStjYhUIyi6DAp0xbEdgTt+LE0aCKQw24U4llsCs4ZRJrYopB6RwqnpA1YQ5NGFZ1YQ41Z5S8IQQdP5laEBRJcD4Vj5DEsW2gE6s6g3d/YP/g+BDnT7GNi2qCjTwGd6riBzHaaCEd3Js01vwCPIbmWBRx1nwAN/1ov+/drgFWIlfKpVukyYihtgkXNp4mABK+1GtVr+SBhJDbBIubVw+Cd/TDgKO2DPiN3YUo6y/nDCNEIsqTKH1en2tcwA9FKEItyDi3aIh8Gl1sRrVnSDzNFDJT1bAy5xpOYGn5fP5JuL95ZjMIn1ya7j5dPGfv0A5eAnpZUY3n5jXcoec5J67D9q+VuAPM47D3XaSeL4AAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;" />
+        </div>
+    </div>
+    <table class="table" id="tabla-profesores">
+        <tr>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Usuario
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombre)
+                    @Html.DisplayFor(modelItem => item.apellidos)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.username)
+                </td>
+                <td>
+                    @Html.ActionLink(" ", "Details", new { id = item.id }, new { @class = "enlace-tabla detalles", @title = "Detalles" })
+                    @Html.ActionLink(" ", "Registrar", new { id = item.id }, new {@class="enlace-tabla aceptar", @title="Aceptar Profesor", onclick = "return confirm('¿Estas seguro de que deseas aceptar este profesor ? ');" }) 
+                    @Html.ActionLink(" ", "Delete", new { id = item.id }, new { @class = "enlace-tabla eliminar-profesor", @title = "Eliminar Profesor", onclick = "return confirm('¿Estas seguro de que deseas eliminar este profesor ? ');" })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+

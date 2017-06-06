@@ -1,0 +1,66 @@
+﻿@using Microsoft.AspNet.Identity
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title -Plataforma de contenidos digitales</title>
+
+    <link rel="stylesheet" type="text/css" href="~/Content/Site.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/custombootstrap.css" />
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <META HTTP-EQUIV="REFRESH" CONTENT="0;URL=../PCD">
+</head>
+
+<body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="color:black;">
+                    Menu
+                </button>
+                <a href="~/"><img src="~/Recursos/logo.png" /></a>
+            </div>
+
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right enlaces">
+                    <li>
+                        <a href="~/">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="~/PCD/Home/About">Acerca de</a>
+                    </li>
+                    <li>
+                        <a href="~/PCD/Home/Contact">Contacto</a>
+                    </li>
+                    <li>
+                        <a href="http://pimas.co.cr/">Web PIMAS</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+           
+
+
+    </div>
+
+    <hr />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - PIMAS</p>
+    </footer>
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+    @*@Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/bootstrap")*@

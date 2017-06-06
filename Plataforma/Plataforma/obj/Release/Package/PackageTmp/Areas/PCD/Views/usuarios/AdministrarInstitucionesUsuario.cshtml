@@ -1,0 +1,106 @@
+﻿@model Plataforma.Areas.PCD.Models.usuario
+
+@{
+    ViewBag.Title = "Agregar Colegios";
+}
+<link rel="stylesheet" type="text/css" href="~/Content/custombootstrap.css" />
+<h2>Agregar Colegios</h2>
+
+<head>
+
+
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#quitar").click(function () {
+                !$("#colegios option:selected").appendTo("#colegiosDisponibles");
+                !$("#colegios option").prop("selected", true);
+                return false;
+            });
+
+            $("#agregar").click(function () {
+                !$("#colegios option").prop("selected", true);
+                return !$("#colegiosDisponibles option:selected").appendTo("#colegios");
+                
+            });
+        });
+    </script>
+</head>
+
+@using (Html.BeginForm())
+{
+
+    @Html.AntiForgeryToken()
+
+
+    <div class="form-horizontal col-lg-9">
+        <h4>Usuario: @Model.nombre @Model.apellidos</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.id)
+
+        @if (Model.roles.FirstOrDefault().rol.Equals(Plataforma.App_Start.Constantes.PROFESOR) 
+            || Model.roles.FirstOrDefault().rol.Equals(Plataforma.App_Start.Constantes.PROFESOR_PREMIUM))
+        {
+            <div class="form-group">
+                <p><br /><br /><h4>Seleccione uno o mas colegios:</h4></p>
+                <div class="col-md-10">
+                    <select id="colegiosDisponibles" class="form-control" name="colegiosDisponibles" multiple>
+                        @foreach (var item in ViewBag.colegiosDisponibles)
+                    {
+                            <option value="@item.id">
+                                @item.nombre
+                            </option>
+                        }
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <a id="agregar" class="btn btn-default" onclick="return false;"> Agregar </a>
+                <a id="quitar" class="btn btn-default" onclick="return false;"> Quitar </a>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-10">
+                    <select id="colegios" class="form-control" name="colegios" multiple>
+                        @foreach (var item in Model.colegios)
+                    {
+                            <option value="@item.id">
+                                @item.nombre
+                            </option>
+                        }
+                    </select>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="form-group">
+                <p><br /><br /><h4>Seleccione un colegio:</h4></p>
+                <div class="col-md-10">
+                    <select id="colegios" class="form-control" name="colegios">
+                        @foreach (var item in ViewBag.colegiosDisponibles)
+                    {
+                            <option value="@item.id">
+                                @item.nombre
+                            </option>
+                        }
+                    </select>
+                </div>
+            </div>
+        }
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Agregar Instituciones" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

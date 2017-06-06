@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Plataforma.Areas.PCD.Models.colegio>
+
+@{
+    ViewBag.Title = "Indice";
+}
+<head>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script>
+        function Buscar() {
+            var nombre = document.getElementById('nombre').value;
+            $("#tabla-colegios").load("/PCD/colegios/Index/?nombre=" + nombre + " #tabla-colegios");
+            return false;
+        }
+    </script>
+</head>
+
+<h2>Colegios</h2>
+    <div class="col-lg-9">
+
+        <p>
+            @Html.ActionLink("Insertar un colegio", "Create")
+        </p>
+        <div class="col-lg-9 barra-busqueda form-group">
+            @Html.Label("Buscar:", htmlAttributes: new { @class = "col-md-2" })
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre del colegio" class="form-control" onkeypress="Buscar()" />
+        </div>
+        <table class="table" id="tabla-colegios">
+            <tr>
+                <th>
+                    Nombre
+                </th>
+                <th>
+                    Pais
+                </th>
+                <th>
+                    Tipo
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.pais.pais1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.tipo_colegio.tipo_institucion)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Editar", "Edit", new { id = item.id }) |
+                        @Html.ActionLink("Ver Detalles", "Details", new { id = item.id }) |
+                        @Html.ActionLink("Eliminar", "Delete", new { id = item.id })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>

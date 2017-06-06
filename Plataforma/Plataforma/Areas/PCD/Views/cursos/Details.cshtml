@@ -1,0 +1,99 @@
+﻿@model Plataforma.Areas.PCD.Models.curso
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<div class="col-md-12">
+    <h1 class="class-forms">
+        <i class="fa fa-user-circle" aria-hidden="true"></i>
+        Detalles
+    </h1>
+    <h4 class="class-forms">Curso</h4>
+    <dl class="dl-horizontal">
+        <dt>
+            Curso
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.curso1)
+        </dd>
+
+        <dt>
+            Visitas
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.contador_visitas)
+        </dd>
+
+
+        <dt>
+            Documentos
+        </dt>
+
+        <dd>
+            @foreach (var item in Model.documentos_curso)
+            {
+                @item.documento.titulo<br />
+            }
+        </dd>
+
+    </dl>
+    <h3>Lista de Usuarios</h3>
+    <table class="table" id="usuarios">
+        <tr>
+            <th>
+                Usuario
+            </th>
+            <th>
+                Grupo
+            </th>
+            <th>
+                Visitas
+            </th>
+            <th></th>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <a href="~/PCD/usuarios/EnviarNotificaciones/?idCurso=@Model.id">Enviar Notificacion a todos los usuarios</a>
+            </td>
+            <td></td>
+        </tr>
+
+        @foreach (var item in Model.usuarios)
+        {
+            <tr>
+                <td>
+                    <a href="~/usuarios/details/@item.id">
+                        @Html.DisplayFor(modelItem => item.nombre)
+                        @Html.DisplayFor(modelItem => item.apellidos)
+                    </a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.grupos.Where(u => u.id_curso == Model.id).FirstOrDefault().grupo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.log_visitas_cursousuario.Where(l => l.id_curso == modelItem.id && l.id_usuario == item.id).FirstOrDefault().contador)
+                </td>
+                <td>
+                    @if (@item.notificacione.correo == true)
+                    {
+                        <a href="~/PCD/usuarios/EnviarNotificaciones/@item.id">Enviar Notificacion</a>
+                    }
+                    else
+                    {
+                        <p>Este usuario no desea recibir notificaciones por correo</p>
+                    }
+                </td>
+            </tr>
+        }
+    </table>
+    <div class="col-lg-9">
+        <p>
+            @Html.ActionLink("Editar", "Edit", new { id = Model.id }) |
+            @Html.ActionLink("Volver al indice", "Index")
+        </p>
+    </div>
+</div>

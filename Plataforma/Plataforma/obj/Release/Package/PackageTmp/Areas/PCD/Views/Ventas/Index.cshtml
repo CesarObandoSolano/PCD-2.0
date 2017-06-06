@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Plataforma.Areas.PCD.Models.Venta>
+
+@{
+    ViewBag.Title = "Indice";
+}
+
+<h2>Indice</h2>
+
+<div class="col-lg-9">
+    <p>
+        @Html.ActionLink("Insertar una venta", "Create")
+    </p>
+<table class="table">
+    <tr>
+        <th>
+            Comprador
+        </th>
+        <th>
+            Telefono
+        </th>
+        <th>
+            Articulo
+        </th>
+        <th>
+            Cantidad
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre_comprador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.numero_comprador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Articulo.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cantidad)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Ver Detalles", "Details", new { id=item.id }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
+</div>

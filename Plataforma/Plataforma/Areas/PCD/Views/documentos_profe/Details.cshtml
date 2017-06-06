@@ -1,0 +1,42 @@
+﻿@model Plataforma.Areas.PCD.Models.documentos_profe
+@{
+    ViewBag.Title = "Detalles";
+}
+<div class="col-md-12">
+    <h1 class="class-forms">
+        <i class="fa fa-user-circle" aria-hidden="true"></i>
+        Detalles
+    </h1>
+    <h4 class="class-forms">Documento</h4>
+    <dl class="dl-horizontal">
+        <dt>
+            Titulo
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.titulo)
+        </dd>
+        <dt>
+            Curso
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.curso.curso1)
+        </dd>
+        <dt>
+            Profesor
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.usuario.nombre)
+            @Html.DisplayFor(model => model.usuario.apellidos)
+        </dd>
+        <dt>
+            Visible
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.visibilidad)
+        </dd>
+    </dl>
+    <p>
+        @Html.ActionLink("Editar", "Edit", new { id = Model.id }) |
+        @Html.ActionLink("Volver al indice", "Index")
+    </p>
+</div>

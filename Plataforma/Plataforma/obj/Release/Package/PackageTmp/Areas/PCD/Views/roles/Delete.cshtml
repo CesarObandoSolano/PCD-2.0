@@ -1,0 +1,35 @@
+﻿@model Plataforma.Areas.PCD.Models.role
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+<link rel="stylesheet" type="text/css" href="~/Content/custombootstrap.css" />
+<h2>Eliminar</h2>
+
+<h3>¿Estas seguro de que quieres eliminar este rol?</h3>
+<div class="col-lg-9">
+    <h4>Rol</h4>
+    <hr />
+    @Html.HiddenFor(model => model.id)
+    <dl class="dl-horizontal">
+
+        <dt>
+            Rol
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rol)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Volver al indice", "Index")
+        </div>
+    }
+</div>

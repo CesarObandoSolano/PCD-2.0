@@ -1,0 +1,164 @@
+﻿@model Plataforma.Areas.PCD.Models.curso
+@{
+    ViewBag.Title = "Matricular Usuarios";
+}
+
+<link rel="stylesheet" type="text/css" href="~/Content/custombootstrap.css" />
+<h2>Matricular</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <head>
+        <script src="~/Scripts/jquery-1.10.2.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#nombre").change(function () {
+                    var nombre = document.getElementById('nombre').value;
+                    var rol = document.getElementById('rol').value;
+                    var colegio = document.getElementById('colegio').value;
+                    var nivel = document.getElementById('nivel').value;
+                    $("#matriculables").load("../MatricularUsuarios/" +@Model.id +"?nombreusuario=" + nombre + "&rol=" + rol + "&colegio=" + colegio + "&nivel=" + nivel + " #usuariosQuitar");
+                    return false;
+                });
+                $("#rol").change(function () {
+                    var nombre = document.getElementById('nombre').value;
+                    var rol = document.getElementById('rol').value;
+                    var colegio = document.getElementById('colegio').value;
+                    var nivel = document.getElementById('nivel').value;
+                    $("#matriculables").load("../MatricularUsuarios/" +@Model.id +"?nombreusuario=" + nombre + "&rol=" + rol + "&colegio=" + colegio + "&nivel=" + nivel + " #usuariosQuitar");
+                    return false;
+                });
+                $("#colegio").change(function () {
+                    var nombre = document.getElementById('nombre').value;
+                    var rol = document.getElementById('rol').value;
+                    var colegio = document.getElementById('colegio').value;
+                    var nivel = document.getElementById('nivel').value;
+                    $("#matriculables").load("../MatricularUsuarios/" +@Model.id +"?nombreusuario=" + nombre + "&rol=" + rol + "&colegio=" + colegio + "&nivel=" + nivel + " #usuariosQuitar");
+                    return false;
+                });
+                $("#nivel").change(function () {
+                    var nombre = document.getElementById('nombre').value;
+                    var rol = document.getElementById('rol').value;
+                    var colegio = document.getElementById('colegio').value;
+                    var nivel = document.getElementById('nivel').value;
+                    $("#matriculables").load("../MatricularUsuarios/" +@Model.id +"?nombreusuario=" + nombre + "&rol=" + rol + "&colegio=" + colegio + "&nivel=" + nivel + " #usuariosQuitar");
+                    return false;
+                });
+                $("#quitar").click(function () {
+                    !$("[name= 'usuariosMatricular'] option:selected").appendTo("[name= 'usuariosQuitar']");
+                    !$("[name= 'usuariosMatricular'] option").prop("selected", true);
+                    return false;
+                });
+
+                $("#agregar").click(function () {
+                    !$("[name= 'usuariosQuitar'] option:selected").appendTo("[name= 'usuariosMatricular']");
+                    !$("[name= 'usuariosMatricular'] option").prop("selected", true);
+                    return false;
+                });
+
+            });
+        </script>
+    </head>
+
+    <div class="col-lg-9">
+
+        @Html.HiddenFor(model => model.id)
+            <div class="col-lg-9 barra-busqueda form-group">
+                <div class="form-group">
+                    @Html.Label("Roles:", htmlAttributes: new { @class = "col-md-2" })
+                    <div class="col-md-10">
+                        <select id="rol" name="rol" class="form-control">
+                            <option value="0">Seleccione un rol...</option>
+                            @foreach (var item in ViewBag.roles)
+                            {
+                                <option value="@item.id">
+                                    @item.rol
+                                </option>
+                            }
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("Colegios:", htmlAttributes: new { @class = "col-md-2" })
+                    <div class="col-md-10">
+                        <select id="colegio" name="colegio" class="form-control">
+                            <option value="0">Seleccione un colegio...</option>
+                            @foreach (var item in ViewBag.colegios)
+                            {
+                                <option value="@item.id">
+                                    @item.nombre
+                                </option>
+                            }
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("Niveles:", htmlAttributes: new { @class = "col-md-2" })
+                    <div class="col-md-10">
+                        <select id="nivel" name="nivel" class="form-control">
+                            <option value="0">Seleccione un nivel...</option>
+                            @foreach (var item in ViewBag.niveles)
+                            {
+                                <option value="@item.id">
+                                    @item.nivel
+                                </option>
+                            }
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("Buscar:", htmlAttributes: new { @class = "col-md-2" })
+                    <div class="col-md-10">
+                        <input type="text" id="nombre" name="nombre" placeholder="Nombre" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            
+        
+            <div class="form-group col-lg-9" >
+                <p><h4>Matricule uno o mas usuarios:</h4></p>
+                <div id="matriculables">
+                    <select id="usuariosQuitar" class="form-control lista-usuarios" multiple="multiple" name="usuariosQuitar">
+                        @foreach (var item in ViewBag.usuariosAMatricular)
+                        {
+                            <option value="@item.id"><p>@item.nombre @item.apellidos</p></option>
+                        }
+                    </select>
+                </div>
+            </div>
+
+        <div class="form-group col-lg-9">
+            <a id="agregar" class="btn btn-default" onclick="return false;"> Agregar </a>
+            <a id="quitar" class="btn btn-default" onclick="return false;"> Quitar </a>
+        </div>
+        
+            <div class="form-group col-lg-9">
+                <p><br /><br /><h4>Retire uno o mas usuarios:</h4></p>
+
+                <select id="usuariosMatricular" class="form-control lista-usuarios" multiple="multiple" name="usuariosMatricular">
+                    @foreach (var item in Model.usuarios)
+                {
+                        <option value="@item.id"><p>@item.nombre @item.apellidos</p></option>
+                    }
+                </select>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Matricular Usuarios" class="btn btn-default" />
+                </div>
+            </div>
+        
+
+    </div>
+
+
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

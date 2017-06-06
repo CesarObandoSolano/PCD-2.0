@@ -1,0 +1,517 @@
+﻿@using Microsoft.AspNet.Identity
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="~/css/assets/images/logo-home-129x128.png" type="image/x-icon">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;subset=latin">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="~/css/assets/bootstrap-material-design-font/css/material.css">
+    <link rel="stylesheet" href="~/css/assets/tether/tether.min.css">
+    <link rel="stylesheet" href="~/css/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/assets/dropdown/css/style.css">
+    <link rel="stylesheet" href="~/css/assets/animate.css/animate.min.css">
+    <link rel="stylesheet" href="~/css/assets/theme/css/style.css">
+    <link rel="stylesheet" href="~/css/assets/mobirise/css/mbr-additional.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="~/css/assets/custom-css/custom_styles.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/miscelaneos.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/4b145ef64a.css">
+    @*@Scripts.Render("~/bundles/modernizr")*@
+
+    <script src="~/Scripts/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="~/Scripts/jquery.table.hpaging.min.js"></script>
+    
+
+    <title>@ViewBag.Title -Plataforma de contenidos digitales</title>
+</head>
+
+<body>
+    <section id="menu-2">
+        <nav class="navbar navbar-dropdown navbar-fixed-top">
+            <div class="container menu-content">
+                <div class="mbr-table">
+                    <div class="mbr-table-cell top-menu">
+                        <div class="navbar-brand"> <a href="index.html" class="navbar-logo"><img src="~/css/assets/images/logo-home-129x128.png" alt="Pimás Editorial"></a> </div>
+                    </div>
+                    <div class="mbr-table-cell top-menu top-menu-top">
+                        <button class="navbar-toggler pull-xs-right hidden-md-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+                            <div class="hamburger-icon"></div>
+                        </button>
+                        <ul class="nav-dropdown collapse nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar">
+                            <li class="nav-item"><a class="nav-link link" href="~/PCD" aria-expanded="false">Inicio</a></li>
+                            <li class="nav-item"><a class="nav-link link" href="~/PCD/HomePCD/About" aria-expanded="false">Acerca de Pimas</a></li>
+                            <li class="nav-item"><a class="nav-link link" href="~/PCD/HomePCD/Contact" aria-expanded="false">Contacto</a></li>
+                            <li class="nav-item"><a class="nav-link link" href="http://www.pimas.co.cr/" aria-expanded="false">Web Pimas</a></li>
+                            <li class="nav-item"></li>
+
+                        </ul>
+                        <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+                            <div class="close-icon"></div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </section>
+
+    <section class="mbr-section article mbr-section__container mbr-after-navbar" id="content6-1f" style="padding-top: 215px; padding-bottom: 20px;">
+        <div class="container">
+            <div class="row top-space">
+                @if (Request.IsAuthenticated)
+                {
+                    if (Session["usuario"] != null)
+                    {
+                        var usuario = (Plataforma.Areas.PCD.Models.usuario)Session["usuario"];
+                        var db = new Plataforma.Areas.PCD.Models.pimasEntities();
+                        usuario = db.usuarios.Find(usuario.id);
+                        usuario.cursos = usuario.cursos.OrderBy(c => c.curso1).ToList();
+
+                        <div class="col-sm-3 col-md-3">
+                            <div class="well sidebar-nav left-nav-sec" id="main-nav">
+
+                                <h4>Menú</h4>
+                                <ul class="plataforma">
+                                    <li class="user">
+                                        <span><i class="fa fa-user-circle" aria-hidden="true"></i> &nbsp;Bienvenido @User.Identity.GetUserName()</span>
+                                    </li>
+                                    <li>
+                                        <a href="~/PCD/usuarios/details/@usuario.id"> <span><i class="fa fa-book" aria-hidden="true"></i> &nbsp;Ver Perfil</span> </a>
+                                    </li>
+                                    <li>
+                                        <a href="~/PCD/usuarios/edit/@usuario.id">
+                                            <span>
+                                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                                                &nbsp;Editar
+                                            </span>
+                                        </a>
+                                    </li>
+                                    @if (usuario.roles.FirstOrDefault().rol.Equals(Plataforma.App_Start.Constantes.ADMINISTRADOR))
+                                    {
+                                        <li>
+                                            <a href="~/PCD/colegios/Index">
+                                                <span>
+                                                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                                    &nbsp;Colegios
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="~/PCD/cursos/Index">
+                                                <span>
+                                                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                                    &nbsp;Cursos
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="~/PCD/documentos/Index">
+                                                <span>
+                                                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                                    &nbsp;Documentos
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="~/PCD/grupos/Index">
+                                                <span>
+                                                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                                    &nbsp;Grupos
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="~/PCD/libros/Index">
+                                                <span>
+                                                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                                    &nbsp;Libros
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="~/PCD/niveles/Index">
+                                                <span>
+                                                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                                    &nbsp;Niveles
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="~/PCD/pais/Index">
+                                                <span>
+                                                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                                    &nbsp;Paises
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="~/PCD/permisos/Index">
+                                                <span>
+                                                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                                    &nbsp;Permisos
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="~/PCD/profesores_temporal/Index">
+                                                <span>
+                                                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                                    &nbsp;Profesores
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="~/PCD/roles/Index">
+                                                <span>
+                                                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                                    &nbsp;Roles
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="~/PCD/tipo_colegio/Index">
+                                                <span>
+                                                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                                    &nbsp;Tipos de Colegio
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="~/PCD/tipo_documento/Index">
+                                                <span>
+                                                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                                    &nbsp;Tipos de Documento
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="~/PCD/unidades/Index">
+                                                <span>
+                                                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                                    &nbsp;Unidades
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="~/PCD/usuarios/Index">
+                                                <span>
+                                                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                                    &nbsp;Usuarios
+                                                </span>
+                                            </a>
+                                        </li>
+
+                                    }
+                                    else if (usuario.roles.FirstOrDefault().rol.Equals(Plataforma.App_Start.Constantes.PROFESOR_PREMIUM))
+                                    {
+                                        <li>
+                                            <a href="~/PCD/cursos/IndiceCursos">
+                                                <span>
+                                                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                                    &nbsp;Administrar Cursos
+                                                </span>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="~/PCD/documentos_profe/Index">
+                                                <span>
+                                                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                                    &nbsp;Documentos
+                                                </span>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="~/PCD/libros/Index">
+                                                <span>
+                                                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                                    &nbsp;Libros
+                                                </span>
+                                            </a>
+                                        </li>
+                                    }
+                                    <li>
+                                        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                                        {
+                                            @Html.AntiForgeryToken()
+                                            <a class="cerrar" href="javascript:document.getElementById('logoutForm').submit()">
+                                                <span>
+                                                    <i class="fa fa-window-close" aria-hidden="true"></i>
+                                                    &nbsp;Cerrar Sesión
+                                                </span>
+                                            </a>
+                                        }
+                                    </li>
+                                </ul>
+
+
+                                @if (usuario.roles.FirstOrDefault().rol.Equals(Plataforma.App_Start.Constantes.PROFESOR_PREMIUM)
+|| usuario.roles.FirstOrDefault().rol.Equals(Plataforma.App_Start.Constantes.ESTUDIANTE_PREMIUM))
+                                {
+                                    <h4>Grupos</h4>
+                                    if (usuario.grupos.Count == 0)
+                                    {
+                                        <ul class="plataforma">
+                                            <li>
+                                                <span class="disabled blocked">
+                                                    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                                                    Aún no estas registrado en ningun grupo.
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    }
+                                    else
+                                    {
+                                        <ul class="plataforma">
+                                            @foreach (var grupo in usuario.grupos)
+                                            {
+                                                <li>
+                                                    <a href="~/PCD/cursos/VerCurso/@grupo.curso.id?idGrupo=@grupo.id">
+                                                        <span>
+                                                            <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                                            &nbsp;@grupo.grupo: @grupo.curso.curso1
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                            }
+                                        </ul>
+                                    }
+
+                                    if (usuario.cursos.Where(c => c.grupos.Where(g => g.usuarios.Contains(usuario)).Count() <= 0).Count() > 0)
+                                    {
+                                        List<Plataforma.Areas.PCD.Models.curso>
+                                            cursos = usuario.cursos.Where(c => c.grupos.Where(g => g.usuarios.Contains(usuario)).Count() <= 0).ToList();
+                                        <h4>Cursos</h4>
+                                        <ul class="plataforma">
+                                            @foreach (var curso in cursos)
+                                            {
+                                                <li>
+                                                    <a href="~/PCD/cursos/VerCurso/@curso.id">
+                                                        <span>
+                                                            <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                                            &nbsp;@curso.curso1
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                            }
+                                        </ul>
+
+                                    }
+                                }
+                                else
+                                {
+                                    <h4>Cursos</h4>
+                                    if (usuario.cursos.Count == 0)
+                                    {
+                                        <ul class="plataforma">
+                                            <li>
+                                                <span class="disabled blocked">
+                                                    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                                                    Aún no estas registrado en ningun curso.
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    }
+                                    else
+                                    {
+                                        <ul class="plataforma">
+                                            @foreach (var curso in usuario.cursos)
+                                            {
+                                                <li>
+                                                    <a href="~/PCD/cursos/VerCurso/@curso.id">
+                                                        <span>
+                                                            <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                                            &nbsp;@curso.curso1
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                            }
+                                        </ul>
+                                    }
+                                }
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-9">
+                            <ul class="breadcrumb">
+                                <li class="breadcrumb-item"> <a href="~/PCD/"> Home </a> </li>
+                            </ul>
+
+                        </div>
+                        <div class="col-md-9">
+                        </div>
+
+                    }
+                }
+                <div class="col-md-9">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+    @*<div class="container body-content">
+            @RenderBody()
+            @if (Request.IsAuthenticated)
+            {
+                if (Session["usuario"] != null)
+                {
+                    var usuario = (Plataforma.Areas.PCD.Models.usuario)Session["usuario"];
+                    var db = new Plataforma.Areas.PCD.Models.pimasEntities();
+                    usuario = db.usuarios.Find(usuario.id);
+                    usuario.cursos = usuario.cursos.OrderBy(c => c.curso1).ToList();
+
+                    <div id="contenedor-banner">
+                        <h3>Menu</h3><hr />
+                        @if (usuario.roles.FirstOrDefault().rol.Equals(Plataforma.App_Start.Constantes.ADMINISTRADOR))
+                        {
+                            @Html.ActionLink("Colegios", "Index", "colegios")<br>
+                            @Html.ActionLink("Cursos", "Index", "cursos")<br>
+                            @Html.ActionLink("Documentos", "Index", "documentos")<br>
+                            @Html.ActionLink("Grupos", "Index", "grupos")<br>
+                            @Html.ActionLink("Libros", "Index", "libros")<br>
+                            @Html.ActionLink("Niveles", "Index", "niveles")<br>
+                            @Html.ActionLink("Paises", "Index", "pais")<br>
+                            @Html.ActionLink("Permisos", "Index", "permisos")<br>
+                            @Html.ActionLink("Profesores", "Index", "profesores_temporal")<br>
+                            @Html.ActionLink("Roles", "Index", "roles")<br>
+                            @Html.ActionLink("Tipos de Colegio", "Index", "tipo_colegio")<br>
+                            @Html.ActionLink("Tipos de Documento", "Index", "tipo_documento")<br>
+                            @Html.ActionLink("Unidades", "Index", "unidades")<br>
+                            @Html.ActionLink("Usuarios", "Index", "usuarios")<br>
+                        }
+                        else if (usuario.roles.FirstOrDefault().rol.Equals(Plataforma.App_Start.Constantes.PROFESOR_PREMIUM))
+                        {
+                            @Html.ActionLink("Administrar Cursos", "IndiceCursos", "cursos")<br>
+                            @Html.ActionLink("Documentos", "Index", "documentos_profe")<br>
+                            @Html.ActionLink("Libros", "Index", "libros")<br>
+                            <a href="~/PCD/usuarios/details/@usuario.id">Ver Perfil</a><br>
+                        }
+                        else
+                        {
+                            <a href="~/PCD/usuarios/details/@usuario.id">Ver Perfil</a><br>
+                        }
+                        @if (usuario.roles.FirstOrDefault().rol.Equals(Plataforma.App_Start.Constantes.PROFESOR_PREMIUM)
+                            || usuario.roles.FirstOrDefault().rol.Equals(Plataforma.App_Start.Constantes.ESTUDIANTE_PREMIUM))
+                        {
+                            <h3>Grupos</h3><hr />
+                            if (usuario.grupos.Count == 0)
+                            {
+                                <p>Aún no estas registrado en ningun grupo. </p>
+                            }
+                            else
+                            {
+                                <ul>
+                                    @foreach (var grupo in usuario.grupos)
+                                    {
+                                        <li>
+                                            <a href="/PCD/cursos/VerCurso/@grupo.curso.id?idGrupo=@grupo.id">@grupo.grupo: @grupo.curso.curso1</a>
+                                            <br />
+                                        </li>
+                                    }
+                                </ul>
+                            }
+                            if (usuario.cursos.Where(c => c.grupos.Where(g => g.usuarios.Contains(usuario)).Count() <= 0).Count() > 0)
+                            {
+                                List<Plataforma.Areas.PCD.Models.curso> cursos = usuario.cursos.Where(c => c.grupos.Where(g => g.usuarios.Contains(usuario)).Count() <= 0).ToList();
+                                <h3>Cursos</h3><hr />
+                                <ul>
+                                    @foreach (var curso in cursos)
+                                    {
+                                        <li>
+                                            <a href="/PCD/cursos/VerCurso/@curso.id">@curso.curso1</a>
+                                            <br />
+                                        </li>
+                                    }
+                                </ul>
+
+                            }
+                        }
+                        else
+                        {
+                            <h3>Cursos</h3><hr />
+                            if (usuario.cursos.Count == 0)
+                            {
+                                <p>Aún no estas registrado en ningun curso. </p>
+                            }
+                            else
+                            {
+                                <ul>
+                                    @foreach (var curso in usuario.cursos)
+                                    {
+                                        <li>
+                                            <a href="/PCD/cursos/VerCurso/@curso.id">@curso.curso1</a>
+                                            <br />
+                                        </li>
+                                    }
+                                </ul>
+                            }
+                        }
+                    </div>
+                }
+            }
+
+
+        </div>*@
+
+    <div class="logo-footer"></div>
+    <section class="mbr-section mbr-section-md-padding mbr-footer footer1" id="contacts1-i" style="background-color: rgb(30, 102, 163); padding-top: 90px; padding-bottom: 90px;">
+        <div class="container">
+            <div class="row">
+                <div class="mbr-footer-content col-xs-12 col-md-4">
+                    <span class="footer-title">Contacto</span>
+                    <p>
+                        <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp; Hatillo #2, San José, Costa Rica. <br>
+                        <i class="fa fa-phone" aria-hidden="true"></i> &nbsp; 2214-0965<br>
+                        <i class="fa fa-mobile" aria-hidden="true"></i>&nbsp; 8310-0573<br>
+                        <i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;<a href="mailto:editorial@pimas.co.cr"> editorial@pimas.co.cr</a><br>
+                    </p>
+                </div>
+                <div class="mbr-footer-content col-xs-12 col-md-4">
+                    <span class="footer-title"> Ultimas entradas</span>
+                    <p>
+                        Texto dinámico con includes del blog
+                    </p>
+                </div>
+                <div class="mbr-footer-content col-xs-12 col-md-4">
+                    <span class="footer-title">Reseña</span>
+                    <p>
+                        PIMAS, significa Publicaciones Innovadoras en Matemática para Secundaria.  El nombre corto hace una referencia a un concepto matemático: Pi más se utiliza para denotar un acercamiento a la constante pi “por la derecha”, es decir, tomando valores siempre mayores que pi, pero acercándose cada vez más.
+                        Repaso de Estadística<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="mbr-small-footer mbr-section mbr-section-nopadding" id="footer1-j" style="background-color: rgb(25, 51, 83); padding-top: 0.875rem; padding-bottom: 0.875rem;">
+        <div class="container">
+            <p class="text-xs-center">COPYRIGHT © 2017 Pimas. ALL RIGHTS RESERVED. Design by EduCalvo</p>
+        </div>
+    </footer>
+    @*@Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)*@
+    <script src="~/scripts/assets/web/assets/jquery/jquery.min.js"></script>
+    <script src="~/scripts/assets/tether/tether.min.js"></script>
+    <script src="~/scripts/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/scripts/assets/smooth-scroll/SmoothScroll.js"></script>
+    <script src="~/scripts/assets/dropdown/js/script.min.js"></script>
+    <script src="~/scripts/assets/touchSwipe/jquery.touchSwipe.min.js"></script>
+    <script src="~/scripts/assets/viewportChecker/jquery.viewportchecker.js"></script>
+    <script src="~/scripts/assets/theme/js/script.js"></script>
+    
+    <input name="animation" type="hidden">
+</body>
+</html>

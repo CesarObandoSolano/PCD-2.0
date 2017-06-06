@@ -1,0 +1,1062 @@
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\roslyn\csc.exe
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\roslyn\Microsoft.CSharp.Core.targets
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\roslyn\Microsoft.VisualBasic.Core.targets
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\roslyn\System.Collections.Immutable.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\roslyn\System.Reflection.Metadata.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\roslyn\vbc.exe
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\roslyn\VBCSCompiler.exe
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\roslyn\VBCSCompiler.exe.config
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\Plataforma.dll.config
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\Plataforma.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\Plataforma.pdb
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\Antlr3.Runtime.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\EntityFramework.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\EntityFramework.SqlServer.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\Microsoft.AspNet.Identity.Core.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\Microsoft.AspNet.Identity.Owin.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\Microsoft.Owin.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\Microsoft.Owin.Host.SystemWeb.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\Microsoft.Owin.Security.Cookies.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\Microsoft.Owin.Security.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\Microsoft.Owin.Security.Facebook.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\Microsoft.Owin.Security.Google.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\Microsoft.Owin.Security.OAuth.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\Microsoft.Owin.Security.Twitter.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\Microsoft.Web.Infrastructure.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\Newtonsoft.Json.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\Owin.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\System.Web.Helpers.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\System.Web.Mvc.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\System.Web.Optimization.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\System.Web.Razor.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\System.Web.WebPages.Deployment.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\System.Web.WebPages.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\System.Web.WebPages.Razor.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\WebGrease.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\System.Web.Helpers.xml
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\System.Web.Mvc.xml
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\System.Web.Optimization.xml
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\System.Web.Razor.xml
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\System.Web.WebPages.xml
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\System.Web.WebPages.Deployment.xml
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\System.Web.WebPages.Razor.xml
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\Antlr3.Runtime.pdb
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\Newtonsoft.Json.xml
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\EntityFramework.xml
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\EntityFramework.SqlServer.xml
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\Microsoft.AspNet.Identity.Core.xml
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\Microsoft.AspNet.Identity.Owin.xml
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\Microsoft.Owin.xml
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\Microsoft.Owin.Host.SystemWeb.xml
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\Microsoft.Owin.Security.xml
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\Microsoft.Owin.Security.Facebook.xml
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\Microsoft.Owin.Security.Cookies.xml
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\Microsoft.Owin.Security.OAuth.xml
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\Microsoft.Owin.Security.Google.xml
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\Microsoft.Owin.Security.Twitter.xml
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\es\System.Web.Helpers.resources.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\es\System.Web.Mvc.resources.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\es\System.Web.Optimization.resources.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\es\System.Web.Razor.resources.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\es\System.Web.WebPages.resources.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\es\System.Web.WebPages.Deployment.resources.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\es\System.Web.WebPages.Razor.resources.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\es\EntityFramework.resources.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\es\EntityFramework.SqlServer.resources.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\es\Microsoft.AspNet.Identity.Core.resources.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\es\Microsoft.AspNet.Identity.Owin.resources.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\es\Microsoft.Owin.resources.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\es\Microsoft.Owin.Host.SystemWeb.resources.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\es\Microsoft.Owin.Security.resources.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\es\Microsoft.Owin.Security.Facebook.resources.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\es\Microsoft.Owin.Security.Google.resources.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\obj\Release\Plataforma.dll
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\obj\Release\Plataforma.pdb
+c:\users\cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\obj\Release\Plataforma.csprojResolveAssemblyReference.cache
+C:\Users\Cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\MvcCheckBoxList.dll
+C:\Users\Cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\Cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\CrystalDecisions.ReportSource.dll
+C:\Users\Cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\CrystalDecisions.Shared.dll
+C:\Users\Cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\Cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\Cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\Cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\Cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\Cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\Cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\Cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\Cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\Cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\Cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\Cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\Cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\stdole.dll
+C:\Users\Cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\Common.Logging.Core.dll
+C:\Users\Cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\Common.Logging.dll
+C:\Users\Cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\Quartz.dll
+C:\Users\Cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\Common.Logging.pdb
+C:\Users\Cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\Common.Logging.xml
+C:\Users\Cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\Common.Logging.Core.pdb
+C:\Users\Cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\Common.Logging.Core.xml
+C:\Users\Cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\Quartz.pdb
+C:\Users\Cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\Quartz.xml
+C:\Users\Cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\CrystalDecisions.Web.dll
+C:\Users\Cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\itextsharp.dll
+C:\Users\Cesar\documents\visual studio 2015\Projects\Plataforma\Plataforma\bin\itextsharp.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\roslyn\csc.exe
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\roslyn\vbc.exe
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\roslyn\VBCSCompiler.exe
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Plataforma.dll.config
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Plataforma.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Plataforma.pdb
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Antlr3.Runtime.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Common.Logging.Core.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Common.Logging.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\CrystalDecisions.ReportSource.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\CrystalDecisions.Shared.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\CrystalDecisions.Web.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\EntityFramework.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\EntityFramework.SqlServer.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\itextsharp.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Microsoft.Owin.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Microsoft.Owin.Security.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\MvcCheckBoxList.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Newtonsoft.Json.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Owin.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Quartz.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\System.Web.Helpers.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\System.Web.Mvc.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\System.Web.Optimization.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\System.Web.Razor.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\System.Web.WebPages.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\System.Web.WebPages.Razor.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\WebGrease.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\stdole.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Common.Logging.pdb
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Common.Logging.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Common.Logging.Core.pdb
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Common.Logging.Core.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\itextsharp.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Quartz.pdb
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Quartz.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\System.Web.Helpers.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\System.Web.Mvc.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\System.Web.Optimization.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\System.Web.Razor.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\System.Web.WebPages.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\System.Web.WebPages.Razor.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Antlr3.Runtime.pdb
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Newtonsoft.Json.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\EntityFramework.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\EntityFramework.SqlServer.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Microsoft.Owin.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Microsoft.Owin.Security.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\es\System.Web.Mvc.resources.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\es\System.Web.Optimization.resources.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\es\System.Web.Razor.resources.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\es\System.Web.WebPages.resources.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\es\EntityFramework.resources.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\es\EntityFramework.SqlServer.resources.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\es\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\es\Microsoft.AspNet.Identity.Owin.resources.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\es\Microsoft.Owin.resources.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\es\Microsoft.Owin.Host.SystemWeb.resources.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\es\Microsoft.Owin.Security.resources.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\es\Microsoft.Owin.Security.Facebook.resources.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\es\Microsoft.Owin.Security.Google.resources.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\obj\Release\Plataforma.csprojResolveAssemblyReference.cache
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\obj\Release\Plataforma.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\obj\Release\Plataforma.pdb
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\roslyn\csc.exe
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\roslyn\vbc.exe
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\roslyn\VBCSCompiler.exe
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\AutoMapper.Net4.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Plataforma.dll.config
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Plataforma.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Plataforma.pdb
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Antlr3.Runtime.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\AutoMapper.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\businesslogic.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\ClientDependency.Core.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\ClientDependency.Core.Mvc.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\cms.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Common.Logging.Core.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Common.Logging.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\controls.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\CookComputing.XmlRpcV2.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\CrystalDecisions.ReportSource.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\CrystalDecisions.Shared.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\CrystalDecisions.Web.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\EntityFramework.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\EntityFramework.SqlServer.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Examine.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\HtmlAgilityPack.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\ICSharpCode.SharpZipLib.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\ImageProcessor.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\ImageProcessor.Web.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\interfaces.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\itextsharp.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\log4net.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Lucene.Net.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\MarkdownSharp.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Microsoft.ApplicationBlocks.Data.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Microsoft.CodeAnalysis.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Microsoft.Owin.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Microsoft.Owin.Security.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\MiniProfiler.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\MvcCheckBoxList.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\MySql.Data.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Newtonsoft.Json.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Owin.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Quartz.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Semver.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\SQLCE4Umbraco.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\System.Collections.Immutable.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\System.Data.SqlServerCe.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\System.Data.SqlServerCe.Entity.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\System.Net.Http.Formatting.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\System.Reflection.Metadata.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\System.Web.Helpers.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\System.Web.Http.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\System.Web.Http.WebHost.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\System.Web.Mvc.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\System.Web.Optimization.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\System.Web.Razor.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\System.Web.WebPages.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\System.Web.WebPages.Razor.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\TidyNet.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Umbraco.Core.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\umbraco.DataLayer.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\umbraco.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\umbraco.editorControls.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\umbraco.MacroEngines.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Umbraco.ModelsBuilder.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\umbraco.providers.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Umbraco.Web.UI.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\UmbracoExamine.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\UrlRewritingNet.UrlRewriter.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\WebGrease.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\stdole.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\AutoMapper.pdb
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\AutoMapper.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\AutoMapper.Net4.pdb
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\businesslogic.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\ClientDependency.Core.pdb
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\ClientDependency.Core.Mvc.pdb
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\cms.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Common.Logging.pdb
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Common.Logging.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Common.Logging.Core.pdb
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Common.Logging.Core.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\controls.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Examine.pdb
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\HtmlAgilityPack.pdb
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\HtmlAgilityPack.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\interfaces.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\itextsharp.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Lucene.Net.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Microsoft.IO.RecyclableMemoryStream.pdb
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\MiniProfiler.pdb
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\MiniProfiler.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Newtonsoft.Json.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Quartz.pdb
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Quartz.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\SQLCE4Umbraco.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\System.Net.Http.Formatting.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\System.Web.Http.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\System.Web.Http.WebHost.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\System.Web.Helpers.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\System.Web.Mvc.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\System.Web.Optimization.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\System.Web.Razor.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\System.Web.WebPages.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\System.Web.WebPages.Razor.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\umbraco.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Umbraco.Core.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\umbraco.DataLayer.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\umbraco.editorControls.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\umbraco.MacroEngines.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Umbraco.ModelsBuilder.pdb
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\umbraco.providers.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Umbraco.Web.UI.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\UmbracoExamine.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Antlr3.Runtime.pdb
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\EntityFramework.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\EntityFramework.SqlServer.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Microsoft.Owin.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Microsoft.Owin.Security.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\es\System.Web.Mvc.resources.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\es\System.Web.Optimization.resources.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\es\System.Web.Razor.resources.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\es\System.Web.WebPages.resources.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\es\EntityFramework.resources.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\es\EntityFramework.SqlServer.resources.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\es\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\es\Microsoft.AspNet.Identity.Owin.resources.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\es\Microsoft.Owin.resources.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\es\Microsoft.Owin.Host.SystemWeb.resources.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\es\Microsoft.Owin.Security.resources.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\es\Microsoft.Owin.Security.Facebook.resources.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\es\Microsoft.Owin.Security.Google.resources.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\obj\Release\Plataforma.csprojResolveAssemblyReference.cache
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\obj\Release\Plataforma.dll
+C:\Users\Cesar\Desktop\Plataforma\Plataforma\obj\Release\Plataforma.pdb
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\AutoMapper.Net4.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\AutoMapper.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\businesslogic.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\ClientDependency.Core.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\ClientDependency.Core.Mvc.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\cms.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\controls.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\CookComputing.XmlRpcV2.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Examine.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\HtmlAgilityPack.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\ICSharpCode.SharpZipLib.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\ImageProcessor.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\ImageProcessor.Web.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\interfaces.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\log4net.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Lucene.Net.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\MarkdownSharp.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Microsoft.ApplicationBlocks.Data.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Microsoft.CodeAnalysis.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\MiniProfiler.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\MySql.Data.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Semver.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\SQLCE4Umbraco.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\System.Collections.Immutable.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\System.Data.SqlServerCe.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\System.Data.SqlServerCe.Entity.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\System.Net.Http.Formatting.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\System.Reflection.Metadata.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\System.Web.Http.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\System.Web.Http.WebHost.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\TidyNet.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Umbraco.Core.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\umbraco.DataLayer.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\umbraco.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\umbraco.editorControls.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\umbraco.MacroEngines.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Umbraco.ModelsBuilder.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\umbraco.providers.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Umbraco.Web.UI.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\UmbracoExamine.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\UrlRewritingNet.UrlRewriter.dll
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\AutoMapper.pdb
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\AutoMapper.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\AutoMapper.Net4.pdb
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\businesslogic.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\ClientDependency.Core.pdb
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\ClientDependency.Core.Mvc.pdb
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\cms.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\controls.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Examine.pdb
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\HtmlAgilityPack.pdb
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\HtmlAgilityPack.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\interfaces.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Lucene.Net.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Microsoft.IO.RecyclableMemoryStream.pdb
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\MiniProfiler.pdb
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\MiniProfiler.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\SQLCE4Umbraco.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\System.Net.Http.Formatting.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\System.Web.Http.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\System.Web.Http.WebHost.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\umbraco.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Umbraco.Core.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\umbraco.DataLayer.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\umbraco.editorControls.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\umbraco.MacroEngines.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Umbraco.ModelsBuilder.pdb
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\umbraco.providers.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\Umbraco.Web.UI.xml
+C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\bin\UmbracoExamine.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\roslyn\csc.exe
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\roslyn\vbc.exe
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\roslyn\VBCSCompiler.exe
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\AutoMapper.Net4.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Plataforma.dll.config
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Plataforma.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Plataforma.pdb
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Antlr3.Runtime.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\AutoMapper.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\businesslogic.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\ClientDependency.Core.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\ClientDependency.Core.Mvc.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\cms.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Common.Logging.Core.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Common.Logging.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\controls.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\CookComputing.XmlRpcV2.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\CrystalDecisions.ReportSource.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\CrystalDecisions.Shared.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\CrystalDecisions.Web.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\EntityFramework.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\EntityFramework.SqlServer.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Examine.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\HtmlAgilityPack.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\ICSharpCode.SharpZipLib.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\ImageProcessor.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\ImageProcessor.Web.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\interfaces.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\itextsharp.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\log4net.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Lucene.Net.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\MarkdownSharp.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Microsoft.ApplicationBlocks.Data.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Microsoft.CodeAnalysis.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Microsoft.Owin.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Microsoft.Owin.Security.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\MiniProfiler.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\MvcCheckBoxList.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\MySql.Data.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Newtonsoft.Json.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Owin.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Quartz.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Semver.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\SQLCE4Umbraco.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\System.Collections.Immutable.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\System.Data.SqlServerCe.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\System.Data.SqlServerCe.Entity.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\System.Net.Http.Formatting.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\System.Reflection.Metadata.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\System.Web.Helpers.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\System.Web.Http.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\System.Web.Http.WebHost.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\System.Web.Mvc.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\System.Web.Optimization.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\System.Web.Razor.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\System.Web.WebPages.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\System.Web.WebPages.Razor.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\TidyNet.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Umbraco.Core.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\umbraco.DataLayer.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\umbraco.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\umbraco.editorControls.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\umbraco.MacroEngines.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Umbraco.ModelsBuilder.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\umbraco.providers.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Umbraco.Web.UI.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\UmbracoExamine.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\UrlRewritingNet.UrlRewriter.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\WebGrease.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\stdole.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\AutoMapper.pdb
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\AutoMapper.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\AutoMapper.Net4.pdb
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\businesslogic.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\ClientDependency.Core.pdb
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\ClientDependency.Core.Mvc.pdb
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\cms.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Common.Logging.pdb
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Common.Logging.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Common.Logging.Core.pdb
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Common.Logging.Core.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\controls.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Examine.pdb
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\HtmlAgilityPack.pdb
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\HtmlAgilityPack.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\interfaces.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\itextsharp.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Lucene.Net.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Microsoft.IO.RecyclableMemoryStream.pdb
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\MiniProfiler.pdb
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\MiniProfiler.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Newtonsoft.Json.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Quartz.pdb
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Quartz.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\SQLCE4Umbraco.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\System.Net.Http.Formatting.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\System.Web.Http.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\System.Web.Http.WebHost.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\System.Web.Helpers.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\System.Web.Mvc.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\System.Web.Optimization.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\System.Web.Razor.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\System.Web.WebPages.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\System.Web.WebPages.Razor.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\umbraco.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Umbraco.Core.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\umbraco.DataLayer.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\umbraco.editorControls.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\umbraco.MacroEngines.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Umbraco.ModelsBuilder.pdb
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\umbraco.providers.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Umbraco.Web.UI.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\UmbracoExamine.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Antlr3.Runtime.pdb
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\EntityFramework.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\EntityFramework.SqlServer.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Microsoft.Owin.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Microsoft.Owin.Security.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\es\System.Web.Mvc.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\es\System.Web.Optimization.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\es\System.Web.Razor.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\es\System.Web.WebPages.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\es\EntityFramework.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\es\EntityFramework.SqlServer.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\es\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\es\Microsoft.AspNet.Identity.Owin.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\es\Microsoft.Owin.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\es\Microsoft.Owin.Host.SystemWeb.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\es\Microsoft.Owin.Security.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\es\Microsoft.Owin.Security.Facebook.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\es\Microsoft.Owin.Security.Google.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\obj\Release\Plataforma.csprojResolveAssemblyReference.cache
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\obj\Release\Plataforma.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma\Plataforma\obj\Release\Plataforma.pdb
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\roslyn\csc.exe
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\roslyn\vbc.exe
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\roslyn\VBCSCompiler.exe
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\AutoMapper.Net4.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Plataforma.dll.config
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Plataforma.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Plataforma.pdb
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Antlr3.Runtime.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\AutoMapper.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\businesslogic.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\ClientDependency.Core.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\ClientDependency.Core.Mvc.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\cms.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Common.Logging.Core.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Common.Logging.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\controls.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\CookComputing.XmlRpcV2.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\CrystalDecisions.ReportSource.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\CrystalDecisions.Shared.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\CrystalDecisions.Web.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\EntityFramework.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\EntityFramework.SqlServer.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Examine.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\HtmlAgilityPack.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\ICSharpCode.SharpZipLib.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\ImageProcessor.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\ImageProcessor.Web.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\interfaces.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\itextsharp.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\log4net.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Lucene.Net.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\MarkdownSharp.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Microsoft.ApplicationBlocks.Data.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Microsoft.CodeAnalysis.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Microsoft.Owin.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Microsoft.Owin.Security.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\MiniProfiler.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\MvcCheckBoxList.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\MySql.Data.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Newtonsoft.Json.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Owin.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Quartz.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Semver.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\SQLCE4Umbraco.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\System.Collections.Immutable.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\System.Data.SqlServerCe.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\System.Data.SqlServerCe.Entity.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\System.Net.Http.Formatting.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\System.Reflection.Metadata.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\System.Web.Helpers.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\System.Web.Http.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\System.Web.Http.WebHost.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\System.Web.Mvc.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\System.Web.Optimization.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\System.Web.Razor.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\System.Web.WebPages.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\System.Web.WebPages.Razor.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\TidyNet.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Umbraco.Core.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\umbraco.DataLayer.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\umbraco.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\umbraco.editorControls.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\umbraco.MacroEngines.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Umbraco.ModelsBuilder.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\umbraco.providers.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Umbraco.Web.UI.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\UmbracoExamine.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\UrlRewritingNet.UrlRewriter.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\WebGrease.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\stdole.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\AutoMapper.pdb
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\AutoMapper.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\AutoMapper.Net4.pdb
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\businesslogic.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\ClientDependency.Core.pdb
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\ClientDependency.Core.Mvc.pdb
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\cms.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Common.Logging.pdb
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Common.Logging.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Common.Logging.Core.pdb
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Common.Logging.Core.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\controls.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Examine.pdb
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\HtmlAgilityPack.pdb
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\HtmlAgilityPack.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\interfaces.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\itextsharp.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Lucene.Net.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Microsoft.IO.RecyclableMemoryStream.pdb
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\MiniProfiler.pdb
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\MiniProfiler.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Newtonsoft.Json.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Quartz.pdb
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Quartz.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\SQLCE4Umbraco.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\System.Net.Http.Formatting.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\System.Web.Http.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\System.Web.Http.WebHost.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\System.Web.Helpers.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\System.Web.Mvc.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\System.Web.Optimization.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\System.Web.Razor.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\System.Web.WebPages.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\System.Web.WebPages.Razor.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\umbraco.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Umbraco.Core.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\umbraco.DataLayer.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\umbraco.editorControls.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\umbraco.MacroEngines.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Umbraco.ModelsBuilder.pdb
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\umbraco.providers.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Umbraco.Web.UI.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\UmbracoExamine.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Antlr3.Runtime.pdb
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\EntityFramework.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\EntityFramework.SqlServer.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Microsoft.Owin.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Microsoft.Owin.Security.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\es\System.Web.Mvc.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\es\System.Web.Optimization.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\es\System.Web.Razor.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\es\System.Web.WebPages.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\es\EntityFramework.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\es\EntityFramework.SqlServer.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\es\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\es\Microsoft.AspNet.Identity.Owin.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\es\Microsoft.Owin.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\es\Microsoft.Owin.Host.SystemWeb.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\es\Microsoft.Owin.Security.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\es\Microsoft.Owin.Security.Facebook.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\es\Microsoft.Owin.Security.Google.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\obj\Release\Plataforma.csprojResolveAssemblyReference.cache
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\obj\Release\Plataforma.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Plataforma - Copy\Plataforma\obj\Release\Plataforma.pdb
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\roslyn\csc.exe
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\roslyn\vbc.exe
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\roslyn\VBCSCompiler.exe
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\AutoMapper.Net4.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Plataforma.dll.config
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Plataforma.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Plataforma.pdb
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Antlr3.Runtime.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\AutoMapper.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\businesslogic.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\ClientDependency.Core.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\ClientDependency.Core.Mvc.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\cms.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Common.Logging.Core.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Common.Logging.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\controls.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\CookComputing.XmlRpcV2.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\CrystalDecisions.ReportSource.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\CrystalDecisions.Shared.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\CrystalDecisions.Web.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\EntityFramework.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\EntityFramework.SqlServer.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Examine.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\HtmlAgilityPack.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\ICSharpCode.SharpZipLib.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\ImageProcessor.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\ImageProcessor.Web.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\interfaces.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\itextsharp.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\log4net.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Lucene.Net.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\MarkdownSharp.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Microsoft.ApplicationBlocks.Data.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Microsoft.CodeAnalysis.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Microsoft.Owin.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Microsoft.Owin.Security.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\MiniProfiler.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\MvcCheckBoxList.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\MySql.Data.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Newtonsoft.Json.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Owin.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Quartz.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Semver.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\SQLCE4Umbraco.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\System.Collections.Immutable.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\System.Data.SqlServerCe.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\System.Data.SqlServerCe.Entity.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\System.Net.Http.Formatting.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\System.Reflection.Metadata.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\System.Web.Helpers.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\System.Web.Http.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\System.Web.Http.WebHost.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\System.Web.Mvc.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\System.Web.Optimization.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\System.Web.Razor.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\System.Web.WebPages.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\System.Web.WebPages.Razor.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\TidyNet.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Umbraco.Core.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\umbraco.DataLayer.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\umbraco.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\umbraco.editorControls.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\umbraco.MacroEngines.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Umbraco.ModelsBuilder.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\umbraco.providers.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Umbraco.Web.UI.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\UmbracoExamine.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\UrlRewritingNet.UrlRewriter.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\WebGrease.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\stdole.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\AutoMapper.pdb
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\AutoMapper.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\AutoMapper.Net4.pdb
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\businesslogic.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\ClientDependency.Core.pdb
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\ClientDependency.Core.Mvc.pdb
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\cms.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Common.Logging.pdb
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Common.Logging.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Common.Logging.Core.pdb
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Common.Logging.Core.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\controls.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Examine.pdb
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\HtmlAgilityPack.pdb
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\HtmlAgilityPack.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\interfaces.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\itextsharp.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Lucene.Net.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Microsoft.IO.RecyclableMemoryStream.pdb
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\MiniProfiler.pdb
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\MiniProfiler.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Newtonsoft.Json.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Quartz.pdb
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Quartz.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\SQLCE4Umbraco.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\System.Net.Http.Formatting.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\System.Web.Http.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\System.Web.Http.WebHost.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\System.Web.Helpers.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\System.Web.Mvc.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\System.Web.Optimization.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\System.Web.Razor.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\System.Web.WebPages.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\System.Web.WebPages.Razor.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\umbraco.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Umbraco.Core.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\umbraco.DataLayer.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\umbraco.editorControls.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\umbraco.MacroEngines.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Umbraco.ModelsBuilder.pdb
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\umbraco.providers.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Umbraco.Web.UI.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\UmbracoExamine.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Antlr3.Runtime.pdb
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\EntityFramework.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\EntityFramework.SqlServer.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Microsoft.Owin.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Microsoft.Owin.Security.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\es\System.Web.Mvc.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\es\System.Web.Optimization.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\es\System.Web.Razor.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\es\System.Web.WebPages.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\es\EntityFramework.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\es\EntityFramework.SqlServer.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\es\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\es\Microsoft.AspNet.Identity.Owin.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\es\Microsoft.Owin.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\es\Microsoft.Owin.Host.SystemWeb.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\es\Microsoft.Owin.Security.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\es\Microsoft.Owin.Security.Facebook.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\es\Microsoft.Owin.Security.Google.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\obj\Release\Plataforma.csprojResolveAssemblyReference.cache
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\obj\Release\Plataforma.dll
+C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma - Copy\Plataforma\obj\Release\Plataforma.pdb

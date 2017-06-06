@@ -1,0 +1,106 @@
+﻿@model Plataforma.Areas.PCD.Models.Venta
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<link rel="stylesheet" type="text/css" href="~/Content/custombootstrap.css" />
+
+<h3>¿Estas seguro de querer eliminar esta venta?</h3>
+<div class="col-lg-9">
+    <h4>Venta</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Nombre Comprador
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre_comprador)
+        </dd>
+
+        <dt>
+            Nombre de quien recibe
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre_receptor)
+        </dd>
+
+        <dt>
+            Telefono del comprador
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numero_comprador)
+        </dd>
+
+        <dt>
+            Telefono de quien recibe
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numero_receptor)
+        </dd>
+
+        <dt>
+            Dirección
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.direccion)
+        </dd>
+
+        <dt>
+            Horario de entrega
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.horario)
+        </dd>
+
+        <dt>
+            Articulo
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Articulo.nombre)
+        </dd>
+
+        <dt>
+            Cantidad de articulos
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cantidad)
+        </dd>
+
+        <dt>
+            Metodo de entrega
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipo_entrega)
+        </dd>
+
+        <dt>
+            Forma de pago
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.forma_pago)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Volver al indice", "Index")
+        </div>
+    }
+</div>

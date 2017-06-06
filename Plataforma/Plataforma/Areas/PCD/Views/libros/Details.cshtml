@@ -1,0 +1,48 @@
+﻿@model Plataforma.Areas.PCD.Models.libro
+@{
+    ViewBag.Title = "Detalles";
+}
+<div class="col-md-12">
+    <h1 class="class-forms">
+        <i class="fa fa-user-circle" aria-hidden="true"></i>
+        Detalles
+    </h1>
+    <h4 class="class-forms">Libro</h4>
+    <dl class="dl-horizontal">
+        <dt>
+            Profesor
+        </dt>
+        <dd>
+            @ViewBag.usuario.nombre @ViewBag.usuario.apellidos
+        </dd>
+
+        <dt>
+            Descripción
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.descripcion)
+        </dd>
+        <dt>
+            Documentos
+        </dt>
+        <dd>
+            @foreach (var documento in Model.documentos)
+            {
+                @documento.titulo<br />
+            }
+        </dd>
+    </dl>
+    <div class="col-lg-9">
+        <p>
+            @if (Session["usuario"] != null)
+            {
+                var usuario = (Plataforma.Areas.PCD.Models.usuario)Session["usuario"];
+                if (usuario.roles.FirstOrDefault().rol.Equals(Plataforma.App_Start.Constantes.PROFESOR_PREMIUM))
+                {
+                    @Html.ActionLink("Editar", "Edit", new { id = Model.id })
+                }
+            }
+            | @Html.ActionLink("Volver al indice", "Index")
+        </p>
+    </div>
+</div>

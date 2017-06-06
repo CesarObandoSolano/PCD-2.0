@@ -1,0 +1,122 @@
+﻿@model Plataforma.Areas.PCD.Models.documento
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<h2>Detalles</h2>
+@Scripts.Render("~/bundles/modernizr")
+<link rel="stylesheet" type="text/css" href="~/Content/custombootstrap.css" />
+<div class="col-lg-9">
+    <h4>Documento</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Titulo
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.titulo)
+        </dd>
+
+        <dt>
+            Tipo de documento
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipo_documento.tipo_documento1)
+        </dd>
+
+
+        <dt>
+            Niveles
+        </dt>
+
+        <dd>
+            @foreach (var item in Model.niveles)
+            {
+                @item.nivel<br />
+            }
+        </dd>
+
+        <dt>
+            Unidad
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.unidade.unidad)
+        </dd>
+
+        <dt>
+            Capitulo
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.capitulo)
+        </dd>
+
+        <dt>
+            Descripción
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcion_corta)
+        </dd>
+
+        <dt>
+            Detalle
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcion_detallada)
+        </dd>
+
+        <dt>
+            Fecha de publicación
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_publicacion)
+        </dd>
+
+        <dt>
+            Estado
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.status)
+        </dd>
+
+        <dt>
+            Numero de versión
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numero_version)
+        </dd>
+
+        <dt>
+            Historial de cambios
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.historial_version)
+        </dd>
+
+        <dt>
+            Visitas
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.contador_visitas)
+        </dd>
+
+    </dl>
+    <div class="col-lg-9">
+        <p>
+            @Html.ActionLink("Editar", "Edit", new { id = Model.id }) |
+            @Html.ActionLink("Volver al indice", "Index")
+        </p>
+    </div>
+</div>
+

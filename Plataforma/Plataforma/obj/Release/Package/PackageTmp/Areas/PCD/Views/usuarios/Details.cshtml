@@ -1,0 +1,158 @@
+﻿@model Plataforma.Areas.PCD.Models.usuario
+
+@{
+    ViewBag.Title = "Detalles";
+}
+<link rel="stylesheet" type="text/css" href="~/Content/custombootstrap.css" />
+<h2>Detalles</h2>
+
+<div class="col-lg-9">
+    <h4>Usuario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Nombre
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+            @Html.DisplayFor(model => model.apellidos)
+        </dd>
+
+        <dt>
+            Rol de usuario
+        </dt>
+
+        <dd>
+            @foreach (var item in Model.roles)
+            {
+                @item.rol
+            }
+        </dd>
+
+        <dt>
+            Usuario
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.username)
+        </dd>
+
+        <dt>
+            Telefono
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefono)<br />
+            @Html.DisplayFor(model => model.telefono_2)
+        </dd>
+
+        <dt>
+            Correo
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.correo)<br />
+            @Html.DisplayFor(model => model.correo_2)
+        </dd>
+
+        <dt>
+            Institucion(es)
+        </dt>
+
+        <dd>
+            @foreach (var item in Model.colegios)
+            {
+                @item.nombre<br />
+            }
+        </dd>
+
+            <dt>
+                Nivel(es)
+            </dt>
+
+            <dd>
+                @foreach (var item in Model.niveles)
+                {
+                    @item.nivel<br />
+                }
+            </dd>
+
+        <dt>
+            Información Adicional
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.informacion_opcional)
+        </dd>
+
+        <dt>
+            Fecha de ingreso al sistema
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_primer_ingreso)
+        </dd>
+
+        <dt>
+            Numero de visitas al sitio
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.log_visitas.Count)
+        </dd>
+
+        <dt>
+            Notificaciones
+        </dt>
+
+        <dd>
+            @if (Model.notificacione.correo == true)
+            {
+                @Html.Label("Correo", htmlAttributes: new { @class = "control-label" })
+            }
+            @if (Model.notificacione.telefono == true)
+            {
+                <br />
+                @Html.Label("Telefono", htmlAttributes: new { @class = "control-label" })
+            }
+        </dd>
+
+
+    </dl>
+
+
+    @if (Session["usuario"] != null)
+    {
+        var usuario = (Plataforma.Areas.PCD.Models.usuario)Session["usuario"];
+        <div class="col-lg-9">
+
+            @if (usuario.roles.FirstOrDefault().rol.Equals(Plataforma.App_Start.Constantes.ADMINISTRADOR))
+                {
+                <p>
+                    <h4>Reportes</h4>
+                    @Html.ActionLink("Reporte Documentos Visualizados", "ReporteDocumentosUsuario", new { id = Model.id }, new { @target = "_blank" })
+                </p>
+
+                <p>
+                    
+                    @Html.ActionLink("Editar", "Edit", new { id = Model.id }) |
+                    @Html.ActionLink("Administrar Colegios", "AdministrarInstitucionesUsuario", new { id = Model.id }) |
+                    @Html.ActionLink("Administrar Niveles", "AdministrarNivelesUsuario", new { id = Model.id }) |
+                    @if (Model.notificacione.correo == true)
+                    {
+                       @Html.ActionLink("Enviar Notificación", "EnviarNotificaciones", new { id = Model.id })
+                    }
+                    @Html.ActionLink("Volver al indice", "Index")
+                </p>
+            }
+            else if (usuario.id == Model.id)
+            {
+                <p>
+                    @Html.ActionLink("Editar", "Edit", new { id = Model.id }) |
+                    @Html.ActionLink("Administrar Colegios", "AdministrarInstitucionesUsuario", new { id = Model.id })
+                </p>
+            }
+        </div>
+    }
+</div>

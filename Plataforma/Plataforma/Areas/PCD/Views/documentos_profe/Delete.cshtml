@@ -1,0 +1,39 @@
+﻿@model Plataforma.Areas.PCD.Models.documentos_profe
+@{
+    ViewBag.Title = "Eliminar";
+}
+<h1 class="class-forms">Eliminar</h1>
+<h3 class="class-forms">Estas seguro de que deseas eliminar este documento?</h3>
+<div class="col-lg-12">
+    <h4 class="class-forms">Documento Profesor</h4>
+    <dl class="dl-horizontal">
+        <dt>
+            Titulo
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.titulo)
+        </dd>
+        <dt>
+            Curso
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.curso.curso1)
+        </dd>
+        <dt>
+            Nombre
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.usuario.nombre)
+            @Html.DisplayFor(model => model.usuario.apellidos)
+        </dd>
+    </dl>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+            @Html.ActionLink("Volver al indice", "Index")
+        </div>
+    }
+</div>

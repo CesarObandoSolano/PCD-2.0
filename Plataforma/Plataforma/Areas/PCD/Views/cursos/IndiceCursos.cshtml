@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Plataforma.Areas.PCD.Models.grupos>
+
+@{
+    ViewBag.Title = "Indice";
+}
+<h1 class="class-forms"><i class="fa fa-graduation-cap" aria-hidden="true"></i> &nbsp;Grupos</h1><br><br>
+
+<div class="col-md-12">
+    <table class="table">
+        <tr>
+            <th>
+                Grupo
+            </th>
+            <th>
+                Curso
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.grupo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.curso.curso1)
+                </td>
+                <td>
+                    @Html.ActionLink("Administrar", "AdministrarCurso", new { id = item.id })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

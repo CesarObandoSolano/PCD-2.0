@@ -1,0 +1,49 @@
+﻿@model Plataforma.Areas.PCD.Models.Articulo
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+
+<h2>Eliminar</h2>
+<link rel="stylesheet" type="text/css" href="~/Content/custombootstrap.css" />
+
+<h3>¿Estas seguro de querer eliminar este articulo?</h3>
+<div class="col-lg-9">
+    <h4>Articulo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Nombre
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            Detalle
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.detalle)
+        </dd>
+
+        <dt>
+            Precio
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.precio)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Volver al indice", "Index")
+        </div>
+    }
+</div>

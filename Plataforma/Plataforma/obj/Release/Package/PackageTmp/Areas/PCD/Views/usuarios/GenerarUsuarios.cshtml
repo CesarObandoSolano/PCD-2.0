@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Generar Usuarios";
+}
+
+<h2>Generar Usuarios</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal col-lg-9">
+        <h4>Usuarios</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        
+        <div class="form-group">
+            @Html.Label("Curso", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <select name="cursos" id="cursos" class="form-control" required>
+                    <option value="">Selecciona un curso...</option>
+                    @foreach (var item in ViewBag.cursos)
+                    {
+                        <option value="@item.id">@item.curso1</option>
+                    }
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Cantidad de Estudiantes", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="number" min="0" name="CantidadUsuarios" id="CantidadUsuarios" class="form-control">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Generar" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+

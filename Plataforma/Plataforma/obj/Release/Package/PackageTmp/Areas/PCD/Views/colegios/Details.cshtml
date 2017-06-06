@@ -1,0 +1,123 @@
+﻿@model Plataforma.Areas.PCD.Models.colegio
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<h2>Detalles</h2>
+<link rel="stylesheet" type="text/css" href="~/Content/custombootstrap.css" />
+<div class="col-lg-9">
+    <h4>Colegio</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Nombre
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            Pais
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pais.pais1)
+        </dd>
+
+        <dt>
+            Tipo
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipo_colegio.tipo_institucion)
+        </dd>
+
+        <dt>
+            Usuarios Matriculados en esta institución
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.usuarios.Count)
+        </dd>
+
+    </dl>
+    <h3>Lista de Usuarios</h3>
+    <table class="table" id="usuarios">
+        <tr>
+            <th>
+                Usuario
+            </th>
+            <th>
+                Cursos
+            </th>
+            <th>
+                Estudiantes
+            </th>
+            <th></th>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <a href="~/usuarios/EnviarNotificaciones/?idColegio=@Model.id">Enviar Notificacion a todos los usuarios</a>
+            </td>
+            <td></td>
+        </tr>
+
+        @foreach (var item in Model.usuarios.Where(u=>u.roles.FirstOrDefault().rol.Contains(Plataforma.App_Start.Constantes.PROFESOR)))
+            {
+            <tr>
+                <td>
+                    <a href="~/usuarios/details/@item.id">
+                        @Html.DisplayFor(modelItem => item.nombre)
+                        @Html.DisplayFor(modelItem => item.apellidos)
+                    </a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cursos.Count)
+                </td>
+                <td>
+                    @if (item.roles.FirstOrDefault().rol.Equals(Plataforma.App_Start.Constantes.PROFESOR_PREMIUM))
+                    {
+                        var cantidadEstudiantes = 0;
+                        foreach (var grupo in item.grupos)
+                        {
+                            cantidadEstudiantes += grupo.usuarios.Count;
+                        }
+                        @cantidadEstudiantes
+                    }
+                    else
+                    {
+                        var cantidadEstudiantes = "--";
+                        @cantidadEstudiantes
+                    }
+
+                </td>
+                <td>
+                    @if (@item.notificacione.correo == true)
+                    {
+                        <a href="~/usuarios/EnviarNotificaciones/@item.id">Enviar Notificacion</a>
+                    }
+                    else
+                    {
+                        <p>Este usuario no desea recibir notificaciones por correo</p>
+                    }
+                </td>
+            </tr>
+        }
+    </table>
+    <div class="col-lg-9">
+        <p>
+            <h4>Reportes</h4>
+            @Html.ActionLink("Reporte Documentos Visualizados", "ReporteDocumentosUsuario", new { id = Model.id }, new { @target = "_blank" })
+        </p>
+
+        <p>
+            @Html.ActionLink("Editar", "Edit", new { id = Model.id }) |
+            @Html.ActionLink("Volver al indice", "Index")
+        </p>
+    </div>
+    
+</div>
+

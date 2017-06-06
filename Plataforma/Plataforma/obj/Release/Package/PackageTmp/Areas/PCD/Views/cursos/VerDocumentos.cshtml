@@ -1,0 +1,149 @@
+﻿@model Plataforma.Areas.PCD.Models.DocumentosCurso
+@{
+    ViewBag.Title = "Documentos";
+}
+
+<link rel="stylesheet" type="text/css" href="~/Content/custombootstrap.css" />
+<h2>Ver Documentos</h2>
+
+    <head>
+
+
+        <script src="~/Scripts/jquery-1.10.2.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#unidadTemporal").change(function () {
+                    var unidad = $('#unidadTemporal').val();
+                    var capitulo = $('#capituloTemporal').val();
+                    $("#documentos").load("../VerDocumentos/" +@Model.curso.contador_visitas +"?idCurso=" +@Model.curso.id +"&unidad=" + unidad + "&capitulo=" + capitulo + " #documentos");
+                    return false;
+                });
+
+                $("#capituloTemporal").change(function () {
+                    var unidad = $('#unidadTemporal').val();
+                    var capitulo = $('#capituloTemporal').val();
+                    $("#documentos").load("../VerDocumentos/" +@Model.curso.contador_visitas +"?idCurso=" +@Model.curso.id +"&unidad=" + unidad + "&capitulo=" + capitulo + " #documentos");
+                    return false;
+                });
+
+                $("#quitar").click(function () {
+                    !$("[name= 'documentosSeleccionados'] option:selected").appendTo("[name= 'documentos-agregar']");
+                    !$("[name= 'documentosSeleccionados'] option").prop("selected", true);
+                    return false;
+                });
+
+                $("#agregar").click(function () {
+                    !$("[name= 'documentos-agregar'] option:selected").appendTo("[name= 'documentosSeleccionados']");
+                    !$("[name= 'documentosSeleccionados'] option").prop("selected", true);
+                    return false;
+                });
+            });
+        </script>
+    </head>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="col-lg-9">
+
+        @Html.HiddenFor(model => model.curso.id)
+
+        <div class="col-lg-9 barra-busqueda">
+            @Html.HiddenFor(model => model.unidad)
+            @Html.HiddenFor(model => model.capitulo)
+            <select id="unidadTemporal" name="unidadTemporal">
+                <option value="0">Seleccione una unidad...</option>
+                @foreach (var item in ViewBag.unidades)
+                {
+                    <option value="@item.id">
+                        @item.unidad
+                    </option>
+                }
+            </select>
+            @*<input type="number" id="unidadTemporal" name="unidadTemporal" placeholder="Unidad" min="0"/>*@
+            <input type="number" id="capituloTemporal" name="capituloTemporal" placeholder="Capitulo" min="0"/>
+        </div>
+        <div class="form-group" id="documentos">
+            <p><br /><br /><h4>Seleccione uno o mas documentos:</h4></p>
+
+            <select id="lista-documentos" class="form-control" multiple="multiple" name="documentos-agregar" draggable="true">
+
+                @if (Model.unidad <= 0 && Model.capitulo <= 0)
+                {
+                    foreach (var item in Model.documentos)
+                    {
+                        <option value="@item.id" style="background:url('../../Recursos/pdf-file_47192peq.png') no-repeat center left; padding-left:30px;">
+                            @item.titulo
+                        </option>
+                    }
+                }
+                else
+                {
+
+                    if (Model.unidad > 0 && Model.capitulo <= 0)
+                    {
+                        foreach (var item in Model.documentos)
+                        {
+                            if (Model.unidad == item.unidad)
+                            {
+                                <option value="@item.id" style="background:url('../../Recursos/pdf-file_47192peq.png') no-repeat center left; padding-left:30px;">
+                                    @item.titulo
+                                </option>
+                            }
+                        }
+                    }
+                    else if (Model.capitulo > 0 && Model.unidad <= 0)
+                    {
+                        foreach (var item in Model.documentos)
+                        {
+                            if (Model.capitulo == item.capitulo)
+                            {
+                                <option value="@item.id" style="background:url('../../Recursos/pdf-file_47192peq.png') no-repeat center left; padding-left:30px;">
+                                    @item.titulo
+                                </option>
+                            }
+                        }
+                    }
+                    else
+                    {
+                        foreach (var item in Model.documentos)
+                        {
+                            if (Model.unidad == item.unidad && Model.capitulo == item.capitulo)
+                            {
+                                <option value="@item.id" style="background:url('../../Recursos/pdf-file_47192peq.png') no-repeat center left; padding-left:30px;">
+                                    @item.titulo
+                                </option>
+                            }
+                        }
+                    }
+                }
+            </select>
+
+        </div>
+
+        <div class="form-group">
+            <a id="agregar" class="btn btn-default" onclick="return false;"> Agregar </a>
+            <a id="quitar" class="btn btn-default" onclick="return false;"> Quitar </a>
+        </div>
+
+        <div class="form-group" id="documentos-seleccionados">
+            <select id="lista-documentos" class="form-control" multiple="multiple" name="documentosSeleccionados" >
+                @foreach (var item in ViewBag.docsSeleccionados)
+                {
+                <option value="@item.documento.id" style="background:url('../../Recursos/pdf-file_47192peq.png') no-repeat center left; padding-left:30px;">
+                    @item.documento.titulo
+                </option>
+                }
+            </select>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Agregar Documentos" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

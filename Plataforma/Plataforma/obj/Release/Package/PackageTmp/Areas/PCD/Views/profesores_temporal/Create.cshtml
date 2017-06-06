@@ -1,0 +1,155 @@
+﻿@model Plataforma.Areas.PCD.Models.profesores_temporal
+
+@{
+    ViewBag.Title = "Insertar";
+}
+
+<head>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script>
+            $(document).ready(function () {
+                $("#username").change(function () {
+                    var username = $("#username").val();
+                    $.ajax({
+                        type: "POST",
+                        url: "/PCD/usuarios/validarUserName",
+                        data: '{"username":"' + username + '"}',
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (data) {
+                            document.getElementById("username-validation").innerHTML = "";
+                            if (data === "ocupado") {
+                                document.getElementById("username").value = "";
+                                label = document.createElement('label');
+                                label.innerHTML = 'El nombre de usuario "' + username + '" ya fue utilizado';
+                                label.style.color = "red";
+                                document.getElementById("username-validation").appendChild(label);
+                            }
+                            else {
+                                label = document.createElement('label');
+                                label.innerHTML = 'El nombre de usuario "' + username + '" esta disponible';
+                                label.style.color = "green";
+                                document.getElementById("username-validation").appendChild(label);
+                            }
+                        },
+                        error: errores
+                    });
+                    function errores(msg) {
+                        alert(msg);
+                    }
+                    return false;
+                });
+            });
+            function EspecificarOtroColegio(otro) {
+                if (otro === "otro") {
+                    $("#colegios").detach();
+                    tfColegio = document.createElement('input');
+                    tfColegio.type = Text;
+                    tfColegio.id = "colegios";
+                    tfColegio.name = "colegios";
+                    tfColegio.className = "form-control";
+                    tfColegio.required = true;
+                    document.getElementById("otro-colegio").appendChild(tfColegio);
+                }
+            }
+    </script>
+</head>
+
+<h2>Insertar</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+        
+    <div class="form-horizontal col-lg-9">
+        <h4>Profesor</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.nombre, "Nombre", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.apellidos, "Apellidos", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.apellidos, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.apellidos, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.colegio, "Institución", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div id="otro-colegio">
+                    <select id="colegio" class="form-control" name="colegio" onchange="EspecificarOtroColegio(this.value)">
+                        <option value="">Seleccione un colegio...</option>
+                        @foreach (var item in ViewBag.Colegios)
+                        {
+                            <option value="@item.nombre">
+                                @item.nombre
+                            </option>
+                        }
+                        <option value="otro">Otro..</option>
+                    </select>
+                </div>
+                @Html.ValidationMessageFor(model => model.colegio, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.username, "Usuario", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.username, new { htmlAttributes = new { @class = "form-control" } })
+                <div id="username-validation"></div>
+                @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.password, "Contraseña", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control", @type = "password" } })
+                @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.correo, "Correo", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.correo, new { htmlAttributes = new { @class = "form-control", @type = "email" } })
+                @Html.ValidationMessageFor(model => model.correo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.telefono, "Telefono", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.telefono, new { htmlAttributes = new { @class = "form-control", @type = "tel" } })
+                @Html.ValidationMessageFor(model => model.telefono, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.informacion_opcional, "Información Adicional", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.informacion_opcional, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.informacion_opcional, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Insertar" class="btn btn-default" />
+            </div>
+        </div>
+        <div class="col-lg-9">
+            @Html.ActionLink("Volver al indice", "Index")
+        </div>
+    </div>
+}
+
+

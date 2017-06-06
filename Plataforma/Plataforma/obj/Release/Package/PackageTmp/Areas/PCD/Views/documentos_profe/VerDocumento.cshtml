@@ -1,0 +1,47 @@
+﻿@model Plataforma.Areas.PCD.Models.documentos_profe
+@{
+    ViewBag.Title = Model.titulo;
+}
+<h2>Ver Documento</h2>
+
+@Scripts.Render("~/bundles/modernizr")
+<link rel="stylesheet" type="text/css" href="~/Content/custombootstrap.css" />
+<div class="col-lg-9">
+    <div class="col-lg-9">
+        <h4>@Model.titulo</h4>
+        <hr />
+        <dl class="dl-horizontal">
+
+            <dt>
+                Titulo
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.titulo)
+            </dd>
+
+            <dt>
+                Profesor
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.usuario.nombre)
+                @Html.DisplayFor(model => model.usuario.apellidos)
+            </dd>
+        </dl>
+    </div>
+
+    <div class="col-lg-9">
+        @if (Path.GetExtension(Model.url).Equals("mp4"))
+        {
+            <video id="sampleMovie" class="visualizador" preload controls autoplay oncontextmenu="return false">
+                <source id="video" type="video/mp4" src="@Url.Content(@Model.url)" />
+                Este navegador no soporta reproducción de video.
+            </video>
+        }
+        else
+        {
+            <iframe src="@Url.Content(@Model.url)" class="visualizador" frameborder="0" allowfullscreen webkitallowfullscreen></iframe>
+        }
+    </div>
+</div>

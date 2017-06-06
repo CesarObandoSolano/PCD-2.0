@@ -1,0 +1,65 @@
+﻿@model Plataforma.Areas.PCD.Models.profesores_temporal
+
+@{
+    ViewBag.Title = "Detalles";
+}
+<div class="col-md-12">
+    <h1 class="class-forms">
+        <i class="fa fa-user-circle" aria-hidden="true"></i>
+        Detalles
+    </h1>
+    <h4 class="class-forms">Profesor</h4>
+    <dl class="dl-horizontal">
+        <dt>
+            Nombre
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+            @Html.DisplayFor(model => model.apellidos)
+        </dd>
+        <dt>
+            Colegio
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.colegio)
+        </dd>
+        <dt>
+            Usuario
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.username)
+        </dd>
+        <dt>
+            Correo
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.correo)
+        </dd>
+        <dt>
+            Telefono
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.telefono)
+        </dd>
+        <dt>
+            Información Adicional
+        </dt>
+        <dd>
+            @if (Model.informacion_opcional != null && Model.informacion_opcional != "")
+            {
+                @Html.DisplayFor(model => model.informacion_opcional)
+            }
+            else
+            {
+                <p>--</p>
+            }
+
+        </dd>
+    </dl>
+    <div class="col-lg-9">
+        <p>
+            @Html.ActionLink("Editar", "Edit", new { id = Model.id }) |
+            @Html.ActionLink("Volver al indice", "Index")
+        </p>
+    </div>
+</div>

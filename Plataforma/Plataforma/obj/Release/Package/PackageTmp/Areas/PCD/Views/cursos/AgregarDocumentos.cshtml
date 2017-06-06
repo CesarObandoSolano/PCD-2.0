@@ -1,0 +1,33 @@
+﻿@model Plataforma.Areas.PCD.Models.DocumentosCurso
+@{
+    ViewBag.Title = "Curso";
+}
+
+<link rel="stylesheet" type="text/css" href="~/Content/custombootstrap.css" />
+<h2>Niveles</h2>
+
+<div class="col-lg-9 vista">
+    @Html.HiddenFor(model => model.curso.id)
+
+    @foreach (var item in Model.niveles)
+    {
+        <div class="documento">
+            <a href="/PCD/cursos/VerDocumentos/@item.id?idCurso=@Model.curso.id">
+                <p>
+                    <img src="~/Recursos/folder_gray_9787.png"><br />
+                    @item.nivel
+                </p>
+            </a>
+        </div>
+    }
+
+    <div class="col-lg-9">
+        <p>
+            @Html.ActionLink("Matricular Usuarios", "MatricularUsuarios", new { id = Model.curso.id }) |
+            @Html.ActionLink("Volver al indice", "Index")
+        </p>
+    </div>
+
+</div>
+
+

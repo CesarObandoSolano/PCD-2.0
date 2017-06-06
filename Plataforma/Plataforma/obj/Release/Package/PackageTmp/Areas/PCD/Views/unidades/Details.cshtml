@@ -1,0 +1,28 @@
+﻿@model Plataforma.Areas.PCD.Models.unidade
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<h2>Detalles</h2>
+<link rel="stylesheet" type="text/css" href="~/Content/custombootstrap.css" />
+<div class="col-lg-9">
+    <h4>Unidad</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.unidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.unidad)
+        </dd>
+
+    </dl>
+    <div class="col-lg-9">
+        <p>
+            @Html.ActionLink("Editar", "Edit", new { id = Model.id }) |
+            @Html.ActionLink("Volver al indice", "Index")
+        </p>
+    </div>
+</div>

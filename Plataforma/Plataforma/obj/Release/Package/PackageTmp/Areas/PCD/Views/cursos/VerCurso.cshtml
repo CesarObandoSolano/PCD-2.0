@@ -1,0 +1,102 @@
+﻿@model Plataforma.Areas.PCD.Models.curso
+@{
+    ViewBag.Title = Model.curso1;
+}
+<head>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script>
+        function Buscar() {
+            var nombre = document.getElementById('nombre').value;
+            @*if (@ViewBag.documentosprofe != null && @ViewBag.documentosprofe.Count > 0){
+                $("#documentos").load("/PCD/cursos/VerCurso/" + @Model.id + "/?idGrupo=" + @ViewBag.Grupo.id + "/&nombre=" + nombre + " #documentos");
+            }else{*@
+                $("#documentos").load("/PCD/cursos/VerCurso/" + @Model.id + "/?nombre=" + nombre + " #documentos");
+            //}
+            //return false;
+        }
+    </script>
+</head>
+
+<h2>Curso: @Model.curso1</h2>
+
+<link rel="stylesheet" type="text/css" href="~/Content/custombootstrap.css" />
+
+<div class="col-lg-9 barra-busqueda form-group">
+    @Html.Label("Buscar:", htmlAttributes: new { @class = "col-md-2" })
+    <input type="text" id="nombre" name="nombre" placeholder="Titulo del documento" class="form-control" onchange="Buscar()" />
+</div>
+
+<div class="col-lg-9" id="documentos">
+    
+    <div class="col-lg-9 vista">
+        @Html.HiddenFor(model => model.id)
+
+        @for (int i = 0; i < Model.documentos_curso.Count; i++)
+            {
+                Plataforma.Areas.PCD.Models.documentos_curso item = Model.documentos_curso.ElementAt(i);
+                if (item.visibilidad == true)
+                {
+                    if (i == 0)
+                    {
+                    <div class="encabezado col-lg-10">
+                        <hr />
+                        <h3>@Model.documentos_curso.ElementAt(i).documento.unidade.unidad</h3>
+                    </div>
+                }
+                <div class="documento">
+                    @if (ViewBag.Grupo != null)
+                    {
+                        <a href="~/PCD/documentos/VerDocumento/@item.documento.id?idCurso=@Model.id&idGrupo=@ViewBag.Grupo.id">
+                            <p>
+                                <img src="@Url.Content(item.documento.tipo_documento.icono)"><br />
+                                @item.documento.titulo
+                            </p>
+                        </a>
+                    }
+                    else
+                    {
+                        <a href="~/PCD/documentos/VerDocumento/@item.documento.id?idCurso=@Model.id">
+
+                            <p>
+                                <img src="@Url.Content(item.documento.tipo_documento.icono)"><br />
+                                @item.documento.titulo
+                            </p>
+                        </a>
+                    }
+                </div>
+                if ((i < Model.documentos_curso.Count - 1) && (@item.documento.unidad != Model.documentos_curso.ElementAt(i + 1).documento.unidad))
+                {
+                    <br />
+                        <div class="encabezado col-lg-10">
+                            <hr />
+                            <h3>@Model.documentos_curso.ElementAt(i + 1).documento.unidade.unidad</h3>
+                            <br />
+                        </div>
+                }
+            }
+        }
+    </div>
+
+    @if (ViewBag.documentosprofe != null && ViewBag.documentosprofe.Count > 0)
+    {
+        <div class="col-lg-9 vista">
+            <br />
+            <hr /><br />
+            <h3>Documentos compartidos por el profesor</h3>
+            @foreach (var item in ViewBag.documentosprofe)
+                {
+                    if (item.visibilidad)
+                    {
+                    <div class="col-sm-3">
+                        <a href="~/PCD/documentos_profe/VerDocumento/@item.id">
+                            <p>
+                                <img src=""><br />
+                                @item.titulo
+                            </p>
+                        </a>
+                    </div>
+                }
+            }
+        </div>
+    }
+</div>

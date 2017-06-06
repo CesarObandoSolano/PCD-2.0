@@ -1,0 +1,28 @@
+﻿@model Plataforma.Areas.PCD.Models.tipo_colegio
+
+@{
+    ViewBag.Title = "Detalles";
+}
+<link rel="stylesheet" type="text/css" href="~/Content/custombootstrap.css" />
+<h2>Detalles</h2>
+
+<div class="col-lg-9">
+    <h4>Tipo de Colegio</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tipo de colegio
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipo_institucion)
+        </dd>
+
+    </dl>
+
+    <p>
+        @Html.ActionLink("Editar", "Edit", new { id = Model.id }) |
+        @Html.ActionLink("Volver al indice", "Index")
+    </p>
+</div>
+

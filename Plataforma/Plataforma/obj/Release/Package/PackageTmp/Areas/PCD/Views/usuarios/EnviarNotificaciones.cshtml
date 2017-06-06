@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "Notificaciones y Noticias";
+}
+
+<h2>Enviar notificaciones</h2>
+
+<link rel="stylesheet" type="text/css" href="~/Content/custombootstrap.css" />
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="col-lg-9">
+        @if (ViewBag.Id == null)
+        {
+            <input type="hidden" value="@ViewBag.IdGrupo" name="idGrupo" id="idGrupo">
+        }
+        else
+        {
+            <input type="hidden" value="@ViewBag.Id" name="id" id="id">
+        }
+        <h4>Notificación</h4>
+        <hr />
+        <input type="text" id="asunto" name="asunto" size="150" class="form-control" placeholder="Asunto" required>
+        <hr />
+        <textarea id="cuerpo" name="cuerpo" cols="150" rows="10" class="form-control" placeholder="Cuerpo del mensaje" required></textarea> <br />
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Enviar" class="btn btn-default" />
+            </div>
+        </div>
+
+    </div>
+}

@@ -1,0 +1,206 @@
+﻿@model IEnumerable<Plataforma.Areas.PCD.Models.documento>
+@{
+    ViewBag.Title = "Indice";
+}
+<head>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script>
+        function Buscar() {
+            var nombre = document.getElementById('nombre').value;
+            $("#tabla-documento").load("/PCD/documentos/Index/?nombre=" + nombre + " #tabla-documento");
+            return false;
+        }
+
+        $(document).ready(function () {
+            $("#categorias").change(function () {
+                var categoria = document.getElementById("categorias").value;
+                if (categoria != "") {
+                    if (categoria == "curso") {
+                        document.getElementById("buscar_curso").hidden = false;
+                        document.getElementById("buscar_nivel").hidden = true;
+                        document.getElementById("buscar_unidad").hidden = true;
+                        document.getElementById("buscar_tipo").hidden = true;
+                    } else if (categoria == "nivel") {
+                        document.getElementById("buscar_curso").hidden = true;
+                        document.getElementById("buscar_nivel").hidden = false;
+                        document.getElementById("buscar_unidad").hidden = true;
+                        document.getElementById("buscar_tipo").hidden = true;
+                    }
+                    else if (categoria == "unidad") {
+                        document.getElementById("buscar_curso").hidden = true;
+                        document.getElementById("buscar_nivel").hidden = true;
+                        document.getElementById("buscar_unidad").hidden = false;
+                        document.getElementById("buscar_tipo").hidden = true;
+                    } else if (categoria == "tipo") {
+                        document.getElementById("buscar_curso").hidden = true;
+                        document.getElementById("buscar_nivel").hidden = true;
+                        document.getElementById("buscar_unidad").hidden = true;
+                        document.getElementById("buscar_tipo").hidden = false;
+                    }
+                }
+                return false;
+            });
+
+            $("#nombre").change(function () {
+                var nombre = document.getElementById('nombre').value;
+                var unidad = document.getElementById('unidad').value;
+                var curso = document.getElementById('curso').value;
+                var nivel = document.getElementById('nivel').value;
+                var tipo = document.getElementById('tipo').value;
+                var descripcion = document.getElementById('descripcion').value;
+                if (unidad != "0") {
+                    $("#tabla-documento").load("/PCD/documentos/Index/?nombre=" + nombre + "&unidad=" + unidad + " #tabla-documento");
+                } else if (curso != "0") {
+                    $("#tabla-documento").load("/PCD/documentos/Index/?nombre=" + nombre + "&curso=" + curso + " #tabla-documento");
+                } else if (nivel != "0") {
+                    $("#tabla-documento").load("/PCD/documentos/Index/?nombre=" + nombre + "&nivel=" + nivel + " #tabla-documento");
+                } else if (tipo != "0") {
+                    $("#tabla-documento").load("/PCD/documentos/Index/?nombre=" + nombre + "&tipo=" + tipo + " #tabla-documento");
+                } else if (descripcion != "") {
+                }
+                else {
+                    $("#tabla-documento").load("/PCD/documentos/Index/?nombre=" + nombre + " #tabla-documento");
+                }
+                return false;
+            });
+
+            $("#nivel").change(function () {
+                var nombre = document.getElementById('nombre').value;
+                var nivel = document.getElementById('nivel').value;
+                if (nivel != "0") {
+                    $("#tabla-documento").load("/PCD/documentos/Index/?nombre=" + nombre + "&nivel=" + nivel + " #tabla-documento");
+                }
+                return false;
+            });
+
+            $("#unidad").change(function () {
+                var nombre = document.getElementById('nombre').value;
+                var unidad = document.getElementById('unidad').value;
+                if (unidad != "0") {
+                    $("#tabla-documento").load("/PCD/documentos/Index/?nombre=" + nombre + "&unidad=" + unidad + " #tabla-documento");
+                }
+                return false;
+            });
+
+            $("#curso").change(function () {
+                var nombre = document.getElementById('nombre').value;
+                var curso = document.getElementById('curso').value;
+                if (curso != "0") {
+                    $("#tabla-documento").load("/PCD/documentos/Index/?nombre=" + nombre + "&curso=" + curso + " #tabla-documento");
+                }
+                return false;
+            });
+
+            $("#tipo").change(function () {
+                var nombre = document.getElementById('nombre').value;
+                var tipo = document.getElementById('tipo').value;
+                if (tipo != "0") {
+                    $("#tabla-documento").load("/PCD/documentos/Index/?nombre=" + nombre + "&tipo=" + tipo + " #tabla-documento");
+                }
+                return false;
+            });
+        });
+    </script>
+</head>
+<div class="col-lg-9">
+    <h2>Documentos</h2>
+    @Scripts.Render("~/bundles/modernizr")
+    <p>
+        @Html.ActionLink("Insertar un documento", "Create")
+    </p>
+    <div class="col-lg-9 barra-busqueda form-group">
+        @Html.Label("Buscar:", htmlAttributes: new { @class = "col-md-2" })
+        <input type="text" id="nombre" name="nombre" placeholder="Titulo del documento" class="form-control" />
+        @Html.Label("Filtrar por:", htmlAttributes: new { @class = "col-md-2" })
+        <select id="categorias" name="categorias" class="form-control">
+            <option value="">Seleccione una categoria...</option>
+            <option value="nivel">Nivel</option>
+            <option value="unidad">Unidad</option>
+            <option value="curso">Curso</option>
+            <option value="tipo">Tipo</option>
+        </select>
+        <div id="buscar_unidad" hidden>
+            <select id="unidad" name="unidad" class="form-control">
+                <option value="0">Seleccione una unidad...</option>
+                @foreach (var item in ViewBag.unidades)
+                {
+                    <option value="@item.id">
+                        @item.unidad
+                    </option>
+                }
+            </select>
+        </div>
+        <div id="buscar_curso" hidden>
+            <select id="curso" name="curso" class="form-control">
+                <option value="0">Seleccione un curso...</option>
+                @foreach (var item in ViewBag.cursos)
+                {
+                    <option value="@item.id">
+                        @item.curso1
+                    </option>
+                }
+            </select>
+        </div>
+        <div id="buscar_nivel" hidden>
+            <select id="nivel" name="nivel" class="form-control">
+                <option value="0">Seleccione un nivel...</option>
+                @foreach (var item in ViewBag.niveles)
+                {
+                    <option value="@item.id">
+                        @item.nivel
+                    </option>
+                }
+            </select>
+        </div>
+        <div id="buscar_tipo" hidden>
+            <select id="tipo" name="tipo" class="form-control">
+                <option value="0">Seleccione un tipo...</option>
+                @foreach (var item in ViewBag.tipos)
+                {
+                    <option value="@item.id">
+                        @item.tipo_documento1
+                    </option>
+                }
+            </select>
+        </div>
+    </div>
+    <table class="table" id="tabla-documento">
+        <tr>
+            <th>
+                Titulo
+            </th>
+            <th>
+                Descripción
+            </th>
+            <th>
+                Publicación
+            </th>
+            <th>
+                Formato
+            </th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.titulo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.descripcion_corta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fecha_publicacion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tipo_documento.tipo_documento1)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.id }) |
+                    @Html.ActionLink("Ver Detalles", "Details", new { id = item.id }) |
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.id })
+                </td>
+            </tr>
+        }
+    </table>
+</div>

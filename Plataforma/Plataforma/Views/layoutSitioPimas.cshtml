@@ -1,0 +1,122 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+	
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="@Umbraco.Media(CurrentPage.Parent.logo).url" type="image/x-icon">
+<meta name="description" content="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;subset=latin">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+<link rel="stylesheet" href="../css/assets/bootstrap-material-design-font/css/material.css">
+<link rel="stylesheet" href="../css/assets/et-line-font-plugin/style.css">
+<link rel="stylesheet" href="../css/assets/tether/tether.min.css">
+<link rel="stylesheet" href="../css/assets/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/assets/dropdown/css/style.css">
+<link rel="stylesheet" href="../css/assets/animate.css/animate.min.css">
+<link rel="stylesheet" href="../css/assets/theme/css/style.css">
+<link rel="stylesheet" href="../css/assets/mobirise-gallery/style.css">
+<link rel="stylesheet" href="../css/assets/mobirise/css/mbr-additional.css" type="text/css">
+<link rel="stylesheet" type="text/css" href="../css/assets/custom-css/custom_styles.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/4b145ef64a.css">
+</head>
+<body>
+<section id="menu-2">
+  <nav class="navbar navbar-dropdown navbar-fixed-top">
+    <div class="container menu-content">
+      <div class="mbr-table">
+        <div class="mbr-table-cell top-menu">
+          <div class="navbar-brand"> 
+			  <a href="index.html" class="navbar-logo">
+        		  <img src="@Umbraco.Media(CurrentPage.Parent.logo).url" alt="Pimás Editorial"/>
+			  </a> 
+		  </div>
+        </div>
+        <div class="mbr-table-cell top-menu top-menu-top">
+          <button class="navbar-toggler pull-xs-right hidden-md-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+          <div class="hamburger-icon"></div>
+          </button>
+		  @{
+    		if (CurrentPage.Parent.HasValue("Menu") && 
+				 CurrentPage.Parent.Menu.ToString().Length >= 1)
+    		{
+        	<ul class="nav-dropdown collapse nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar">
+			@foreach (var item in CurrentPage.Parent.Menu)
+            {
+                var linkUrl = (bool)item.isInternal ? Umbraco.NiceUrl(item.Value<int>("internal")) : item.link;
+                var linkTarget = (bool)item.newWindow ? "_blank" : null;
+				<li class="nav-item">
+					<a class="nav-link link" href="@linkUrl" target="@linkTarget" aria-expanded="false">
+						@item.caption
+					</a>
+				</li>
+            }
+        	</ul>
+    		}
+		}
+          <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+          <div class="close-icon"></div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+</section>
+		
+@RenderBody()			  
+			  
+<footer>
+<div class="logo-footer"></div>
+<section class="mbr-section mbr-section-md-padding mbr-footer footer1" id="contacts1-i" style="background-color: rgb(30, 102, 163); padding-top: 90px; padding-bottom: 90px;">
+  <div class="container">
+    <div class="row">
+      <div class="mbr-footer-content col-xs-12 col-md-4">
+        <span class="footer-title">@CurrentPage.Parent.contactoLbl</span>
+          <p><i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp; @Umbraco.Field("#Direccion", altFieldAlias: "#Direccion", convertLineBreaks: true, removeParagraphTags: true) <br>
+          <i class="fa fa-phone" aria-hidden="true"></i> &nbsp; @Umbraco.Field("#Telefono", altFieldAlias: "#Telefono", convertLineBreaks: true, removeParagraphTags: true)<br>
+           <i class="fa fa-mobile" aria-hidden="true"></i>&nbsp; @Umbraco.Field("#Movil", altFieldAlias: "#Movil", convertLineBreaks: true, removeParagraphTags: true)<br>
+           <i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;<a href="mailto:@Umbraco.Field("#email", altFieldAlias: "#email", convertLineBreaks: true, removeParagraphTags: true)"> @Umbraco.Field("#email", altFieldAlias: "#email", convertLineBreaks: true, removeParagraphTags: true)</a><br>
+        </p>
+      </div>
+      <div class="mbr-footer-content col-xs-12 col-md-4">
+        <span class="footer-title">@CurrentPage.Parent.entradasBlogLbl</span>
+         <p>Texto dinámico con includes del blog
+        </p>
+      </div>
+      <div class="mbr-footer-content col-xs-12 col-md-4">
+        <span class="footer-title">@CurrentPage.Parent.resenaLbl</span>
+          <p>@CurrentPage.Parent.resenaTxt<br>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="mbr-small-footer mbr-section mbr-section-nopadding" id="footer1-j" style="background-color: rgb(25, 51, 83); padding-top: 0.875rem; padding-bottom: 0.875rem;">
+  <div class="container">
+    <p class="text-xs-center">COPYRIGHT © 2017 Pimas. ALL RIGHTS RESERVED. Design by EduCalvo</p>
+  </div>
+</footer>
+<script src="../scripts/assets/web/assets/jquery/jquery.min.js"></script> 
+<script src="../scripts/assets/tether/tether.min.js"></script> 
+<script src="../scripts/assets/bootstrap/js/bootstrap.min.js"></script> 
+<script src="../scripts/assets/smooth-scroll/SmoothScroll.js"></script> 
+<script src="../scripts/assets/dropdown/js/script.min.js"></script> 
+<script src="../scripts/assets/touchSwipe/jquery.touchSwipe.min.js"></script> 
+<script src="../scripts/assets/viewportChecker/jquery.viewportchecker.js"></script> 
+<script src="../scripts/assets/bootstrap-carousel-swipe/bootstrap-carousel-swipe.js"></script> 
+<script src="../scripts/assets/masonry/masonry.pkgd.min.js"></script> 
+<script src="../scripts/assets/imagesloaded/imagesloaded.pkgd.min.js"></script> 
+<script src="../scripts/assets/theme/js/script.js"></script> 
+<script src="../scripts/assets/mobirise-gallery/player.min.js"></script> 
+<script src="../scripts/assets/mobirise-gallery/script.js"></script>
+<input name="animation" type="hidden">
+</footer>
+</body>
+</html>

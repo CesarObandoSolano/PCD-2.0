@@ -1,0 +1,32 @@
+﻿@model Plataforma.Areas.PCD.Models.nivele
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+<link rel="stylesheet" type="text/css" href="~/Content/custombootstrap.css" />
+<h2>Eliminar</h2>
+
+<h3>¿Estas seguro de que quieres eliminar este nivel?</h3>
+<div class="col-lg-9">
+    <h4>Nivel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Nivel
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nivel)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Volver al indice", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,109 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<UCommerce.RazorStore.Models.PurchaseOrderViewModel>
+    @{
+    Layout = "Layout.cshtml";
+    }
+
+
+    @if (Model.OrderLines.Count == 0)
+    {
+    <div class="alert alert-info">
+        <p>Tu carrito esta vacio. Por favor <a href="/">regresa a la tienda y añade algunos items</a>.</p>
+    </div>
+    }
+    else
+    {
+    <form method="post">
+        <table class="table table-striped" id="cart">
+            <thead>
+                <tr>
+                    <th class="span7">Descripción</th>
+                    <th class="span1 money">Precio</th>
+                    <th class="span1 money">I.V</th>
+                    <th class="span2">Cantidad</th>
+                    <th class="span1 money">Total</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (var i = 0; i < Model.OrderLines.Count; i++)
+                {
+                var line = Model.OrderLines[i];
+                <tr class="order-line">
+
+                    @Html.HiddenFor(model => model.OrderLines[i].Sku)
+                    @Html.HiddenFor(model => model.OrderLines[i].VariantSku)
+                    @Html.HiddenFor(model => model.OrderLines[i].OrderLineId)
+
+                    <td><a href="@line.ProductUrl">@line.ProductName</a></td>
+                    <td class="money">
+                        @if (@line.Discount.HasValue && @line.Discount > 0)
+                        {
+                        <span style="text-decoration: line-through">
+                            @line.Price
+                        </span>
+                        @line.PriceWithDiscount
+                        }
+                        else
+                        {
+                        @line.Price
+                        }
+                    </td>
+                    <td class="money">
+                        @line.Tax
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(model => model.OrderLines[i].Quantity, new {@class = "qty form-control no-padding" })
+                    </td>
+                    <td>
+                        @line.Total
+                    </td>
+                    <td>
+                        <button type="submit" value="@line.OrderLineId" name="RemoveOrderlineId" class="line-remove">×</button>
+                    </td>
+                </tr>
+                }
+                <tr>
+
+                    <td rowspan="4"></td>
+                    <td colspan="2" rowspan="4">
+                        <button name="update-basket" id="update-basket" class="btn btn-secondary update-basket" type="submit"><i class="icon-refresh icon-white"></i>Actualizar</button>
+                    </td>
+                    <td>Sub total:</td>
+                    <td class="money order-subtotal">
+                        @Model.SubTotal
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Impuesto de venta:</td>
+                    <td class="money order-tax">
+                        @Model.TaxTotal
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Descuento:</td>
+                    <td class="money order-discounts">
+                        @Model.DiscountTotal
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>Total:</td>
+                    <td class="money order-total">
+                        @Model.OrderTotal
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="pull-xs-right">
+            <a href="/basket/address" class="btn btn-secondary btn-large btn-success">  Continúa con la compra <i class="fa fa-arrow-right icon-white"></i></a>
+        </div>
+    </form>
+    @*<div class="col-md-6" id="voucher-form">
+        @Umbraco.RenderMacro("uCommerceVoucher")
+        <p><span class="label label-info">Tip!</span> <small>Sign up to our mailing list and get 10% off your first order! <a href="#">Click here to get 10% off now</a>!</small></p>
+    </div>*@
+    }
+

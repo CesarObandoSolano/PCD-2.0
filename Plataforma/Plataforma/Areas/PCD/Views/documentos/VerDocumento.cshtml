@@ -1,0 +1,201 @@
+﻿@model Plataforma.Areas.PCD.Models.documento
+@{
+    ViewBag.Title = Model.titulo;
+}
+<h1 class="class-forms">Ver Documento</h1>
+
+<head>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script>
+
+        function Responder(id) {
+            document.getElementById("responder-" + id).hidden = !document.getElementById("responder-" + id).hidden;
+        }
+
+        function EnviarComentario() {
+            if(@ViewBag.Grupo.id!=-1){
+                var idDocumento = @Model.id;
+                var idGrupo = @ViewBag.Grupo.id;
+                var comentario = document.getElementById('comentario').value;
+                $(document).ready(function () {
+                    $.ajax({
+                        type: "POST",
+                        url: "/PCD/grupos/EnviarComentario",
+                        data: '{"idDocumento":"' + idDocumento + '","idGrupo":"' + idGrupo + '", "comentario":"' + comentario + '"}',
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (data) {
+                            if (data === "Exito") {
+                                $('#seccion-comentarios').load('../VerDocumento/@Model.id?idCurso=@ViewBag.Curso.id&idGrupo='+ idGrupo +' #comentarios');
+                                alert("Tu comentario fue enviado correctamente");
+                            }
+                        },
+                        error: errores
+                    });
+                    function errores(data) {
+                        alert(data);
+                    }
+                    return false;
+                });
+            }
+        }
+
+        function EnviarRespuesta(idComentario) {
+            if(@ViewBag.Grupo.id != -1){
+                var respuesta = document.getElementById('respuesta-'+idComentario).value;
+                var idGrupo = @ViewBag.Grupo.id;
+                $(document).ready(function () {
+                    $.ajax({
+                        type: "POST",
+                        url: "/PCD/grupos/EnviarRespuesta",
+                        data: '{"idComentario":"' + idComentario + '", "respuesta":"' + respuesta + '"}',
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (data) {
+                            if (data === "Exito") {
+                                $('#seccion-comentarios').load('../VerDocumento/@Model.id?idCurso=@ViewBag.Curso.id&idGrupo='+ idGrupo +' #comentarios');
+                                alert("Tu respuesta fue enviada correctamente");
+                            }
+                        },
+                        error: errores
+                    });
+                    function errores(data) {
+                        alert(data);
+                    }
+                    return false;
+                });
+            }
+
+        }
+
+        function HabilitarComentario() {
+            var comentario = document.getElementById('comentario').value;
+            if (comentario != null || comentario != "") {
+                document.getElementById('btn-comentar').disabled = false;
+            }
+        }
+
+        function HabilitarRespuesta(idComentario) {
+            var respuesta = document.getElementById('respuesta-' + idComentario).value;
+            if (respuesta != null || respuesta != "") {
+                document.getElementById('btn-responder-' + idComentario).disabled = false;
+            }
+        }
+
+    </script>
+
+</head>
+
+@Scripts.Render("~/bundles/modernizr")
+
+<div class="col-lg-12">
+    <div class="col-lg-12">
+        <h4>@Model.titulo</h4>
+        <hr />
+        <dl class="dl-horizontal col-lg-12">
+            @if (@ViewBag.Curso != null)
+            {
+                <dd>
+                    @ViewBag.Curso.curso1/@Html.DisplayFor(model => model.unidade.unidad)/@Html.DisplayFor(model => model.capitulo)/@Html.DisplayFor(model => model.titulo)/@Html.DisplayFor(model => model.descripcion_corta)
+                </dd>
+
+                <dd>
+                    <pre>@Html.DisplayFor(model => model.descripcion_detallada)</pre>
+                </dd>
+            }
+        </dl>
+    </div>
+    <div class="col-lg-12 visualizador">
+        <div class="navegador">
+            @if (ViewBag.Grupo.id != -1)
+            {
+                if (ViewBag.DocAnterior != null)
+                {
+                    <a href="~/PCD/documentos/VerDocumento/@ViewBag.DocAnterior?idCurso=@ViewBag.Curso.id&idGrupo=@ViewBag.Grupo.id" class="navegador-anterior">
+                        Anterior
+                    </a>
+                }
+                if (ViewBag.DocSiguiente != null)
+                {
+                    <a href="~/PCD/documentos/VerDocumento/@ViewBag.DocSiguiente?idCurso=@ViewBag.Curso.id&idGrupo=@ViewBag.Grupo.id" class="navegador-siguiente">
+                        Siguiente
+                    </a>
+                }
+            }
+            else
+            {
+                if (ViewBag.DocAnterior != null)
+                {
+                    <a href="~/PCD/documentos/VerDocumento/@ViewBag.DocAnterior?idCurso=@ViewBag.Curso.id" class="navegador-anterior">
+                        Anterior
+                    </a>
+                }
+                if (ViewBag.DocSiguiente != null)
+                {
+                    <a href="~/PCD/documentos/VerDocumento/@ViewBag.DocSiguiente?idCurso=@ViewBag.Curso.id" class="navegador-siguiente">
+                        Siguiente
+                    </a>
+                }
+            }
+        </div>
+        <div>
+            @if (Model.tipo_documento.tipo_documento1.Equals("mp4"))
+            {
+                <video id="sampleMovie" class="visualizador" preload="auto" controls autoplay oncontextmenu="return false">
+                    <source id="video" type="video/mp4" src="@Url.Content(@Model.url)" />
+                    Este navegador no soporta reproducción de video.
+                </video>
+            }
+            else if (Model.tipo_documento.tipo_documento1.Equals("pdf"))
+            {
+                <iframe src="@Url.Content(@Model.url)" class="visualizador" frameborder="0"
+                        allowfullscreen webkitallowfullscreen></iframe>
+            }
+            else
+            {
+                <iframe src="@Url.Content(@Model.url)" style="display:none">
+                    El documento se descargara automaticamente en unos segundos...
+                </iframe>
+            }
+        </div>
+    </div>
+    @if (ViewBag.Comentarios != null)
+    {
+        <hr>
+        <div id="seccion-comentarios">
+            <div id="comentarios" class="seccion-comentarios col-lg-12">
+                <h3>Comentarios</h3>
+                <div class="form-group col-lg-9">
+                    <textarea id="comentario" name="comentario" placeholder="Haz un comentario..." class="form-control" rows="5" onchange="HabilitarComentario()"></textarea>
+                    <input id="btn-comentar" type="submit" onclick="EnviarComentario()" value="Comentar" class="btn btn-default" disabled>
+                </div>
+                @foreach (Plataforma.Areas.PCD.Models.comentario comentario in ViewBag.Comentarios)
+                {
+                    <div class="col-lg-12">
+                        <div class="comentario">
+                            <label>@comentario.usuario.nombre @comentario.usuario.apellidos<br />@comentario.fecha_publicacion</label>
+                            <p>@comentario.comentario1</p>
+                            @if (comentario.respuestas.Count > 0)
+                            {
+                                <h5>Respuestas</h5>
+                                foreach (Plataforma.Areas.PCD.Models.respuesta respuesta in comentario.respuestas)
+                                {
+                                    <div class="respuesta">
+                                        <label>@respuesta.usuario.nombre @respuesta.usuario.apellidos<br />@respuesta.fecha_publicacion</label>
+                                        <p>@respuesta.respuesta1</p>
+                                    </div>
+                                }
+                            }
+                            <a onclick="Responder(@comentario.id)">Responder</a>
+                            <div id="responder-@comentario.id" hidden>
+                                <textarea id="respuesta-@comentario.id" name="respuesta" placeholder="Escribe tu respuesta..." class="form-control" rows="5" onchange="HabilitarRespuesta(@comentario.id)"></textarea>
+                                <input id="btn-responder-@comentario.id" type="submit" onclick="EnviarRespuesta(@comentario.id)" value="Responder" class="btn btn-default" disabled>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+
+</div>

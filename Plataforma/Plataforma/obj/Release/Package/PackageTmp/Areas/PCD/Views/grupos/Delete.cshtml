@@ -1,0 +1,32 @@
+﻿@model Plataforma.Areas.PCD.Models.grupos
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+
+<h2>Eliminar</h2>
+<link rel="stylesheet" type="text/css" href="~/Content/custombootstrap.css" />
+<h3>¿Estas seguro de que quieres eliminar este grupo?</h3>
+<div class="col-lg-9">
+    <h4>Grupo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Grupo
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.grupo)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Volver al indice", "Index")
+        </div>
+    }
+</div>

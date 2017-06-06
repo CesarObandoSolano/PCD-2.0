@@ -1,0 +1,38 @@
+﻿@model UCommerce.RazorStore.Models.ProductsViewModel
+
+@{
+    Layout = null;
+}
+
+<div class="container">
+    <div class="row" id="homepage-catalog">
+
+        @foreach (var product in Model.Products)
+        {
+        <div class="product col-sm-4 col-md-4 col-xs-2">
+            <a href="@product.Url"><img class="img-responsive" src="@product.ThumbnailImageUrl" width="444" height="600" alt="" /><br><br></a>
+            <p class="item-name">
+            <h4>@product.Name</h4>
+            <hr class="line">
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    @if (product.PriceCalculation.ListPrice != null)
+                    {
+<p class="item-price">
+                @product.PriceCalculation.YourPrice.Amount
+                </p>
+                }
+            else
+            {
+            <p class="item-price"></p>
+            }
+            </div>
+        <div class="col-md-6 col-sm-6">
+                <a href="@product.Url" class="btn btn-success right">Comprar <span><i class="fa fa-shopping-cart" aria-hidden="true"></i></span></a>
+            </div>
+        </div>
+    </div>
+    }
+
+</div>
+</div>

@@ -1,0 +1,823 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="pimasModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="admin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Articulo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="detalle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="precio" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <NavigationProperty Name="Ventas" Relationship="Self.FK_Articulo_Venta" FromRole="Articulos" ToRole="Venta" />
+  </EntityType>
+  <EntityType Name="colegio">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_tipo_colegio" Type="Int32" Nullable="false" />
+    <Property Name="id_pais" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tipo_colegio" Relationship="Self.FK_colegio_tipo" FromRole="colegio" ToRole="tipo_colegio" />
+    <NavigationProperty Name="pais" Relationship="Self.FKcolegio605212" FromRole="colegio" ToRole="paises" />
+    <NavigationProperty Name="usuarios" Relationship="Self.colegio_profesores" FromRole="colegio" ToRole="usuarios" />
+    <NavigationProperty Name="libros" Relationship="Self.libros_colegio" FromRole="colegio" ToRole="libros" />
+  </EntityType>
+  <EntityType Name="comentario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_documento" Type="Int32" Nullable="false" />
+    <Property Name="id_grupo" Type="Int32" Nullable="false" />
+    <Property Name="id_usuario" Type="Int32" Nullable="false" />
+    <Property Name="comentario1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fecha_publicacion" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="documento" Relationship="Self.FK_comentarios_documentos" FromRole="comentarios" ToRole="documentos" />
+    <NavigationProperty Name="grupos" Relationship="Self.FK_comentarios_grupo" FromRole="comentarios" ToRole="grupos" />
+    <NavigationProperty Name="usuario" Relationship="Self.FK_comentarios_usuarios" FromRole="comentarios" ToRole="usuarios" />
+    <NavigationProperty Name="respuestas" Relationship="Self.FK_respuestas_comentario" FromRole="comentarios" ToRole="respuestas" />
+  </EntityType>
+  <EntityType Name="curso">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="curso1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="contador_visitas" Type="Int32" />
+    <NavigationProperty Name="log_visitas_cursousuario" Relationship="Self.FK_cursousuario_curso" FromRole="cursos" ToRole="log_visitas_cursousuario" />
+    <NavigationProperty Name="grupos" Relationship="Self.FK_grupo_curso" FromRole="cursos" ToRole="grupos" />
+    <NavigationProperty Name="documentos_profe" Relationship="Self.FKdocumentos613860" FromRole="cursos" ToRole="documentos_profe" />
+    <NavigationProperty Name="usuarios" Relationship="Self.curso_usuario" FromRole="cursos" ToRole="usuarios" />
+    <NavigationProperty Name="roles" Relationship="Self.cursos_rol" FromRole="cursos" ToRole="roles" />
+    <NavigationProperty Name="documentos_curso" Relationship="pimasModel.FK_documentos_curso_cursos" FromRole="curso" ToRole="documentos_curso" />
+  </EntityType>
+  <EntityType Name="documento">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_tipo" Type="Int32" Nullable="false" />
+    <Property Name="url" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="contador_visitas" Type="Int32" />
+    <Property Name="titulo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="descripcion_corta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="descripcion_detallada" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_publicacion" Type="DateTime" Precision="3" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="imagen" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="historial_version" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="numero_version" Type="Int32" />
+    <Property Name="unidad" Type="Int32" Nullable="false" />
+    <Property Name="capitulo" Type="Int32" />
+    <NavigationProperty Name="comentarios" Relationship="Self.FK_comentarios_documentos" FromRole="documentos" ToRole="comentarios" />
+    <NavigationProperty Name="tipo_documento" Relationship="Self.FK_documento_tipo" FromRole="documentos" ToRole="tipo_documento" />
+    <NavigationProperty Name="unidade" Relationship="Self.FK_documento_unidad" FromRole="documentos" ToRole="unidades" />
+    <NavigationProperty Name="log_visitas_documentousuario" Relationship="Self.FK_documentousuario_documento" FromRole="documentos" ToRole="log_visitas_documentousuario" />
+    <NavigationProperty Name="libros" Relationship="Self.documentos_libro" FromRole="documentos" ToRole="libros" />
+    <NavigationProperty Name="niveles" Relationship="Self.niveles_documento" FromRole="documentos" ToRole="niveles" />
+    <NavigationProperty Name="documentos_curso" Relationship="pimasModel.FK_documentos_curso_documentos" FromRole="documento" ToRole="documentos_curso" />
+  </EntityType>
+  <EntityType Name="documentos_curso">
+    <Key>
+      <PropertyRef Name="id_curso" />
+      <PropertyRef Name="id_documento" />
+    </Key>
+    <Property Name="id_curso" Type="Int32" Nullable="false" />
+    <Property Name="id_documento" Type="Int32" Nullable="false" />
+    <Property Name="visibilidad" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="curso" Relationship="pimasModel.FK_documentos_curso_cursos" FromRole="documentos_curso" ToRole="curso" />
+    <NavigationProperty Name="documento" Relationship="pimasModel.FK_documentos_curso_documentos" FromRole="documentos_curso" ToRole="documento" />
+  </EntityType>
+  <EntityType Name="documentos_profe">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_curso" Type="Int32" Nullable="false" />
+    <Property Name="id_profesor" Type="Int32" Nullable="false" />
+    <Property Name="url" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="titulo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="visibilidad" Type="Boolean" />
+    <NavigationProperty Name="curso" Relationship="Self.FKdocumentos613860" FromRole="documentos_profe" ToRole="cursos" />
+    <NavigationProperty Name="usuario" Relationship="Self.FK_documento_profesor" FromRole="documentos_profe" ToRole="usuarios" />
+  </EntityType>
+  <EntityType Name="grupos">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_curso" Type="Int32" />
+    <Property Name="grupo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="comentarios" Relationship="Self.FK_comentarios_grupo" FromRole="grupos" ToRole="comentarios" />
+    <NavigationProperty Name="curso" Relationship="Self.FK_grupo_curso" FromRole="grupos" ToRole="cursos" />
+    <NavigationProperty Name="permisos" Relationship="Self.permisos_grupo" FromRole="grupos" ToRole="permisos" />
+    <NavigationProperty Name="usuarios" Relationship="Self.usuarios_grupo" FromRole="grupos" ToRole="usuarios" />
+  </EntityType>
+  <EntityType Name="libro">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="solicitado" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="documentos" Relationship="Self.documentos_libro" FromRole="libros" ToRole="documentos" />
+    <NavigationProperty Name="colegios" Relationship="Self.libros_colegio" FromRole="libros" ToRole="colegio" />
+    <NavigationProperty Name="usuarios" Relationship="Self.libros_profesor" FromRole="libros" ToRole="usuarios" />
+  </EntityType>
+  <EntityType Name="log_visitas">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+      <PropertyRef Name="fecha_hora" />
+    </Key>
+    <Property Name="id_usuario" Type="Int32" Nullable="false" />
+    <Property Name="fecha_hora" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="usuario" Relationship="Self.FKlog_visita318727" FromRole="log_visitas" ToRole="usuarios" />
+  </EntityType>
+  <EntityType Name="log_visitas_cursousuario">
+    <Key>
+      <PropertyRef Name="id_curso" />
+      <PropertyRef Name="id_usuario" />
+    </Key>
+    <Property Name="contador" Type="Int32" Nullable="false" />
+    <Property Name="id_curso" Type="Int32" Nullable="false" />
+    <Property Name="id_usuario" Type="Int32" Nullable="false" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="curso" Relationship="Self.FK_cursousuario_curso" FromRole="log_visitas_cursousuario" ToRole="cursos" />
+    <NavigationProperty Name="usuario" Relationship="Self.FK_cursousuario_usuario" FromRole="log_visitas_cursousuario" ToRole="usuarios" />
+  </EntityType>
+  <EntityType Name="log_visitas_documentousuario">
+    <Key>
+      <PropertyRef Name="id_documento" />
+      <PropertyRef Name="id_usuario" />
+    </Key>
+    <Property Name="contador" Type="Int32" Nullable="false" />
+    <Property Name="id_documento" Type="Int32" Nullable="false" />
+    <Property Name="id_usuario" Type="Int32" Nullable="false" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="documento" Relationship="Self.FK_documentousuario_documento" FromRole="log_visitas_documentousuario" ToRole="documentos" />
+    <NavigationProperty Name="usuario" Relationship="Self.FK_documentousuario_usuario" FromRole="log_visitas_documentousuario" ToRole="usuarios" />
+  </EntityType>
+  <EntityType Name="nivele">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nivel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="documentos" Relationship="Self.niveles_documento" FromRole="niveles" ToRole="documentos" />
+    <NavigationProperty Name="usuarios" Relationship="Self.niveles_usuario" FromRole="niveles" ToRole="usuarios" />
+  </EntityType>
+  <EntityType Name="notificacione">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+    </Key>
+    <Property Name="id_usuario" Type="Int32" Nullable="false" />
+    <Property Name="fecha_hora" Type="DateTime" Precision="3" />
+    <Property Name="telefono" Type="Boolean" />
+    <Property Name="correo" Type="Boolean" />
+    <NavigationProperty Name="usuario" Relationship="Self.FKnotificaci133407" FromRole="notificaciones" ToRole="usuarios" />
+  </EntityType>
+  <EntityType Name="pais">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pais1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="colegios" Relationship="Self.FKcolegio605212" FromRole="paises" ToRole="colegio" />
+  </EntityType>
+  <EntityType Name="permiso">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="grupos" Relationship="Self.permisos_grupo" FromRole="permisos" ToRole="grupos" />
+    <NavigationProperty Name="roles" Relationship="Self.permisos_rol" FromRole="permisos" ToRole="roles" />
+    <NavigationProperty Name="usuarios" Relationship="Self.permisos_usuario" FromRole="permisos" ToRole="usuarios" />
+  </EntityType>
+  <EntityType Name="profesores_temporal">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="colegio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="username" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="telefono" Type="Int32" />
+    <Property Name="informacion_opcional" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="respuesta">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_comentario" Type="Int64" Nullable="false" />
+    <Property Name="id_usuario" Type="Int32" Nullable="false" />
+    <Property Name="respuesta1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fecha_publicacion" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="comentario" Relationship="Self.FK_respuestas_comentario" FromRole="respuestas" ToRole="comentarios" />
+    <NavigationProperty Name="usuario" Relationship="Self.FK_respuestas_usuarios" FromRole="respuestas" ToRole="usuarios" />
+  </EntityType>
+  <EntityType Name="role">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="cursos" Relationship="Self.cursos_rol" FromRole="roles" ToRole="cursos" />
+    <NavigationProperty Name="permisos" Relationship="Self.permisos_rol" FromRole="roles" ToRole="permisos" />
+    <NavigationProperty Name="usuarios" Relationship="Self.roles_usuario" FromRole="roles" ToRole="usuarios" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tipo_colegio">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tipo_institucion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="colegios" Relationship="Self.FK_colegio_tipo" FromRole="tipo_colegio" ToRole="colegio" />
+  </EntityType>
+  <EntityType Name="tipo_documento">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tipo_documento1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="icono" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="documentos" Relationship="Self.FK_documento_tipo" FromRole="tipo_documento" ToRole="documentos" />
+  </EntityType>
+  <EntityType Name="unidade">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="unidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="documentos" Relationship="Self.FK_documento_unidad" FromRole="unidades" ToRole="documentos" />
+  </EntityType>
+  <EntityType Name="usuario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="username" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="telefono" Type="Int32" />
+    <Property Name="telefono_2" Type="Int32" />
+    <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="correo_2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="informacion_opcional" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_primer_ingreso" Type="DateTime" Precision="3" />
+    <Property Name="bloqueado" Type="Boolean" />
+    <Property Name="logueado" Type="Boolean" />
+    <NavigationProperty Name="comentarios" Relationship="Self.FK_comentarios_usuarios" FromRole="usuarios" ToRole="comentarios" />
+    <NavigationProperty Name="documentos_profe" Relationship="Self.FK_documento_profesor" FromRole="usuarios" ToRole="documentos_profe" />
+    <NavigationProperty Name="log_visitas" Relationship="Self.FKlog_visita318727" FromRole="usuarios" ToRole="log_visitas" />
+    <NavigationProperty Name="log_visitas_cursousuario" Relationship="Self.FK_cursousuario_usuario" FromRole="usuarios" ToRole="log_visitas_cursousuario" />
+    <NavigationProperty Name="log_visitas_documentousuario" Relationship="Self.FK_documentousuario_usuario" FromRole="usuarios" ToRole="log_visitas_documentousuario" />
+    <NavigationProperty Name="notificacione" Relationship="Self.FKnotificaci133407" FromRole="usuarios" ToRole="notificaciones" />
+    <NavigationProperty Name="respuestas" Relationship="Self.FK_respuestas_usuarios" FromRole="usuarios" ToRole="respuestas" />
+    <NavigationProperty Name="colegios" Relationship="Self.colegio_profesores" FromRole="usuarios" ToRole="colegio" />
+    <NavigationProperty Name="cursos" Relationship="Self.curso_usuario" FromRole="usuarios" ToRole="cursos" />
+    <NavigationProperty Name="libros" Relationship="Self.libros_profesor" FromRole="usuarios" ToRole="libros" />
+    <NavigationProperty Name="niveles" Relationship="Self.niveles_usuario" FromRole="usuarios" ToRole="niveles" />
+    <NavigationProperty Name="permisos" Relationship="Self.permisos_usuario" FromRole="usuarios" ToRole="permisos" />
+    <NavigationProperty Name="roles" Relationship="Self.roles_usuario" FromRole="usuarios" ToRole="roles" />
+    <NavigationProperty Name="grupos" Relationship="Self.usuarios_grupo" FromRole="usuarios" ToRole="grupos" />
+  </EntityType>
+  <EntityType Name="Venta">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_articulo" Type="Int32" Nullable="false" />
+    <Property Name="nombre_comprador" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nombre_receptor" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="numero_comprador" Type="Int32" Nullable="false" />
+    <Property Name="numero_receptor" Type="Int32" Nullable="false" />
+    <Property Name="direccion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="horario" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="cantidad" Type="Int32" Nullable="false" />
+    <Property Name="tipo_entrega" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="forma_pago" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Articulo" Relationship="Self.FK_Articulo_Venta" FromRole="Venta" ToRole="Articulos" />
+  </EntityType>
+  <Association Name="FK_Articulo_Venta">
+    <End Role="Articulos" Type="Self.Articulo" Multiplicity="1" />
+    <End Role="Venta" Type="Self.Venta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Articulos">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Venta">
+        <PropertyRef Name="id_articulo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_colegio_tipo">
+    <End Role="tipo_colegio" Type="Self.tipo_colegio" Multiplicity="1" />
+    <End Role="colegio" Type="Self.colegio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipo_colegio">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="colegio">
+        <PropertyRef Name="id_tipo_colegio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKcolegio605212">
+    <End Role="paises" Type="Self.pais" Multiplicity="1" />
+    <End Role="colegio" Type="Self.colegio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="paises">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="colegio">
+        <PropertyRef Name="id_pais" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_comentarios_documentos">
+    <End Role="documentos" Type="Self.documento" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="comentarios" Type="Self.comentario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="documentos">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="comentarios">
+        <PropertyRef Name="id_documento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_comentarios_grupo">
+    <End Role="grupos" Type="Self.grupos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="comentarios" Type="Self.comentario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="grupos">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="comentarios">
+        <PropertyRef Name="id_grupo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_comentarios_usuarios">
+    <End Role="usuarios" Type="Self.usuario" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="comentarios" Type="Self.comentario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuarios">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="comentarios">
+        <PropertyRef Name="id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_respuestas_comentario">
+    <End Role="comentarios" Type="Self.comentario" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="respuestas" Type="Self.respuesta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="comentarios">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="respuestas">
+        <PropertyRef Name="id_comentario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cursousuario_curso">
+    <End Role="cursos" Type="Self.curso" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="log_visitas_cursousuario" Type="Self.log_visitas_cursousuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cursos">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="log_visitas_cursousuario">
+        <PropertyRef Name="id_curso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_grupo_curso">
+    <End Role="cursos" Type="Self.curso" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="grupos" Type="Self.grupos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cursos">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="grupos">
+        <PropertyRef Name="id_curso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKdocumentos613860">
+    <End Role="cursos" Type="Self.curso" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="documentos_profe" Type="Self.documentos_profe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cursos">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="documentos_profe">
+        <PropertyRef Name="id_curso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_documento_tipo">
+    <End Role="tipo_documento" Type="Self.tipo_documento" Multiplicity="1" />
+    <End Role="documentos" Type="Self.documento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipo_documento">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="documentos">
+        <PropertyRef Name="id_tipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_documento_unidad">
+    <End Role="unidades" Type="Self.unidade" Multiplicity="1" />
+    <End Role="documentos" Type="Self.documento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="unidades">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="documentos">
+        <PropertyRef Name="unidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_documentousuario_documento">
+    <End Role="documentos" Type="Self.documento" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="log_visitas_documentousuario" Type="Self.log_visitas_documentousuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="documentos">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="log_visitas_documentousuario">
+        <PropertyRef Name="id_documento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_documento_profesor">
+    <End Role="usuarios" Type="Self.usuario" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="documentos_profe" Type="Self.documentos_profe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuarios">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="documentos_profe">
+        <PropertyRef Name="id_profesor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKlog_visita318727">
+    <End Role="usuarios" Type="Self.usuario" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="log_visitas" Type="Self.log_visitas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuarios">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="log_visitas">
+        <PropertyRef Name="id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cursousuario_usuario">
+    <End Role="usuarios" Type="Self.usuario" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="log_visitas_cursousuario" Type="Self.log_visitas_cursousuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuarios">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="log_visitas_cursousuario">
+        <PropertyRef Name="id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_documentousuario_usuario">
+    <End Role="usuarios" Type="Self.usuario" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="log_visitas_documentousuario" Type="Self.log_visitas_documentousuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuarios">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="log_visitas_documentousuario">
+        <PropertyRef Name="id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKnotificaci133407">
+    <End Role="usuarios" Type="Self.usuario" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="notificaciones" Type="Self.notificacione" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="usuarios">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="notificaciones">
+        <PropertyRef Name="id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_respuestas_usuarios">
+    <End Role="usuarios" Type="Self.usuario" Multiplicity="1" />
+    <End Role="respuestas" Type="Self.respuesta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuarios">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="respuestas">
+        <PropertyRef Name="id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="colegio_profesores">
+    <End Role="colegio" Type="Self.colegio" Multiplicity="*" />
+    <End Role="usuarios" Type="Self.usuario" Multiplicity="*" />
+  </Association>
+  <Association Name="curso_usuario">
+    <End Role="cursos" Type="Self.curso" Multiplicity="*" />
+    <End Role="usuarios" Type="Self.usuario" Multiplicity="*" />
+  </Association>
+  <Association Name="cursos_rol">
+    <End Role="cursos" Type="Self.curso" Multiplicity="*" />
+    <End Role="roles" Type="Self.role" Multiplicity="*" />
+  </Association>
+  <Association Name="documentos_libro">
+    <End Role="documentos" Type="Self.documento" Multiplicity="*" />
+    <End Role="libros" Type="Self.libro" Multiplicity="*" />
+  </Association>
+  <Association Name="libros_colegio">
+    <End Role="libros" Type="Self.libro" Multiplicity="*" />
+    <End Role="colegio" Type="Self.colegio" Multiplicity="*" />
+  </Association>
+  <Association Name="libros_profesor">
+    <End Role="libros" Type="Self.libro" Multiplicity="*" />
+    <End Role="usuarios" Type="Self.usuario" Multiplicity="*" />
+  </Association>
+  <Association Name="niveles_documento">
+    <End Role="documentos" Type="Self.documento" Multiplicity="*" />
+    <End Role="niveles" Type="Self.nivele" Multiplicity="*" />
+  </Association>
+  <Association Name="niveles_usuario">
+    <End Role="niveles" Type="Self.nivele" Multiplicity="*" />
+    <End Role="usuarios" Type="Self.usuario" Multiplicity="*" />
+  </Association>
+  <Association Name="permisos_grupo">
+    <End Role="grupos" Type="Self.grupos" Multiplicity="*" />
+    <End Role="permisos" Type="Self.permiso" Multiplicity="*" />
+  </Association>
+  <Association Name="permisos_rol">
+    <End Role="permisos" Type="Self.permiso" Multiplicity="*" />
+    <End Role="roles" Type="Self.role" Multiplicity="*" />
+  </Association>
+  <Association Name="permisos_usuario">
+    <End Role="permisos" Type="Self.permiso" Multiplicity="*" />
+    <End Role="usuarios" Type="Self.usuario" Multiplicity="*" />
+  </Association>
+  <Association Name="roles_usuario">
+    <End Role="usuarios" Type="Self.usuario" Multiplicity="*" />
+    <End Role="roles" Type="Self.role" Multiplicity="*" />
+  </Association>
+  <Association Name="usuarios_grupo">
+    <End Role="usuarios" Type="Self.usuario" Multiplicity="*" />
+    <End Role="grupos" Type="Self.grupos" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="pimasEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="admins" EntityType="Self.admin" />
+    <EntitySet Name="Articulos" EntityType="Self.Articulo" />
+    <EntitySet Name="colegios" EntityType="Self.colegio" />
+    <EntitySet Name="comentarios" EntityType="Self.comentario" />
+    <EntitySet Name="cursos" EntityType="Self.curso" />
+    <EntitySet Name="documentos" EntityType="Self.documento" />
+    <EntitySet Name="documentos_curso" EntityType="Self.documentos_curso" />
+    <EntitySet Name="documentos_profe" EntityType="Self.documentos_profe" />
+    <EntitySet Name="grupos" EntityType="Self.grupos" />
+    <EntitySet Name="libros" EntityType="Self.libro" />
+    <EntitySet Name="log_visitas" EntityType="Self.log_visitas" />
+    <EntitySet Name="log_visitas_cursousuario" EntityType="Self.log_visitas_cursousuario" />
+    <EntitySet Name="log_visitas_documentousuario" EntityType="Self.log_visitas_documentousuario" />
+    <EntitySet Name="niveles" EntityType="Self.nivele" />
+    <EntitySet Name="notificaciones" EntityType="Self.notificacione" />
+    <EntitySet Name="paises" EntityType="Self.pais" />
+    <EntitySet Name="permisos" EntityType="Self.permiso" />
+    <EntitySet Name="profesores_temporal" EntityType="Self.profesores_temporal" />
+    <EntitySet Name="respuestas" EntityType="Self.respuesta" />
+    <EntitySet Name="roles" EntityType="Self.role" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="tipo_colegio" EntityType="Self.tipo_colegio" />
+    <EntitySet Name="tipo_documento" EntityType="Self.tipo_documento" />
+    <EntitySet Name="unidades" EntityType="Self.unidade" />
+    <EntitySet Name="usuarios" EntityType="Self.usuario" />
+    <EntitySet Name="Ventas" EntityType="Self.Venta" />
+    <AssociationSet Name="FK_Articulo_Venta" Association="Self.FK_Articulo_Venta">
+      <End Role="Articulos" EntitySet="Articulos" />
+      <End Role="Venta" EntitySet="Ventas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_colegio_tipo" Association="Self.FK_colegio_tipo">
+      <End Role="tipo_colegio" EntitySet="tipo_colegio" />
+      <End Role="colegio" EntitySet="colegios" />
+    </AssociationSet>
+    <AssociationSet Name="FKcolegio605212" Association="Self.FKcolegio605212">
+      <End Role="paises" EntitySet="paises" />
+      <End Role="colegio" EntitySet="colegios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_comentarios_documentos" Association="Self.FK_comentarios_documentos">
+      <End Role="documentos" EntitySet="documentos" />
+      <End Role="comentarios" EntitySet="comentarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_comentarios_grupo" Association="Self.FK_comentarios_grupo">
+      <End Role="grupos" EntitySet="grupos" />
+      <End Role="comentarios" EntitySet="comentarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_comentarios_usuarios" Association="Self.FK_comentarios_usuarios">
+      <End Role="usuarios" EntitySet="usuarios" />
+      <End Role="comentarios" EntitySet="comentarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_respuestas_comentario" Association="Self.FK_respuestas_comentario">
+      <End Role="comentarios" EntitySet="comentarios" />
+      <End Role="respuestas" EntitySet="respuestas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cursousuario_curso" Association="Self.FK_cursousuario_curso">
+      <End Role="cursos" EntitySet="cursos" />
+      <End Role="log_visitas_cursousuario" EntitySet="log_visitas_cursousuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_grupo_curso" Association="Self.FK_grupo_curso">
+      <End Role="cursos" EntitySet="cursos" />
+      <End Role="grupos" EntitySet="grupos" />
+    </AssociationSet>
+    <AssociationSet Name="FKdocumentos613860" Association="Self.FKdocumentos613860">
+      <End Role="cursos" EntitySet="cursos" />
+      <End Role="documentos_profe" EntitySet="documentos_profe" />
+    </AssociationSet>
+    <AssociationSet Name="FK_documento_tipo" Association="Self.FK_documento_tipo">
+      <End Role="tipo_documento" EntitySet="tipo_documento" />
+      <End Role="documentos" EntitySet="documentos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_documento_unidad" Association="Self.FK_documento_unidad">
+      <End Role="unidades" EntitySet="unidades" />
+      <End Role="documentos" EntitySet="documentos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_documentousuario_documento" Association="Self.FK_documentousuario_documento">
+      <End Role="documentos" EntitySet="documentos" />
+      <End Role="log_visitas_documentousuario" EntitySet="log_visitas_documentousuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_documento_profesor" Association="Self.FK_documento_profesor">
+      <End Role="usuarios" EntitySet="usuarios" />
+      <End Role="documentos_profe" EntitySet="documentos_profe" />
+    </AssociationSet>
+    <AssociationSet Name="FKlog_visita318727" Association="Self.FKlog_visita318727">
+      <End Role="usuarios" EntitySet="usuarios" />
+      <End Role="log_visitas" EntitySet="log_visitas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cursousuario_usuario" Association="Self.FK_cursousuario_usuario">
+      <End Role="usuarios" EntitySet="usuarios" />
+      <End Role="log_visitas_cursousuario" EntitySet="log_visitas_cursousuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_documentousuario_usuario" Association="Self.FK_documentousuario_usuario">
+      <End Role="usuarios" EntitySet="usuarios" />
+      <End Role="log_visitas_documentousuario" EntitySet="log_visitas_documentousuario" />
+    </AssociationSet>
+    <AssociationSet Name="FKnotificaci133407" Association="Self.FKnotificaci133407">
+      <End Role="usuarios" EntitySet="usuarios" />
+      <End Role="notificaciones" EntitySet="notificaciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK_respuestas_usuarios" Association="Self.FK_respuestas_usuarios">
+      <End Role="usuarios" EntitySet="usuarios" />
+      <End Role="respuestas" EntitySet="respuestas" />
+    </AssociationSet>
+    <AssociationSet Name="colegio_profesores" Association="Self.colegio_profesores">
+      <End Role="colegio" EntitySet="colegios" />
+      <End Role="usuarios" EntitySet="usuarios" />
+    </AssociationSet>
+    <AssociationSet Name="curso_usuario" Association="Self.curso_usuario">
+      <End Role="cursos" EntitySet="cursos" />
+      <End Role="usuarios" EntitySet="usuarios" />
+    </AssociationSet>
+    <AssociationSet Name="cursos_rol" Association="Self.cursos_rol">
+      <End Role="cursos" EntitySet="cursos" />
+      <End Role="roles" EntitySet="roles" />
+    </AssociationSet>
+    <AssociationSet Name="documentos_libro" Association="Self.documentos_libro">
+      <End Role="documentos" EntitySet="documentos" />
+      <End Role="libros" EntitySet="libros" />
+    </AssociationSet>
+    <AssociationSet Name="libros_colegio" Association="Self.libros_colegio">
+      <End Role="libros" EntitySet="libros" />
+      <End Role="colegio" EntitySet="colegios" />
+    </AssociationSet>
+    <AssociationSet Name="libros_profesor" Association="Self.libros_profesor">
+      <End Role="libros" EntitySet="libros" />
+      <End Role="usuarios" EntitySet="usuarios" />
+    </AssociationSet>
+    <AssociationSet Name="niveles_documento" Association="Self.niveles_documento">
+      <End Role="documentos" EntitySet="documentos" />
+      <End Role="niveles" EntitySet="niveles" />
+    </AssociationSet>
+    <AssociationSet Name="niveles_usuario" Association="Self.niveles_usuario">
+      <End Role="niveles" EntitySet="niveles" />
+      <End Role="usuarios" EntitySet="usuarios" />
+    </AssociationSet>
+    <AssociationSet Name="permisos_grupo" Association="Self.permisos_grupo">
+      <End Role="grupos" EntitySet="grupos" />
+      <End Role="permisos" EntitySet="permisos" />
+    </AssociationSet>
+    <AssociationSet Name="permisos_rol" Association="Self.permisos_rol">
+      <End Role="permisos" EntitySet="permisos" />
+      <End Role="roles" EntitySet="roles" />
+    </AssociationSet>
+    <AssociationSet Name="permisos_usuario" Association="Self.permisos_usuario">
+      <End Role="permisos" EntitySet="permisos" />
+      <End Role="usuarios" EntitySet="usuarios" />
+    </AssociationSet>
+    <AssociationSet Name="roles_usuario" Association="Self.roles_usuario">
+      <End Role="usuarios" EntitySet="usuarios" />
+      <End Role="roles" EntitySet="roles" />
+    </AssociationSet>
+    <AssociationSet Name="usuarios_grupo" Association="Self.usuarios_grupo">
+      <End Role="usuarios" EntitySet="usuarios" />
+      <End Role="grupos" EntitySet="grupos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_documentos_curso_cursos" Association="pimasModel.FK_documentos_curso_cursos">
+      <End Role="curso" EntitySet="cursos" />
+      <End Role="documentos_curso" EntitySet="documentos_curso" />
+    </AssociationSet>
+    <AssociationSet Name="FK_documentos_curso_documentos" Association="pimasModel.FK_documentos_curso_documentos">
+      <End Role="documento" EntitySet="documentos" />
+      <End Role="documentos_curso" EntitySet="documentos_curso" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="FK_documentos_curso_cursos">
+    <End Type="pimasModel.curso" Role="curso" Multiplicity="1" />
+    <End Type="pimasModel.documentos_curso" Role="documentos_curso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="curso">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="documentos_curso">
+        <PropertyRef Name="id_curso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_documentos_curso_documentos">
+    <End Type="pimasModel.documento" Role="documento" Multiplicity="1" />
+    <End Type="pimasModel.documentos_curso" Role="documentos_curso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="documento">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="documentos_curso">
+        <PropertyRef Name="id_documento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

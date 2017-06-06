@@ -1,0 +1,96 @@
+﻿@model Plataforma.Areas.PCD.Models.role
+
+@{
+    ViewBag.Title = "Editar";
+}
+<link rel="stylesheet" type="text/css" href="~/Content/custombootstrap.css" />
+<h2>Editar</h2>
+
+<head>
+    <script>
+        function QuitarPermisos() {
+            var select = document.getElementById("quitarPermisos");
+            if(@Model.permisos.Count == select){
+                alert("Cuidado");
+            }
+        }
+    </script>
+
+</head>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal col-lg-9">
+        <h4>Rol</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.id)
+        <div class="form-group">
+            @Html.LabelFor(model => model.rol, "Rol", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.rol, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.rol, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Agregar Permisos", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("listaPermisos", null, htmlAttributes: new { @class = "form-control lista-usuarios", @multiple = "multiple" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Quitar Permisos", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <select class="form-control lista-usuarios" multiple="multiple" name="quitarPermisos" id="quitarPermisos" onclick="QuitarPermisos()">
+                    @foreach (var item in Model.permisos)
+                    {
+                        <option value="@item.id">
+                            @item.descripcion
+                        </option>
+                    }
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Agregar Cursos Predeterminados", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("listaCursos", null, htmlAttributes: new { @class = "form-control lista-usuarios", @multiple = "multiple" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Quitar Cursos Predeterminados", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <select class="form-control lista-usuarios" multiple="multiple" name="quitarCursos" id="quitarCursos">
+                    @foreach (var item in Model.cursos)
+                    {
+                        <option value="@item.id">
+                            @item.curso1
+                        </option>
+                    }
+                </select>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Editar" class="btn btn-default" />
+            </div>
+        </div>
+        <div class="col-lg-9">
+            @Html.ActionLink("Volver al indice", "Index")
+        </div>
+    </div>
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

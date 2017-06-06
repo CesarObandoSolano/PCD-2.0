@@ -1,0 +1,189 @@
+
+-------------------------------------------------------------------------------
+   ROBOCOPY     ::     Robust File Copy for Windows                              
+-------------------------------------------------------------------------------
+
+  Started : Thursday, January 19, 2017 3:12:12 AM
+   Source : C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\
+     Dest : C:\Users\Cesar\Desktop\Plataforma\Plataforma\App_Data\NuGetBackup\20170119-031211\bin\
+
+    Files : *.*
+	    
+  Options : *.* /S /E /DCOPY:DA /COPY:DAT /R:1000000 /W:30 
+
+------------------------------------------------------------------------------
+
+	                 126	C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\
+	    New File  		  102912	Antlr3.Runtime.dll  0%  100%  
+	    New File  		  431616	Antlr3.Runtime.pdb  0%   30%   60%   91%  100%  
+	    New File  		  166400	AutoMapper.dll  0%   78%  100%  
+	    New File  		   28672	AutoMapper.Net4.dll  0%  100%  
+	    New File  		  118784	businesslogic.dll  0%  100%  
+	    New File  		  148480	ClientDependency.Core.dll  0%   88%  100%  
+	    New File  		   23552	ClientDependency.Core.Mvc.dll  0%  100%  
+	    New File  		  520192	cms.dll  0%   25%   50%   75%  100%  
+	    New File  		   10240	Common.Logging.Core.dll  0%  100%  
+	    New File  		   11776	Common.Logging.Core.pdb  0%  100%  
+	    New File  		   54432	Common.Logging.Core.xml  0%  100%  
+	    New File  		   44544	Common.Logging.dll  0%  100%  
+	    New File  		  169472	Common.Logging.pdb  0%   77%  100%  
+	    New File  		  167494	Common.Logging.xml  0%   78%  100%  
+	    New File  		   52224	controls.dll  0%  100%  
+	    New File  		  122880	CookComputing.XmlRpcV2.dll  0%  100%  
+	    New File  		  380928	CrystalDecisions.CrystalReports.Engine.dll  0%   34%   68%  100%  
+	    New File  		   65536	CrystalDecisions.ReportAppServer.ClientDoc.dll  0%  100%  
+	    New File  		   49152	CrystalDecisions.ReportAppServer.CommLayer.dll  0%  100%  
+	    New File  		  135168	CrystalDecisions.ReportAppServer.CommonControls.dll  0%   96%  100%  
+	    New File  		   36864	CrystalDecisions.ReportAppServer.CommonObjectModel.dll  0%  100%  
+	    New File  		  176128	CrystalDecisions.ReportAppServer.Controllers.dll  0%   74%  100%  
+	    New File  		   36864	CrystalDecisions.ReportAppServer.CubeDefModel.dll  0%  100%  
+	    New File  		  262144	CrystalDecisions.ReportAppServer.DataDefModel.dll  0%   50%  100%  
+	    New File  		   57344	CrystalDecisions.ReportAppServer.DataSetConversion.dll  0%  100%  
+	    New File  		    5120	CrystalDecisions.ReportAppServer.ObjectFactory.dll  0%  100%  
+	    New File  		  155648	CrystalDecisions.ReportAppServer.Prompting.dll  0%   84%  100%  
+	    New File  		  368640	CrystalDecisions.ReportAppServer.ReportDefModel.dll  0%   35%   71%  100%  
+	    New File  		   16384	CrystalDecisions.ReportAppServer.XmlSerialize.dll  0%  100%  
+	    New File  		   86016	CrystalDecisions.ReportSource.dll  0%  100%  
+	    New File  		  880640	CrystalDecisions.Shared.dll  0%   29%   59%   89%  100%  
+	    New File  		  458752	CrystalDecisions.Web.dll  0%   28%   57%   85%  100%  
+	    New File  		   4.9 m	EntityFramework.dll  0%   10%   20%   30%   40%   50%   60%   70%   80%   90%  100%  
+	    New File  		  621264	EntityFramework.SqlServer.dll  0%   42%   84%  100%  
+	    New File  		  154866	EntityFramework.SqlServer.xml  0%   84%  100%  
+	    New File  		   3.4 m	EntityFramework.xml  0%   14%   28%   43%   57%   71%   86%  100%  
+	    New File  		   99328	Examine.dll  0%  100%  
+	    New File  		  134656	HtmlAgilityPack.dll  0%   97%  100%  
+	    New File  		  200704	ICSharpCode.SharpZipLib.dll  0%   65%  100%  
+	    New File  		  179712	ImageProcessor.dll  0%   72%  100%  
+	    New File  		  114688	ImageProcessor.Web.dll  0%  100%  
+	    New File  		   24576	interfaces.dll  0%  100%  
+	    New File  		   3.8 m	itextsharp.dll  0%   12%   25%   38%   51%   64%   77%   90%  100%  
+	    New File  		   3.0 m	itextsharp.xml  0%   16%   33%   49%   66%   82%   99%  100%  
+	    New File  		  258048	log4net.dll  0%   50%  100%  
+	    New File  		  786432	Lucene.Net.dll  0%   33%   66%  100%  
+	    New File  		   54784	MarkdownSharp.dll  0%  100%  
+	    New File  		   11264	Microsoft.ApplicationBlocks.Data.dll  0%  100%  
+	    New File  		  171672	Microsoft.AspNet.Identity.Core.dll  0%   76%  100%  
+	    New File  		  124939	Microsoft.AspNet.Identity.Core.xml  0%  100%  
+	    New File  		   77472	Microsoft.AspNet.Identity.EntityFramework.dll  0%  100%  
+	    New File  		   52609	Microsoft.AspNet.Identity.EntityFramework.xml  0%  100%  
+	    New File  		   54944	Microsoft.AspNet.Identity.Owin.dll  0%  100%  
+	    New File  		   32939	Microsoft.AspNet.Identity.Owin.xml  0%  100%  
+	    New File  		   3.8 m	Microsoft.CodeAnalysis.CSharp.dll  0%   13%   26%   39%   52%   65%   78%   91%  100%  
+	    New File  		   1.6 m	Microsoft.CodeAnalysis.dll  0%   15%   30%   45%   60%   76%   91%  100%  
+	    New File  		   29344	Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll  0%  100%  
+	    New File  		    1805	Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml  0%  100%  
+	    New File  		   41232	Microsoft.IO.RecyclableMemoryStream.dll  0%  100%  
+	    New File  		  101032	Microsoft.Owin.dll  0%  100%  
+	    New File  		  133288	Microsoft.Owin.Host.SystemWeb.dll  0%   98%  100%  
+	    New File  		   31372	Microsoft.Owin.Host.SystemWeb.xml  0%  100%  
+	    New File  		   36520	Microsoft.Owin.Security.Cookies.dll  0%  100%  
+	    New File  		   33265	Microsoft.Owin.Security.Cookies.xml  0%  100%  
+	    New File  		   53416	Microsoft.Owin.Security.dll  0%  100%  
+	    New File  		   36520	Microsoft.Owin.Security.Facebook.dll  0%  100%  
+	    New File  		   19747	Microsoft.Owin.Security.Facebook.xml  0%  100%  
+	    New File  		   55984	Microsoft.Owin.Security.Google.dll  0%  100%  
+	    New File  		   36808	Microsoft.Owin.Security.Google.xml  0%  100%  
+	    New File  		   36528	Microsoft.Owin.Security.MicrosoftAccount.dll  0%  100%  
+	    New File  		   21149	Microsoft.Owin.Security.MicrosoftAccount.xml  0%  100%  
+	    New File  		   77488	Microsoft.Owin.Security.OAuth.dll  0%  100%  
+	    New File  		  111514	Microsoft.Owin.Security.OAuth.xml  0%  100%  
+	    New File  		   44208	Microsoft.Owin.Security.Twitter.dll  0%  100%  
+	    New File  		   21961	Microsoft.Owin.Security.Twitter.xml  0%  100%  
+	    New File  		   30791	Microsoft.Owin.Security.xml  0%  100%  
+	    New File  		  166973	Microsoft.Owin.xml  0%   78%  100%  
+	    New File  		   45416	Microsoft.Web.Infrastructure.dll  0%  100%  
+	    New File  		  396288	MiniProfiler.dll  0%   33%   66%   99%  100%  
+	    New File  		   32256	MvcCheckBoxList.dll  0%  100%  
+	    New File  		  424448	MySql.Data.dll  0%   30%   61%   92%  100%  
+	    New File  		  513536	Newtonsoft.Json.dll  0%   25%   51%   76%  100%  
+	    New File  		  478726	Newtonsoft.Json.xml  0%   27%   54%   82%  100%  
+	    New File  		    4608	Owin.dll  0%  100%  
+	    New File  		  299008	Plataforma.dll  0%   43%   87%  100%  
+	    New File  		    8972	Plataforma.dll.config  0%  100%  
+	    New File  		  415232	Plataforma.pdb  0%   31%   63%   94%  100%  
+	    New File  		  889856	Quartz.dll  0%   29%   58%   88%  100%  
+	    New File  		   1.7 m	Quartz.pdb  0%   14%   28%   43%   57%   72%   86%  100%  
+	    New File  		 1039583	Quartz.xml  0%   25%   50%   75%  100%  
+	    New File  		   10240	Semver.dll  0%  100%  
+	    New File  		   19968	SQLCE4Umbraco.dll  0%  100%  
+	    New File  		   22344	stdole.dll  0%  100%  
+	    New File  		  204544	System.Collections.Immutable.dll  0%   64%  100%  
+	    New File  		  470696	System.Data.SqlServerCe.dll  0%   27%   55%   83%  100%  
+	    New File  		  240808	System.Data.SqlServerCe.Entity.dll  0%   54%  100%  
+	    New File  		  185544	System.Net.Http.Formatting.dll  0%   70%  100%  
+	    New File  		  262896	System.Reflection.Metadata.dll  0%   49%   99%  100%  
+	    New File  		  139976	System.Web.Helpers.dll  0%   93%  100%  
+	    New File  		   74850	System.Web.Helpers.xml  0%  100%  
+	    New File  		  471240	System.Web.Http.dll  0%   27%   55%   83%  100%  
+	    New File  		   82120	System.Web.Http.WebHost.dll  0%  100%  
+	    New File  		  566472	System.Web.Mvc.dll  0%   46%   92%  100%  
+	    New File  		  952428	System.Web.Mvc.xml  0%   27%   55%   82%  100%  
+	    New File  		   70864	System.Web.Optimization.dll  0%  100%  
+	    New File  		   50585	System.Web.Optimization.xml  0%  100%  
+	    New File  		  272072	System.Web.Razor.dll  0%   48%   96%  100%  
+	    New File  		  522146	System.Web.Razor.xml  0%   25%   50%   75%  100%  
+	    New File  		   41672	System.Web.WebPages.Deployment.dll  0%  100%  
+	    New File  		    4867	System.Web.WebPages.Deployment.xml  0%  100%  
+	    New File  		  211656	System.Web.WebPages.dll  0%   61%  100%  
+	    New File  		   39624	System.Web.WebPages.Razor.dll  0%  100%  
+	    New File  		   25222	System.Web.WebPages.Razor.xml  0%  100%  
+	    New File  		  234716	System.Web.WebPages.xml  0%   55%  100%  
+	    New File  		  192512	TidyNet.dll  0%   68%  100%  
+	    New File  		   2.4 m	Umbraco.Core.dll  0%   20%   41%   62%   82%  100%  
+	    New File  		   38912	umbraco.DataLayer.dll  0%  100%  
+	    New File  		   2.1 m	umbraco.dll  0%   23%   46%   69%   92%  100%  
+	    New File  		  372736	umbraco.editorControls.dll  0%   35%   70%  100%  
+	    New File  		  131584	umbraco.MacroEngines.dll  0%   99%  100%  
+	    New File  		   98816	Umbraco.ModelsBuilder.dll  0%  100%  
+	    New File  		   38400	umbraco.providers.dll  0%  100%  
+	    New File  		   57344	Umbraco.Web.UI.dll  0%  100%  
+	    New File  		   61440	UmbracoExamine.dll  0%  100%  
+	    New File  		   22528	UrlRewritingNet.UrlRewriter.dll  0%  100%  
+	    New File  		   1.2 m	WebGrease.dll  0%   20%   41%   61%   82%  100%  
+	  New Dir         19	C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\es\
+	    New File  		  374984	EntityFramework.resources.dll  0%   34%   69%  100%  
+	    New File  		   21200	EntityFramework.SqlServer.resources.dll  0%  100%  
+	    New File  		   13984	Microsoft.AspNet.Identity.Core.resources.dll  0%  100%  
+	    New File  		   12960	Microsoft.AspNet.Identity.EntityFramework.resources.dll  0%  100%  
+	    New File  		    9880	Microsoft.AspNet.Identity.Owin.resources.dll  0%  100%  
+	    New File  		   15528	Microsoft.Owin.Host.SystemWeb.resources.dll  0%  100%  
+	    New File  		   12464	Microsoft.Owin.resources.dll  0%  100%  
+	    New File  		   10920	Microsoft.Owin.Security.Facebook.resources.dll  0%  100%  
+	    New File  		   10920	Microsoft.Owin.Security.Google.resources.dll  0%  100%  
+	    New File  		   10928	Microsoft.Owin.Security.MicrosoftAccount.resources.dll  0%  100%  
+	    New File  		   11440	Microsoft.Owin.Security.resources.dll  0%  100%  
+	    New File  		   10920	Microsoft.Owin.Security.Twitter.resources.dll  0%  100%  
+	    New File  		   16592	System.Web.Helpers.resources.dll  0%  100%  
+	    New File  		   39624	System.Web.Mvc.resources.dll  0%  100%  
+	    New File  		   13520	System.Web.Optimization.resources.dll  0%  100%  
+	    New File  		   28360	System.Web.Razor.resources.dll  0%  100%  
+	    New File  		   13512	System.Web.WebPages.Deployment.resources.dll  0%  100%  
+	    New File  		   12496	System.Web.WebPages.Razor.resources.dll  0%  100%  
+	    New File  		   22224	System.Web.WebPages.resources.dll  0%  100%  
+	  New Dir         12	C:\Users\Cesar\Desktop\Plataforma\Plataforma\bin\roslyn\
+	    New File  		   41608	csc.exe  0%  100%  
+	    New File  		   85192	Microsoft.Build.Tasks.CodeAnalysis.dll  0%  100%  
+	    New File  		   3.8 m	Microsoft.CodeAnalysis.CSharp.dll  0%   13%   26%   39%   52%   65%   78%   91%  100%  
+	    New File  		   1.6 m	Microsoft.CodeAnalysis.dll  0%   15%   30%   45%   60%   76%   91%  100%  
+	    New File  		   4.6 m	Microsoft.CodeAnalysis.VisualBasic.dll  0%   10%   21%   32%   42%   53%   64%   74%   85%   96%  100%  
+	    New File  		    6416	Microsoft.CSharp.Core.targets  0%  100%  
+	    New File  		    5846	Microsoft.VisualBasic.Core.targets  0%  100%  
+	    New File  		  204544	System.Collections.Immutable.dll  0%   64%  100%  
+	    New File  		  262896	System.Reflection.Metadata.dll  0%   49%   99%  100%  
+	    New File  		   41608	vbc.exe  0%  100%  
+	    New File  		   63648	VBCSCompiler.exe  0%  100%  
+	    New File  		     563	VBCSCompiler.exe.config  0%  100%  
+
+------------------------------------------------------------------------------
+
+               Total    Copied   Skipped  Mismatch    FAILED    Extras
+    Dirs :         3         2         1         0         0         0
+   Files :       157       157         0         0         0         0
+   Bytes :   59.17 m   59.17 m         0         0         0         0
+   Times :   0:00:03   0:00:03                       0:00:00   0:00:00
+
+
+   Speed :            16725073 Bytes/sec.
+   Speed :             957.016 MegaBytes/min.
+   Ended : Thursday, January 19, 2017 3:12:16 AM
+

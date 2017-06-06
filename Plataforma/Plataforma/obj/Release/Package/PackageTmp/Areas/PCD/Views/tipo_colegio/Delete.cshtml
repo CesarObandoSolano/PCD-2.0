@@ -1,0 +1,32 @@
+﻿@model Plataforma.Areas.PCD.Models.tipo_colegio
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+
+<h2>Eliminar</h2>
+<link rel="stylesheet" type="text/css" href="~/Content/custombootstrap.css" />
+<h3>¿Estas seguro de que quieres eliminar este tipo de colegio?</h3>
+<div class="col-lg-9">
+    <h4>Tipo de Colegio</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tipo de colegio
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipo_institucion)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Volver al indice", "Index")
+        </div>
+    }
+</div>

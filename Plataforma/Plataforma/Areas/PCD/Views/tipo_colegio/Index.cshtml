@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Plataforma.Areas.PCD.Models.tipo_colegio>
+
+@{
+    ViewBag.Title = "Indice";
+}
+
+<h1 class="class-forms"><i class="fa fa-graduation-cap" aria-hidden="true"></i> &nbsp;Tipos de Institución</h1><br><br>
+<div class="col-md-12">
+    <p>
+        @Html.ActionLink("Insertar un nuevo tipo", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                Tipo de colegio
+            </th>
+            <th>Acciones</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tipo_institucion)
+                </td>
+                <td>
+@Html.ActionLink(" ", "Edit", new { id = item.id }, new { @class = "enlace-tabla editar", @title = "Editar" })
+@Html.ActionLink(" ", "Details", new { id = item.id }, new { @class = "enlace-tabla detalles", @title = "Detalles" })
+@Html.ActionLink(" ", "Delete", new { id = item.id }, new { @class = "enlace-tabla eliminar", @title = "Eliminar" })
+                </td>
+            </tr>
+        }
+    </table>
+</div>

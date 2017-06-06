@@ -1,0 +1,81 @@
+﻿@model Plataforma.Areas.PCD.Models.libro
+
+@{
+    ViewBag.Title = "Editar";
+}
+<link rel="stylesheet" type="text/css" href="~/Content/custombootstrap.css" />
+<h2>Editar</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="col-lg-9">
+        <div class="form-horizontal">
+            <h4>Libro</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.id)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.descripcion, "Descripción", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.descripcion, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.descripcion, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            @if (ViewBag.Documentos == null || ViewBag.Documentos.Count == 0)
+            {
+                <p>No hay documentos para mostrar</p>
+            }
+            else
+            {
+                <div class="form-group">
+                    @Html.Label("Documentos Disponibles", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <select id="documentosSeleccionados" class="form-control lista-usuarios" name="documentosSeleccionados" multiple>
+                            @foreach (var item in ViewBag.Documentos)
+                            {
+                                <option value="@item.id">
+                                    <p>@item.titulo</p>
+                                </option>
+                            }
+                        </select>
+                    </div>
+                </div>
+            }
+
+            @if (Model.documentos == null || Model.documentos.Count == 0)
+            {
+                <p>No hay documentos para mostrar</p>
+            }
+            else
+            {
+                <div class="form-group">
+                    @Html.Label("Documentos Seleccionados", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <select id="documentosRemover" class="form-control lista-usuarios" name="documentosRemover" multiple>
+                            @foreach (var item in Model.documentos)
+                            {
+                                <option value="@item.id">
+                                    <p>@item.titulo</p>
+                                </option>
+                            }
+                        </select>
+                    </div>
+                </div>
+            }
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Editar" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-9">
+            @Html.ActionLink("Volver al indice", "Index")
+        </div>
+    </div>
+}
+
+

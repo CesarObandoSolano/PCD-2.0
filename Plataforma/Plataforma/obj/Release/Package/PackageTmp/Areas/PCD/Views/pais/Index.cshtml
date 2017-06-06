@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Plataforma.Areas.PCD.Models.pais>
+
+@{
+    ViewBag.Title = "Indice";
+}
+<head>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script>
+        function Buscar() {
+            var nombre = document.getElementById('nombre').value;
+            $("#tabla-paises").load("/PCD/pais/Index/?nombre=" + nombre + " #tabla-paises");
+            return false;
+        }
+    </script>
+</head>
+
+<div class="col-lg-9">
+    <h2>Paises</h2>
+
+    <p>
+        @Html.ActionLink("Insertar un pais", "Create")
+    </p>
+    <div class="col-lg-9 barra-busqueda form-group">
+        @Html.Label("Buscar:", htmlAttributes: new { @class = "col-md-2" })
+        <input type="text" id="nombre" name="nombre" placeholder="Nombre del país" class="form-control" onkeypress="Buscar()" />
+    </div>
+    <table class="table" id="tabla-paises">
+        <tr>
+            <th>
+                Pais
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.pais1)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.id }) |
+                    @Html.ActionLink("Ver Detalles", "Details", new { id = item.id }) |
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.id })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

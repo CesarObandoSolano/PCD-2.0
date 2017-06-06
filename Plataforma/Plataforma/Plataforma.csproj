@@ -1,0 +1,869 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\UmbracoCms.7.5.7\build\UmbracoCms.props" Condition="Exists('..\packages\UmbracoCms.7.5.7\build\UmbracoCms.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{70620A46-1C53-47FC-AC22-969D95D99AA8}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Plataforma</RootNamespace>
+    <AssemblyName>Plataforma</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper.Net4, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="businesslogic, Version=1.0.6219.11993, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.5.7\lib\businesslogic.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ClientDependency.Core, Version=1.9.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClientDependency.1.9.2\lib\net45\ClientDependency.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ClientDependency.Core.Mvc, Version=1.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClientDependency-Mvc5.1.8.0.0\lib\net45\ClientDependency.Core.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="cms, Version=1.0.6219.11994, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.5.7\lib\cms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Common.Logging, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.3.3.1\lib\net40\Common.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Core.3.3.1\lib\net40\Common.Logging.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="controls, Version=1.0.6219.11996, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.5.7\lib\controls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CookComputing.XmlRpcV2, Version=2.5.0.0, Culture=neutral, PublicKeyToken=a7d6e17aa302004d, processorArchitecture=MSIL">
+      <HintPath>..\packages\xmlrpcnet.2.5.0\lib\net20\CookComputing.XmlRpcV2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Examine, Version=0.1.70.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Examine.0.1.70.0\lib\Examine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.9.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ImageProcessor, Version=2.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ImageProcessor.2.5.1\lib\net45\ImageProcessor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ImageProcessor.Web, Version=4.7.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ImageProcessor.Web.4.7.2\lib\net45\ImageProcessor.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="interfaces, Version=1.0.6219.11988, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.5.7\lib\interfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.10\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.5.7\lib\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Lucene.Net, Version=2.9.4.1, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
+      <HintPath>..\packages\Lucene.Net.2.9.4.1\lib\net40\Lucene.Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MarkdownSharp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Markdown.1.14.4\lib\net45\MarkdownSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationBlocks.Data, Version=1.0.1559.20655, Culture=neutral">
+      <HintPath>..\packages\UmbracoCms.Core.7.5.7\lib\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.Common.1.0.0\lib\net45\Microsoft.CodeAnalysis.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.CSharp.1.0.0\lib\net45\Microsoft.CodeAnalysis.CSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.1.2.0\lib\net45\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MiniProfiler, Version=2.1.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniProfiler.2.1.0\lib\net40\MiniProfiler.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MvcCheckBoxList, Version=1.4.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvcCheckBoxList.1.4.5\lib\net45\MvcCheckBoxList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.9\lib\net45\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Quartz, Version=2.4.1.0, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Quartz.2.4.1\lib\net40\Quartz.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Semver, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\semver.1.1.2\lib\net451\Semver.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SQLCE4Umbraco, Version=1.0.6219.11995, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.5.7\lib\SQLCE4Umbraco.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.1.36.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.1.36\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.5.7\lib\System.Data.SqlServerCe.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.SqlServerCe.Entity, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.5.7\lib\System.Data.SqlServerCe.Entity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reflection.Metadata, Version=1.0.21.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reflection.Metadata.1.0.21\lib\portable-net45+win8\System.Reflection.Metadata.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="TidyNet, Version=1.0.0.0, Culture=neutral">
+      <HintPath>..\packages\UmbracoCms.Core.7.5.7\lib\TidyNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="umbraco, Version=1.0.6219.11997, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.5.7\lib\umbraco.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Umbraco.Core, Version=1.0.6219.11990, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.5.7\lib\Umbraco.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="umbraco.DataLayer, Version=1.0.6219.11993, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.5.7\lib\umbraco.DataLayer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="umbraco.editorControls, Version=1.0.6219.11999, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.5.7\lib\umbraco.editorControls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="umbraco.MacroEngines, Version=1.0.6219.12000, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.5.7\lib\umbraco.MacroEngines.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Umbraco.ModelsBuilder, Version=3.0.5.96, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Umbraco.ModelsBuilder.3.0.5\lib\Umbraco.ModelsBuilder.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="umbraco.providers, Version=1.0.6219.11996, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.5.7\lib\umbraco.providers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Umbraco.Web.UI, Version=1.0.6219.12001, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.5.7\lib\Umbraco.Web.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="UmbracoExamine, Version=0.7.0.11994, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.5.7\lib\UmbracoExamine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="UrlRewritingNet.UrlRewriter, Version=2.0.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UrlRewritingNet.2.0.7\lib\UrlRewritingNet.UrlRewriter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\Constantes.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\MvcStartup.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\PCD\Controllers\ArticulosController.cs" />
+    <Compile Include="Areas\PCD\Controllers\VentasController.cs" />
+    <Compile Include="Areas\PCD\Models\admin.cs">
+      <DependentUpon>ModelPimas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\PCD\Models\Articulo.cs">
+      <DependentUpon>ModelPimas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\PCD\Models\colegio.cs">
+      <DependentUpon>ModelPimas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\PCD\Models\comentario.cs">
+      <DependentUpon>ModelPimas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\PCD\Models\curso.cs">
+      <DependentUpon>ModelPimas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\PCD\Models\documento.cs">
+      <DependentUpon>ModelPimas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\PCD\Models\documentos_curso.cs">
+      <DependentUpon>ModelPimas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\PCD\Models\documentos_profe.cs">
+      <DependentUpon>ModelPimas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\PCD\Models\grupos.cs">
+      <DependentUpon>ModelPimas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\PCD\Models\libro.cs">
+      <DependentUpon>ModelPimas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\PCD\Models\log_visitas.cs">
+      <DependentUpon>ModelPimas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\PCD\Models\log_visitas_cursousuario.cs">
+      <DependentUpon>ModelPimas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\PCD\Models\log_visitas_documentousuario.cs">
+      <DependentUpon>ModelPimas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\PCD\Models\ModelPimas.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelPimas.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\PCD\Models\ModelPimas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelPimas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\PCD\Models\ModelPimas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelPimas.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\PCD\Models\nivele.cs">
+      <DependentUpon>ModelPimas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\PCD\Models\notificacione.cs">
+      <DependentUpon>ModelPimas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\PCD\Models\pais.cs">
+      <DependentUpon>ModelPimas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\PCD\Models\permiso.cs">
+      <DependentUpon>ModelPimas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\PCD\Models\profesores_temporal.cs">
+      <DependentUpon>ModelPimas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\PCD\Models\respuesta.cs">
+      <DependentUpon>ModelPimas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\PCD\Models\role.cs">
+      <DependentUpon>ModelPimas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\PCD\Models\sysdiagram.cs">
+      <DependentUpon>ModelPimas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\PCD\Models\tipo_colegio.cs">
+      <DependentUpon>ModelPimas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\PCD\Models\tipo_documento.cs">
+      <DependentUpon>ModelPimas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\PCD\Models\unidade.cs">
+      <DependentUpon>ModelPimas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\PCD\Models\usuario.cs">
+      <DependentUpon>ModelPimas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\PCD\Models\Venta.cs">
+      <DependentUpon>ModelPimas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\PCD\PCDAreaRegistration.cs" />
+    <Compile Include="Areas\PCD\Controllers\AccountController.cs" />
+    <Compile Include="Areas\PCD\Controllers\colegiosController.cs" />
+    <Compile Include="Areas\PCD\Controllers\cursosController.cs" />
+    <Compile Include="Areas\PCD\Controllers\documentosController.cs" />
+    <Compile Include="Areas\PCD\Controllers\documentos_profeController.cs" />
+    <Compile Include="Areas\PCD\Controllers\gruposController.cs" />
+    <Compile Include="Areas\PCD\Controllers\HomePCDController.cs" />
+    <Compile Include="Areas\PCD\Controllers\librosController.cs" />
+    <Compile Include="Areas\PCD\Controllers\ManageController.cs" />
+    <Compile Include="Areas\PCD\Controllers\nivelesController.cs" />
+    <Compile Include="Areas\PCD\Controllers\NotificarVencimiento.cs" />
+    <Compile Include="Areas\PCD\Controllers\paisController.cs" />
+    <Compile Include="Areas\PCD\Controllers\permisosController.cs" />
+    <Compile Include="Areas\PCD\Controllers\profesores_temporalController.cs" />
+    <Compile Include="Areas\PCD\Controllers\ProgramadorTarea.cs" />
+    <Compile Include="Areas\PCD\Controllers\rolesController.cs" />
+    <Compile Include="Areas\PCD\Controllers\tipo_colegioController.cs" />
+    <Compile Include="Areas\PCD\Controllers\tipo_documentoController.cs" />
+    <Compile Include="Areas\PCD\Controllers\unidadesController.cs" />
+    <Compile Include="Areas\PCD\Controllers\usuariosController.cs" />
+    <Compile Include="Areas\PCD\Controllers\Utilitarios.cs" />
+    <Compile Include="Controllers\ContactenosController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\PCD\Models\AccountViewModels.cs" />
+    <Compile Include="Areas\PCD\Models\DocumentosCurso.cs" />
+    <Compile Include="Areas\PCD\Models\IdentityModels.cs" />
+    <Compile Include="Areas\PCD\Models\ManageViewModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.controller.js" />
+    <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.htm" />
+    <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.resource.js" />
+    <Content Include="Areas\PCD\Models\ModelPimas.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelPimas.edmx</DependentUpon>
+      <LastGenOutput>ModelPimas.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\PCD\Models\ModelPimas.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelPimas.edmx</DependentUpon>
+      <LastGenOutput>ModelPimas.cs</LastGenOutput>
+    </Content>
+    <Content Include="config\grid.editors.config.js" />
+    <Content Include="config\Lang\cs-CZ.user.xml" />
+    <Content Include="config\Lang\da-DK.user.xml" />
+    <Content Include="config\Lang\de-DE.user.xml" />
+    <Content Include="config\Lang\en-GB.user.xml" />
+    <Content Include="config\Lang\en-US.user.xml" />
+    <Content Include="config\Lang\es-ES.user.xml" />
+    <Content Include="config\Lang\fr-FR.user.xml" />
+    <Content Include="config\Lang\he-IL.user.xml" />
+    <Content Include="config\Lang\it-IT.user.xml" />
+    <Content Include="config\Lang\ja-JP.user.xml" />
+    <Content Include="config\Lang\ko-KR.user.xml" />
+    <Content Include="config\Lang\nb-NO.user.xml" />
+    <Content Include="config\Lang\nl-NL.user.xml" />
+    <Content Include="config\Lang\pl-PL.user.xml" />
+    <Content Include="config\Lang\pt-BR.user.xml" />
+    <Content Include="config\Lang\ru-RU.user.xml" />
+    <Content Include="config\Lang\sv-SE.user.xml" />
+    <Content Include="config\Lang\zh-CN.user.xml" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\custombootstrap.css" />
+    <Content Include="Content\miscelaneos.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Recursos\Aplicacion\check.png" />
+    <Content Include="Recursos\Aplicacion\folder_gray_9787.png" />
+    <Content Include="Recursos\Aplicacion\logo.png" />
+    <Content Include="Recursos\Aplicacion\pdf-file_47192.png" />
+    <Content Include="Recursos\Aplicacion\pdf-file_47192peq.png" />
+    <Content Include="Recursos\Aplicacion\pdf_acrobat_9836.png" />
+    <Content Include="Recursos\Aplicacion\trash.png" />
+    <Content Include="Recursos\folder_gray_9787.png" />
+    <Content Include="Recursos\Iconos\desbloquear_usuario-hov.png" />
+    <Content Include="Recursos\Iconos\desbloquear_usuario.png" />
+    <Content Include="Recursos\Iconos\solicitar_libro-hov.png" />
+    <Content Include="Recursos\Iconos\solicitar_libro.png" />
+    <Content Include="Recursos\logo-peq.png" />
+    <Content Include="Recursos\logo.png" />
+    <Content Include="Recursos\pdf-file_47192peq.png" />
+    <Content Include="Recursos\pdf-file_47192.png" />
+    <Content Include="Recursos\pdf_acrobat_9836.png" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\PCD\Views\web.config" />
+    <Content Include="ClassDiagram1.cd" />
+    <Content Include="Areas\PCD\Views\_ViewStart.cshtml" />
+    <Content Include="config\imageprocessor\security.config" />
+    <Content Include="config\imageprocessor\processing.config" />
+    <Content Include="config\imageprocessor\cache.config" />
+    <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
+    <Content Include="config\UrlRewriting.config" />
+    <Content Include="config\umbracoSettings.config" />
+    <Content Include="config\trees.config" />
+    <Content Include="config\tinyMceConfig.config" />
+    <Content Include="config\scripting.config" />
+    <Content Include="config\metablogConfig.config" />
+    <Content Include="config\log4net.config" />
+    <Content Include="config\FileSystemProviders.config" />
+    <Content Include="config\feedProxy.config" />
+    <Content Include="config\ExamineSettings.config" />
+    <Content Include="config\ExamineIndex.config" />
+    <Content Include="config\EmbeddedMedia.config" />
+    <Content Include="config\Dashboard.config" />
+    <Content Include="config\ClientDependency.config" />
+    <Content Include="config\BaseRestExtensions.config" />
+    <Content Include="config\applications.config" />
+    <Content Include="config\404handlers.config" />
+    <Content Include="Areas\PCD\Views\Articulos\Create.cshtml" />
+    <Content Include="Areas\PCD\Views\Articulos\Delete.cshtml" />
+    <Content Include="Areas\PCD\Views\Articulos\Details.cshtml" />
+    <Content Include="Areas\PCD\Views\Articulos\Edit.cshtml" />
+    <Content Include="Areas\PCD\Views\Articulos\Index.cshtml" />
+    <Content Include="Areas\PCD\Views\Ventas\Create.cshtml" />
+    <Content Include="Areas\PCD\Views\Ventas\Delete.cshtml" />
+    <Content Include="Areas\PCD\Views\Ventas\Details.cshtml" />
+    <Content Include="Areas\PCD\Views\Ventas\Edit.cshtml" />
+    <Content Include="Areas\PCD\Views\Ventas\Index.cshtml" />
+    <Content Include="Areas\PCD\Views\usuarios\CambiarPasswordUsuario.cshtml" />
+    <Content Include="Areas\PCD\Views\usuarios\UsuarioIncorrecto.cshtml" />
+    <Content Include="Areas\PCD\Views\HomePCD\Index.cshtml" />
+    <Content Include="Areas\PCD\Views\HomePCD\About.cshtml" />
+    <Content Include="Areas\PCD\Views\HomePCD\Contact.cshtml" />
+    <Content Include="Areas\PCD\Views\documentos\AdministrarNivelesDocumento.cshtml" />
+    <EntityDeploy Include="Areas\PCD\Models\ModelPimas.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelPimas.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\PCD\Models\ModelPimas.edmx.diagram">
+      <DependentUpon>ModelPimas.edmx</DependentUpon>
+    </Content>
+    <None Include="job_scheduling_data_2_0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Media\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Properties\PublishProfiles\Cesar Obando.pubxml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\CargarArchivos.js" />
+    <None Include="Scripts\jquery-1.12.4.intellisense.js" />
+    <Content Include="Scripts\jquery-1.12.4.js" />
+    <Content Include="Scripts\jquery-1.12.4.min.js" />
+    <Content Include="Scripts\jquery-1.12.4.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\jquery.table.hpaging.js" />
+    <Content Include="Scripts\jquery.table.hpaging.min.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Areas\PCD\Views\Shared\Error.cshtml" />
+    <Content Include="Areas\PCD\Views\Home\About.cshtml" />
+    <Content Include="Areas\PCD\Views\Home\Contact.cshtml" />
+    <Content Include="Areas\PCD\Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Areas\PCD\Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Areas\PCD\Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Areas\PCD\Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Areas\PCD\Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Areas\PCD\Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Areas\PCD\Views\Account\Login.cshtml" />
+    <Content Include="Areas\PCD\Views\Account\Register.cshtml" />
+    <Content Include="Areas\PCD\Views\Account\ResetPassword.cshtml" />
+    <Content Include="Areas\PCD\Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Areas\PCD\Views\Account\SendCode.cshtml" />
+    <Content Include="Areas\PCD\Views\Account\VerifyCode.cshtml" />
+    <Content Include="Areas\PCD\Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Areas\PCD\Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Areas\PCD\Views\Manage\Index.cshtml" />
+    <Content Include="Areas\PCD\Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Areas\PCD\Views\Manage\SetPassword.cshtml" />
+    <Content Include="Areas\PCD\Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Areas\PCD\Views\Shared\Lockout.cshtml" />
+    <Content Include="Areas\PCD\Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Areas\PCD\Views\Home\Index.cshtml" />
+    <Content Include="Areas\PCD\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\PCD\Views\documentos\Create.cshtml" />
+    <Content Include="Areas\PCD\Views\documentos\Delete.cshtml" />
+    <Content Include="Areas\PCD\Views\documentos\Details.cshtml" />
+    <Content Include="Areas\PCD\Views\documentos\Edit.cshtml" />
+    <Content Include="Areas\PCD\Views\documentos\Index.cshtml" />
+    <Content Include="Areas\PCD\Views\pais\Create.cshtml" />
+    <Content Include="Areas\PCD\Views\pais\Delete.cshtml" />
+    <Content Include="Areas\PCD\Views\pais\Details.cshtml" />
+    <Content Include="Areas\PCD\Views\pais\Edit.cshtml" />
+    <Content Include="Areas\PCD\Views\pais\Index.cshtml" />
+    <Content Include="Areas\PCD\Views\colegios\Create.cshtml" />
+    <Content Include="Areas\PCD\Views\colegios\Delete.cshtml" />
+    <Content Include="Areas\PCD\Views\colegios\Details.cshtml" />
+    <Content Include="Areas\PCD\Views\colegios\Edit.cshtml" />
+    <Content Include="Areas\PCD\Views\colegios\Index.cshtml" />
+    <Content Include="Areas\PCD\Views\niveles\Create.cshtml" />
+    <Content Include="Areas\PCD\Views\niveles\Delete.cshtml" />
+    <Content Include="Areas\PCD\Views\niveles\Details.cshtml" />
+    <Content Include="Areas\PCD\Views\niveles\Edit.cshtml" />
+    <Content Include="Areas\PCD\Views\niveles\Index.cshtml" />
+    <Content Include="Areas\PCD\Views\tipo_documento\Create.cshtml" />
+    <Content Include="Areas\PCD\Views\tipo_documento\Delete.cshtml" />
+    <Content Include="Areas\PCD\Views\tipo_documento\Details.cshtml" />
+    <Content Include="Areas\PCD\Views\tipo_documento\Edit.cshtml" />
+    <Content Include="Areas\PCD\Views\tipo_documento\Index.cshtml" />
+    <Content Include="Areas\PCD\Views\grupos\Create.cshtml" />
+    <Content Include="Areas\PCD\Views\grupos\Delete.cshtml" />
+    <Content Include="Areas\PCD\Views\grupos\Details.cshtml" />
+    <Content Include="Areas\PCD\Views\grupos\Edit.cshtml" />
+    <Content Include="Areas\PCD\Views\grupos\Index.cshtml" />
+    <Content Include="Areas\PCD\Views\cursos\Create.cshtml" />
+    <Content Include="Areas\PCD\Views\cursos\Delete.cshtml" />
+    <Content Include="Areas\PCD\Views\cursos\Details.cshtml" />
+    <Content Include="Areas\PCD\Views\cursos\Edit.cshtml" />
+    <Content Include="Areas\PCD\Views\cursos\Index.cshtml" />
+    <Content Include="Areas\PCD\Views\permisos\Create.cshtml" />
+    <Content Include="Areas\PCD\Views\permisos\Delete.cshtml" />
+    <Content Include="Areas\PCD\Views\permisos\Details.cshtml" />
+    <Content Include="Areas\PCD\Views\permisos\Edit.cshtml" />
+    <Content Include="Areas\PCD\Views\permisos\Index.cshtml" />
+    <Content Include="Areas\PCD\Views\roles\Create.cshtml" />
+    <Content Include="Areas\PCD\Views\roles\Delete.cshtml" />
+    <Content Include="Areas\PCD\Views\roles\Details.cshtml" />
+    <Content Include="Areas\PCD\Views\roles\Edit.cshtml" />
+    <Content Include="Areas\PCD\Views\roles\Index.cshtml" />
+    <Content Include="Areas\PCD\Views\cursos\AgregarDocumentos.cshtml" />
+    <Content Include="Areas\PCD\Views\cursos\VerDocumentos.cshtml" />
+    <Content Include="Areas\PCD\Views\usuarios\Create.cshtml" />
+    <Content Include="Areas\PCD\Views\usuarios\Delete.cshtml" />
+    <Content Include="Areas\PCD\Views\usuarios\Details.cshtml" />
+    <Content Include="Areas\PCD\Views\usuarios\Edit.cshtml" />
+    <Content Include="Areas\PCD\Views\usuarios\Index.cshtml" />
+    <Content Include="Areas\PCD\Views\profesores_temporal\Create.cshtml" />
+    <Content Include="Areas\PCD\Views\profesores_temporal\Delete.cshtml" />
+    <Content Include="Areas\PCD\Views\profesores_temporal\Details.cshtml" />
+    <Content Include="Areas\PCD\Views\profesores_temporal\Edit.cshtml" />
+    <Content Include="Areas\PCD\Views\profesores_temporal\Index.cshtml" />
+    <Content Include="Areas\PCD\Views\documentos\VerDocumento.cshtml" />
+    <Content Include="Areas\PCD\Views\cursos\VerCurso.cshtml" />
+    <Content Include="Areas\PCD\Views\documentos_profe\Create.cshtml" />
+    <Content Include="Areas\PCD\Views\documentos_profe\Delete.cshtml" />
+    <Content Include="Areas\PCD\Views\documentos_profe\Details.cshtml" />
+    <Content Include="Areas\PCD\Views\documentos_profe\Edit.cshtml" />
+    <Content Include="Areas\PCD\Views\documentos_profe\Index.cshtml" />
+    <Content Include="Areas\PCD\Views\cursos\MatricularUsuarios.cshtml" />
+    <Content Include="Areas\PCD\Views\documentos_profe\VerDocumento.cshtml" />
+    <Content Include="Areas\PCD\Views\usuarios\CambiarPassword.cshtml" />
+    <Content Include="Areas\PCD\Views\unidades\Create.cshtml" />
+    <Content Include="Areas\PCD\Views\unidades\Delete.cshtml" />
+    <Content Include="Areas\PCD\Views\unidades\Details.cshtml" />
+    <Content Include="Areas\PCD\Views\unidades\Edit.cshtml" />
+    <Content Include="Areas\PCD\Views\unidades\Index.cshtml" />
+    <Content Include="Areas\PCD\Views\cursos\AdministrarCurso.cshtml" />
+    <Content Include="Areas\PCD\Views\cursos\IndiceCursos.cshtml" />
+    <Content Include="Areas\PCD\Views\usuarios\EnviarNotificaciones.cshtml" />
+    <Content Include="Areas\PCD\Views\libros\Create.cshtml" />
+    <Content Include="Areas\PCD\Views\libros\Delete.cshtml" />
+    <Content Include="Areas\PCD\Views\libros\Details.cshtml" />
+    <Content Include="Areas\PCD\Views\libros\Edit.cshtml" />
+    <Content Include="Areas\PCD\Views\libros\Index.cshtml" />
+    <Content Include="Areas\PCD\Views\Account\LoginForm.cshtml" />
+    <Content Include="Areas\PCD\Views\Shared\SolicitudInscripcion.cshtml" />
+    <Content Include="Areas\PCD\Views\profesores_temporal\SolicitudInscripcion.cshtml" />
+    <Content Include="Areas\PCD\Views\tipo_colegio\Create.cshtml" />
+    <Content Include="Areas\PCD\Views\tipo_colegio\Delete.cshtml" />
+    <Content Include="Areas\PCD\Views\tipo_colegio\Details.cshtml" />
+    <Content Include="Areas\PCD\Views\tipo_colegio\Edit.cshtml" />
+    <Content Include="Areas\PCD\Views\tipo_colegio\Index.cshtml" />
+    <Content Include="Areas\PCD\Views\usuarios\AdministrarInstitucionesUsuario.cshtml" />
+    <Content Include="Areas\PCD\Views\usuarios\AdministrarNivelesUsuario.cshtml" />
+    <Content Include="Areas\PCD\Views\usuarios\GenerarUsuarios.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Rte.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Media.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Macro.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Embed.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Base.cshtml" />
+    <Content Include="Views\Partials\Grid\Bootstrap3.cshtml" />
+    <Content Include="Views\Partials\Grid\Bootstrap3-Fluid.cshtml" />
+    <Content Include="Views\Partials\Grid\Bootstrap2.cshtml" />
+    <Content Include="Views\Partials\Grid\Bootstrap2-Fluid.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\frontpage.cshtml" />
+    <Content Include="Views\Layout.cshtml" />
+    <Content Include="Views\Basket.cshtml" />
+    <Content Include="Views\BillingShippingAddress.cshtml" />
+    <Content Include="Views\Catalog.cshtml" />
+    <Content Include="Views\Confirmation.cshtml" />
+    <Content Include="Views\Payment.cshtml" />
+    <Content Include="Views\Preview.cshtml" />
+    <Content Include="Views\Product.cshtml" />
+    <Content Include="Views\Search.cshtml" />
+    <Content Include="Views\Shipping.cshtml" />
+    <Content Include="Views\uCommerceEmail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+    <Folder Include="Recursos\Documentos\" />
+    <Folder Include="Scripts\paginador\" />
+    <Folder Include="ViewerJS\" />
+    <Folder Include="Views\Contactenos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <Target Name="EnsureContentOnViews" BeforeTargets="BeforeBuild">
+    <ItemGroup>
+      <Filtered Include="@(None)" Condition="'%(Extension)' == '.cshtml'" />
+    </ItemGroup>
+    <Warning Condition="'@(Filtered)'!=''" Code="CSHTML" File="$(MSBuildProjectDirectory)\%(Filtered.Identity)" Text="View is not set to [BuildAction:Content]" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3617</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:3617/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\UmbracoCms.7.5.7\build\UmbracoCms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\UmbracoCms.7.5.7\build\UmbracoCms.props'))" />
+    <Error Condition="!Exists('..\packages\UmbracoCms.7.5.7\build\UmbracoCms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\UmbracoCms.7.5.7\build\UmbracoCms.targets'))" />
+  </Target>
+  <Import Project="..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
+  <Import Project="..\packages\UmbracoCms.7.5.7\build\UmbracoCms.targets" Condition="Exists('..\packages\UmbracoCms.7.5.7\build\UmbracoCms.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
