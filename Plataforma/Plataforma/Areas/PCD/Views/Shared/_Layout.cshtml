@@ -75,188 +75,192 @@
                         <div class="col-sm-3 col-md-3">
                             <div class="well sidebar-nav left-nav-sec" id="main-nav">
 
-                                <h4>Menú</h4>
+                                <h4>Menú&nbsp;&nbsp;<input id="mostrarmenu" class="mostrarmenu" type="button"></h4>
                                 <ul class="plataforma">
                                     <li class="user">
                                         <span><i class="fa fa-user-circle" aria-hidden="true"></i> &nbsp;Bienvenido @User.Identity.GetUserName()</span>
                                     </li>
-                                    <li>
-                                        <a href="~/PCD/usuarios/details/@usuario.id"> <span><i class="fa fa-book" aria-hidden="true"></i> &nbsp;Ver Perfil</span> </a>
-                                    </li>
-                                    <li>
-                                        <a href="~/PCD/usuarios/edit/@usuario.id">
-                                            <span>
-                                                <i class="fa fa-pencil" aria-hidden="true"></i>
-                                                &nbsp;Editar
-                                            </span>
-                                        </a>
-                                    </li>
-                                    @if (usuario.roles.FirstOrDefault().rol.Equals(Plataforma.App_Start.Constantes.ADMINISTRADOR))
-                                    {
-                                        <li>
-                                            <a href="~/PCD/colegios/Index">
-                                                <span>
-                                                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
-                                                    &nbsp;Colegios
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="~/PCD/cursos/Index">
-                                                <span>
-                                                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
-                                                    &nbsp;Cursos
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="~/PCD/documentos/Index">
-                                                <span>
-                                                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
-                                                    &nbsp;Documentos
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="~/PCD/grupos/Index">
-                                                <span>
-                                                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
-                                                    &nbsp;Grupos
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="~/PCD/libros/Index">
-                                                <span>
-                                                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
-                                                    &nbsp;Libros
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="~/PCD/niveles/Index">
-                                                <span>
-                                                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
-                                                    &nbsp;Niveles
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="~/PCD/pais/Index">
-                                                <span>
-                                                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
-                                                    &nbsp;Paises
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="~/PCD/permisos/Index">
-                                                <span>
-                                                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
-                                                    &nbsp;Permisos
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="~/PCD/profesores_temporal/Index">
-                                                <span>
-                                                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
-                                                    &nbsp;Profesores
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="~/PCD/roles/Index">
-                                                <span>
-                                                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
-                                                    &nbsp;Roles
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="~/PCD/tipo_colegio/Index">
-                                                <span>
-                                                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
-                                                    &nbsp;Tipos de Colegio
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="~/PCD/tipo_documento/Index">
-                                                <span>
-                                                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
-                                                    &nbsp;Tipos de Documento
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="~/PCD/unidades/Index">
-                                                <span>
-                                                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
-                                                    &nbsp;Unidades
-                                                </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="~/PCD/usuarios/Index">
-                                                <span>
-                                                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
-                                                    &nbsp;Usuarios
-                                                </span>
-                                            </a>
-                                        </li>
 
-                                    }
-                                    else if (usuario.roles.FirstOrDefault().rol.Equals(Plataforma.App_Start.Constantes.PROFESOR_PREMIUM))
-                                    {
-                                        <li>
-                                            <a href="~/PCD/cursos/IndiceCursos">
-                                                <span>
-                                                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
-                                                    &nbsp;Administrar Cursos
-                                                </span>
-                                            </a>
-                                        </li>
+                                    <div id='menuLateral'>
 
                                         <li>
-                                            <a href="~/PCD/documentos_profe/Index">
-                                                <span>
-                                                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
-                                                    &nbsp;Documentos
-                                                </span>
-                                            </a>
+                                            <a href="~/PCD/usuarios/details/@usuario.id"> <span><i class="fa fa-book" aria-hidden="true"></i> &nbsp;Ver Perfil</span> </a>
                                         </li>
-
                                         <li>
-                                            <a href="~/PCD/libros/Index">
+                                            <a href="~/PCD/usuarios/edit/@usuario.id">
                                                 <span>
-                                                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
-                                                    &nbsp;Libros
+                                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                                    &nbsp;Editar
                                                 </span>
                                             </a>
                                         </li>
-                                    }
-                                    <li>
-                                        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                                        @if (usuario.roles.FirstOrDefault().rol.Equals(Plataforma.App_Start.Constantes.ADMINISTRADOR))
                                         {
-                                            @Html.AntiForgeryToken()
-                                            <a class="cerrar" href="javascript:document.getElementById('logoutForm').submit()">
-                                                <span>
-                                                    <i class="fa fa-window-close" aria-hidden="true"></i>
-                                                    &nbsp;Cerrar Sesión
-                                                </span>
-                                            </a>
+                                            <li>
+                                                <a href="~/PCD/colegios/Index">
+                                                    <span>
+                                                        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                                        &nbsp;Colegios
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="~/PCD/cursos/Index">
+                                                    <span>
+                                                        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                                        &nbsp;Cursos
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="~/PCD/documentos/Index">
+                                                    <span>
+                                                        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                                        &nbsp;Documentos
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="~/PCD/grupos/Index">
+                                                    <span>
+                                                        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                                        &nbsp;Grupos
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="~/PCD/libros/Index">
+                                                    <span>
+                                                        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                                        &nbsp;Libros
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="~/PCD/niveles/Index">
+                                                    <span>
+                                                        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                                        &nbsp;Niveles
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="~/PCD/pais/Index">
+                                                    <span>
+                                                        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                                        &nbsp;Paises
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="~/PCD/permisos/Index">
+                                                    <span>
+                                                        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                                        &nbsp;Permisos
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="~/PCD/profesores_temporal/Index">
+                                                    <span>
+                                                        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                                        &nbsp;Profesores
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="~/PCD/roles/Index">
+                                                    <span>
+                                                        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                                        &nbsp;Roles
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="~/PCD/tipo_colegio/Index">
+                                                    <span>
+                                                        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                                        &nbsp;Tipos de Colegio
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="~/PCD/tipo_documento/Index">
+                                                    <span>
+                                                        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                                        &nbsp;Tipos de Documento
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="~/PCD/unidades/Index">
+                                                    <span>
+                                                        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                                        &nbsp;Unidades
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="~/PCD/usuarios/Index">
+                                                    <span>
+                                                        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                                        &nbsp;Usuarios
+                                                    </span>
+                                                </a>
+                                            </li>
+
                                         }
-                                    </li>
-                                </ul>
+                                        else if (usuario.roles.FirstOrDefault().rol.Equals(Plataforma.App_Start.Constantes.PROFESOR_PREMIUM))
+                                        {
+                                            <li>
+                                                <a href="~/PCD/cursos/IndiceCursos">
+                                                    <span>
+                                                        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                                        &nbsp;Administrar Cursos
+                                                    </span>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="~/PCD/documentos_profe/Index">
+                                                    <span>
+                                                        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                                        &nbsp;Documentos
+                                                    </span>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="~/PCD/libros/Index">
+                                                    <span>
+                                                        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                                        &nbsp;Libros
+                                                    </span>
+                                                </a>
+                                            </li>
+                                        }
+                                    </div>
+                                        <li>
+                                            @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                                            {
+                                                @Html.AntiForgeryToken()
+                                                <a class="cerrar" href="javascript:document.getElementById('logoutForm').submit()">
+                                                    <span>
+                                                        <i class="fa fa-window-close" aria-hidden="true"></i>
+                                                        &nbsp;Cerrar Sesión
+                                                    </span>
+                                                </a>
+                                            }
+                                        </li>
+                                    </ul>
 
 
-                                @if (usuario.roles.FirstOrDefault().rol.Equals(Plataforma.App_Start.Constantes.PROFESOR_PREMIUM)
-|| usuario.roles.FirstOrDefault().rol.Equals(Plataforma.App_Start.Constantes.ESTUDIANTE_PREMIUM))
+                                @if (usuario.roles.FirstOrDefault().rol.Equals(Plataforma.App_Start.Constantes.PROFESOR_PREMIUM) || usuario.roles.FirstOrDefault().rol.Equals(Plataforma.App_Start.Constantes.ESTUDIANTE_PREMIUM))
                                 {
-                                    <h4>Grupos</h4>
-                                    if (usuario.grupos.Count == 0)
-                                    {
+                                    <h4>Grupos&nbsp;&nbsp;<input id="mostrarMenuGrupos" class="mostrarmenu" type="button"></h4>
+                                    <div id='menuLateralGrupos'>
+                                        if (usuario.grupos.Count == 0)
+                                        {
                                         <ul class="plataforma">
                                             <li>
                                                 <span class="disabled blocked">
@@ -265,9 +269,9 @@
                                                 </span>
                                             </li>
                                         </ul>
-                                    }
-                                    else
-                                    {
+                                        }
+                                        else
+                                        {
                                         <ul class="plataforma">
                                             @foreach (var grupo in usuario.grupos)
                                             {
@@ -281,61 +285,73 @@
                                                 </li>
                                             }
                                         </ul>
-                                    }
+
+                                        }
+                                    </div>
 
                                     if (usuario.cursos.Where(c => c.grupos.Where(g => g.usuarios.Contains(usuario)).Count() <= 0).Count() > 0)
                                     {
                                         List<Plataforma.Areas.PCD.Models.curso>
-                                            cursos = usuario.cursos.Where(c => c.grupos.Where(g => g.usuarios.Contains(usuario)).Count() <= 0).ToList();
-                                        <h4>Cursos</h4>
-                                        <ul class="plataforma">
-                                            @foreach (var curso in cursos)
-                                            {
-                                                <li>
-                                                    <a href="~/PCD/cursos/VerCurso/@curso.id">
-                                                        <span>
-                                                            <i class="fa fa-unlock-alt" aria-hidden="true"></i>
-                                                            &nbsp;@curso.curso1
-                                                        </span>
-                                                    </a>
-                                                </li>
-                                            }
-                                        </ul>
+                                        cursos = usuario.cursos.Where(c => c.grupos.Where(g => g.usuarios.Contains(usuario)).Count() <= 0).ToList();
+                                        <h4>Cursos&nbsp;&nbsp;<input id="mostrarMenuCursos" class="mostrarmenu" type="button"></h4>
+                                        <div id='menuLateralCursos'>
 
+                                            <ul class="plataforma">
+                                                @foreach (var curso in cursos)
+                                                {
+                                                    <li>
+                                                        <a href="~/PCD/cursos/VerCurso/@curso.id">
+                                                            <span>
+                                                                <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                                                &nbsp;@curso.curso1
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                }
+                                            </ul>
+                                            </div>
                                     }
                                 }
                                 else
                                 {
-                                    <h4>Cursos</h4>
+                                    <h4>Cursos&nbsp;&nbsp;<input id="mostrarMenuCursos" class="mostrarmenu" type="button"></h4>
+
                                     if (usuario.cursos.Count == 0)
                                     {
-                                        <ul class="plataforma">
-                                            <li>
-                                                <span class="disabled blocked">
-                                                    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-                                                    Aún no estas registrado en ningun curso.
-                                                </span>
-                                            </li>
-                                        </ul>
+                                        <div id='menuLateralCursos'>
+                                            <ul class="plataforma">
+                                                <li>
+                                                    <span class="disabled blocked">
+                                                        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                                                        Aún no estas registrado en ningun curso.
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                            </div>
                                     }
                                     else
                                     {
-                                        <ul class="plataforma">
-                                            @foreach (var curso in usuario.cursos)
-                                            {
-                                                <li>
-                                                    <a href="~/PCD/cursos/VerCurso/@curso.id">
-                                                        <span>
-                                                            <i class="fa fa-unlock-alt" aria-hidden="true"></i>
-                                                            &nbsp;@curso.curso1
-                                                        </span>
-                                                    </a>
-                                                </li>
+                                        <div id='menuLateralCursos'>
+                                            <ul class="plataforma">
+                                                @foreach (var curso in usuario.cursos)
+                                                {
+                                                    <li>
+                                                        <a href="~/PCD/cursos/VerCurso/@curso.id">
+                                                            <span>
+                                                                <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                                                &nbsp;@curso.curso1
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                }
+                                            </ul>
+                                            </div>
                                             }
-                                        </ul>
-                                    }
-                                }
-                            </div>
+
+                                            }
+
+
+                                        </div>
                         </div>
 
 
@@ -511,6 +527,7 @@
     <script src="~/scripts/assets/touchSwipe/jquery.touchSwipe.min.js"></script>
     <script src="~/scripts/assets/viewportChecker/jquery.viewportchecker.js"></script>
     <script src="~/scripts/assets/theme/js/script.js"></script>
+    <script src="~/scripts/comprimir-menu.js"></script>
     
     <input name="animation" type="hidden">
 </body>

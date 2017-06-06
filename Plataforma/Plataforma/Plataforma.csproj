@@ -555,6 +555,7 @@
     <Content Include="Recursos\folder_gray_9787.png" />
     <Content Include="Recursos\Iconos\desbloquear_usuario-hov.png" />
     <Content Include="Recursos\Iconos\desbloquear_usuario.png" />
+    <Content Include="Recursos\Iconos\mostrarmenu1.png" />
     <Content Include="Recursos\Iconos\solicitar_libro-hov.png" />
     <Content Include="Recursos\Iconos\solicitar_libro.png" />
     <Content Include="Recursos\logo-peq.png" />
@@ -625,6 +626,7 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\CargarArchivos.js" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
+    <Content Include="Scripts\comprimir-menu.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
     <Content Include="Scripts\jquery-1.12.4.min.js" />
     <Content Include="Scripts\jquery-1.12.4.min.map" />
