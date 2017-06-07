@@ -8,7 +8,7 @@
     <div id="login" class="login-pltaforma">
         <h1 class="class-forms">
             <i class="fa fa-key" aria-hidden="true"></i>
-            &nbsp;Iniciar sesión.
+            Inicia sesión
         </h1>
         <div class="row">
             <div class="col-lg-12">
@@ -20,26 +20,27 @@
                                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                                 <br>
                                 <div class="form-group">
-                                    <label class="col-md-4 control-label" for="Email">
+                                    
+                                    <label class="col-xs-6 col-md-6 control-label" for="Email">
                                         <i class="fa fa-user" aria-hidden="true"></i>
                                         &nbsp;Usuario
                                     </label>
-                                    <div class="col-md-8">
+                                    <div class="col-xs-6 col-md-6">
                                         @Html.TextBoxFor(m => m.Email, new { @id = "Email", @class = "form-control", @type = "text", @value = "", @autocomplete = "off", @style = "background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=&quot;);" })
                                         @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-md-4 control-label" for="Password">
+                                    <label class="control-label col-xs-6 col-md-6" for="Password">
                                         <i class="fa fa-key" aria-hidden="true"></i>
                                         &nbsp;Contraseña
                                     </label>
-                                    <div class="col-md-8">
+                                    <div class="col-xs-6 col-md-6">
                                         @Html.PasswordFor(m => m.Password, new { @class = "form-control", @id = "Password", @type = "password", @autocomplete = "off", @style = "background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=&quot;); cursor: auto;" })
                                         @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group col-md-12">
                                     <div class="col-md-offset-4 col-md-8">
                                         <input type="submit" value="Iniciar sesión" class="btn btn-primary">
                                     </div>
