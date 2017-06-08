@@ -9,7 +9,9 @@
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal col-lg-9">
-        <h1 class="class-forms"><i class="fa fa-graduation-cap" aria-hidden="true"></i> &nbsp;Pais</h1><br><br>
+        <h1 class="class-forms"><i class="fa fa-graduation-cap" aria-hidden="true"></i> &nbsp;Pais</h1>
+        <h6>Agregue la información correspondiente al país</h6>
+        <br><br>
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.pais1, "Pais", htmlAttributes: new { @class = "control-label col-md-4" })

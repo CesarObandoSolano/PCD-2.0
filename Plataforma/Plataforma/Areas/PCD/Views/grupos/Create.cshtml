@@ -9,7 +9,9 @@
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal col-lg-9">
-        <h1 class="class-forms"><i class="fa fa-graduation-cap" aria-hidden="true"></i> &nbsp;Grupo</h1><br><br>
+        <h1 class="class-forms"><i class="fa fa-graduation-cap" aria-hidden="true"></i> &nbsp;Grupo</h1>
+        <h6>Agregue la información correspondiente al grupo</h6>
+        <br><br>
         @Html.ValidationSummary(true, "No se pudo insertar el grupo", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.grupo, "Grupo", htmlAttributes: new { @class = "control-label col-md-4" })

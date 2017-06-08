@@ -14,7 +14,9 @@
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal col-lg-9">
-        <h1 class="class-forms"><i class="fa fa-graduation-cap" aria-hidden="true"></i> &nbsp;Documento</h1><br><br>
+        <h1 class="class-forms"><i class="fa fa-graduation-cap" aria-hidden="true"></i> &nbsp;Documento</h1>
+        <h6>Edite la información necesaria del documento</h6>
+        <br><br>
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.id)
         <input type="hidden" id="unidadAnterior" name="unidadAnterior" value="@Model.unidad">
