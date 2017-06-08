@@ -541,6 +541,7 @@
     <Content Include="Content\custombootstrap.css" />
     <Content Include="Content\miscelaneos.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="css\assets\images\logo-home-129x128.png" />
     <Content Include="default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />

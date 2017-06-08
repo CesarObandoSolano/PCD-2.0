@@ -71,11 +71,11 @@ namespace Plataforma.Areas.PCD.Controllers
                     //    usuarios.Where(u => u.id == item.id).FirstOrDefault().niveles.Add(nivelTemp);
                     //}
 
-                    //usuarios =
-                    //    usuarios.OrderBy(u => u.roles.FirstOrDefault().rol).
-                    //    ThenBy(u => u.nombre + " " + u.apellidos).ToList();
-                        //ThenBy(u => u.colegios.FirstOrDefault().nombre).
-                        //ThenBy(u => u.niveles.FirstOrDefault().nivel).ToList();
+                    usuarios =
+                        usuarios.OrderBy(u => u.roles.FirstOrDefault().rol).
+                        ThenBy(u => u.nombre + " " + u.apellidos).ToList();
+                    //ThenBy(u => u.colegios.FirstOrDefault().nombre).
+                    //ThenBy(u => u.niveles.FirstOrDefault().nivel).ToList();
                     ViewBag.TotalVisitas = db.log_visitas.Count();
                     ViewBag.roles = db.roles;
                     ViewBag.colegios = db.colegios;
@@ -195,7 +195,14 @@ namespace Plataforma.Areas.PCD.Controllers
                 notificacion.id_usuario = usuario.id;
                 notificacion.fecha_hora = DateTime.Now;
                 usuario.notificacione = notificacion;
-                cuerpo = "Usuario = " + usuario.username + " Password = " + usuario.password;
+                cuerpo = "Estimado/a " +usuario.nombre + " " + usuario.apellidos +
+                         "</br></br>Le informamos que ya está habilitado su usuario para ingresar a la Plataforma de Contenidos Digitales de la Editorial PIMAS."+
+                         "</br>Su información de acceso es la siguiente:"+
+                         "</br></br>Usuario: "+usuario.username+
+                         "</br>Contraseña: "+usuario.password+
+                         "</br></br>Para ingresar puede dirigirse al siguiente vínculo:</br>"+
+                         "<a href='https://www.pimas.co.cr/PCD'>https://www.pimas.co.cr/PCD</a>" +
+                         "</br>Estamos para servirle.";
                 usuario.password = Utilitarios.EncodePassword(string.Concat(usuario.username, usuario.password));
                 db.usuarios.Add(usuario);
                 db.SaveChanges();
@@ -948,6 +955,7 @@ namespace Plataforma.Areas.PCD.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         public ActionResult SolicitudInscripcion()
         {
             return View();
