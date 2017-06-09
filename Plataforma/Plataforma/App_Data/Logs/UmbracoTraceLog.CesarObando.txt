@@ -313,3 +313,31 @@ _shutDownStack=   at System.Environment.GetStackTrace(Exception e, Boolean needF
  2017-06-07 23:27:51,095 [P15008/D3/T56] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
  2017-06-07 23:27:52,125 [P15008/D3/T56] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 4809ms)
  2017-06-07 23:27:55,430 [P15008/D3/T104] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:3617/umbraco (UmbracoModule request)
+ 2017-06-08 22:07:59,307 [P15008/D3/T238] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Terminating
+ 2017-06-08 22:07:59,307 [P15008/D3/T238] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Waiting for tasks to complete
+ 2017-06-08 22:07:59,310 [P15008/D3/T238] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [Umbraco.Web.Scheduling.IBackgroundTask] Tasks completed, terminated
+ 2017-06-08 22:07:59,310 [P15008/D3/T238] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Terminating
+ 2017-06-08 22:07:59,310 [P15008/D3/T238] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Waiting for tasks to complete
+ 2017-06-08 22:07:59,310 [P15008/D3/T238] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Terminating
+ 2017-06-08 22:07:59,310 [P15008/D3/T238] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Waiting for tasks to complete
+ 2017-06-08 22:07:59,310 [P15008/D3/T238] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Terminating
+ 2017-06-08 22:07:59,310 [P15008/D3/T238] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Waiting for tasks to complete
+ 2017-06-08 22:07:59,310 [P15008/D3/T237] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledTasks] Tasks completed, terminated
+ 2017-06-08 22:07:59,310 [P15008/D3/T237] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [ScheduledPublishing] Tasks completed, terminated
+ 2017-06-08 22:07:59,310 [P15008/D3/T104] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [LogScrubber] Tasks completed, terminated
+ 2017-06-08 22:07:59,314 [P15008/D3/T238] INFO  Umbraco.Core.MainDom - Stopping...
+ 2017-06-08 22:07:59,318 [P15008/D3/T238] INFO  Umbraco.Core.MainDom - Released MainDom.
+ 2017-06-08 22:07:59,319 [P15008/D3/T238] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Terminating
+ 2017-06-08 22:07:59,319 [P15008/D3/T238] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Waiting for tasks to complete
+ 2017-06-08 22:07:59,319 [P15008/D3/T241] INFO  Umbraco.Web.Scheduling.BackgroundTaskRunner - [KeepAlive] Tasks completed, terminated
+ 2017-06-08 22:08:29,436 [P15008/D3/T104] INFO  Umbraco.Core.UmbracoApplicationBase - Application shutdown. Details: ConfigurationChange
+
+_shutDownMessage=IIS configuration change
+HostingEnvironment initiated shutdown
+HostingEnvironment caused shutdown
+
+_shutDownStack=   at System.Environment.GetStackTrace(Exception e, Boolean needFileInfo)
+   at System.Environment.get_StackTrace()
+   at System.Web.Hosting.HostingEnvironment.InitiateShutdownInternal()
+   at System.Web.Hosting.HostingEnvironment.InitiateShutdownWithoutDemand()
+   at System.Web.Hosting.PipelineRuntime.StopProcessing()
