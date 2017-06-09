@@ -171,15 +171,28 @@ namespace Plataforma.Areas.PCD.Controllers
                     Document pdfDoc = new Document(PageSize.A4, 25, 10, 25, 10);
                     PdfWriter pdfWriter = PdfWriter.GetInstance(pdfDoc, s);
                     pdfDoc.Open();
+                    iTextSharp.text.Image logoPimas = iTextSharp.text.Image.GetInstance("~/Recursos/Aplicacion/logo-pimas.png");
+                    
+                    logoPimas.ScaleToFit(90, 45);
+                    logoPimas.Alignment = Element.ALIGN_LEFT;
+                    pdfDoc.Add(logoPimas);
                     pdfDoc.AddTitle("Reporte de usuarios generados");
                     pdfDoc.Add(table);
                     Paragraph Text = new Paragraph("\n\n" + sb.ToString());
                     pdfDoc.Add(Text);
+                    Paragraph footer = new Paragraph("\n\nPublicaciones Innovadoras en Matemática para Secundaria PIMAS 	 Cédula Jurídica: 3-101-469172" +
+                                        "editorial @pimas.co.cr ⧫ www.pimas.co.cr ⧫ Facebook / PimasCR ⧫ Tel: 8310 0573");
+                    pdfDoc.Add(footer);
                     pdfWriter.CloseStream = false;
                     pdfDoc.Close();
                     s = new MemoryStream(s.ToArray());
                     Utilitarios.EnviarCorreoAdjunto(destinatarios, "Datos de usuarios generados: ",
-                        "Adjunto encontrarás un documento PDF con los datos de acceso para los usuarios generados el dia " + DateTime.Today, s);
+                        "Estimado "+ usuario.nombre + " "+ usuario.apellidos +
+                        ": Adjunto encontrará un documento PDF con los datos de acceso para los usuarios generados el dia "
+                        + DateTime.Today.Date + " y las indicaciones necesarias.", s);
+                    
+
+
                     s.Close();
                     //Utilitarios.EnviarCorreo(destinatarios, "Datos de usuarios del grupo: " + grupos.grupo, sb.ToString());
                 }

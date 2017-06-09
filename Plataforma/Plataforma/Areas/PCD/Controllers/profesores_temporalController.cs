@@ -101,11 +101,12 @@ namespace Plataforma.Areas.PCD.Controllers
                 List<string> destinatarios = new List<string>();
                 destinatarios.Add(profesores_temporal.correo);
                 Utilitarios.EnviarCorreo(destinatarios, "PCD: Solicitud Recibida", 
-                    "Estimado "+ profesores_temporal.nombre +
-                    "<br /><br />Hemos recibido una solicitud de registro en el sitio Plataforma Contenidos Digitales, dicha solicitud será procesada y" +
-                    " se le notificará una vez acabe el proceso.<br /><br />Le recordamos que:<br />Su usuario registrado es: " + profesores_temporal.username +
-                    "<br/>Su password es: "+pass+
+                    "Estimado "+ profesores_temporal.nombre + " " + profesores_temporal.apellidos +
+                    "<br /><br />Hemos recibido una solicitud de registro en el sitio Plataforma Contenidos Digitales PIMAS, dicha solicitud será procesada y" +
+                    " se le notificará una vez acabe el proceso.<br /><br />Le recordamos que:<br />Su usuario es: " + profesores_temporal.username +
+                    "<br/>Su contraseña es: "+pass+
                     "<br /><br />Saludos");
+                
                 return RedirectToAction("SolicitudInscripcion");
             }
             ViewBag.Colegios = db.colegios.ToList();
@@ -250,11 +251,12 @@ namespace Plataforma.Areas.PCD.Controllers
                     List<string> destinatarios = new List<string>();
                     destinatarios.Add(profesores_temporal.correo);
                     Utilitarios.EnviarCorreo(destinatarios, "PCD: Solicitud Aceptada",
-                        "Estimado "+ usuario.nombre  +
-                        "<br /><br />El proceso de registro de usuario en el sitio Plataforma de Contenidos Digitales ha concluido y su solicitud fue aceptada.<br/><br />Gracias." +
-                        "<br /><br />Le recordamos que:<br /> su usuario registrado es: " + usuario.username +
-                        "<br />Esperamos que los contenidos de la plataforma le sean útiles en sus labores."
+                        "Estimado "+ usuario.nombre  + " " + usuario.apellidos +
+                        "<br /><br />El proceso de registro de usuario en el sitio Plataforma de Contenidos Digitales PIMAS ha concluido y su solicitud fue aceptada.<br/><br />" +
+                        "<br /><br />Le recordamos que:<br /> Su usuario es: " + usuario.username +
+                        "<br />Esperamos que los contenidos de la plataforma le sean útiles en sus labores.<br />Gracias por utilizar nuestros productos."
                         );
+
                     return RedirectToAction("Index");
                 }
                 else

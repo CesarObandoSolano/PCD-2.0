@@ -286,7 +286,8 @@ namespace Plataforma.Areas.PCD.Controllers
         {
             List<string> destinatarios = new List<string>();
             string asunto = "PCD - Actualización de Curso";
-            string mensaje = "Le informamos que se actualizó el curso " + db.cursos.Find(documentosCurso.curso.id).curso1 + " en la plataforma de PIMAS. Los cambios son los siguientes:<br/>-  Se incluyeron los siguientes archivos: ";
+            string mensaje = "Le informamos que se actualizó el curso " + db.cursos.Find(documentosCurso.curso.id).curso1 +
+                " en la plataforma de PIMAS. Los cambios son los siguientes:<br/>-  Se incluyeron / actualizaron los siguientes archivos: ";
             foreach(documentos_curso item in db.documentos_curso.Where(dc=>dc.id_curso == documentosCurso.curso.id))
             {
                 db.documentos_curso.Remove(item);
@@ -300,6 +301,7 @@ namespace Plataforma.Areas.PCD.Controllers
                 db.documentos_curso.Add(dc);
                 mensaje += "<br />" + db.documentos.Find(idDocumento).titulo;
             }
+            mensaje += "<br /><br /> Esperamos le sean de utilidad.";
             List<usuario> usuarios = db.cursos.Find(documentosCurso.curso.id).usuarios.ToList();
             foreach (usuario usuario in usuarios)
             {
@@ -467,6 +469,14 @@ namespace Plataforma.Areas.PCD.Controllers
                 {
                     usuario usuarioTemporal = db.usuarios.Find(idUsuario);
                     usuarioTemporal.cursos.Add(curso);
+                    List<string> destinatarios = new List<string>();
+                    destinatarios.Add(usuarioTemporal.correo);
+                    Utilitarios.EnviarCorreo(destinatarios, "PCD: Solicitud Aceptada",
+                        "Estimado " + usuarioTemporal.nombre + " " + usuarioTemporal.apellidos +
+                        "<br /><br />Le informamos que ha sido matriculado en el curso “X” de nuestra Plataforma de Contenidos Digitales PIMAS," +
+                        " el cual debe aparecerle ahora en la sección “Cursos” del Menú." +
+                        "<br />Gracias por utilizar nuestros productos."
+                        );
                 }
             }
             db.SaveChanges();
