@@ -153,9 +153,9 @@ namespace Plataforma.Areas.PCD.Controllers
                     }
                     PdfPTable table = new PdfPTable(5);
 
-                    PdfPCell celImagen = new PdfPCell(Image.GetInstance(Path.Combine(Request.PhysicalApplicationPath, "Recursos", "logo-peq.png")));
+                    PdfPCell celImagen = new PdfPCell(Image.GetInstance(Path.Combine(Request.PhysicalApplicationPath, "Recursos", "Aplicacion", "logo-pimas.png")));
                     celImagen.Border = 0;
-
+                    celImagen.HorizontalAlignment = Element.ALIGN_LEFT;
                     PdfPCell celTitulo = new PdfPCell(new Phrase("Plataforma de Contenidos Digitales" +
                         "\n" + DateTime.Today.ToShortDateString().ToString() +
                         "\nReporte de usuarios generados",
@@ -171,25 +171,36 @@ namespace Plataforma.Areas.PCD.Controllers
                     Document pdfDoc = new Document(PageSize.A4, 25, 10, 25, 10);
                     PdfWriter pdfWriter = PdfWriter.GetInstance(pdfDoc, s);
                     pdfDoc.Open();
-                    iTextSharp.text.Image logoPimas = iTextSharp.text.Image.GetInstance("~/Recursos/Aplicacion/logo-pimas.png");
-                    
-                    logoPimas.ScaleToFit(90, 45);
-                    logoPimas.Alignment = Element.ALIGN_LEFT;
-                    pdfDoc.Add(logoPimas);
                     pdfDoc.AddTitle("Reporte de usuarios generados");
                     pdfDoc.Add(table);
                     Paragraph Text = new Paragraph("\n\n" + sb.ToString());
                     pdfDoc.Add(Text);
+                    string indicaciones = 
+                        "\n\nCada estudiante debe recibir un Username y su respectivo Password para poder "+
+                        "ingresar al curso solicitado, una vez que ingrese, puede cambiar sus datos personales."+
+                        "\n\n Dicho curso le debe aparecer en le debe aparecer en la sección 'Cursos' del menu.\n"+ 
+                        "\nContenido:\n";
+                    foreach (var contenido in curso.documentos_curso)
+                    {
+                        indicaciones += contenido.documento.titulo + "\n";
+                    }
+                    indicaciones += "\nGracias por utilizar nuestros productos.\n";
+                    indicaciones += "Equipo Administrativo PIMAS";
+                    Paragraph parrafoIndicaciones = new Paragraph(indicaciones);
+                    parrafoIndicaciones.Alignment = Element.ALIGN_JUSTIFIED;
+                    pdfDoc.Add(parrafoIndicaciones);
                     Paragraph footer = new Paragraph("\n\nPublicaciones Innovadoras en Matemática para Secundaria PIMAS 	 Cédula Jurídica: 3-101-469172" +
-                                        "editorial @pimas.co.cr ⧫ www.pimas.co.cr ⧫ Facebook / PimasCR ⧫ Tel: 8310 0573");
+                                        "\n\neditorial @pimas.co.cr ⧫ www.pimas.co.cr ⧫ Facebook / PimasCR ⧫ Tel: 8310 0573");
+                    footer.Alignment = Element.ALIGN_CENTER;
+                    footer.Font = new Font(Font.FontFamily.HELVETICA, 5, Font.BOLDITALIC);
                     pdfDoc.Add(footer);
                     pdfWriter.CloseStream = false;
                     pdfDoc.Close();
                     s = new MemoryStream(s.ToArray());
                     Utilitarios.EnviarCorreoAdjunto(destinatarios, "Datos de usuarios generados: ",
                         "Estimado "+ usuario.nombre + " "+ usuario.apellidos +
-                        ": Adjunto encontrará un documento PDF con los datos de acceso para los usuarios generados el dia "
-                        + DateTime.Today.Date + " y las indicaciones necesarias.", s);
+                        ":\n\nAdjunto encontrará un documento PDF con los datos de acceso para los usuarios generados el dia "
+                        + DateTime.Today.ToShortDateString().ToString() + " y las indicaciones necesarias.", s);
                     
 
 
