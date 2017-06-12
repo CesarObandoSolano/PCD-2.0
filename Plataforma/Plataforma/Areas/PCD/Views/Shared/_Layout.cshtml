@@ -289,7 +289,7 @@
                                 {
                                     <h4>Grupos&nbsp;&nbsp;<input id="mostrarMenuGrupos" class="mostrarmenu" type="button"></h4>
                                     <div id='menuLateralGrupos'>
-                                        if (usuario.grupos.Count == 0)
+                                        @if (usuario.grupos.Count == 0)
                                         {
                                         <ul class="plataforma">
                                             <li>
@@ -302,24 +302,26 @@
                                         }
                                         else
                                         {
-                                        <ul class="plataforma">
-                                            @foreach (var grupo in usuario.grupos)
-                                            {
-                                                <li>
-                                                    <a href="~/PCD/cursos/VerCurso/@grupo.curso.id?idGrupo=@grupo.id">
-                                                        <span>
-                                                            <i class="fa fa-unlock-alt" aria-hidden="true"></i>
-                                                            &nbsp;@grupo.grupo: @grupo.curso.curso1
-                                                        </span>
-                                                    </a>
-                                                </li>
+                                        <h4>Grupos&nbsp;&nbsp;<input id="mostrarMenuGrupos" class="mostrarmenu" type="button"></h4>
+                                        <div id='menuLateralGrupos'>
+                                            <ul class="plataforma">
+                                                @foreach (var grupo in usuario.grupos)
+                                                {
+                                                    <li>
+                                                        <a href="~/PCD/cursos/VerCurso/@grupo.curso.id?idGrupo=@grupo.id">
+                                                            <span>
+                                                                <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                                                &nbsp;@grupo.grupo: @grupo.curso.curso1
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                }
+                                            </ul>
+
                                             }
-                                        </ul>
+                                        </div>
 
-                                        }
-                                    </div>
-
-                                    if (usuario.cursos.Where(c => c.grupos.Where(g => g.usuarios.Contains(usuario)).Count() <= 0).Count() > 0)
+                                    @if (usuario.cursos.Where(c => c.grupos.Where(g => g.usuarios.Contains(usuario)).Count() <= 0).Count() > 0)
                                     {
                                         List<Plataforma.Areas.PCD.Models.curso>
                                         cursos = usuario.cursos.Where(c => c.grupos.Where(g => g.usuarios.Contains(usuario)).Count() <= 0).ToList();
@@ -346,7 +348,7 @@
                                 {
                                     <h4>Cursos&nbsp;&nbsp;<input id="mostrarMenuCursos" class="mostrarmenu" type="button"></h4>
 
-                                    if (usuario.cursos.Count == 0)
+                                    @if (usuario.cursos.Count == 0)
                                     {
                                         <div id='menuLateralCursos'>
                                             <ul class="plataforma">
