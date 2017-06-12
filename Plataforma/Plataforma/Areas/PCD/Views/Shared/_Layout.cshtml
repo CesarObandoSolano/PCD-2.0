@@ -291,19 +291,18 @@
                                     <div id='menuLateralGrupos'>
                                         @if (usuario.grupos.Count == 0)
                                         {
-                                        <ul class="plataforma">
-                                            <li>
-                                                <span class="disabled blocked">
-                                                    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-                                                    Aún no estas registrado en ningun grupo.
-                                                </span>
-                                            </li>
-                                        </ul>
+                                            <ul class="plataforma">
+                                                <li>
+                                                    <span class="disabled blocked">
+                                                        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                                                        Aún no estas registrado en ningun grupo.
+                                                    </span>
+                                                </li>
+                                            </ul>
                                         }
                                         else
                                         {
-                                        <h4>Grupos&nbsp;&nbsp;<input id="mostrarMenuGrupos" class="mostrarmenu" type="button"></h4>
-                                        <div id='menuLateralGrupos'>
+                                            <h4>Grupos&nbsp;&nbsp;<input id="mostrarMenuGrupos" class="mostrarmenu" type="button"></h4>
                                             <ul class="plataforma">
                                                 @foreach (var grupo in usuario.grupos)
                                                 {
@@ -317,10 +316,9 @@
                                                     </li>
                                                 }
                                             </ul>
-
-                                            }
-                                        </div>
-
+                                        }
+                                    </div>
+                                }
                                     @if (usuario.cursos.Where(c => c.grupos.Where(g => g.usuarios.Contains(usuario)).Count() <= 0).Count() > 0)
                                     {
                                         List<Plataforma.Areas.PCD.Models.curso>
@@ -343,12 +341,12 @@
                                             </ul>
                                         </div>
                                     }
-                                }
+                                
                                 else
                                 {
                                     <h4>Cursos&nbsp;&nbsp;<input id="mostrarMenuCursos" class="mostrarmenu" type="button"></h4>
 
-                                    @if (usuario.cursos.Count == 0)
+                                    if (usuario.cursos.Count == 0)
                                     {
                                         <div id='menuLateralCursos'>
                                             <ul class="plataforma">

@@ -57,6 +57,7 @@
     <EntitySetMapping Name="documentos">
       <EntityTypeMapping TypeName="pimasModel.documento">
         <MappingFragment StoreEntitySet="documentos">
+          <ScalarProperty Name="descargable" ColumnName="descargable" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="id_tipo" ColumnName="id_tipo" />
           <ScalarProperty Name="url" ColumnName="url" />

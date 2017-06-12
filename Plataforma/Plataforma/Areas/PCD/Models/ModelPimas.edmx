@@ -95,6 +95,7 @@
           <Property Name="numero_version" Type="int" />
           <Property Name="unidad" Type="int" Nullable="false" />
           <Property Name="capitulo" Type="int" />
+          <Property Name="descargable" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="documentos_curso">
           <Key>
@@ -1318,6 +1319,7 @@
           <NavigationProperty Name="libros" Relationship="Self.documentos_libro" FromRole="documentos" ToRole="libros" />
           <NavigationProperty Name="niveles" Relationship="Self.niveles_documento" FromRole="documentos" ToRole="niveles" />
           <NavigationProperty Name="documentos_curso" Relationship="pimasModel.FK_documentos_curso_documentos" FromRole="documento" ToRole="documentos_curso" />
+          <Property Name="descargable" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="documentos_curso">
           <Key>
@@ -2112,6 +2114,7 @@
           <EntitySetMapping Name="documentos">
             <EntityTypeMapping TypeName="pimasModel.documento">
               <MappingFragment StoreEntitySet="documentos">
+                <ScalarProperty Name="descargable" ColumnName="descargable" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="id_tipo" ColumnName="id_tipo" />
                 <ScalarProperty Name="url" ColumnName="url" />

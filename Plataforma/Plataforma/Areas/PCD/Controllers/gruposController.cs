@@ -178,7 +178,7 @@ namespace Plataforma.Areas.PCD.Controllers
                     string indicaciones = 
                         "\n\nCada estudiante debe recibir un Username y su respectivo Password para poder "+
                         "ingresar al curso solicitado, una vez que ingrese, puede cambiar sus datos personales."+
-                        "\n\n Dicho curso le debe aparecer en le debe aparecer en la sección 'Cursos' del menu.\n"+ 
+                        "\n\n Dicho curso le debe aparecer en la sección 'Cursos' del menu.\n"+ 
                         "\nContenido:\n";
                     foreach (var contenido in curso.documentos_curso)
                     {

@@ -90,6 +90,7 @@
     <Property Name="numero_version" Type="int" />
     <Property Name="unidad" Type="int" Nullable="false" />
     <Property Name="capitulo" Type="int" />
+    <Property Name="descargable" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="documentos_curso">
     <Key>

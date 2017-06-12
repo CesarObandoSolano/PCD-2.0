@@ -1,4 +1,4 @@
-﻿// La generación de código T4 está habilitada para el modelo 'C:\Users\Cesar\Documents\Trabajo\Sinertica\PCD\Plataforma\Plataforma\Areas\PCD\Models\ModelPimas.edmx'. 
+﻿// La generación de código T4 está habilitada para el modelo 'C:\Users\Cesar\Documents\Trabajo\PCD-2.0\PCD-2.0\Plataforma\Plataforma\Areas\PCD\Models\ModelPimas.edmx'. 
 // Para habilitar la generación de código heredada, cambie el valor de la propiedad del diseñador 'Estrategia de generación de código'
 // por 'ObjectContext heredado'. Esta propiedad está disponible en la ventana Propiedades cuando se abre
 // el modelo en el diseñador.
