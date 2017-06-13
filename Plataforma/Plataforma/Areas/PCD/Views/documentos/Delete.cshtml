@@ -44,18 +44,22 @@
             @Html.DisplayFor(model => model.fecha_publicacion)
         </dd>
         <dt>
-            Numero de versión
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.numero_version)
-        </dd>
-        <dt>
             Visitas
         </dt>
         <dd>
             @Html.DisplayFor(model => model.contador_visitas)
         </dd>
-
+        <dt>Descargable</dt>
+        <dd>
+            @if (Model.descargable)
+            {
+                <p>Si</p>
+            }
+            else
+            {
+                <p>No</p>
+            }
+        </dd>
     </dl>
     @using (Html.BeginForm())
     {
