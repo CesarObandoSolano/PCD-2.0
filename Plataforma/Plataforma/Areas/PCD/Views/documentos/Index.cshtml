@@ -11,8 +11,10 @@
             return false;
         }
 
-        $(document).ready(function () {
-            
+         $(document).ready(function () {
+
+             obtenerTabla("tabla-documento");
+
             $("#categorias").change(function () {
                 var categoria = document.getElementById("categorias").value;
                 if (categoria != "") {
@@ -201,8 +203,3 @@
         }
     </table>
 </div>
-<script type="text/javascript">
-    $(function () {
-        $("#tabla-documento").hpaging({ "limit": 20 });
-    });
-</script>

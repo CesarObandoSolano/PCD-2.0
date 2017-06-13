@@ -641,6 +641,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\jquery.table.hpaging.js" />
     <Content Include="Scripts\jquery.table.hpaging.min.js" />
+    <Content Include="Scripts\paginador.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
@@ -801,7 +802,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Recursos\Documentos\" />
-    <Folder Include="Scripts\paginador\" />
     <Folder Include="ViewerJS\" />
     <Folder Include="Views\Contactenos\" />
   </ItemGroup>
