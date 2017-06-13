@@ -10,6 +10,10 @@
             $("#tabla-documentos").load("/PCD/documentos_profe/Index/?nombre=" + nombre + " #tabla-documentos");
             return false;
         }
+
+        $(document).ready(function () {
+            obtenerTabla("tabla-documentos");
+        });
     </script>
 </head>
 <h1 class="class-forms"><i class="fa fa-graduation-cap" aria-hidden="true"></i> &nbsp;Documentos Profesor</h1>

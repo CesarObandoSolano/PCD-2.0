@@ -11,6 +11,10 @@
             $("#tabla-tipos").load("/PCD/tipo_documento/Index/?nombre=" + nombre + " #tabla-tipos");
             return false;
         }
+
+        $(document).ready(function () {
+            obtenerTabla("tabla-documentos");
+        });
     </script>
 </head>
 

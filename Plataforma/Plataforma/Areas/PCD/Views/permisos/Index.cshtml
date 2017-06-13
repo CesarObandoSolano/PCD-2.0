@@ -11,6 +11,10 @@
             $("#tabla-permisos").load("/PCD/permisos/Index/?nombre=" + nombre + " #tabla-permisos");
             return false;
         }
+
+        $(document).ready(function () {
+            obtenerTabla("tabla-permisos");
+        });
     </script>
 </head>
 

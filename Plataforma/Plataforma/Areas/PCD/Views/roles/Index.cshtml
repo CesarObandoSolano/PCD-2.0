@@ -11,6 +11,10 @@
             $("#tabla-roles").load("/PCD/roles/Index/?nombre=" + nombre + " #tabla-roles");
             return false;
         }
+
+        $(document).ready(function () {
+            obtenerTabla("tabla-roles");
+        });
     </script>
 </head>
 

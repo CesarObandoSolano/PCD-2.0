@@ -11,6 +11,10 @@
             $("#tabla-unidades").load("/PCD/unidades/Index/?nombre=" + nombre + " #tabla-unidades");
             return false;
         }
+
+        $(document).ready(function () {
+            obtenerTabla("tabla-unidades");
+        });
     </script>
 </head>
 

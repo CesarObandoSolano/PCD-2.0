@@ -4,6 +4,12 @@
     ViewBag.Title = "Indice";
 }
 
+<script>
+        $(document).ready(function () {
+            obtenerTabla("tabla-tipo-colegio");
+        });
+</script>
+
 <h1 class="class-forms"><i class="fa fa-graduation-cap" aria-hidden="true"></i> &nbsp;Tipos de Institución</h1>
 <h6>Listado de tipos de colegio</h6>
 <br><br>
@@ -11,7 +17,7 @@
     <p>
         @Html.ActionLink("Insertar un nuevo tipo", "Create")
     </p>
-    <table class="table">
+    <table class="table" id="tabla-tipo-colegio">
         <tr>
             <th>
                 Tipo de colegio

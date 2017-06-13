@@ -10,6 +10,10 @@
             $("#tabla-niveles").load("/PCD/niveles/Index/?nombre=" + nombre + " #tabla-niveles");
             return false;
         }
+
+        $(document).ready(function () {
+            obtenerTabla("tabla-niveles");
+        });
     </script>
 </head>
 <h1 class="class-forms"><i class="fa fa-graduation-cap" aria-hidden="true"></i> &nbsp;Niveles</h1>

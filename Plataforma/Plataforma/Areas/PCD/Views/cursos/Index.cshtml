@@ -12,6 +12,10 @@
             $("#tabla-cursos").load("/PCD/cursos/Index/?nombre=" + nombre + " #tabla-cursos");
             return false;
         }
+
+        $(document).ready(function () {
+            obtenerTabla("tabla-cursos");
+        });
     </script>
 </head>
 <div class="col-md-12">

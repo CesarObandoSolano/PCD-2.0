@@ -10,6 +10,10 @@
             $("#tabla-grupos").load("/PCD/grupos/Index/?nombre=" + nombre + " #tabla-grupos");
             return false;
         }
+
+        $(document).ready(function () {
+            obtenerTabla("tabla-grupos");
+        });
     </script>
 </head>
 <h1 class="class-forms"><i class="fa fa-graduation-cap" aria-hidden="true"></i> &nbsp;Grupos</h1>

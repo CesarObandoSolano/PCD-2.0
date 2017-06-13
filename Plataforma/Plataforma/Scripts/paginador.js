@@ -42,7 +42,7 @@ function obtenerTabla($id) {
             $tr[$ii] = $table.rows[$i].outerHTML;
         // create a div block to hold the buttons
 
-        $table.insertAdjacentHTML("afterend", "<div class='col-sm-3'></div><div id='buttons' class='col-sm-6'></div><div class='col-sm-3'></div>");
+        $table.insertAdjacentHTML("afterend", "<div id='buttons' class='col-md-offset-4 col-xs-offset-2'></div>");
         // the first sort, default page is the first one
         sort(1);
     }

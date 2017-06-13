@@ -10,6 +10,11 @@
             $("#tabla-colegios").load("/PCD/colegios/Index/?nombre=" + nombre + " #tabla-colegios");
             return false;
         }
+
+        $(document).ready(function () {
+            obtenerTabla("tabla-colegios");
+        });
+
     </script>
 </head>
 
