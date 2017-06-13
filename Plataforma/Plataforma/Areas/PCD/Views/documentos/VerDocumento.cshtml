@@ -6,9 +6,8 @@
 <h6>Visor del documento seleccionado</h6>
 <br />
 <br />
-
+<script src="~/Scripts/jquery-1.12.4.js"></script>
 <head>
-    <script src="~/Scripts/jquery-1.10.2.js"></script>
     <script>
 
         function Responder(id) {
@@ -105,6 +104,9 @@
                 <dd>
                     <pre>@Html.DisplayFor(model => model.descripcion_detallada)</pre>
                 </dd>
+                <dd>
+                    
+                </dd>
             }
         </dl>
     </div>
@@ -161,7 +163,9 @@
                 </iframe>
             }
         </div>
+        
     </div>
+    
     @if (ViewBag.Comentarios != null)
     {
         <hr>
