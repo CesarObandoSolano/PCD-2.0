@@ -132,7 +132,7 @@ namespace Plataforma.Areas.PCD.Controllers
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,id_tipo,url,contador_visitas,titulo,descripcion_corta,descripcion_detallada,fecha_publicacion,status,imagen,historial_version,numero_version,unidad,capitulo,descargable")] documento documento, HttpPostedFileBase file, ICollection<int> nivel)
+        public ActionResult Create([Bind(Include = "id,id_tipo,url,contador_visitas,titulo,descripcion_corta,descripcion_detallada,fecha_publicacion,status,imagen,historial_version,numero_version,unidad,capitulo")] documento documento, HttpPostedFileBase file, ICollection<int> nivel)
         {
             if (ModelState.IsValid)
             {
@@ -215,7 +215,7 @@ namespace Plataforma.Areas.PCD.Controllers
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,id_tipo,url,contador_visitas,titulo,descripcion_corta,descripcion_detallada,fecha_publicacion,status,imagen,historial_version,numero_version,unidad,capitulo,descargable")] documento documento, HttpPostedFileBase file, int unidadAnterior, ICollection<int> nivel)
+        public ActionResult Edit([Bind(Include = "id,id_tipo,url,contador_visitas,titulo,descripcion_corta,descripcion_detallada,fecha_publicacion,status,imagen,historial_version,numero_version,unidad,capitulo")] documento documento, HttpPostedFileBase file, int unidadAnterior, ICollection<int> nivel)
         {
             if (ModelState.IsValid)
             {

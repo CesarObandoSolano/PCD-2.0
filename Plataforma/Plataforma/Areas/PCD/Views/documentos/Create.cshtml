@@ -77,15 +77,7 @@
                 @Html.ValidationMessageFor(model => model.capitulo, "", new { @class = "text-danger" })
             </div>
         </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.descargable, "Descargable", htmlAttributes: new { @class = "control-label col-md-4" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.descargable, new { htmlAttributes = new { @value = false } })
-                    @Html.ValidationMessageFor(model => model.descargable, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
+        
         <div class="form-group">
             <div class="col-md-offset-6 col-md-10">
                 <input type="submit" value="Insertar" class="btn btn-primary" />

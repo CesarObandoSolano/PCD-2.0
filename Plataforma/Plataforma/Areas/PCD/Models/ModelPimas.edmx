@@ -95,7 +95,6 @@
           <Property Name="numero_version" Type="int" />
           <Property Name="unidad" Type="int" Nullable="false" />
           <Property Name="capitulo" Type="int" />
-          <Property Name="descargable" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="documentos_curso">
           <Key>
@@ -341,6 +340,7 @@
           <Property Name="correo_2" Type="varchar" MaxLength="50" />
           <Property Name="informacion_opcional" Type="varchar" MaxLength="255" />
           <Property Name="fecha_primer_ingreso" Type="datetime" />
+          <Property Name="fecha_vencimiento" Type="datetime" />
           <Property Name="bloqueado" Type="bit" />
           <Property Name="logueado" Type="bit" />
         </EntityType>
@@ -1319,7 +1319,6 @@
           <NavigationProperty Name="libros" Relationship="Self.documentos_libro" FromRole="documentos" ToRole="libros" />
           <NavigationProperty Name="niveles" Relationship="Self.niveles_documento" FromRole="documentos" ToRole="niveles" />
           <NavigationProperty Name="documentos_curso" Relationship="pimasModel.FK_documentos_curso_documentos" FromRole="documento" ToRole="documentos_curso" />
-          <Property Name="descargable" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="documentos_curso">
           <Key>
@@ -1540,6 +1539,7 @@
           <NavigationProperty Name="permisos" Relationship="Self.permisos_usuario" FromRole="usuarios" ToRole="permisos" />
           <NavigationProperty Name="roles" Relationship="Self.roles_usuario" FromRole="usuarios" ToRole="roles" />
           <NavigationProperty Name="grupos" Relationship="Self.usuarios_grupo" FromRole="usuarios" ToRole="grupos" />
+          <Property Name="fecha_vencimiento" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="Venta">
           <Key>
@@ -2114,7 +2114,6 @@
           <EntitySetMapping Name="documentos">
             <EntityTypeMapping TypeName="pimasModel.documento">
               <MappingFragment StoreEntitySet="documentos">
-                <ScalarProperty Name="descargable" ColumnName="descargable" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="id_tipo" ColumnName="id_tipo" />
                 <ScalarProperty Name="url" ColumnName="url" />
@@ -2306,6 +2305,7 @@
           <EntitySetMapping Name="usuarios">
             <EntityTypeMapping TypeName="pimasModel.usuario">
               <MappingFragment StoreEntitySet="usuarios">
+                <ScalarProperty Name="fecha_vencimiento" ColumnName="fecha_vencimiento" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="apellidos" ColumnName="apellidos" />

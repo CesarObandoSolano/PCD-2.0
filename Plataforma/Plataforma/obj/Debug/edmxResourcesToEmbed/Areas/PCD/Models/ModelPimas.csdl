@@ -309,6 +309,7 @@
     <NavigationProperty Name="permisos" Relationship="Self.permisos_usuario" FromRole="usuarios" ToRole="permisos" />
     <NavigationProperty Name="roles" Relationship="Self.roles_usuario" FromRole="usuarios" ToRole="roles" />
     <NavigationProperty Name="grupos" Relationship="Self.usuarios_grupo" FromRole="usuarios" ToRole="grupos" />
+    <Property Name="fecha_vencimiento" Type="DateTime" Precision="3" />
   </EntityType>
   <EntityType Name="Venta">
     <Key>

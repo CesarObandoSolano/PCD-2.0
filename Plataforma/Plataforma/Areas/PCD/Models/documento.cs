@@ -38,7 +38,6 @@ namespace Plataforma.Areas.PCD.Models
         public Nullable<int> numero_version { get; set; }
         public int unidad { get; set; }
         public Nullable<int> capitulo { get; set; }
-        public bool descargable { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<comentario> comentarios { get; set; }

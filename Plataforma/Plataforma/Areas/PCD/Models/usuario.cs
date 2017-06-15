@@ -45,6 +45,7 @@ namespace Plataforma.Areas.PCD.Models
         public Nullable<System.DateTime> fecha_primer_ingreso { get; set; }
         public Nullable<bool> bloqueado { get; set; }
         public Nullable<bool> logueado { get; set; }
+        public Nullable<System.DateTime> fecha_vencimiento { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<comentario> comentarios { get; set; }
