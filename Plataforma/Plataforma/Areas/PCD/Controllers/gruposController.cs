@@ -175,10 +175,10 @@ namespace Plataforma.Areas.PCD.Controllers
                     pdfDoc.Add(table);
                     Paragraph Text = new Paragraph("\n\n" + sb.ToString());
                     pdfDoc.Add(Text);
-                    string indicaciones =
-                        "\n\nCada estudiante debe recibir un Username y su respectivo Password para poder " +
-                        "ingresar al curso solicitado, una vez que ingrese, puede cambiar sus datos personales." +
-                        "\n\n Dicho curso le debe aparecer en la sección 'Cursos' del menu.\n" +
+                    string indicaciones = 
+                        "\n\nCada estudiante debe recibir un Username y su respectivo Password para poder "+
+                        "ingresar al curso solicitado, una vez que ingrese, puede cambiar sus datos personales."+
+                        "\n\n Dicho curso le debe aparecer en la sección 'Cursos' del menu.\n"+ 
                         "\nContenido:\n";
                     foreach (var contenido in curso.documentos_curso)
                     {
@@ -189,17 +189,11 @@ namespace Plataforma.Areas.PCD.Controllers
                     Paragraph parrafoIndicaciones = new Paragraph(indicaciones);
                     parrafoIndicaciones.Alignment = Element.ALIGN_JUSTIFIED;
                     pdfDoc.Add(parrafoIndicaciones);
-
-                    
-                    pdfWriter.PageEvent = new EventosReporte();
-
-                    //Paragraph footer = new Paragraph("\n\nPublicaciones Innovadoras en Matemática para Secundaria PIMAS 	 Cédula Jurídica: 3-101-469172" +
-                    //                    "\n\neditorial @pimas.co.cr ⧫ www.pimas.co.cr ⧫ Facebook / PimasCR ⧫ Tel: 8310 0573");
-                    //footer.Alignment = Element.ALIGN_CENTER;
-
-                    //footer.Font = new Font(Font.FontFamily.HELVETICA, 5, Font.BOLDITALIC);
-
-                    //pdfDoc.Add(footer);
+                    Paragraph footer = new Paragraph("\n\nPublicaciones Innovadoras en Matemática para Secundaria PIMAS 	 Cédula Jurídica: 3-101-469172" +
+                                        "\n\neditorial @pimas.co.cr ⧫ www.pimas.co.cr ⧫ Facebook / PimasCR ⧫ Tel: 8310 0573");
+                    footer.Alignment = Element.ALIGN_CENTER;
+                    footer.Font = new Font(Font.FontFamily.HELVETICA, 5, Font.BOLDITALIC);
+                    pdfDoc.Add(footer);
                     pdfWriter.CloseStream = false;
                     pdfDoc.Close();
                     s = new MemoryStream(s.ToArray());

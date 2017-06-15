@@ -370,7 +370,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\PCD\Controllers\ArticulosController.cs" />
-    <Compile Include="Areas\PCD\Controllers\EventosReporte.cs" />
     <Compile Include="Areas\PCD\Controllers\VentasController.cs" />
     <Compile Include="Areas\PCD\Models\admin.cs">
       <DependentUpon>ModelPimas.tt</DependentUpon>
