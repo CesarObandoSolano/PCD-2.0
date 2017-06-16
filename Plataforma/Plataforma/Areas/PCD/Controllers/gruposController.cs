@@ -102,10 +102,25 @@ namespace Plataforma.Areas.PCD.Controllers
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,grupo, permisos")] grupos grupos, ICollection<int> permiso, int profesores, int cursos, int CantidadUsuarios)
+        public ActionResult Create([Bind(Include = "id,grupo, permisos")] grupos grupos, ICollection<int> permiso, int profesores, int cursos, int CantidadUsuarios, int? vencimiento, int? unidadTiempo)
         {
             if (ModelState.IsValid)
             {
+                //fecha vencimiento
+                if (vencimiento == null || unidadTiempo == null)
+                {
+                    vencimiento = 1;
+                    unidadTiempo = 1;
+                }
+                DateTime fechaVencimiento = DateTime.Today;
+                if (unidadTiempo == 1)
+                {
+                    fechaVencimiento = fechaVencimiento.AddMonths(vencimiento.Value);
+                }
+                else
+                {
+                    fechaVencimiento = fechaVencimiento.AddYears(vencimiento.Value);
+                }
                 foreach (int permisoSeleccionado in permiso)
                 {
                     permiso permisoobj = db.permisos.Find(permisoSeleccionado);
@@ -142,6 +157,7 @@ namespace Plataforma.Areas.PCD.Controllers
                         sb.AppendLine("Username = " + estudiante.username + " Password = " + estudiante.password);
                         estudiante.password = Utilitarios.EncodePassword(string.Concat(estudiante.username, estudiante.password));
                         estudiante.fecha_primer_ingreso = DateTime.Today;
+                        estudiante.fecha_vencimiento = fechaVencimiento;
                         estudiante.roles = db.roles.Where(r => r.rol.Equals(Constantes.ESTUDIANTE_PREMIUM)).ToList();
                         estudiante.cursos.Add(curso);
                         notificacione notificacion = new notificacione();

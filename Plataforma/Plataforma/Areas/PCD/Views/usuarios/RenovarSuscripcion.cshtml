@@ -1,0 +1,48 @@
+﻿@model Plataforma.Areas.PCD.Models.usuario
+@{
+    ViewBag.Title = "RenovarSuscripcion";
+}
+
+@using (Html.BeginForm())
+            {
+    @Html.AntiForgeryToken()
+
+    <div class="col-md-12">
+        <h1 class="class-forms">Renovar Suscripcion</h1>
+        <h6>Renueva la suscripción de este usuario</h6>
+        <br />
+        <br />
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.id)
+        
+        <dl class="dl-horizontal">
+            <dt>
+                Nombre
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.nombre)
+                @Html.DisplayFor(model => model.apellidos)
+            </dd>
+        </dl>
+
+            <div class="form-group div-vencimiento">
+                @Html.Label("Tiempo de suscripción", htmlAttributes: new { @class = "control-label col-md-4" })
+                <div class="col-md-10">
+                    <div class="col-md-7">
+                        <input type="number" min="1" value="1" name="vencimiento" id="vencimiento" class="form-control" />
+                    </div>
+                    <div class="col-md-5">
+                        <select name="unidadTiempo" id="unidadTiempo" class="form-control">
+                            <option value="1" selected>Meses</option>
+                            <option value="2">Años</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-6 col-md-10">
+                    <input type="submit" class="btn btn-primary" value="Renovar" />
+                </div>
+            </div>
+</div>
+}

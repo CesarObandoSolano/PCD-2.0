@@ -88,7 +88,6 @@
     <NavigationProperty Name="libros" Relationship="Self.documentos_libro" FromRole="documentos" ToRole="libros" />
     <NavigationProperty Name="niveles" Relationship="Self.niveles_documento" FromRole="documentos" ToRole="niveles" />
     <NavigationProperty Name="documentos_curso" Relationship="pimasModel.FK_documentos_curso_documentos" FromRole="documento" ToRole="documentos_curso" />
-    <Property Name="descargable" Type="Boolean" Nullable="false" />
   </EntityType>
   <EntityType Name="documentos_curso">
     <Key>
