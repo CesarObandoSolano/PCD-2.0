@@ -19,16 +19,16 @@
 
 <h2>Curso: @Model.curso1</h2>
 
-<link rel="stylesheet" type="text/css" href="~/Content/custombootstrap.css" />
-
-<div class="col-lg-9 barra-busqueda form-group">
-    @Html.Label("Buscar:", htmlAttributes: new { @class = "col-md-2" })
-    <input type="text" id="nombre" name="nombre" placeholder="Titulo del documento" class="form-control" onchange="Buscar()" />
+<div class="form-group">
+    @Html.Label("Buscar:", htmlAttributes: new { @class = "control-label col-md-4", style = "top: 10px;" })
+    <div class="col-md-10">
+        <input type="text" id="nombre" name="nombre" placeholder="Título del documento" class="form-control text-box single-line" onchange="Buscar()" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAfBJREFUWAntVk1OwkAUZkoDKza4Utm61iP0AqyIDXahN2BjwiHYGU+gizap4QDuegWN7lyCbMSlCQjU7yO0TOlAi6GwgJc0fT/fzPfmzet0crmD7HsFBAvQbrcrw+Gw5fu+AfOYvgylJ4TwCoVCs1ardYTruqfj8fgV5OUMSVVT93VdP9dAzpVvm5wJHZFbg2LQ2pEYOlZ/oiDvwNcsFoseY4PBwMCrhaeCJyKWZU37KOJcYdi27QdhcuuBIb073BvTNL8ln4NeeR6NRi/wxZKQcGurQs5oNhqLshzVTMBewW/LMU3TTNlO0ieTiStjYhUIyi6DAp0xbEdgTt+LE0aCKQw24U4llsCs4ZRJrYopB6RwqnpA1YQ5NGFZ1YQ41Z5S8IQQdP5laEBRJcD4Vj5DEsW2gE6s6g3d/YP/g+BDnT7GNi2qCjTwGd6riBzHaaCEd3Js01vwCPIbmWBRx1nwAN/1ov+/drgFWIlfKpVukyYihtgkXNp4mABK+1GtVr+SBhJDbBIubVw+Cd/TDgKO2DPiN3YUo6y/nDCNEIsqTKH1en2tcwA9FKEItyDi3aIh8Gl1sRrVnSDzNFDJT1bAy5xpOYGn5fP5JuL95ZjMIn1ya7j5dPGfv0A5eAnpZUY3n5jXcoec5J67D9q+VuAPM47D3XaSeL4AAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;" />
+    </div>
 </div>
 
-<div class="col-lg-9" id="documentos">
-    
-    <div class="col-lg-9 vista">
+<div class="col-lg-12" id="documentos">
+
+    <div class="col-lg-12 vista">
         @Html.HiddenFor(model => model.id)
 
         @for (int i = 0; i < Model.documentos_curso.Count; i++)
@@ -67,11 +67,11 @@
                 if ((i < Model.documentos_curso.Count - 1) && (@item.documento.unidad != Model.documentos_curso.ElementAt(i + 1).documento.unidad))
                 {
                     <br />
-                        <div class="encabezado col-lg-10">
-                            <hr />
-                            <h3>@Model.documentos_curso.ElementAt(i + 1).documento.unidade.unidad</h3>
-                            <br />
-                        </div>
+                    <div class="encabezado col-lg-10">
+                        <hr />
+                        <h3>@Model.documentos_curso.ElementAt(i + 1).documento.unidade.unidad</h3>
+                        <br />
+                    </div>
                 }
             }
         }

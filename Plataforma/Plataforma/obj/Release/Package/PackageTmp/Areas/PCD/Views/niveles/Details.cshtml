@@ -1,27 +1,25 @@
 ﻿@model Plataforma.Areas.PCD.Models.nivele
-
 @{
     ViewBag.Title = "Detalles";
 }
-<link rel="stylesheet" type="text/css" href="~/Content/custombootstrap.css" />
-<h2>Detalles</h2>
-
-<div>
-    <h4>Nivel</h4>
-    <hr />
+<div class="col-md-12">
+    <h1 class="class-forms">
+        <i class="fa fa-user-circle" aria-hidden="true"></i>
+        Detalles
+    </h1>
+    <h6>Información asociada al nivel</h6>
+    <br />
+    <h4 class="class-forms">Nivel</h4>
     <dl class="dl-horizontal">
         <dt>
             Nivel
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.nivel)
         </dd>
-
     </dl>
     <p>
         @Html.ActionLink("Editar", "Edit", new { id = Model.id }) |
         @Html.ActionLink("Volver al indice", "Index")
     </p>
 </div>
-

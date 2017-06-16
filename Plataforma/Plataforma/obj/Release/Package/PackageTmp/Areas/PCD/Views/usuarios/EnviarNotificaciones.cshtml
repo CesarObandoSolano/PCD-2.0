@@ -2,14 +2,15 @@
     ViewBag.Title = "Notificaciones y Noticias";
 }
 
-<h2>Enviar notificaciones</h2>
+<h1 class="class-forms">Enviar notificaciones</h1>
+<h6>Agregue un asunto y un mensaje para enviar una notificación</h6>
+<br />
 
-<link rel="stylesheet" type="text/css" href="~/Content/custombootstrap.css" />
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    <div class="col-lg-9">
+    <div class="col-md-12">
         @if (ViewBag.Id == null)
         {
             <input type="hidden" value="@ViewBag.IdGrupo" name="idGrupo" id="idGrupo">
@@ -25,8 +26,8 @@
         <textarea id="cuerpo" name="cuerpo" cols="150" rows="10" class="form-control" placeholder="Cuerpo del mensaje" required></textarea> <br />
 
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Enviar" class="btn btn-default" />
+            <div class="col-md-offset-6 col-md-10">
+                <input type="submit" value="Enviar" class="btn btn-primary" />
             </div>
         </div>
 

@@ -1,8 +1,72 @@
 ﻿@using Plataforma.Areas.PCD.Models
 @model LoginViewModel
 
-    
-    <div class="row">
+
+<section class="mbr-section article mbr-section__container mbr-after-navbar" id="content6-1f" style="background-color: rgb(255, 255, 255); padding-bottom: 20px;">
+    <div class="container">
+        <div id="login">
+            <h1 class="class-forms">
+                <i class="fa fa-key" aria-hidden="true"></i>
+                &nbsp;Iniciar sesión.
+            </h1>
+            <div class="row">
+                <div class="col-lg-12">
+                    <section id="loginForm">
+                        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <h4 class="login-form">Usa tu cuenta de usuario para ingresar.</h4>
+                            <br>
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="Email">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    &nbsp;Nombre de usuario
+                                </label>
+                                <div class="col-md-8">
+                                    @Html.TextBoxFor(m => m.Email, new { @id = "Email", @class = "form-control", @type = "text", @value = "", @autocomplete = "off", @style = "background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=&quot;);" })
+                                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="Password">
+                                    <i class="fa fa-key" aria-hidden="true"></i>
+                                    &nbsp;Contraseña
+                                </label>
+                                <div class="col-md-8">
+                                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", @id = "Password", @type = "password", @autocomplete = "off", @style = "background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=&quot;); cursor: auto;" })
+                                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-offset-4 col-md-8">
+                                    <input type="submit" value="Iniciar sesión" class="btn btn-primary">
+                                </div>
+                            </div>
+                            <p>
+                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                Registrate como <a href="../PCD/profesores_temporal/Create">Profesor</a> o como <a href="../PCD/usuarios/Create">Usuario</a><br>
+                                <a href="../PCD/usuarios/CambiarPasswordUsuario">
+                                    <i class="fa fa-key" aria-hidden="true"></i>
+                                    &nbsp;Recuperar contraseña
+                                </a>
+                            </p>
+                        }
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+@*<div class="row">
         <div class="col-lg-9">
             <section id="loginForm">
                 @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
@@ -37,4 +101,4 @@
                 }
             </section>
         </div>
-    </div>
+    </div>*@

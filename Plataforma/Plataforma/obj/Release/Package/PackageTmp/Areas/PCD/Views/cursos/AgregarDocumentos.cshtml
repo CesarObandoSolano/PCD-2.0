@@ -3,10 +3,11 @@
     ViewBag.Title = "Curso";
 }
 
-<link rel="stylesheet" type="text/css" href="~/Content/custombootstrap.css" />
-<h2>Niveles</h2>
+<h1 class="class-forms">Niveles</h1>
+<h6>Elija el nivel en el cual desea agregar un documento</h6>
+<br/>
 
-<div class="col-lg-9 vista">
+<div class="col-md-12 vista">
     @Html.HiddenFor(model => model.curso.id)
 
     @foreach (var item in Model.niveles)

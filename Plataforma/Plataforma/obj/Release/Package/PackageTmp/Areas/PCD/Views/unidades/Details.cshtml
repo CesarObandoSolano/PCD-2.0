@@ -4,20 +4,21 @@
     ViewBag.Title = "Detalles";
 }
 
-<h2>Detalles</h2>
-<link rel="stylesheet" type="text/css" href="~/Content/custombootstrap.css" />
-<div class="col-lg-9">
-    <h4>Unidad</h4>
-    <hr />
+<div class="col-md-12">
+    <h1 class="class-forms">
+        <i class="fa fa-user-circle" aria-hidden="true"></i>
+        Detalles
+    </h1>
+    <h6>Información asociada a la unidad</h6>
+    <br />
+    <h4 class="class-forms">Unidad</h4>
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.unidad)
+            Unidad
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.unidad)
         </dd>
-
     </dl>
     <div class="col-lg-9">
         <p>

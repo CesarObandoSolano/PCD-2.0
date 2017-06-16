@@ -3,55 +3,57 @@
 @{
     ViewBag.Title = "Detalles";
 }
-<link rel="stylesheet" type="text/css" href="~/Content/custombootstrap.css" />
-<h2>Detalles</h2>
-
-<div class="col-lg-9">
-    <h4>Rol</h4>
-    <hr />
+<div class="col-md-12">
+    <h1 class="class-forms">
+        <i class="fa fa-user-circle" aria-hidden="true"></i>
+        Detalles
+    </h1>
+    <h6>Información asociada al rol</h6>
+    <br />
+    <h4 class="class-forms">Rol</h4>
     <dl class="dl-horizontal">
         <dt>
             Rol
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.rol)
         </dd>
-
         <dt>
-            Cantidad de usuarios de este tipo
+            Usuarios en este rol
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.usuarios.Count)
         </dd>
-        @if (Model.cursos.Count > 0)
-        {
-
-            <dt>
-                Cursos
-            </dt>
-
-            <dd>
-                @foreach (var item in Model.cursos)
-                {
-                    @item.curso1<br />
-                }
-            </dd>
-        }
+        <dt>
+            Cursos
+        </dt>
+        <dd>
+            @if (Model.cursos.Count > 0)
+            {
+                <ul>
+                    @foreach (var item in Model.cursos)
+                    {
+                        <li>
+                            @item.curso1
+                        </li>
+                    }
+                </ul>
+            }
+            else
+            {
+                <p>No hay cursos para este rol</p>
+            }
+        </dd>
         <dt>
             Permisos
         </dt>
-
         <dd>
             @foreach (var item in Model.permisos)
             {
                 @item.descripcion<br />
             }
         </dd>
-
     </dl>
-
     <div class="col-lg-9">
         <p>
             @Html.ActionLink("Editar", "Edit", new { id = Model.id }) |

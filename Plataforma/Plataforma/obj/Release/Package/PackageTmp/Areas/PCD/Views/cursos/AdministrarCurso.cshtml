@@ -141,12 +141,17 @@
 </head>
 
 
-<h2>Detalles</h2>
-<link rel="stylesheet" type="text/css" href="~/Content/custombootstrap.css" />
-<div class="col-lg-9">
-    <h4>Grupo</h4>
-    <hr />
-    <dl class="dl-horizontal">
+<h1 class="class-forms">
+    <i class="fa fa-user-circle" aria-hidden="true"></i>
+    Detalles
+</h1>
+<h6>Administre la lista de usuarios y documentos</h6>
+<br />
+<br />
+
+<div class="col-md-12">
+    <h4 class="class-forms">Grupo</h4>
+       <dl class="dl-horizontal">
         <dt>
             Grupo
         </dt>
@@ -164,11 +169,14 @@
         </dd>
     </dl>
 
-    <div class="col-lg-9 barra-busqueda form-group">
-        @Html.Label("Buscar:", htmlAttributes: new { @class = "col-md-2" })
-        <input type="text" id="nombre_usuario" name="nombre_usuario" placeholder="Nombre del usuario" class="form-control" />
+    <div class="form-group">
+        @Html.Label("Buscar:", htmlAttributes: new { @class = "control-label col-md-4", style = "top: 10px;" })
+        <div class="col-md-10">
+            <input type="text" id="nombre_usuario" name="nombre_usuario" placeholder="Nombre del usuario" class="form-control text-box single-line" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAfBJREFUWAntVk1OwkAUZkoDKza4Utm61iP0AqyIDXahN2BjwiHYGU+gizap4QDuegWN7lyCbMSlCQjU7yO0TOlAi6GwgJc0fT/fzPfmzet0crmD7HsFBAvQbrcrw+Gw5fu+AfOYvgylJ4TwCoVCs1ardYTruqfj8fgV5OUMSVVT93VdP9dAzpVvm5wJHZFbg2LQ2pEYOlZ/oiDvwNcsFoseY4PBwMCrhaeCJyKWZU37KOJcYdi27QdhcuuBIb073BvTNL8ln4NeeR6NRi/wxZKQcGurQs5oNhqLshzVTMBewW/LMU3TTNlO0ieTiStjYhUIyi6DAp0xbEdgTt+LE0aCKQw24U4llsCs4ZRJrYopB6RwqnpA1YQ5NGFZ1YQ41Z5S8IQQdP5laEBRJcD4Vj5DEsW2gE6s6g3d/YP/g+BDnT7GNi2qCjTwGd6riBzHaaCEd3Js01vwCPIbmWBRx1nwAN/1ov+/drgFWIlfKpVukyYihtgkXNp4mABK+1GtVr+SBhJDbBIubVw+Cd/TDgKO2DPiN3YUo6y/nDCNEIsqTKH1en2tcwA9FKEItyDi3aIh8Gl1sRrVnSDzNFDJT1bAy5xpOYGn5fP5JuL95ZjMIn1ya7j5dPGfv0A5eAnpZUY3n5jXcoec5J67D9q+VuAPM47D3XaSeL4AAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;" />
+        </div>
     </div>
-    <div class="col-lg-9">
+
+    <div class="col-md-12">
         <h3>Lista de Usuarios</h3>
         <table class="table" id="usuarios">
             <tr>
@@ -215,19 +223,19 @@
         </table>
     </div>
 
-    <br /><hr /><br />
+    <br /><br />
     
-    <div class="col-lg-9 barra-busqueda form-group">
-        @Html.Label("Buscar:", htmlAttributes: new { @class = "col-md-2" })
+    <div class="col-md-12 barra-busqueda form-group">
+        @Html.Label("Buscar:", htmlAttributes: new { @class = "col-md-2", style = "top: 10px;" })
         <input type="text" id="nombre" name="nombre" placeholder="Titulo del documento" class="form-control" />
-        @Html.Label("Ordenar por:", htmlAttributes: new { @class = "col-md-2" })
+        @Html.Label("Ordenar por:", htmlAttributes: new { @class = "col-md-2", style = "top: 10px;" })
         <select id="categorias" name="categorias" class="form-control">
             <option value="">Seleccione una categoria...</option>
             <option value="nivel">Nivel</option>
             <option value="unidad">Unidad</option>
             <option value="tipo">Tipo</option>
         </select>
-        <div id="buscar_unidad" hidden>
+        <div id="buscar_unidad" hidden class="col-md-12" style="top: 5px; left: 15px; width:1150px;">
             <select id="unidad" name="unidad" class="form-control">
                 <option value="0">Seleccione una unidad...</option>
                 @foreach (var item in ViewBag.unidades)
@@ -238,7 +246,7 @@
                 }
             </select>
         </div>
-        <div id="buscar_nivel" hidden>
+        <div id="buscar_nivel" hidden class="col-md-12" style="top: 5px; left: 15px; width:1150px;">
             <select id="nivel" name="nivel" class="form-control">
                 <option value="0">Seleccione un nivel...</option>
                 @foreach (var item in ViewBag.niveles)
@@ -249,7 +257,7 @@
                 }
             </select>
         </div>
-        <div id="buscar_tipo" hidden>
+        <div id="buscar_tipo" hidden class="col-md-12" style="top: 5px; left: 15px; width:1150px;">
             <select id="tipo" name="tipo" class="form-control">
                 <option value="0">Seleccione un tipo...</option>
                 @foreach (var item in ViewBag.tipos)
@@ -261,7 +269,7 @@
             </select>
         </div>
     </div>
-    <div class="col-lg-9">
+    <div class="col-md-12">
         <h3>Lista de Documentos</h3>
         <table class="table" id="tabla-documento">
             <tr>
