@@ -205,11 +205,10 @@ namespace Plataforma.Areas.PCD.Controllers
                     Paragraph parrafoIndicaciones = new Paragraph(indicaciones);
                     parrafoIndicaciones.Alignment = Element.ALIGN_JUSTIFIED;
                     pdfDoc.Add(parrafoIndicaciones);
-                    Paragraph footer = new Paragraph("\n\nPublicaciones Innovadoras en Matemática para Secundaria PIMAS 	 Cédula Jurídica: 3-101-469172" +
-                                        "\n\neditorial @pimas.co.cr ⧫ www.pimas.co.cr ⧫ Facebook / PimasCR ⧫ Tel: 8310 0573");
-                    footer.Alignment = Element.ALIGN_CENTER;
-                    footer.Font = new Font(Font.FontFamily.HELVETICA, 5, Font.BOLDITALIC);
-                    pdfDoc.Add(footer);
+
+                    //Agregar footer al pdf
+                    pdfWriter.PageEvent = new AdministrarReportes();
+
                     pdfWriter.CloseStream = false;
                     pdfDoc.Close();
                     s = new MemoryStream(s.ToArray());
