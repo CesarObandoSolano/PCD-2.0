@@ -369,6 +369,7 @@
     <Compile Include="App_Start\MvcStartup.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\PCD\Controllers\AdministrarReportes.cs" />
     <Compile Include="Areas\PCD\Controllers\ArticulosController.cs" />
     <Compile Include="Areas\PCD\Controllers\VentasController.cs" />
     <Compile Include="Areas\PCD\Models\admin.cs">
