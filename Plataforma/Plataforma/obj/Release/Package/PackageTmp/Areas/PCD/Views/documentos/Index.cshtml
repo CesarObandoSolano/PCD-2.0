@@ -3,15 +3,18 @@
     ViewBag.Title = "Indice";
 }
 <head>
-    <script src="~/Scripts/jquery-1.10.2.js"></script>
-    <script>
+
+     <script>
         function Buscar() {
             var nombre = document.getElementById('nombre').value;
             $("#tabla-documento").load("/PCD/documentos/Index/?nombre=" + nombre + " #tabla-documento");
             return false;
         }
 
-        $(document).ready(function () {
+         $(document).ready(function () {
+
+            obtenerTabla("tabla-documento");
+
             $("#categorias").change(function () {
                 var categoria = document.getElementById("categorias").value;
                 if (categoria != "") {
@@ -47,7 +50,6 @@
                 var curso = document.getElementById('curso').value;
                 var nivel = document.getElementById('nivel').value;
                 var tipo = document.getElementById('tipo').value;
-                var descripcion = document.getElementById('descripcion').value;
                 if (unidad != "0") {
                     $("#tabla-documento").load("/PCD/documentos/Index/?nombre=" + nombre + "&unidad=" + unidad + " #tabla-documento");
                 } else if (curso != "0") {
@@ -56,7 +58,6 @@
                     $("#tabla-documento").load("/PCD/documentos/Index/?nombre=" + nombre + "&nivel=" + nivel + " #tabla-documento");
                 } else if (tipo != "0") {
                     $("#tabla-documento").load("/PCD/documentos/Index/?nombre=" + nombre + "&tipo=" + tipo + " #tabla-documento");
-                } else if (descripcion != "") {
                 }
                 else {
                     $("#tabla-documento").load("/PCD/documentos/Index/?nombre=" + nombre + " #tabla-documento");
@@ -101,17 +102,21 @@
             });
         });
     </script>
+
+    
 </head>
-<div class="col-lg-9">
-    <h2>Documentos</h2>
-    @Scripts.Render("~/bundles/modernizr")
+<h1 class="class-forms"><i class="fa fa-graduation-cap" aria-hidden="true"></i> &nbsp;Documentos</h1>
+<h6>Listado de documentos</h6>
+<br><br>
+<div class="col-md-12">
+
     <p>
         @Html.ActionLink("Insertar un documento", "Create")
     </p>
-    <div class="col-lg-9 barra-busqueda form-group">
-        @Html.Label("Buscar:", htmlAttributes: new { @class = "col-md-2" })
+    <div class="col-md-12 barra-busqueda form-group">
+        @Html.Label("Buscar:", htmlAttributes: new { @class = "col-md-2", style = "top: 10px;" })
         <input type="text" id="nombre" name="nombre" placeholder="Titulo del documento" class="form-control" />
-        @Html.Label("Filtrar por:", htmlAttributes: new { @class = "col-md-2" })
+        @Html.Label("Filtrar por:", htmlAttributes: new { @class = "col-md-2", style = "top: 10px;" })
         <select id="categorias" name="categorias" class="form-control">
             <option value="">Seleccione una categoria...</option>
             <option value="nivel">Nivel</option>
@@ -119,7 +124,7 @@
             <option value="curso">Curso</option>
             <option value="tipo">Tipo</option>
         </select>
-        <div id="buscar_unidad" hidden>
+        <div id="buscar_unidad" hidden class="col-md-12" style="top: 5px; left: 15px; width:1150px;">
             <select id="unidad" name="unidad" class="form-control">
                 <option value="0">Seleccione una unidad...</option>
                 @foreach (var item in ViewBag.unidades)
@@ -130,8 +135,8 @@
                 }
             </select>
         </div>
-        <div id="buscar_curso" hidden>
-            <select id="curso" name="curso" class="form-control">
+        <div id="buscar_curso" hidden class="col-md-12" style="top: 5px; left: 15px; width:1150px;">
+            <select id="curso" name="curso" class="form-control" style="top: 50px;">
                 <option value="0">Seleccione un curso...</option>
                 @foreach (var item in ViewBag.cursos)
                 {
@@ -141,8 +146,8 @@
                 }
             </select>
         </div>
-        <div id="buscar_nivel" hidden>
-            <select id="nivel" name="nivel" class="form-control">
+        <div id="buscar_nivel" hidden class="col-md-12" style="top: 5px; left: 15px; width:1150px;">
+            <select id="nivel" name="nivel" class="form-control" style="top: 50px;">
                 <option value="0">Seleccione un nivel...</option>
                 @foreach (var item in ViewBag.niveles)
                 {
@@ -152,8 +157,8 @@
                 }
             </select>
         </div>
-        <div id="buscar_tipo" hidden>
-            <select id="tipo" name="tipo" class="form-control">
+        <div id="buscar_tipo" hidden class="col-md-12" style="top: 5px; left: 15px; width:1150px;">
+            <select id="tipo" name="tipo" class="form-control" style="top: 50px;">
                 <option value="0">Seleccione un tipo...</option>
                 @foreach (var item in ViewBag.tipos)
                 {
@@ -170,35 +175,29 @@
                 Titulo
             </th>
             <th>
-                Descripción
-            </th>
-            <th>
                 Publicación
             </th>
             <th>
                 Formato
             </th>
-            <th></th>
+            <th>Acciones</th>
         </tr>
         @foreach (var item in Model)
             {
             <tr>
-                <td>
+                <td title="@item.descripcion_corta">
                     @Html.DisplayFor(modelItem => item.titulo)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.descripcion_corta)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.fecha_publicacion)
+                    @item.fecha_publicacion.Value.ToShortDateString()
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.tipo_documento.tipo_documento1)
                 </td>
                 <td>
-                    @Html.ActionLink("Editar", "Edit", new { id = item.id }) |
-                    @Html.ActionLink("Ver Detalles", "Details", new { id = item.id }) |
-                    @Html.ActionLink("Eliminar", "Delete", new { id = item.id })
+                    @Html.ActionLink(" ", "Edit", new { id = item.id }, new { @class = "enlace-tabla editar", @title = "Editar" })
+                    @Html.ActionLink(" ", "Details", new { id = item.id }, new { @class = "enlace-tabla detalles", @title = "Detalles" })
+                    @Html.ActionLink(" ", "Delete", new { id = item.id }, new { @class = "enlace-tabla eliminar", @title = "Eliminar" })
                 </td>
             </tr>
         }

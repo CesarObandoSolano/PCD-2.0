@@ -335,6 +335,7 @@
     <Property Name="correo_2" Type="varchar" MaxLength="50" />
     <Property Name="informacion_opcional" Type="varchar" MaxLength="255" />
     <Property Name="fecha_primer_ingreso" Type="datetime" />
+    <Property Name="fecha_vencimiento" Type="datetime" />
     <Property Name="bloqueado" Type="bit" />
     <Property Name="logueado" Type="bit" />
   </EntityType>

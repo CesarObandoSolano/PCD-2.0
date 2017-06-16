@@ -3,8 +3,9 @@
     ViewBag.Title = "Matricular Usuarios";
 }
 
-<link rel="stylesheet" type="text/css" href="~/Content/custombootstrap.css" />
-<h2>Matricular</h2>
+<h1 class="class-forms">Matricular</h1>
+<h6>Matricule o retire los usuarios deseados del curso</h6>
+<br />
 
 @using (Html.BeginForm())
 {
@@ -61,65 +62,65 @@
         </script>
     </head>
 
-    <div class="col-lg-9">
+    <div class="col-md-12">
 
         @Html.HiddenFor(model => model.id)
-            <div class="col-lg-9 barra-busqueda form-group">
-                <div class="form-group">
-                    @Html.Label("Roles:", htmlAttributes: new { @class = "col-md-2" })
-                    <div class="col-md-10">
-                        <select id="rol" name="rol" class="form-control">
-                            <option value="0">Seleccione un rol...</option>
-                            @foreach (var item in ViewBag.roles)
-                            {
-                                <option value="@item.id">
-                                    @item.rol
-                                </option>
-                            }
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    @Html.Label("Colegios:", htmlAttributes: new { @class = "col-md-2" })
-                    <div class="col-md-10">
-                        <select id="colegio" name="colegio" class="form-control">
-                            <option value="0">Seleccione un colegio...</option>
-                            @foreach (var item in ViewBag.colegios)
-                            {
-                                <option value="@item.id">
-                                    @item.nombre
-                                </option>
-                            }
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    @Html.Label("Niveles:", htmlAttributes: new { @class = "col-md-2" })
-                    <div class="col-md-10">
-                        <select id="nivel" name="nivel" class="form-control">
-                            <option value="0">Seleccione un nivel...</option>
-                            @foreach (var item in ViewBag.niveles)
-                            {
-                                <option value="@item.id">
-                                    @item.nivel
-                                </option>
-                            }
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    @Html.Label("Buscar:", htmlAttributes: new { @class = "col-md-2" })
-                    <div class="col-md-10">
-                        <input type="text" id="nombre" name="nombre" placeholder="Nombre" class="form-control" />
-                    </div>
+        <div class="col-md-12 barra-busqueda form-horizontal">
+            <div class="form-group">
+                @Html.Label("Roles:", htmlAttributes: new { @class = "col-md-4" })
+                <div class="col-md-10">
+                    <select id="rol" name="rol" class="form-control">
+                        <option value="0">Seleccione un rol...</option>
+                        @foreach (var item in ViewBag.roles)
+                        {
+                            <option value="@item.id">
+                                @item.rol
+                            </option>
+                        }
+                    </select>
                 </div>
             </div>
-            
-        
-            <div class="form-group col-lg-9" >
+
+            <div class="form-group">
+                @Html.Label("Colegios:", htmlAttributes: new { @class = "col-md-4" })
+                <div class="col-md-10">
+                    <select id="colegio" name="colegio" class="form-control">
+                        <option value="0">Seleccione un colegio...</option>
+                        @foreach (var item in ViewBag.colegios)
+                        {
+                            <option value="@item.id">
+                                @item.nombre
+                            </option>
+                        }
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Niveles:", htmlAttributes: new { @class = "col-md-4" })
+                <div class="col-md-10">
+                    <select id="nivel" name="nivel" class="form-control">
+                        <option value="0">Seleccione un nivel...</option>
+                        @foreach (var item in ViewBag.niveles)
+                        {
+                            <option value="@item.id">
+                                @item.nivel
+                            </option>
+                        }
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Buscar:", htmlAttributes: new { @class = "col-md-4" })
+                <div class="col-md-10">
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre" class="form-control" />
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
                 <p><h4>Matricule uno o mas usuarios:</h4></p>
                 <div id="matriculables">
                     <select id="usuariosQuitar" class="form-control lista-usuarios" multiple="multiple" name="usuariosQuitar">
@@ -131,13 +132,13 @@
                 </div>
             </div>
 
-        <div class="form-group col-lg-9">
-            <a id="agregar" class="btn btn-default" onclick="return false;"> Agregar </a>
-            <a id="quitar" class="btn btn-default" onclick="return false;"> Quitar </a>
-        </div>
-        
-            <div class="form-group col-lg-9">
-                <p><br /><br /><h4>Retire uno o mas usuarios:</h4></p>
+            <div class="form-group">
+                <a id="agregar" class="btn btn-primary" onclick="return false;"> Agregar </a>
+                <a id="quitar" class="btn btn-danger" onclick="return false;"> Quitar </a>
+            </div>
+
+            <div class="form-group">
+                <h4>Retire uno o mas usuarios:</h4>
 
                 <select id="usuariosMatricular" class="form-control lista-usuarios" multiple="multiple" name="usuariosMatricular">
                     @foreach (var item in Model.usuarios)
@@ -148,11 +149,11 @@
             </div>
 
             <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Matricular Usuarios" class="btn btn-default" />
+                <div class="col-md-offset-6 col-md-10">
+                    <input type="submit" value="Matricular Usuarios" class="btn btn-primary" />
                 </div>
             </div>
-        
+        </div>
 
     </div>
 

@@ -4,19 +4,26 @@
     ViewBag.Title = "Indice";
 }
 
-<h2>Tipos de institución</h2>
-<div class="col-lg-9">
+<script>
+        $(document).ready(function () {
+            obtenerTabla("tabla-tipo-colegio");
+        });
+</script>
+
+<h1 class="class-forms"><i class="fa fa-graduation-cap" aria-hidden="true"></i> &nbsp;Tipos de Institución</h1>
+<h6>Listado de tipos de colegio</h6>
+<br><br>
+<div class="col-md-12">
     <p>
         @Html.ActionLink("Insertar un nuevo tipo", "Create")
     </p>
-    <table class="table">
+    <table class="table" id="tabla-tipo-colegio">
         <tr>
             <th>
                 Tipo de colegio
             </th>
-            <th></th>
+            <th>Acciones</th>
         </tr>
-
         @foreach (var item in Model)
         {
             <tr>
@@ -24,12 +31,11 @@
                     @Html.DisplayFor(modelItem => item.tipo_institucion)
                 </td>
                 <td>
-                    @Html.ActionLink("Editar", "Edit", new { id = item.id }) |
-                    @Html.ActionLink("Ver Detalles", "Details", new { id = item.id }) |
-                    @Html.ActionLink("Eliminar", "Delete", new { id = item.id })
+@Html.ActionLink(" ", "Edit", new { id = item.id }, new { @class = "enlace-tabla editar", @title = "Editar" })
+@Html.ActionLink(" ", "Details", new { id = item.id }, new { @class = "enlace-tabla detalles", @title = "Detalles" })
+@Html.ActionLink(" ", "Delete", new { id = item.id }, new { @class = "enlace-tabla eliminar", @title = "Eliminar" })
                 </td>
             </tr>
         }
-
     </table>
-    </div>
+</div>

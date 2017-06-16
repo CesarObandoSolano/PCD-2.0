@@ -2,36 +2,32 @@
 @{
     ViewBag.Title = Model.titulo;
 }
-<h2>Ver Documento</h2>
-
+<h1 class="class-forms">Ver Documento</h1>
+<h6>Visor del documento seleccionado</h6>
+<br />
+<br />
 @Scripts.Render("~/bundles/modernizr")
-<link rel="stylesheet" type="text/css" href="~/Content/custombootstrap.css" />
-<div class="col-lg-9">
-    <div class="col-lg-9">
+<div class="col-lg-12">
+    <div class="col-lg-12">
         <h4>@Model.titulo</h4>
         <hr />
         <dl class="dl-horizontal">
-
             <dt>
                 Titulo
             </dt>
-
             <dd>
                 @Html.DisplayFor(model => model.titulo)
             </dd>
-
             <dt>
                 Profesor
             </dt>
-
             <dd>
                 @Html.DisplayFor(model => model.usuario.nombre)
                 @Html.DisplayFor(model => model.usuario.apellidos)
             </dd>
         </dl>
     </div>
-
-    <div class="col-lg-9">
+    <div class="col-lg-12">
         @if (Path.GetExtension(Model.url).Equals("mp4"))
         {
             <video id="sampleMovie" class="visualizador" preload controls autoplay oncontextmenu="return false">

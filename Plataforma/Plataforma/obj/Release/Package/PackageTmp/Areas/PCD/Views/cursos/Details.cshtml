@@ -3,12 +3,21 @@
 @{
     ViewBag.Title = "Detalles";
 }
-<link rel="stylesheet" type="text/css" href="~/Content/custombootstrap.css" />
-<h2>Detalles</h2>
 
-<div class="col-lg-9">
-    <h4>Curso</h4>
-    <hr />
+<script>
+        $(document).ready(function () {
+            obtenerTabla("usuarios");
+        });
+</script>
+
+<div class="col-md-12">
+    <h1 class="class-forms">
+        <i class="fa fa-user-circle" aria-hidden="true"></i>
+        Detalles
+    </h1>
+    <h4 class="class-forms">Curso</h4>
+    <h6>Información asociada al curso</h6>
+    <br/>
     <dl class="dl-horizontal">
         <dt>
             Curso
@@ -54,12 +63,12 @@
             <th></th>
         </tr>
         <tr>
-                <td></td>
-                <td>
-                    <a href="~/PCD/usuarios/EnviarNotificaciones/?idCurso=@Model.id">Enviar Notificacion a todos los usuarios</a>
-                </td>
-                <td></td>
-            </tr>
+            <td></td>
+            <td>
+                <a href="~/PCD/usuarios/EnviarNotificaciones/?idCurso=@Model.id">Enviar Notificacion a todos los usuarios</a>
+            </td>
+            <td></td>
+        </tr>
 
         @foreach (var item in Model.usuarios)
         {
@@ -74,7 +83,7 @@
                     @Html.DisplayFor(modelItem => item.grupos.Where(u => u.id_curso == Model.id).FirstOrDefault().grupo)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.log_visitas_cursousuario.Where(l=>l.id_curso==modelItem.id&&l.id_usuario==item.id).FirstOrDefault().contador)
+                    @Html.DisplayFor(modelItem => item.log_visitas_cursousuario.Where(l => l.id_curso == modelItem.id && l.id_usuario == item.id).FirstOrDefault().contador)
                 </td>
                 <td>
                     @if (@item.notificacione.correo == true)

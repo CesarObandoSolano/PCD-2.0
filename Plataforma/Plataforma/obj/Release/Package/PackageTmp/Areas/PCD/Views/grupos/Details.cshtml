@@ -1,38 +1,34 @@
 ﻿@model Plataforma.Areas.PCD.Models.grupos
-
 @{
     ViewBag.Title = "Detalles";
 }
-
-<h2>Detalles</h2>
-<link rel="stylesheet" type="text/css" href="~/Content/custombootstrap.css" />
-<div class="col-lg-9">
-    <h4>Grupo</h4>
-    <hr />
+<div class="col-md-12">
+    <h1 class="class-forms">
+        <i class="fa fa-user-circle" aria-hidden="true"></i>
+        Detalles
+    </h1>
+    <h6>Información asociada al grupo</h6>
+    <br />
+    <h4 class="class-forms">Grupo</h4>
     <dl class="dl-horizontal">
         <dt>
             Grupo
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.grupo)
         </dd>
-
         <dt>
             Permisos
         </dt>
-
         <dd>
             @foreach (var item in Model.permisos)
             {
                 @item.descripcion<br />
             }
         </dd>
-
     </dl>
     <p>
         @Html.ActionLink("Editar", "Edit", new { id = Model.id }) |
         @Html.ActionLink("Volver al indice", "Index")
     </p>
 </div>
-

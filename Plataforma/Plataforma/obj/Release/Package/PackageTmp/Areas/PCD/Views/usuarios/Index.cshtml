@@ -53,28 +53,28 @@
             });
         }
 
-        function RenovarSubscripcion(id) {
-            $(document).ready(function () {
-                $.ajax({
-                    type: "POST",
-                    url: "/PCD/usuarios/RenovarSubscripcion",
-                    data: '{"id":"' + id + '"}',
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json",
-                    success: function (data) {
-                        if (data === "Exito") {
-                            alert("Modificación exitosa");
-                            $('#' + id).load('../usuarios/index #' + id);
-                        }
-                    },
-                    error: errores
-                });
-                function errores(data) {
-                    alert(data);
-                }
-                return false;
-            });
-        }
+        //function RenovarSubscripcion(id) {
+        //    $(document).ready(function () {
+        //        $.ajax({
+        //            type: "POST",
+        //            url: "/PCD/usuarios/RenovarSubscripcion",
+        //            data: '{"id":"' + id + '"}',
+        //            contentType: "application/json; charset=utf-8",
+        //            dataType: "json",
+        //            success: function (data) {
+        //                if (data === "Exito") {
+        //                    alert("Modificación exitosa");
+        //                    $('#' + id).load('../usuarios/index #' + id);
+        //                }
+        //            },
+        //            error: errores
+        //        });
+        //        function errores(data) {
+        //            alert(data);
+        //        }
+        //        return false;
+        //    });
+        //}
 
         $(document).ready(function () {
             $("#categorias").change(function () {
@@ -144,28 +144,33 @@
 
         });
 
+        $(document).ready(function () {
+            obtenerTabla("tabla-usuarios");
+        });
         </script>
     
 </head>
 
-<h2>Usuarios</h2>
-<div class="col-lg-9">
+<h1 class="class-forms"><i class="fa fa-graduation-cap" aria-hidden="true"></i> &nbsp;Usuarios</h1>
+<h6>Listado de usuarios</h6>
+<br><br>
+<div class="col-md-12">
     <p>
         @Html.ActionLink("Insertar un usuario nuevo", "Create")<br />
         @Html.ActionLink("Generar Usuarios", "GenerarUsuarios")<br />
         <a onclick="CerrarSesiones()">Cerrar todas las sesiones activas en este momento</a>
     </p>
-    <div class="col-lg-9 barra-busqueda form-group">
-        @Html.Label("Buscar:", htmlAttributes: new { @class = "col-md-2" })
+    <div class="col-lg-12 barra-busqueda form-group">
+        @Html.Label("Buscar:", htmlAttributes: new { @class = "col-md-2", style = "top: 10px;" })
         <input type="text" id="nombre" name="nombre" placeholder="Nombre del usuario" class="form-control" />
-        @Html.Label("Filtrar por:", htmlAttributes: new { @class = "col-md-2" })
+        @Html.Label("Filtrar por:", htmlAttributes: new { @class = "col-md-2", style = "top: 10px;" })
         <select id="categorias" name="categorias" class="form-control">
             <option value="">Seleccione una categoria...</option>
             <option value="rol">Rol</option>
             <option value="colegio">Colegio</option>
             <option value="nivel">Nivel</option>
         </select>
-        <div id="buscar_rol" hidden>
+        <div id="buscar_rol" hidden class="col-md-12" style="top: 5px; left: 15px; width:1150px;">
             <select id="rol" name="rol" class="form-control">
                 <option value="0">Seleccione un rol...</option>
                 @foreach (var item in ViewBag.roles)
@@ -176,7 +181,7 @@
                 }
             </select>
         </div>
-        <div id="buscar_colegio" hidden>
+        <div id="buscar_colegio" hidden class="col-md-12" style="top: 5px; left: 15px; width:1150px;">
             <select id="colegio" name="colegio" class="form-control">
                 <option value="0">Seleccione un colegio...</option>
                 @foreach (var item in ViewBag.colegios)
@@ -187,7 +192,7 @@
                 }
             </select>
         </div>
-        <div id="buscar_nivel" hidden>
+        <div id="buscar_nivel" hidden class="col-md-12" style="top: 5px; left: 15px; width:1150px;">
             <select id="nivel" name="nivel" class="form-control">
                 <option value="0">Seleccione un nivel...</option>
                 @foreach (var item in ViewBag.niveles)
@@ -213,7 +218,7 @@
             <th>
                 Visitas
             </th>
-            <th></th>
+            <th>Acciones</th>
         </tr>
 
         @foreach (var item in Model)
@@ -236,24 +241,17 @@
                     @item.log_visitas.Count
                 </td>
                 <td id="@item.id">
-                    @Html.ActionLink("Editar", "Edit", new { id = item.id }) |
-                    @Html.ActionLink("Ver Detalles", "Details", new { id = item.id }) |
-                    @Html.ActionLink("Eliminar", "Delete", new { id = item.id })|
+                    @Html.ActionLink(" ", "Edit", new { id = item.id }, new { @class = "enlace-tabla editar", @title = "Editar" })
+                    @Html.ActionLink(" ", "Details", new { id = item.id }, new { @class = "enlace-tabla detalles", @title = "Detalles" })
+                    @Html.ActionLink(" ", "Delete", new { id = item.id }, new { @class = "enlace-tabla eliminar", @title = "Eliminar" })
+                    @Html.ActionLink(" ", "RenovarSuscripcion", new { id = item.id }, new { @class = "enlace-tabla renovar", @title = "Renovar Suscripción" })
                     @if (item.bloqueado.GetValueOrDefault())
                     {
-                        <a onclick="bloquearUsuario(@item.id)">Desbloquear</a>
+                        <a onclick="bloquearUsuario(@item.id)" class="enlace-tabla desbloquear" title="Desbloquear usuario"></a>
                     }
                     else
                     {
-                        <a onclick="bloquearUsuario(@item.id)">Bloquear</a>
-                    }
-                    @{
-                        DateTime fechaVencimiento = new DateTime(item.fecha_primer_ingreso.Value.Year + 1, item.fecha_primer_ingreso.Value.Month, item.fecha_primer_ingreso.Value.Day);
-                        TimeSpan diferenciaRenovacion = fechaVencimiento - DateTime.Today;
-                        if (diferenciaRenovacion.Days <= 90)
-                        {
-                            <a onclick="RenovarSubscripcion(@item.id)">Renovar</a>
-                        }
+                        <a onclick="bloquearUsuario(@item.id)" class="enlace-tabla bloquear" title="Bloquear usuario"></a>
                     }
                 </td>
             </tr>

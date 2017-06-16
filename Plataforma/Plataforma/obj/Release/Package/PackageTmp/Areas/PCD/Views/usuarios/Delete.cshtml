@@ -3,13 +3,11 @@
 @{
     ViewBag.Title = "Eliminar";
 }
-<link rel="stylesheet" type="text/css" href="~/Content/custombootstrap.css" />
-<h2>Eliminar</h2>
+<h1 class="class-forms">Eliminar</h1>
 
-<h3>Estas seguro de que deseas eliminar este usuario?</h3>
-<div class="col-lg-9">
-    <h4>Usuario</h4>
-    <hr />
+<h3 class="class-forms">Estas seguro de que deseas eliminar este usuario?</h3>
+<div class="col-md-12">
+    <h4 class="class-forms">Usuario</h4>
     <dl class="dl-horizontal">
         <dt>
             Nombre
@@ -18,6 +16,12 @@
         <dd>
             @Html.DisplayFor(model => model.nombre)
             @Html.DisplayFor(model => model.apellidos)
+        </dd>
+        <dt>
+            Fecha de vencimiento
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.fecha_vencimiento)
         </dd>
 
         <dt>
@@ -52,7 +56,7 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            <input type="submit" value="Eliminar" class="btn btn-danger" /> |
             @Html.ActionLink("Volver al indice", "Index")
         </div>
     }
