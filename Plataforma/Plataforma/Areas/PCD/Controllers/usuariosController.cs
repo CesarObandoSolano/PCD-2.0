@@ -947,6 +947,9 @@ namespace Plataforma.Areas.PCD.Controllers
                         pdfDoc.Add(Text);
                         pdfDoc.Add(tableContenido);
                         pdfDoc.Add(Text);
+                        //Agregar footer al pdf
+                        pdfWriter.PageEvent = new AdministrarReportes();
+
                         pdfWriter.CloseStream = false;
                         pdfDoc.Close();
                         s = new MemoryStream(s.ToArray());
