@@ -166,10 +166,25 @@ namespace Plataforma.Areas.PCD.Controllers
         [AllowAnonymous]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,nombre,apellidos,username,password,telefono,telefono_2,correo,correo_2,informacion_opcional,fecha_primer_ingreso")] usuario usuario, int roles, List<int> colegios, List<int> niveles, bool? notificacionCorreo, bool? notificacionTelefono)
+        public ActionResult Create([Bind(Include = "id,nombre,apellidos,username,password,telefono,telefono_2,correo,correo_2,informacion_opcional,fecha_primer_ingreso")] usuario usuario, int roles, List<int> colegios, List<int> niveles, bool? notificacionCorreo, bool? notificacionTelefono, int? vencimiento, int? unidadTiempo)
         {
             if (ModelState.IsValid)
             {
+                //fecha vencimiento
+                if(vencimiento == null || unidadTiempo == null)
+                {
+                    vencimiento = 1;
+                    unidadTiempo = 1;
+                }
+                usuario.fecha_vencimiento = DateTime.Today;
+                if(unidadTiempo == 1)
+                {
+                    usuario.fecha_vencimiento = usuario.fecha_vencimiento.Value.AddMonths(vencimiento.Value);
+                }
+                else
+                {
+                    usuario.fecha_vencimiento = usuario.fecha_vencimiento.Value.AddYears(vencimiento.Value);
+                }
                 List<string> destinatarios = new List<string>();
                 string asunto = "Bienvenido al sitio Plataforma de Contenidos Digitales";
                 string cuerpo;
@@ -501,43 +516,39 @@ namespace Plataforma.Areas.PCD.Controllers
             {
                 return false;
             }
-            else if (usuario.roles.FirstOrDefault().rol.Equals(Constantes.ADMINISTRADOR))
+            else if (usuario.roles.FirstOrDefault().rol.Equals(Constantes.ESTUDIANTE) ||
+                usuario.roles.FirstOrDefault().rol.Equals(Constantes.ESTUDIANTE_PREMIUM) ||
+                usuario.roles.FirstOrDefault().rol.Equals(Constantes.PROFESOR) ||
+                usuario.roles.FirstOrDefault().rol.Equals(Constantes.PROFESOR_PREMIUM))
             {
-                return true;
+                if(usuario.fecha_vencimiento > DateTime.Today)
+                {
+                    return true;
+                }
             }
             else
             {
-                DateTime primerIngreso = (DateTime)usuario.fecha_primer_ingreso;
-                TimeSpan diferenciaPrimerIngreso = DateTime.Today - primerIngreso;
-                if (usuario.roles.FirstOrDefault().rol.Equals(Constantes.ESTUDIANTE) && diferenciaPrimerIngreso.Days <= 1095)
-                {
-                    return true;
-                }
-                else if ((!usuario.roles.FirstOrDefault().rol.Equals(Constantes.ESTUDIANTE)) && diferenciaPrimerIngreso.Days <= 365)
-                {
-                    return true;
-                }
-
+                return true;
             }
             return false;
         }
 
-        [Authorize]
-        [HttpPost]
-        public ActionResult RenovarSubscripcion(int id)
-        {
-            if (Session["usuario"] != null)
-            {
-                usuario usuarioSesion = (usuario)HttpContext.Session["usuario"];
-                if (usuarioSesion.roles.FirstOrDefault().rol.Equals(Constantes.ADMINISTRADOR))
-                {
-                    db.usuarios.Find(id).fecha_primer_ingreso = DateTime.Today;
-                    db.SaveChanges();
-                    return Json("Exito", JsonRequestBehavior.AllowGet);
-                }
-            }
-            return Json("Usuario no autenticado o sin permisos para utilizar esta función", JsonRequestBehavior.AllowGet);
-        }
+        //[Authorize]
+        //[HttpPost]
+        //public ActionResult RenovarSubscripcion(int id)
+        //{
+        //    if (Session["usuario"] != null)
+        //    {
+        //        usuario usuarioSesion = (usuario)HttpContext.Session["usuario"];
+        //        if (usuarioSesion.roles.FirstOrDefault().rol.Equals(Constantes.ADMINISTRADOR))
+        //        {
+        //            db.usuarios.Find(id).fecha_primer_ingreso = DateTime.Today;
+        //            db.SaveChanges();
+        //            return Json("Exito", JsonRequestBehavior.AllowGet);
+        //        }
+        //    }
+        //    return Json("Usuario no autenticado o sin permisos para utilizar esta función", JsonRequestBehavior.AllowGet);
+        //}
 
         [Authorize]
         [HttpPost]
@@ -737,9 +748,23 @@ namespace Plataforma.Areas.PCD.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult GenerarUsuarios(List<int> cursos, int CantidadUsuarios)
+        public ActionResult GenerarUsuarios(List<int> cursos, int CantidadUsuarios, int? vencimiento, int? unidadTiempo)
         {
-
+            //fecha vencimiento
+            if (vencimiento == null || unidadTiempo == null)
+            {
+                vencimiento = 1;
+                unidadTiempo = 1;
+            }
+            DateTime fechaVencimiento = DateTime.Today;
+            if (unidadTiempo == 1)
+            {
+               fechaVencimiento = fechaVencimiento.AddMonths(vencimiento.Value);
+            }
+            else
+            {
+                fechaVencimiento = fechaVencimiento.AddYears(vencimiento.Value);
+            }
             //DSUsuariosGenerados dsUsuarios = new DSUsuariosGenerados();
             List<curso> cursosMatricular = new List<curso>();
             usuario usuarioSesion = (usuario)HttpContext.Session["usuario"];
@@ -777,6 +802,7 @@ namespace Plataforma.Areas.PCD.Controllers
                         //dsUsuarios.Tables[0].Rows.Add(estudiante.username, estudiante.password);
                         estudiante.password = Utilitarios.EncodePassword(string.Concat(estudiante.username, estudiante.password));
                         estudiante.fecha_primer_ingreso = DateTime.Today;
+                        estudiante.fecha_vencimiento = fechaVencimiento;
                         estudiante.roles = db.roles.Where(r => r.rol.Equals(Constantes.ESTUDIANTE)).ToList();
                         foreach (curso curso in cursosMatricular)
                         {
@@ -980,6 +1006,65 @@ namespace Plataforma.Areas.PCD.Controllers
         [AllowAnonymous]
         public ActionResult SolicitudInscripcion()
         {
+            return View();
+        }
+
+        [Authorize]
+        public ActionResult RenovarSuscripcion(int? id)
+        {
+            if (Session["usuario"] != null)
+            {
+                usuario usuarioSesion = (usuario)HttpContext.Session["usuario"];
+                if ((usuarioSesion.roles.FirstOrDefault().rol.Equals(Constantes.ADMINISTRADOR)))
+                {
+                    if (id == null)
+                    {
+                        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                    }
+                    usuario usuario = db.usuarios.Find(id);
+                    if (usuario == null)
+                    {
+                        return HttpNotFound();
+                    }
+                    return View(usuario);
+                }
+                else
+                {
+                    return RedirectToAction("../");
+                }
+            }
+            return RedirectToAction("../Account/Login/ReturnUrl=usuarios");
+        }
+
+        [Authorize]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult RenovarSuscripcion(int id, int? vencimiento, int? unidadTiempo)
+        {
+            if (ModelState.IsValid)
+            {
+                usuario usuario = db.usuarios.Find(id);
+                //fecha vencimiento
+                if (vencimiento == null || unidadTiempo == null)
+                {
+                    vencimiento = 1;
+                    unidadTiempo = 1;
+                }
+                if (usuario.fecha_vencimiento < DateTime.Today)
+                {
+                    usuario.fecha_vencimiento = DateTime.Today;
+                }
+                if (unidadTiempo == 1)
+                {
+                    usuario.fecha_vencimiento = usuario.fecha_vencimiento.Value.AddMonths(vencimiento.Value);
+                }
+                else
+                {
+                    usuario.fecha_vencimiento = usuario.fecha_vencimiento.Value.AddYears(vencimiento.Value);
+                }
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
             return View();
         }
 

@@ -230,6 +230,7 @@ namespace Plataforma.Areas.PCD.Controllers
                     
                     usuario.informacion_opcional = profesores_temporal.informacion_opcional;
                     usuario.fecha_primer_ingreso = DateTime.Today;
+                    usuario.fecha_vencimiento = DateTime.Today.AddYears(1);
                     usuario.roles = db.roles.Where(r => r.rol.Equals(Constantes.PROFESOR)).ToList();
 
                     if (usuario.roles.FirstOrDefault().cursos.Count > 0)

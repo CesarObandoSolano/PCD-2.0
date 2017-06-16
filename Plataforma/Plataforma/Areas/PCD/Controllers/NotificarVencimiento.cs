@@ -24,9 +24,8 @@ namespace Plataforma.Areas.PCD.Controllers
                     {
                         destinatarios.Add(usuario.correo_2);
                     }
-                    DateTime fechaVencimiento = new DateTime(usuario.fecha_primer_ingreso.Value.Year + 1, usuario.fecha_primer_ingreso.Value.Month, usuario.fecha_primer_ingreso.Value.Day);
-                    TimeSpan diferenciaRenovacion = fechaVencimiento - DateTime.Today;
-                    if (diferenciaRenovacion.Days == 30 || diferenciaRenovacion.Days == 15 || diferenciaRenovacion.Days == 3)
+                    TimeSpan diferenciaRenovacion = usuario.fecha_vencimiento.Value - DateTime.Today;
+                    if (diferenciaRenovacion.Days == 15 || diferenciaRenovacion.Days == 7 || diferenciaRenovacion.Days == 3)
                     {
                         string mensaje = "Estimado " + usuario.nombre + "<br /> Por medio de este mensaje deseamos darle a conocer que su membresia en el sitio Plataforma de Contenidos Digitales se vencera en: " + diferenciaRenovacion.Days + " dias." +
                             "<br/><br/>Se recomienda comunicarse con el equipo de <a href='www.pimas.co.cr'>PIMAS</a> para la renovación de dicha membresia. <br/> <br/> Gracias.";

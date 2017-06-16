@@ -2,21 +2,20 @@
 @{
     ViewBag.Title = "Generar Usuarios";
 }
-
-<h2>Generar Usuarios</h2>
-
+<h2 class="class-forms">Generar Usuarios</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal col-lg-9">
-        <h4>Usuarios</h4>
-        <hr />
+        <h1 class="class-forms"><i class="fa fa-graduation-cap" aria-hidden="true"></i> &nbsp;Usuarios</h1>
+        <h6>Agregue la cantidad de usuarios al curso elegido</h6>
+        <br><br>
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        
+
         <div class="form-group">
-            @Html.Label("Curso", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Curso", htmlAttributes: new { @class = "control-label col-md-4" })
             <div class="col-md-10">
                 <select name="cursos" id="cursos" class="form-control" required>
                     <option value="">Selecciona un curso...</option>
@@ -27,26 +26,35 @@
                 </select>
             </div>
         </div>
-
         <div class="form-group">
-            @Html.Label("Cantidad de Estudiantes", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Cantidad de Estudiantes", htmlAttributes: new { @class = "control-label col-md-4" })
             <div class="col-md-10">
                 <input type="number" min="0" name="CantidadUsuarios" id="CantidadUsuarios" class="form-control">
             </div>
         </div>
-
+        <div class="form-group div-vencimiento">
+            @Html.Label("Tiempo de suscripción", htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-10">
+                <div class="col-md-7">
+                    <input type="number" min="1" value="1" name="vencimiento" id="vencimiento" class="form-control" />
+                </div>
+                <div class="col-md-5">
+                    <select name="unidadTiempo" id="unidadTiempo" class="form-control">
+                        <option value="1" selected>Meses</option>
+                        <option value="2">Años</option>
+                    </select>
+                </div>
+            </div>
+        </div>
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Generar" class="btn btn-default" />
+            <div class="col-md-offset-6 col-md-10">
+                <input type="submit" value="Generar" class="btn btn-primary" />
             </div>
         </div>
     </div>
 }
 
-
-
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
-
 

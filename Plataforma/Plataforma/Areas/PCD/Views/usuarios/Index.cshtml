@@ -53,28 +53,28 @@
             });
         }
 
-        function RenovarSubscripcion(id) {
-            $(document).ready(function () {
-                $.ajax({
-                    type: "POST",
-                    url: "/PCD/usuarios/RenovarSubscripcion",
-                    data: '{"id":"' + id + '"}',
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json",
-                    success: function (data) {
-                        if (data === "Exito") {
-                            alert("Modificación exitosa");
-                            $('#' + id).load('../usuarios/index #' + id);
-                        }
-                    },
-                    error: errores
-                });
-                function errores(data) {
-                    alert(data);
-                }
-                return false;
-            });
-        }
+        //function RenovarSubscripcion(id) {
+        //    $(document).ready(function () {
+        //        $.ajax({
+        //            type: "POST",
+        //            url: "/PCD/usuarios/RenovarSubscripcion",
+        //            data: '{"id":"' + id + '"}',
+        //            contentType: "application/json; charset=utf-8",
+        //            dataType: "json",
+        //            success: function (data) {
+        //                if (data === "Exito") {
+        //                    alert("Modificación exitosa");
+        //                    $('#' + id).load('../usuarios/index #' + id);
+        //                }
+        //            },
+        //            error: errores
+        //        });
+        //        function errores(data) {
+        //            alert(data);
+        //        }
+        //        return false;
+        //    });
+        //}
 
         $(document).ready(function () {
             $("#categorias").change(function () {
@@ -244,6 +244,7 @@
                     @Html.ActionLink(" ", "Edit", new { id = item.id }, new { @class = "enlace-tabla editar", @title = "Editar" })
                     @Html.ActionLink(" ", "Details", new { id = item.id }, new { @class = "enlace-tabla detalles", @title = "Detalles" })
                     @Html.ActionLink(" ", "Delete", new { id = item.id }, new { @class = "enlace-tabla eliminar", @title = "Eliminar" })
+                    @Html.ActionLink(" ", "RenovarSuscripcion", new { id = item.id }, new { @class = "enlace-tabla renovar", @title = "Renovar Suscripción" })
                     @if (item.bloqueado.GetValueOrDefault())
                     {
                         <a onclick="bloquearUsuario(@item.id)" class="enlace-tabla desbloquear" title="Desbloquear usuario"></a>
@@ -251,14 +252,6 @@
                     else
                     {
                         <a onclick="bloquearUsuario(@item.id)" class="enlace-tabla bloquear" title="Bloquear usuario"></a>
-                    }
-                    @{
-                        DateTime fechaVencimiento = new DateTime(item.fecha_primer_ingreso.Value.Year + 1, item.fecha_primer_ingreso.Value.Month, item.fecha_primer_ingreso.Value.Day);
-                        TimeSpan diferenciaRenovacion = fechaVencimiento - DateTime.Today;
-                        if (diferenciaRenovacion.Days <= 90)
-                        {
-                            <a onclick="RenovarSubscripcion(@item.id)" class="enlace-tabla renovar" title="Renovar Suscripción"></a>
-                        }
                     }
                 </td>
             </tr>

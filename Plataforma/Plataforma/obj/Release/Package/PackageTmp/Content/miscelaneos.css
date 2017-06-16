@@ -1,0 +1,179 @@
+﻿body {
+}
+
+.visualizador {
+    height: 680px;
+    width: 100%;
+}
+
+.vista {
+}
+
+    .vista div {
+    }
+
+    .vista .encabezado {
+        max-height: 80px;
+    }
+
+    .vista .documento {
+        width: 130px;
+        display: inline-block;
+    }
+
+    .vista a {
+        margin: 10px;
+    }
+
+    .vista image {
+        max-height: 100px;
+        max-width: 100px;
+        min-height: 32px;
+        min-width: 32px;
+    }
+
+    .vista p {
+        text-align: center;
+        display: table-cell;
+    }
+
+.navegador {
+    position: inherit;
+    height: 25px;
+}
+
+.navegador-anterior {
+    position: initial;
+}
+
+.navegador-siguiente {
+    position: absolute;
+    right: 0px;
+    padding: inherit;
+}
+
+.seccion-comentarios {
+    width: 100%;
+    padding: 20px;
+    border: outset;
+    border-color: transparent;
+    display: table-cell;
+}
+
+.comentario {
+    background-color: #EAEAEA;
+    width: 90%;
+    margin: 5px;
+}
+
+    .comentario label {
+        color: black;
+    }
+
+    .comentario p {
+        color: black;
+    }
+
+    .comentario a {
+        float: right;
+        cursor: pointer;
+    }
+
+.respuesta {
+    width: 85%;
+    margin: 5px;
+    margin-left: 50px;
+}
+
+    .respuesta label {
+        color: black;
+    }
+
+    .respuesta p {
+        color: black;
+    }
+
+.editar{
+    background: url("/Recursos/Iconos/editar-hov.png") center center no-repeat;
+}
+
+.detalles {
+    background: url("/Recursos/Iconos/ver_detalles.png") center center no-repeat;
+}
+
+.eliminar {
+    background: url("/Recursos/Iconos/eliminar-hov.png") center center no-repeat;
+}
+
+.bloquear {
+    background: url("/Recursos/Iconos/blockear_usuario-hov.png") center center no-repeat;
+}
+
+.desbloquear{
+    background: url("/Recursos/Iconos/desbloquear_usuario-hov.png") center center no-repeat;
+}
+
+.renovar {
+    background: url("/Recursos/Iconos/renovar_susc-hov.png") center center no-repeat;
+}
+
+.matricular {
+    background: url("/Recursos/Iconos/matricular_usuarios-hov.png") center center no-repeat;
+}
+
+.aceptar {
+    background: url("/Recursos/Iconos/aceptar_profesor-hov.png") center center no-repeat;
+}
+
+.eliminar-profesor {
+    background: url("/Recursos/Iconos/eliminar_profesor-hov.png") center center no-repeat;
+}
+
+.agregar-documentos {
+    background: url("/Recursos/Iconos/agregar_documentos-hov.png") center center no-repeat;
+}
+
+.solicitar-libro{
+    background: url("/Recursos/Iconos/solicitar_libro-hov.png") center center no-repeat;
+}
+
+.enlace-tabla {
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+
+.mostrarmenu {
+    background: url("/Recursos/Iconos/mostrarmenu1.png") no-repeat;
+    border: none;
+    width: 17px;
+    height: 17px;
+}
+
+/** Inicio de paginador*/
+
+    /*Fin de paginador*/
+
+input[type="button"] {
+    transition: all .3s;
+    border: 1px solid #ddd;
+    padding: 2px 8px;
+    text-decoration: none;
+    border-radius: 2px;
+    font-size: 15px;
+}
+
+    input[type="button"]:not(.active) {
+        background-color: transparent;
+    }
+
+.active {
+    background-color: #ff4d4d;
+    color: #fff;
+}
+
+input[type="button"]:hover:not(.active) {
+    background-color: #ddd;
+}

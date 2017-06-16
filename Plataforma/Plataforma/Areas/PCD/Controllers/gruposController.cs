@@ -102,10 +102,25 @@ namespace Plataforma.Areas.PCD.Controllers
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,grupo, permisos")] grupos grupos, ICollection<int> permiso, int profesores, int cursos, int CantidadUsuarios)
+        public ActionResult Create([Bind(Include = "id,grupo, permisos")] grupos grupos, ICollection<int> permiso, int profesores, int cursos, int CantidadUsuarios, int? vencimiento, int? unidadTiempo)
         {
             if (ModelState.IsValid)
             {
+                //fecha vencimiento
+                if (vencimiento == null || unidadTiempo == null)
+                {
+                    vencimiento = 1;
+                    unidadTiempo = 1;
+                }
+                DateTime fechaVencimiento = DateTime.Today;
+                if (unidadTiempo == 1)
+                {
+                    fechaVencimiento = fechaVencimiento.AddMonths(vencimiento.Value);
+                }
+                else
+                {
+                    fechaVencimiento = fechaVencimiento.AddYears(vencimiento.Value);
+                }
                 foreach (int permisoSeleccionado in permiso)
                 {
                     permiso permisoobj = db.permisos.Find(permisoSeleccionado);
@@ -142,6 +157,7 @@ namespace Plataforma.Areas.PCD.Controllers
                         sb.AppendLine("Username = " + estudiante.username + " Password = " + estudiante.password);
                         estudiante.password = Utilitarios.EncodePassword(string.Concat(estudiante.username, estudiante.password));
                         estudiante.fecha_primer_ingreso = DateTime.Today;
+                        estudiante.fecha_vencimiento = fechaVencimiento;
                         estudiante.roles = db.roles.Where(r => r.rol.Equals(Constantes.ESTUDIANTE_PREMIUM)).ToList();
                         estudiante.cursos.Add(curso);
                         notificacione notificacion = new notificacione();
@@ -175,10 +191,10 @@ namespace Plataforma.Areas.PCD.Controllers
                     pdfDoc.Add(table);
                     Paragraph Text = new Paragraph("\n\n" + sb.ToString());
                     pdfDoc.Add(Text);
-                    string indicaciones =
-                        "\n\nCada estudiante debe recibir un Username y su respectivo Password para poder " +
-                        "ingresar al curso solicitado, una vez que ingrese, puede cambiar sus datos personales." +
-                        "\n\n Dicho curso le debe aparecer en la sección 'Cursos' del menu.\n" +
+                    string indicaciones = 
+                        "\n\nCada estudiante debe recibir un Username y su respectivo Password para poder "+
+                        "ingresar al curso solicitado, una vez que ingrese, puede cambiar sus datos personales."+
+                        "\n\n Dicho curso le debe aparecer en la sección 'Cursos' del menu.\n"+ 
                         "\nContenido:\n";
                     foreach (var contenido in curso.documentos_curso)
                     {
@@ -189,17 +205,11 @@ namespace Plataforma.Areas.PCD.Controllers
                     Paragraph parrafoIndicaciones = new Paragraph(indicaciones);
                     parrafoIndicaciones.Alignment = Element.ALIGN_JUSTIFIED;
                     pdfDoc.Add(parrafoIndicaciones);
-
-                    
-                    pdfWriter.PageEvent = new EventosReporte();
-
-                    //Paragraph footer = new Paragraph("\n\nPublicaciones Innovadoras en Matemática para Secundaria PIMAS 	 Cédula Jurídica: 3-101-469172" +
-                    //                    "\n\neditorial @pimas.co.cr ⧫ www.pimas.co.cr ⧫ Facebook / PimasCR ⧫ Tel: 8310 0573");
-                    //footer.Alignment = Element.ALIGN_CENTER;
-
-                    //footer.Font = new Font(Font.FontFamily.HELVETICA, 5, Font.BOLDITALIC);
-
-                    //pdfDoc.Add(footer);
+                    Paragraph footer = new Paragraph("\n\nPublicaciones Innovadoras en Matemática para Secundaria PIMAS 	 Cédula Jurídica: 3-101-469172" +
+                                        "\n\neditorial @pimas.co.cr ⧫ www.pimas.co.cr ⧫ Facebook / PimasCR ⧫ Tel: 8310 0573");
+                    footer.Alignment = Element.ALIGN_CENTER;
+                    footer.Font = new Font(Font.FontFamily.HELVETICA, 5, Font.BOLDITALIC);
+                    pdfDoc.Add(footer);
                     pdfWriter.CloseStream = false;
                     pdfDoc.Close();
                     s = new MemoryStream(s.ToArray());

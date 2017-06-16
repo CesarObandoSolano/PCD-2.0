@@ -88,7 +88,6 @@
     <NavigationProperty Name="libros" Relationship="Self.documentos_libro" FromRole="documentos" ToRole="libros" />
     <NavigationProperty Name="niveles" Relationship="Self.niveles_documento" FromRole="documentos" ToRole="niveles" />
     <NavigationProperty Name="documentos_curso" Relationship="pimasModel.FK_documentos_curso_documentos" FromRole="documento" ToRole="documentos_curso" />
-    <Property Name="descargable" Type="Boolean" Nullable="false" />
   </EntityType>
   <EntityType Name="documentos_curso">
     <Key>
@@ -309,6 +308,7 @@
     <NavigationProperty Name="permisos" Relationship="Self.permisos_usuario" FromRole="usuarios" ToRole="permisos" />
     <NavigationProperty Name="roles" Relationship="Self.roles_usuario" FromRole="usuarios" ToRole="roles" />
     <NavigationProperty Name="grupos" Relationship="Self.usuarios_grupo" FromRole="usuarios" ToRole="grupos" />
+    <Property Name="fecha_vencimiento" Type="DateTime" Precision="3" />
   </EntityType>
   <EntityType Name="Venta">
     <Key>

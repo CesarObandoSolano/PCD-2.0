@@ -3,13 +3,10 @@
 @{
     ViewBag.Title = "Eliminar";
 }
-
-<h2>Eliminar</h2>
-<link rel="stylesheet" type="text/css" href="~/Content/custombootstrap.css" />
-<h3>¿Estas seguro de que quieres eliminar este tipo de colegio?</h3>
-<div class="col-lg-9">
-    <h4>Tipo de Colegio</h4>
-    <hr />
+<h1 class="class-forms">Eliminar</h1>
+<h3 class="class-forms">¿Estas seguro de que quieres eliminar este tipo de colegio?</h3>
+<div class="col-md-12">
+    <h4 class="class-forms">Tipo de Colegio</h4>
     <dl class="dl-horizontal">
         <dt>
             Tipo de colegio
@@ -25,7 +22,7 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            <input type="submit" value="Eliminar" class="btn btn-danger" /> |
             @Html.ActionLink("Volver al indice", "Index")
         </div>
     }

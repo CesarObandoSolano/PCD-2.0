@@ -49,17 +49,6 @@
         <dd>
             @Html.DisplayFor(model => model.contador_visitas)
         </dd>
-        <dt>Descargable</dt>
-        <dd>
-            @if (Model.descargable)
-            {
-                <p>Si</p>
-            }
-            else
-            {
-                <p>No</p>
-            }
-        </dd>
     </dl>
     @using (Html.BeginForm())
     {

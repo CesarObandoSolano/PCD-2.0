@@ -3,23 +3,22 @@
 @{
     ViewBag.Title = "Detalles";
 }
-<link rel="stylesheet" type="text/css" href="~/Content/custombootstrap.css" />
-<h2>Detalles</h2>
-
-<div class="col-lg-9">
-    <h4>Tipo de Colegio</h4>
-    <hr />
+<div class="col-md-12">
+    <h1 class="class-forms">
+        <i class="fa fa-user-circle" aria-hidden="true"></i>
+        Detalles
+    </h1>
+    <h6>Información asociada al tipo de colegio</h6>
+    <br />
+    <h4 class="class-forms">Tipo de Colegio</h4>
     <dl class="dl-horizontal">
         <dt>
             Tipo de colegio
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.tipo_institucion)
         </dd>
-
     </dl>
-
     <p>
         @Html.ActionLink("Editar", "Edit", new { id = Model.id }) |
         @Html.ActionLink("Volver al indice", "Index")

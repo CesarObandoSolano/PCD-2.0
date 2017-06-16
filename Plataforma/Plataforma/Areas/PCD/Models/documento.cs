@@ -11,7 +11,9 @@ namespace Plataforma.Areas.PCD.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public partial class documento
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -28,8 +30,10 @@ namespace Plataforma.Areas.PCD.Models
         public int id_tipo { get; set; }
         public string url { get; set; }
         public Nullable<int> contador_visitas { get; set; }
+        [Required(ErrorMessage = "Ingresa un titulo para el documento")]
         public string titulo { get; set; }
         public string descripcion_corta { get; set; }
+        [Column(TypeName = "varchar(1000)")]
         public string descripcion_detallada { get; set; }
         public Nullable<System.DateTime> fecha_publicacion { get; set; }
         public Nullable<bool> status { get; set; }
@@ -38,7 +42,6 @@ namespace Plataforma.Areas.PCD.Models
         public Nullable<int> numero_version { get; set; }
         public int unidad { get; set; }
         public Nullable<int> capitulo { get; set; }
-        public bool descargable { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<comentario> comentarios { get; set; }
