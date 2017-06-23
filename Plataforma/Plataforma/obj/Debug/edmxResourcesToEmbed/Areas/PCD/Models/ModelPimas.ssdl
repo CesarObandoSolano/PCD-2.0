@@ -331,7 +331,7 @@
     <Property Name="password" Type="varchar" MaxLength="30" Nullable="false" />
     <Property Name="telefono" Type="int" />
     <Property Name="telefono_2" Type="int" />
-    <Property Name="correo" Type="varchar" MaxLength="50" />
+    <Property Name="correo" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="correo_2" Type="varchar" MaxLength="50" />
     <Property Name="informacion_opcional" Type="varchar" MaxLength="255" />
     <Property Name="fecha_primer_ingreso" Type="datetime" />

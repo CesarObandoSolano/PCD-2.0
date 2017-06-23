@@ -83,6 +83,10 @@ namespace Plataforma.Areas.PCD.Controllers
             {
                 return View(model);
             }
+            if (model.Email.Contains("@") && db.usuarios.Where(u => u.correo.Equals(model.Email)).FirstOrDefault() != null)
+            {
+                model.Email = db.usuarios.Where(u => u.correo.Equals(model.Email)).FirstOrDefault().username;
+            }
             var pass = Utilitarios.EncodePassword(model.Email + model.Password);
             usuario user = db.usuarios.Where(u => u.username.Equals(model.Email) && u.password.Equals(pass)).FirstOrDefault();
             if (user != null)
