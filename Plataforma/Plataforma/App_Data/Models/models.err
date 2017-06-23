@@ -9,7 +9,8 @@ The type initializer for 'File' threw an exception.
    at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
    at Umbraco.ModelsBuilder.ReferencedAssemblies.<>c.<.cctor>b__2_1() in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\ReferencedAssemblies.cs:line 23
    at System.Lazy`1.CreateValue()
-   at System.Lazy`1.LazyInitValue()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
    at System.Lazy`1.get_Value()
    at Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory.GenerateModelsCode(IDictionary`2 ourFiles, IList`1 typeModels) in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\Umbraco\PureLiveModelFactory.cs:line 345
    at Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory.GetModelsAssembly(Boolean forceRebuild) in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\Umbraco\PureLiveModelFactory.cs:line 283
