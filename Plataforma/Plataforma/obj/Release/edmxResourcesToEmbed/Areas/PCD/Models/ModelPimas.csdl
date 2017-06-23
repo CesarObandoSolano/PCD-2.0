@@ -288,7 +288,7 @@
     <Property Name="password" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="telefono" Type="Int32" />
     <Property Name="telefono_2" Type="Int32" />
-    <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="correo_2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="informacion_opcional" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
     <Property Name="fecha_primer_ingreso" Type="DateTime" Precision="3" />
