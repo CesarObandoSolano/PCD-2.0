@@ -26,7 +26,7 @@
                                         &nbsp;Usuario
                                     </label>
                                     <div class="col-xs-6 col-md-6">
-                                        @Html.TextBoxFor(m => m.Email, new { @id = "Email", @class = "form-control", @type = "text", @value = "", @autocomplete = "off", @style = "background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=&quot;);" })
+                                        @Html.TextBoxFor(m => m.Email, new {@title="Usa tu nombre de usuario o correo para ingresar", @id = "Email", @class = "form-control", @type = "text", @value = "", @autocomplete = "off", @style = "background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=&quot;);" })
                                         @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                                     </div>
                                 </div>

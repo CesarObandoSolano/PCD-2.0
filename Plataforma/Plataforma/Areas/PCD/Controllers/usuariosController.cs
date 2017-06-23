@@ -265,6 +265,7 @@ namespace Plataforma.Areas.PCD.Controllers
                         return HttpNotFound();
                     }
                     ViewBag.nombreUsuario = usuario.username;
+                    ViewBag.correoUsuario = usuario.correo;
                     ViewBag.Roles = db.roles;
                     ViewBag.colegios = db.colegios;
                     ViewBag.notificacionCorreo = usuario.notificacione.correo;
@@ -381,6 +382,18 @@ namespace Plataforma.Areas.PCD.Controllers
         {
             if (db.usuarios.Where(u => u.username.Equals(username)).ToList().Count > 0 || 
                 db.profesores_temporal.Where(p => p.username.Equals(username)).ToList().Count > 0)
+            {
+                return Json("ocupado", JsonRequestBehavior.AllowGet);
+            }
+            return Json("libre", JsonRequestBehavior.AllowGet);
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        public ActionResult validarCorreo(String correo)
+        {
+            if (db.usuarios.Where(u => u.correo.Equals(correo)).ToList().Count > 0 ||
+                db.profesores_temporal.Where(p => p.correo.Equals(correo)).ToList().Count > 0)
             {
                 return Json("ocupado", JsonRequestBehavior.AllowGet);
             }
