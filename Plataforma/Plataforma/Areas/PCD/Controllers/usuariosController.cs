@@ -146,12 +146,15 @@ namespace Plataforma.Areas.PCD.Controllers
             }
             ViewBag.id = new SelectList(db.notificaciones, "id_usuario", "id_usuario");
             ViewBag.id = new SelectList(db.log_visitas, "id_usuario", "id_usuario");
-            ViewBag.roles = new SelectList(db.roles.Where(r => !(r.rol.Equals(Constantes.ADMINISTRADOR)  ||
-                                                               r.rol.Equals(Constantes.PROFESOR_PREMIUM) ||
-                                                               r.rol.Equals(Constantes.PROFESOR) ||
-                                                               r.rol.Equals(Constantes.ESTUDIANTE_PREMIUM) ||
-                                                               r.rol.Equals("Estudiante Plus") ||
-                                                               r.rol.Equals(Constantes.ESTUDIANTE)
+            //ViewBag.roles = new SelectList(db.roles.Where(r => !(r.rol.Equals(Constantes.ADMINISTRADOR)  ||
+            //                                                   r.rol.Equals(Constantes.PROFESOR_PREMIUM) ||
+            //                                                   r.rol.Equals(Constantes.PROFESOR) ||
+            //                                                   r.rol.Equals(Constantes.ESTUDIANTE_PREMIUM) ||
+            //                                                   r.rol.Equals("Estudiante Plus") ||
+            //                                                   r.rol.Equals(Constantes.ESTUDIANTE)
+            //                                                   )),
+            //                                                   "id", "rol");
+            ViewBag.roles = new SelectList(db.roles.Where(r => (r.rol.Equals("Perfil Libre")
                                                                )),
                                                                "id", "rol");
             ViewBag.colegios = new SelectList(db.colegios, "id", "nombre");
