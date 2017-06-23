@@ -43,27 +43,27 @@
                         <h3>@Model.documentos_curso.ElementAt(i).documento.unidade.unidad</h3>
                     </div>
                 }
-                <div class="documento">
-                    @if (ViewBag.Grupo != null)
+                    <div class="documento">
+                        @if (ViewBag.Grupo != null)
                     {
-                        <a href="~/PCD/documentos/VerDocumento/@item.documento.id?idCurso=@Model.id&idGrupo=@ViewBag.Grupo.id">
-                            <p>
-                                <img src="@Url.Content(item.documento.tipo_documento.icono)"><br />
-                                @item.documento.titulo
-                            </p>
-                        </a>
-                    }
-                    else
-                    {
-                        <a href="~/PCD/documentos/VerDocumento/@item.documento.id?idCurso=@Model.id">
+                            <a href="~/PCD/documentos/VerDocumento/@item.documento.id?idCurso=@Model.id&idGrupo=@ViewBag.Grupo.id">
+                                <p>
+                                    <img src="@Url.Content(item.documento.tipo_documento.icono)"><br />
+                                    @item.documento.titulo
+                                </p>
+                            </a>
+                        }
+                        else
+                        {
+                            <a href="~/PCD/documentos/VerDocumento/@item.documento.id?idCurso=@Model.id">
 
-                            <p>
-                                <img src="@Url.Content(item.documento.tipo_documento.icono)"><br />
-                                @item.documento.titulo
-                            </p>
-                        </a>
-                    }
-                </div>
+                                <p>
+                                    <img src="@Url.Content(item.documento.tipo_documento.icono)"><br />
+                                    @item.documento.titulo
+                                </p>
+                            </a>
+                        }
+                    </div>
                 if ((i < Model.documentos_curso.Count - 1) && (@item.documento.unidad != Model.documentos_curso.ElementAt(i + 1).documento.unidad))
                 {
                     <br />

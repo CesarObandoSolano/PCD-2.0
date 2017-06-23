@@ -1428,19 +1428,6 @@ C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\U
 C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\UmbracoExamine.dll
 C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\UrlRewritingNet.UrlRewriter.dll
 C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\WebGrease.dll
-C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
-C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
-C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
-C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.Controllers.dll
-C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.CommLayer.dll
-C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
-C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.Prompting.dll
-C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
-C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
-C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
-C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
-C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
-C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\stdole.dll
 C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\AutoMapper.pdb
 C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\AutoMapper.xml
 C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\AutoMapper.Net4.pdb
@@ -1520,7 +1507,6 @@ C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\e
 C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\es\Microsoft.Owin.Security.Google.resources.dll
 C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\es\Microsoft.Owin.Security.Twitter.resources.dll
 C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\es\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
-C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\obj\Debug\Plataforma.csprojResolveAssemblyReference.cache
 C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\obj\Debug\Plataforma.dll
 C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\obj\Debug\Plataforma.pdb
 C:\Users\Cesar\Documents\Trabajo\PCD-2.0\PCD-2.0\Plataforma\Plataforma\bin\roslyn\csc.exe
@@ -1712,3 +1698,4 @@ C:\Users\Cesar\Documents\Trabajo\PCD-2.0\PCD-2.0\Plataforma\Plataforma\bin\es\Mi
 C:\Users\Cesar\Documents\Trabajo\PCD-2.0\PCD-2.0\Plataforma\Plataforma\obj\Debug\Plataforma.csprojResolveAssemblyReference.cache
 C:\Users\Cesar\Documents\Trabajo\PCD-2.0\PCD-2.0\Plataforma\Plataforma\obj\Debug\Plataforma.dll
 C:\Users\Cesar\Documents\Trabajo\PCD-2.0\PCD-2.0\Plataforma\Plataforma\obj\Debug\Plataforma.pdb
+C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\obj\Debug\Plataforma.csprojResolveAssemblyReference.cache
