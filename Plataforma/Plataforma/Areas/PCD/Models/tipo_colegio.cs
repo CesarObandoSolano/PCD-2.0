@@ -11,7 +11,8 @@ namespace Plataforma.Areas.PCD.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class tipo_colegio
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,6 +22,7 @@ namespace Plataforma.Areas.PCD.Models
         }
     
         public int id { get; set; }
+        [Required(ErrorMessage = "Ingresa un nombre para el tipo de colegio")]
         public string tipo_institucion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

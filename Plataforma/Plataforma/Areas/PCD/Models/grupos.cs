@@ -11,7 +11,8 @@ namespace Plataforma.Areas.PCD.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class grupos
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -24,6 +25,7 @@ namespace Plataforma.Areas.PCD.Models
     
         public int id { get; set; }
         public Nullable<int> id_curso { get; set; }
+        [Required(ErrorMessage = "Ingresa una descripción para el grupo")]
         public string grupo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
