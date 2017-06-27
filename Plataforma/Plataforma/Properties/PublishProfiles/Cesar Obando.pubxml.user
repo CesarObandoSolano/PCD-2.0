@@ -433,7 +433,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>04/06/2017 00:57:18</publishTime>
     </File>
     <File Include="Areas/PCD/Controllers/AccountController.cs">
-      <publishTime>04/06/2017 00:57:18</publishTime>
+      <publishTime>06/23/2017 15:37:53</publishTime>
     </File>
     <File Include="Areas/PCD/Controllers/AdministrarReportes.cs">
       <publishTime>06/16/2017 11:52:56</publishTime>
@@ -499,7 +499,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>03/01/2017 23:32:49</publishTime>
     </File>
     <File Include="Areas/PCD/Controllers/usuariosController.cs">
-      <publishTime>06/16/2017 12:08:29</publishTime>
+      <publishTime>06/26/2017 18:33:23</publishTime>
     </File>
     <File Include="Areas/PCD/Controllers/Utilitarios.cs">
       <publishTime>04/06/2017 00:09:47</publishTime>
@@ -517,16 +517,16 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>04/19/2017 15:28:06</publishTime>
     </File>
     <File Include="Areas/PCD/Models/colegio.cs">
-      <publishTime>06/16/2017 01:08:42</publishTime>
+      <publishTime>06/23/2017 16:30:32</publishTime>
     </File>
     <File Include="Areas/PCD/Models/comentario.cs">
       <publishTime>04/19/2017 15:28:06</publishTime>
     </File>
     <File Include="Areas/PCD/Models/curso.cs">
-      <publishTime>06/16/2017 01:08:42</publishTime>
+      <publishTime>06/23/2017 16:28:11</publishTime>
     </File>
     <File Include="Areas/PCD/Models/documento.cs">
-      <publishTime>06/16/2017 01:08:42</publishTime>
+      <publishTime>06/23/2017 16:31:15</publishTime>
     </File>
     <File Include="Areas/PCD/Models/DocumentosCurso.cs">
       <publishTime>03/01/2017 23:33:03</publishTime>
@@ -538,13 +538,13 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>04/19/2017 15:28:06</publishTime>
     </File>
     <File Include="Areas/PCD/Models/grupos.cs">
-      <publishTime>06/16/2017 01:08:42</publishTime>
+      <publishTime>06/23/2017 16:26:37</publishTime>
     </File>
     <File Include="Areas/PCD/Models/IdentityModels.cs">
       <publishTime>03/01/2017 23:33:02</publishTime>
     </File>
     <File Include="Areas/PCD/Models/libro.cs">
-      <publishTime>06/16/2017 01:08:42</publishTime>
+      <publishTime>06/23/2017 16:25:54</publishTime>
     </File>
     <File Include="Areas/PCD/Models/login_admin_Result.cs">
       <publishTime>02/13/2017 21:21:42</publishTime>
@@ -562,19 +562,19 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>03/01/2017 23:33:01</publishTime>
     </File>
     <File Include="Areas/PCD/Models/ModelPimas.Context.cs">
-      <publishTime>06/15/2017 17:37:06</publishTime>
+      <publishTime>06/23/2017 11:56:22</publishTime>
     </File>
     <File Include="Areas/PCD/Models/ModelPimas.Context.tt">
       <publishTime>04/19/2017 15:27:36</publishTime>
     </File>
     <File Include="Areas/PCD/Models/ModelPimas.cs">
-      <publishTime>06/15/2017 17:36:32</publishTime>
+      <publishTime>06/23/2017 11:55:27</publishTime>
     </File>
     <File Include="Areas/PCD/Models/ModelPimas.Designer.cs">
-      <publishTime>06/15/2017 17:36:32</publishTime>
+      <publishTime>06/23/2017 11:55:27</publishTime>
     </File>
     <File Include="Areas/PCD/Models/ModelPimas.edmx">
-      <publishTime>06/15/2017 17:36:15</publishTime>
+      <publishTime>06/23/2017 11:55:05</publishTime>
     </File>
     <File Include="Areas/PCD/Models/ModelPimas.edmx.diagram">
       <publishTime>04/19/2017 18:45:25</publishTime>
@@ -583,40 +583,40 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>04/19/2017 15:27:36</publishTime>
     </File>
     <File Include="Areas/PCD/Models/nivele.cs">
-      <publishTime>06/16/2017 01:08:42</publishTime>
+      <publishTime>06/23/2017 16:25:23</publishTime>
     </File>
     <File Include="Areas/PCD/Models/notificacione.cs">
       <publishTime>04/19/2017 15:28:06</publishTime>
     </File>
     <File Include="Areas/PCD/Models/pais.cs">
-      <publishTime>06/16/2017 01:08:42</publishTime>
+      <publishTime>06/23/2017 16:24:58</publishTime>
     </File>
     <File Include="Areas/PCD/Models/permiso.cs">
-      <publishTime>06/16/2017 01:08:42</publishTime>
+      <publishTime>06/23/2017 16:23:26</publishTime>
     </File>
     <File Include="Areas/PCD/Models/profesores_temporal.cs">
-      <publishTime>06/16/2017 01:08:42</publishTime>
+      <publishTime>06/23/2017 16:23:08</publishTime>
     </File>
     <File Include="Areas/PCD/Models/respuesta.cs">
       <publishTime>04/19/2017 15:28:06</publishTime>
     </File>
     <File Include="Areas/PCD/Models/role.cs">
-      <publishTime>06/16/2017 01:08:42</publishTime>
+      <publishTime>06/23/2017 16:22:17</publishTime>
     </File>
     <File Include="Areas/PCD/Models/sysdiagram.cs">
       <publishTime>04/19/2017 15:28:06</publishTime>
     </File>
     <File Include="Areas/PCD/Models/tipo_colegio.cs">
-      <publishTime>06/16/2017 01:08:42</publishTime>
+      <publishTime>06/23/2017 16:21:56</publishTime>
     </File>
     <File Include="Areas/PCD/Models/tipo_documento.cs">
-      <publishTime>06/16/2017 01:08:42</publishTime>
+      <publishTime>06/23/2017 16:21:37</publishTime>
     </File>
     <File Include="Areas/PCD/Models/unidade.cs">
-      <publishTime>06/16/2017 01:08:42</publishTime>
+      <publishTime>06/23/2017 16:21:18</publishTime>
     </File>
     <File Include="Areas/PCD/Models/usuario.cs">
-      <publishTime>06/16/2017 01:08:42</publishTime>
+      <publishTime>06/23/2017 16:20:49</publishTime>
     </File>
     <File Include="Areas/PCD/Models/Venta.cs">
       <publishTime>04/19/2017 15:28:06</publishTime>
@@ -640,7 +640,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>03/01/2017 23:33:07</publishTime>
     </File>
     <File Include="Areas/PCD/Views/Account/Login.cshtml">
-      <publishTime>06/23/2017 15:04:34</publishTime>
+      <publishTime>06/26/2017 18:18:29</publishTime>
     </File>
     <File Include="Areas/PCD/Views/Account/LoginForm.cshtml">
       <publishTime>06/16/2017 01:08:42</publishTime>
@@ -979,7 +979,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>06/16/2017 01:08:44</publishTime>
     </File>
     <File Include="Areas/PCD/Views/usuarios/CambiarPasswordUsuario.cshtml">
-      <publishTime>06/16/2017 01:08:44</publishTime>
+      <publishTime>06/26/2017 18:44:47</publishTime>
     </File>
     <File Include="Areas/PCD/Views/usuarios/Create.cshtml">
       <publishTime>06/23/2017 13:54:06</publishTime>
@@ -1423,7 +1423,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>02/23/2017 12:57:01</publishTime>
     </File>
     <File Include="bin/Plataforma.dll">
-      <publishTime>06/23/2017 16:38:03</publishTime>
+      <publishTime>06/26/2017 18:48:09</publishTime>
     </File>
     <File Include="bin/Plataforma.dll.config">
       <publishTime>03/09/2017 17:20:51</publishTime>
