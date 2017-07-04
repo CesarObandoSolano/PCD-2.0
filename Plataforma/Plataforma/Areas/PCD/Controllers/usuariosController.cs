@@ -551,23 +551,6 @@ namespace Plataforma.Areas.PCD.Controllers
             return false;
         }
 
-        //[Authorize]
-        //[HttpPost]
-        //public ActionResult RenovarSubscripcion(int id)
-        //{
-        //    if (Session["usuario"] != null)
-        //    {
-        //        usuario usuarioSesion = (usuario)HttpContext.Session["usuario"];
-        //        if (usuarioSesion.roles.FirstOrDefault().rol.Equals(Constantes.ADMINISTRADOR))
-        //        {
-        //            db.usuarios.Find(id).fecha_primer_ingreso = DateTime.Today;
-        //            db.SaveChanges();
-        //            return Json("Exito", JsonRequestBehavior.AllowGet);
-        //        }
-        //    }
-        //    return Json("Usuario no autenticado o sin permisos para utilizar esta función", JsonRequestBehavior.AllowGet);
-        //}
-
         [Authorize]
         [HttpPost]
         public ActionResult CerrarSesiones()
@@ -996,7 +979,11 @@ namespace Plataforma.Areas.PCD.Controllers
         [HttpPost]
         public ActionResult CambiarPasswordUsuario(String username)
         {
-            if (db.usuarios.Where(u => u.username.Equals(username)).ToList().Count > 0 || db.profesores_temporal.Where(p => p.username.Equals(username)).ToList().Count > 0)
+            if (username.Contains("@") && db.usuarios.Where(u => u.correo.Equals(username)).FirstOrDefault() != null)
+            {
+                username = db.usuarios.Where(u => u.correo.Equals(username)).FirstOrDefault().username;
+            }
+            if (db.usuarios.Where(u => u.username.Equals(username)).ToList().Count > 0)
             {
                 usuario usuario = db.usuarios.Where(u => u.username.Equals(username)).FirstOrDefault();
                 string password = Guid.NewGuid().ToString().Substring(0, 10);
