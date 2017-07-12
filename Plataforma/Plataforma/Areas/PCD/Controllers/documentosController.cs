@@ -42,7 +42,7 @@ namespace Plataforma.Areas.PCD.Controllers
 
                     if (curso != null)
                     {
-                        documentos = documentos.Where(u => u.documentos_curso.Where(dc=>dc.id_curso == curso).ToList().Count>0).ToList();
+                        documentos = documentos.Where(u => u.documentos_curso.Where(dc => dc.id_curso == curso).ToList().Count > 0).ToList();
                     }
 
                     if (nivel != null)
@@ -59,7 +59,7 @@ namespace Plataforma.Areas.PCD.Controllers
                     {
                         documentos = documentos.Where(u => u.descripcion_corta.Contains(descripcion) || u.descripcion_detallada.Contains(descripcion)).ToList();
                     }
-                    
+
                     documentos = documentos.OrderBy(d => d.titulo).ToList();
                     ViewBag.unidades = db.unidades;
                     ViewBag.cursos = db.cursos;
@@ -239,9 +239,10 @@ namespace Plataforma.Areas.PCD.Controllers
                         Directory.CreateDirectory(ruta);
                     }
                     file.SaveAs(ruta_final);
-                } else if (unidadAnterior!=0)
+                }
+                else if (unidadAnterior != 0)
                 {
-                    if (unidadAnterior!=documento.unidad)
+                    if (unidadAnterior != documento.unidad)
                     {
                         string ruta = Path.Combine(Request.PhysicalApplicationPath, "Recursos", "Documentos", "" + documento.unidad);
                         string archivo = Path.GetFileName(documento.url);
@@ -257,9 +258,9 @@ namespace Plataforma.Areas.PCD.Controllers
                         }
                     }
                 }
-                if (nivel!=null && nivel.Count>0)
+                if (nivel != null && nivel.Count > 0)
                 {
-                    foreach(var item in nivel)
+                    foreach (var item in nivel)
                     {
                         nivele nivelObj = db.niveles.Find(item);
                         documento.niveles.Add(nivelObj);
@@ -404,8 +405,8 @@ namespace Plataforma.Areas.PCD.Controllers
                         }
                         grupos grupo = new grupos();
                         grupo.id = 1;
-                        
-                        if (idGrupo!=null && usuarioSesion.grupos.Where(g=>g.id == idGrupo).ToList().Count>0)
+
+                        if (idGrupo != null && usuarioSesion.grupos.Where(g => g.id == idGrupo).ToList().Count > 0)
                         {
                             grupo = db.grupos.Find(idGrupo);
                             List<comentario> comentarios = documento.comentarios.Where(c => c.id_grupo == grupo.id).OrderByDescending(c => c.fecha_publicacion).ToList();
@@ -414,7 +415,7 @@ namespace Plataforma.Areas.PCD.Controllers
                                 comentarios.ElementAt(i).respuestas.OrderByDescending(r => r.fecha_publicacion);
                             }
                             ViewBag.Grupo = grupo;
-                            if(comentarios == null)
+                            if (comentarios == null)
                             {
                                 comentarios = new List<comentario>();
                             }
@@ -521,6 +522,87 @@ namespace Plataforma.Areas.PCD.Controllers
             }
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult BusquedaGeneral(string nombre, int? curso, int? unidad, int? nivel, int? tipo)
+        {
+            if (Session["usuario"] != null)
+            {
+                List<documento> documentos = new List<documento>();
+                List<documentos_curso> documentosUsuario = new List<documentos_curso>();
+                if ((nombre != null && nombre != "") || curso != null || unidad != null || nivel != null || tipo != null)
+                {
+                    usuario usuarioSesion = (usuario)HttpContext.Session["usuario"];
+                    
+                    documentosUsuario = db.documentos_curso.SqlQuery("select distinct * from documentos_curso where id_documento in (" +
+                                                                      "select id from documentos where " +
+                                                                      "titulo COLLATE Latin1_general_CI_AI like '%"+nombre+"%' COLLATE Latin1_general_CI_AI or " +
+                                                                      "descripcion_corta COLLATE Latin1_general_CI_AI like '%" + nombre + "%' COLLATE Latin1_general_CI_AI or " +
+                                                                      "descripcion_detallada COLLATE Latin1_general_CI_AI like '%" + nombre + "%' COLLATE Latin1_general_CI_AI)"
+                                                                     ).ToList();
+
+                    documentos = db.documentos.SqlQuery("select * from documentos where " +
+                        "titulo COLLATE Latin1_general_CI_AI like '%" + nombre + "%' COLLATE Latin1_general_CI_AI or " +
+                        "descripcion_corta COLLATE Latin1_general_CI_AI like '%" + nombre + "%' COLLATE Latin1_general_CI_AI or " +
+                        "descripcion_detallada COLLATE Latin1_general_CI_AI like '%" + nombre + "%' COLLATE Latin1_general_CI_AI " +
+                        "order by unidad, titulo"
+                        ).ToList();
+
+                    documentosUsuario = documentosUsuario.GroupBy(du => du.id_documento).Select(d => d.FirstOrDefault()).OrderBy(d => d.documento.unidade.unidad).ThenBy(d => d.documento.titulo).ToList();
+                    documentos = documentos.Where(d => !documentosUsuario.Exists(du => du.id_documento == d.id)).ToList();
+
+                    if (unidad != null)
+                    {
+                        documentos = documentos.Where(u => u.unidad == unidad).ToList();
+                        documentosUsuario = documentosUsuario.Where(d => d.documento.unidad == unidad).ToList();
+                    }
+                    else if (tipo != null)
+                    {
+                        documentos = documentos.Where(u => u.id_tipo == tipo).ToList();
+                        documentosUsuario = documentosUsuario.Where(d => d.documento.id_tipo == tipo).ToList();
+                    }
+                    else if (curso != null)
+                    {
+                        documentos = documentos.Where(u => u.documentos_curso.Where(dc => dc.id_curso == curso).ToList().Count > 0).ToList();
+                        documentosUsuario = documentosUsuario.Where(d => d.id_curso == curso).ToList();
+                    }
+                    else if (nivel != null)
+                    {
+                        nivele nivelObj = db.niveles.Find(nivel);
+                        documentos = documentos.Where(u => nivelObj.documentos.Contains(u)).ToList();
+                        documentosUsuario = documentosUsuario.Where(d => nivelObj.documentos.Contains(d.documento)).ToList();
+                    }
+
+                    foreach (var documento in documentos)
+                    {
+                        string nombreArchivo = Path.GetFileName(documento.tipo_documento.icono);
+                        string ruta = "~/Recursos/Iconos/" + nombreArchivo;
+                        documento.tipo_documento.icono = ruta;
+                    }
+                    foreach (var itemDocumento in documentosUsuario)
+                    {
+                        string nombreArchivo = Path.GetFileName(itemDocumento.documento.tipo_documento.icono);
+                        string ruta = "~/Recursos/Iconos/" + nombreArchivo;
+                        itemDocumento.documento.tipo_documento.icono = ruta;
+                    }
+                    ViewBag.documentosUsuario = documentosUsuario;
+                    ViewBag.unidades = db.unidades;
+                    ViewBag.cursos = db.cursos;
+                    ViewBag.niveles = db.niveles;
+                    ViewBag.tipos = db.tipo_documento;
+                    return View(documentos);
+                }
+                else
+                {
+                    ViewBag.documentosUsuario = documentosUsuario;
+                    ViewBag.unidades = db.unidades;
+                    ViewBag.cursos = db.cursos;
+                    ViewBag.niveles = db.niveles;
+                    ViewBag.tipos = db.tipo_documento;
+                    return View(documentos);
+                }
+            }
+            return RedirectToAction("../Account/Login/ReturnUrl=documentos");
         }
 
         protected override void Dispose(bool disposing)

@@ -1,0 +1,262 @@
+﻿@model IEnumerable<Plataforma.Areas.PCD.Models.documento>
+<head>
+
+    <script>
+        function Buscar() {
+            var nombre = document.getElementById('nombre').value;
+            $("#tabla-documento").load("/PCD/documentos/BusquedaGeneral/?nombre=" + nombre + " #tabla-documento");
+            return false;
+        }
+        $(document).ready(function () {
+            $("#categorias").change(function () {
+                var categoria = document.getElementById("categorias").value;
+                if (categoria != "") {
+                    if (categoria == "curso") {
+                        document.getElementById("buscar_curso").hidden = false;
+                        document.getElementById("buscar_nivel").hidden = true;
+                        document.getElementById("buscar_unidad").hidden = true;
+                        document.getElementById("buscar_tipo").hidden = true;
+
+                        document.getElementById("buscar_nivel").value = "0";
+                        document.getElementById("buscar_unidad").value = "0";
+                        document.getElementById("buscar_tipo").value = "0";
+                    } else if (categoria == "nivel") {
+                        document.getElementById("buscar_curso").hidden = true;
+                        document.getElementById("buscar_nivel").hidden = false;
+                        document.getElementById("buscar_unidad").hidden = true;
+                        document.getElementById("buscar_tipo").hidden = true;
+
+                        document.getElementById("buscar_curso").value = "0";
+                        document.getElementById("buscar_unidad").value = "0";
+                        document.getElementById("buscar_tipo").value = "0";
+                    }
+                    else if (categoria == "unidad") {
+                        document.getElementById("buscar_curso").hidden = true;
+                        document.getElementById("buscar_nivel").hidden = true;
+                        document.getElementById("buscar_unidad").hidden = false;
+                        document.getElementById("buscar_tipo").hidden = true;
+
+                        document.getElementById("buscar_curso").value = "0";
+                        document.getElementById("buscar_nivel").value = "0";
+                        document.getElementById("buscar_tipo").value = "0";
+                    } else if (categoria == "tipo") {
+                        document.getElementById("buscar_curso").hidden = true;
+                        document.getElementById("buscar_nivel").hidden = true;
+                        document.getElementById("buscar_unidad").hidden = true;
+                        document.getElementById("buscar_tipo").hidden = false;
+
+                        document.getElementById("buscar_curso").value = "0";
+                        document.getElementById("buscar_nivel").value = "0";
+                        document.getElementById("buscar_unidad").value = "0";
+                    }
+                }
+                return false;
+            });
+
+            $("#nombre").change(function () {
+                var nombre = document.getElementById('nombre').value;
+                var unidad = document.getElementById('unidad').value;
+                var curso = document.getElementById('curso').value;
+                var nivel = document.getElementById('nivel').value;
+                var tipo = document.getElementById('tipo').value;
+                if (unidad != "0") {
+                    $("#tabla-documento").load("/PCD/documentos/BusquedaGeneral/?nombre=" + nombre + "&unidad=" + unidad + " #tabla-documento");
+                } else if (curso != "0") {
+                    $("#tabla-documento").load("/PCD/documentos/BusquedaGeneral/?nombre=" + nombre + "&curso=" + curso + " #tabla-documento");
+                } else if (nivel != "0") {
+                    $("#tabla-documento").load("/PCD/documentos/BusquedaGeneral/?nombre=" + nombre + "&nivel=" + nivel + " #tabla-documento");
+                } else if (tipo != "0") {
+                    $("#tabla-documento").load("/PCD/documentos/BusquedaGeneral/?nombre=" + nombre + "&tipo=" + tipo + " #tabla-documento");
+                }
+                else {
+                    $("#tabla-documento").load("/PCD/documentos/BusquedaGeneral/?nombre=" + nombre + " #tabla-documento");
+                }
+                return false;
+            });
+
+            $("#nivel").change(function () {
+                var nombre = document.getElementById('nombre').value;
+                var nivel = document.getElementById('nivel').value;
+                if (nivel != "0") {
+                    $("#tabla-documento").load("/PCD/documentos/BusquedaGeneral/?nombre=" + nombre + "&nivel=" + nivel + " #tabla-documento");
+                }
+                return false;
+            });
+
+            $("#unidad").change(function () {
+                var nombre = document.getElementById('nombre').value;
+                var unidad = document.getElementById('unidad').value;
+                if (unidad != "0") {
+                    $("#tabla-documento").load("/PCD/documentos/BusquedaGeneral/?nombre=" + nombre + "&unidad=" + unidad + " #tabla-documento");
+                }
+                return false;
+            });
+
+            $("#curso").change(function () {
+                var nombre = document.getElementById('nombre').value;
+                var curso = document.getElementById('curso').value;
+                if (curso != "0") {
+                    $("#tabla-documento").load("/PCD/documentos/BusquedaGeneral/?nombre=" + nombre + "&curso=" + curso + " #tabla-documento");
+                }
+                return false;
+            });
+
+            $("#tipo").change(function () {
+                var nombre = document.getElementById('nombre').value;
+                var tipo = document.getElementById('tipo').value;
+                if (tipo != "0") {
+                    $("#tabla-documento").load("/PCD/documentos/BusquedaGeneral/?nombre=" + nombre + "&tipo=" + tipo + " #tabla-documento");
+                }
+                return false;
+            });
+        });
+    </script>
+
+
+</head>
+<h1 class="class-forms"><i class="fa fa-graduation-cap" aria-hidden="true"></i> &nbsp;Documentos</h1>
+<h6>Listado de documentos</h6>
+<br><br>
+<div class="col-md-12 col-sm-12 col-xs-12">
+
+    <div class="col-md-12 col-sm-12 col-xs-12 barra-busqueda form-group">
+        @Html.Label("Buscar:", htmlAttributes: new { @class = "col-md-2", style = "top: 10px;" })
+        <input type="text" id="nombre" name="nombre" placeholder="Titulo del documento" class="form-control" />
+        @Html.Label("Filtrar por:", htmlAttributes: new { @class = "col-md-2", style = "top: 10px;" })
+        <select id="categorias" name="categorias" class="form-control">
+            <option value="">Seleccione una categoria...</option>
+            <option value="nivel">Nivel</option>
+            <option value="unidad">Unidad</option>
+            <option value="curso">Curso</option>
+            <option value="tipo">Tipo</option>
+        </select>
+        <div id="buscar_unidad" hidden class="col-md-12" style="top: 5px; left: 15px; width:1150px;">
+            <select id="unidad" name="unidad" class="form-control">
+                <option value="0">Seleccione una unidad...</option>
+                @foreach (var item in ViewBag.unidades)
+                {
+                    <option value="@item.id">
+                        @item.unidad
+                    </option>
+                }
+            </select>
+        </div>
+        <div id="buscar_curso" hidden class="col-md-12" style="top: 5px; left: 15px; width:1150px;">
+            <select id="curso" name="curso" class="form-control" style="top: 50px;">
+                <option value="0">Seleccione un curso...</option>
+                @foreach (var item in ViewBag.cursos)
+                {
+                    <option value="@item.id">
+                        @item.curso1
+                    </option>
+                }
+            </select>
+        </div>
+        <div id="buscar_nivel" hidden class="col-md-12" style="top: 5px; left: 15px; width:1150px;">
+            <select id="nivel" name="nivel" class="form-control" style="top: 50px;">
+                <option value="0">Seleccione un nivel...</option>
+                @foreach (var item in ViewBag.niveles)
+                {
+                    <option value="@item.id">
+                        @item.nivel
+                    </option>
+                }
+            </select>
+        </div>
+        <div id="buscar_tipo" hidden class="col-md-12" style="top: 5px; left: 15px; width:1150px;">
+            <select id="tipo" name="tipo" class="form-control" style="top: 50px;">
+                <option value="0">Seleccione un tipo...</option>
+                @foreach (var item in ViewBag.tipos)
+                {
+                    <option value="@item.id">
+                        @item.tipo_documento1
+                    </option>
+                }
+            </select>
+        </div>
+    </div>
+    <div id="tabla-documento">
+        @if (Model.Count() > 0 || ViewBag.documentosUsuario.Count > 0)
+        {
+            <h1 class="class-forms" style="text-align:center;">Documentos Matriculados</h1>
+            if (ViewBag.documentosUsuario.Count > 0)
+            {
+                <div class="col-lg-12" id="documentos">
+                    <div class="col-lg-12 vista">
+                        @for (int i = 0; i < ViewBag.documentosUsuario.Count; i++)
+                    {
+                        Plataforma.Areas.PCD.Models.documentos_curso item = ViewBag.documentosUsuario[i];
+                        if (i == 0)
+                        {
+                                <div class="encabezado col-lg-10">
+                                    <hr />
+                                    <h3>@ViewBag.documentosUsuario[i].documento.unidade.unidad</h3>
+                                </div>
+                            }
+                            <div class="documento">
+                                <a href="~/PCD/documentos/VerDocumento/@item.documento.id?idCurso=@item.curso.id">
+                                    <p>
+                                        <img src="@Url.Content(item.documento.tipo_documento.icono)"><br />
+                                        @item.documento.titulo
+                                    </p>
+                                </a>
+                            </div>
+                            if ((i < ViewBag.documentosUsuario.Count - 1) && (@item.documento.unidad != ViewBag.documentosUsuario[i + 1].documento.unidad))
+                            {
+                                <br />
+                                <div class="encabezado col-lg-10">
+                                    <hr />
+                                    <h5>@ViewBag.documentosUsuario[i + 1].documento.unidade.unidad</h5>
+                                    <br />
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+            }
+
+            else
+            {
+                <h3> No posees documentos matriculados que concuerden con los criterios de busqueda</h3>
+            }
+            <h1 class="class-forms" style="text-align:center;">Documentos no Matriculados</h1>
+            if (Model.Count() > 0)
+            {
+                <div class="col-lg-12" id="documentos">
+                    <div class="col-lg-12 vista">
+                        @for (int i = 0; i < Model.Count(); i++)
+                    {
+                        Plataforma.Areas.PCD.Models.documento item = Model.ElementAt(i);
+                        if (i == 0)
+                        {
+                                <div class="encabezado col-lg-10">
+                                    <hr />
+                                    <h3>@item.unidade.unidad</h3>
+                                </div>
+                            }
+                            <div class="documento">
+                                <p>
+                                    <img src="@Url.Content(item.tipo_documento.icono)"><br />
+                                    @item.titulo
+                                </p>
+                            </div>
+                            if ((i < Model.Count() - 1) && (@item.unidad != Model.ElementAt(i + 1).unidad))
+                            {
+                                <br />
+                                <div class="encabezado col-lg-10">
+                                    <hr />
+                                    <h3>@Model.ElementAt(i + 1).unidade.unidad</h3>
+                                    <br />
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+            }
+            else
+            {
+                <h5>No existen documentos que concuerden con los criterios de busqueda</h5>
+            }
+        }
+    </div>
+</div>

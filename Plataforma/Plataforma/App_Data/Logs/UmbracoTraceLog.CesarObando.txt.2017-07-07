@@ -1,0 +1,500 @@
+﻿ 2017-07-07 11:24:58,876 [P9288/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.5.7 application starting on CESAROBANDO
+ 2017-07-07 11:24:58,904 [P9288/D2/T1] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2017-07-07 11:24:58,940 [P9288/D2/T1] INFO  Umbraco.Core.PluginManager - Hash determined (took 35ms)
+ 2017-07-07 11:24:59,056 [P9288/D2/T1] INFO  Umbraco.Core.MainDom - Acquiring MainDom...
+ 2017-07-07 11:24:59,059 [P9288/D2/T1] INFO  Umbraco.Core.MainDom - Acquired MainDom.
+ 2017-07-07 11:24:59,071 [P9288/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+ 2017-07-07 11:24:59,759 [P9288/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 0 (took 687ms)
+ 2017-07-07 11:24:59,792 [P9288/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2017-07-07 11:24:59,814 [P9288/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 21ms)
+ 2017-07-07 11:24:59,815 [P9288/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2017-07-07 11:24:59,853 [P9288/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 0 (took 37ms)
+ 2017-07-07 11:24:59,875 [P9288/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+ 2017-07-07 11:24:59,909 [P9288/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 34ms)
+ 2017-07-07 11:24:59,910 [P9288/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+ 2017-07-07 11:24:59,940 [P9288/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 0 (took 29ms)
+ 2017-07-07 11:25:00,030 [P9288/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+ 2017-07-07 11:25:00,054 [P9288/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 0 (took 24ms)
+ 2017-07-07 11:25:00,056 [P9288/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+ 2017-07-07 11:25:00,081 [P9288/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 0 (took 25ms)
+ 2017-07-07 11:25:01,903 [P9288/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2017-07-07 11:25:02,485 [P9288/D2/T1] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2017-07-07 11:25:02,518 [P9288/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2017-07-07 11:25:02,887 [P9288/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2017-07-07 11:25:07,154 [P9288/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 8434ms)
+ 2017-07-07 11:25:07,446 [P9288/D2/T7] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:3617/umbraco (UmbracoModule request)
+ 2017-07-07 11:25:23,231 [P9288/D2/T26] INFO  umbraco.content - Load Xml from file...
+ 2017-07-07 11:25:23,236 [P9288/D2/T26] INFO  umbraco.content - Loaded Xml from file.
+ 2017-07-07 12:16:04,803 [P1140/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.5.7 application starting on CESAROBANDO
+ 2017-07-07 12:16:04,832 [P1140/D2/T1] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2017-07-07 12:16:04,870 [P1140/D2/T1] INFO  Umbraco.Core.PluginManager - Hash determined (took 37ms)
+ 2017-07-07 12:16:05,095 [P1140/D2/T1] INFO  Umbraco.Core.MainDom - Acquiring MainDom...
+ 2017-07-07 12:16:05,097 [P1140/D2/T1] INFO  Umbraco.Core.MainDom - Acquired MainDom.
+ 2017-07-07 12:16:05,105 [P1140/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+ 2017-07-07 12:16:05,364 [P1140/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 0 (took 258ms)
+ 2017-07-07 12:16:05,571 [P1140/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2017-07-07 12:16:05,574 [P1140/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 3ms)
+ 2017-07-07 12:16:05,575 [P1140/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2017-07-07 12:16:05,577 [P1140/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 0 (took 2ms)
+ 2017-07-07 12:16:05,606 [P1140/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+ 2017-07-07 12:16:05,670 [P1140/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 63ms)
+ 2017-07-07 12:16:05,671 [P1140/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+ 2017-07-07 12:16:05,691 [P1140/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 0 (took 19ms)
+ 2017-07-07 12:16:05,853 [P1140/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+ 2017-07-07 12:16:05,855 [P1140/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 0 (took 1ms)
+ 2017-07-07 12:16:05,856 [P1140/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+ 2017-07-07 12:16:05,857 [P1140/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 0 (took 1ms)
+ 2017-07-07 12:16:07,924 [P1140/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2017-07-07 12:16:08,512 [P1140/D2/T1] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2017-07-07 12:16:08,668 [P1140/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2017-07-07 12:16:09,020 [P1140/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2017-07-07 12:16:09,973 [P1140/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 5261ms)
+ 2017-07-07 12:16:15,034 [P1140/D2/T7] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:3617/umbraco (UmbracoModule request)
+ 2017-07-07 12:16:20,388 [P1140/D2/T7] INFO  umbraco.content - Load Xml from file...
+ 2017-07-07 12:16:20,393 [P1140/D2/T7] INFO  umbraco.content - Loaded Xml from file.
+ 2017-07-07 12:16:23,663 [P1140/D2/T7] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+ 2017-07-07 12:16:23,804 [P1140/D2/T7] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 141ms)
+ 2017-07-07 12:16:25,304 [P1140/D2/T7] ERROR Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory - Failed to build models.
+System.IO.IOException: The type initializer for 'File' threw an exception. ---> System.TypeInitializationException: The type initializer for 'File' threw an exception. ---> System.IO.FileLoadException: Could not load file or assembly 'System.IO.FileSystem, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+   at System.RuntimeTypeHandle.GetTypeByName(String name, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMarkHandle stackMark, IntPtr pPrivHostBinder, Boolean loadTypeFromPartialName, ObjectHandleOnStack type)
+   at System.RuntimeTypeHandle.GetTypeByName(String name, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean loadTypeFromPartialName)
+   at System.RuntimeType.GetType(String typeName, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMark& stackMark)
+   at System.Type.GetType(String typeName, Boolean throwOnError)
+   at Roslyn.Utilities.ReflectionUtil.GetTypeFromEither(String contractName, String desktopName)
+   at Roslyn.Utilities.PortableShim.File..cctor()
+   --- End of inner exception stack trace ---
+   at Roslyn.Utilities.FileUtilities.OpenFileStream(String path)
+   --- End of inner exception stack trace ---
+   at Roslyn.Utilities.FileUtilities.OpenFileStream(String path)
+   at Microsoft.CodeAnalysis.MetadataReference.CreateFromFile(String path, MetadataReferenceProperties properties, DocumentationProvider documentation)
+   at Umbraco.ModelsBuilder.ReferencedAssemblies.<>c.<.cctor>b__2_2(String x) in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\ReferencedAssemblies.cs:line 24
+   at System.Linq.Enumerable.WhereSelectListIterator`2.MoveNext()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at Umbraco.ModelsBuilder.ReferencedAssemblies.<>c.<.cctor>b__2_1() in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\ReferencedAssemblies.cs:line 23
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.LazyInitValue()
+   at System.Lazy`1.get_Value()
+   at Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory.GenerateModelsCode(IDictionary`2 ourFiles, IList`1 typeModels) in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\Umbraco\PureLiveModelFactory.cs:line 345
+   at Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory.GetModelsAssembly(Boolean forceRebuild) in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\Umbraco\PureLiveModelFactory.cs:line 283
+   at Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory.EnsureModels() in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\Umbraco\PureLiveModelFactory.cs:line 152
+ 2017-07-07 12:16:25,312 [P1140/D2/T7] WARN  Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory - Running without models.
+ 2017-07-07 12:16:44,117 [P1140/D2/T10] ERROR Umbraco.Core.UmbracoApplicationBase - An unhandled exception occurred
+Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: The call is ambiguous between the following methods or properties: 'Umbraco.Web.UmbracoHelper.Media(params int[])' and 'Umbraco.Web.UmbracoHelper.Media(params string[])'
+   at CallSite.Target(Closure , CallSite , UmbracoHelper , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute2[T0,T1,TRet](CallSite site, T0 arg0, T1 arg1)
+   at ASP._Page_Views_index_cshtml.Execute() in c:\Users\Cesar\Documents\Trabajo\PCD-2.0\PCD-2.0\Plataforma\Plataforma\Views\index.cshtml:line 179
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.RunPage()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at Umbraco.Core.Profiling.ProfilingView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecute>b__15(IAsyncResult asyncResult, Controller controller)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+ 2017-07-07 14:37:55,993 [P9076/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.5.7 application starting on CESAROBANDO
+ 2017-07-07 14:37:56,077 [P9076/D2/T1] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2017-07-07 14:37:56,113 [P9076/D2/T1] INFO  Umbraco.Core.PluginManager - Hash determined (took 37ms)
+ 2017-07-07 14:37:56,281 [P9076/D2/T1] INFO  Umbraco.Core.MainDom - Acquiring MainDom...
+ 2017-07-07 14:37:56,285 [P9076/D2/T1] INFO  Umbraco.Core.MainDom - Acquired MainDom.
+ 2017-07-07 14:37:56,305 [P9076/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+ 2017-07-07 14:37:57,225 [P9076/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 0 (took 918ms)
+ 2017-07-07 14:37:57,317 [P9076/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2017-07-07 14:37:57,329 [P9076/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 14ms)
+ 2017-07-07 14:37:57,333 [P9076/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2017-07-07 14:37:57,385 [P9076/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 0 (took 53ms)
+ 2017-07-07 14:37:57,413 [P9076/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+ 2017-07-07 14:37:57,449 [P9076/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 38ms)
+ 2017-07-07 14:37:57,453 [P9076/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+ 2017-07-07 14:37:57,481 [P9076/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 0 (took 30ms)
+ 2017-07-07 14:37:57,565 [P9076/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+ 2017-07-07 14:37:57,589 [P9076/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 0 (took 25ms)
+ 2017-07-07 14:37:57,589 [P9076/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+ 2017-07-07 14:37:57,617 [P9076/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 0 (took 26ms)
+ 2017-07-07 14:37:59,461 [P9076/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2017-07-07 14:38:00,322 [P9076/D2/T1] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2017-07-07 14:38:00,378 [P9076/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2017-07-07 14:38:00,798 [P9076/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2017-07-07 14:38:06,297 [P9076/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 10513ms)
+ 2017-07-07 14:38:06,781 [P9076/D2/T6] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:3617/umbraco (UmbracoModule request)
+ 2017-07-07 14:38:10,378 [P9076/D2/T6] INFO  umbraco.content - Load Xml from file...
+ 2017-07-07 14:38:10,382 [P9076/D2/T6] INFO  umbraco.content - Loaded Xml from file.
+ 2017-07-07 14:38:13,760 [P9076/D2/T6] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+ 2017-07-07 14:38:13,884 [P9076/D2/T6] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 124ms)
+ 2017-07-07 14:38:15,264 [P9076/D2/T6] ERROR Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory - Failed to build models.
+System.IO.IOException: The type initializer for 'File' threw an exception. ---> System.TypeInitializationException: The type initializer for 'File' threw an exception. ---> System.IO.FileLoadException: Could not load file or assembly 'System.IO.FileSystem, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+   at System.RuntimeTypeHandle.GetTypeByName(String name, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMarkHandle stackMark, IntPtr pPrivHostBinder, Boolean loadTypeFromPartialName, ObjectHandleOnStack type)
+   at System.RuntimeTypeHandle.GetTypeByName(String name, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean loadTypeFromPartialName)
+   at System.RuntimeType.GetType(String typeName, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMark& stackMark)
+   at System.Type.GetType(String typeName, Boolean throwOnError)
+   at Roslyn.Utilities.ReflectionUtil.GetTypeFromEither(String contractName, String desktopName)
+   at Roslyn.Utilities.PortableShim.File..cctor()
+   --- End of inner exception stack trace ---
+   at Roslyn.Utilities.FileUtilities.OpenFileStream(String path)
+   --- End of inner exception stack trace ---
+   at Roslyn.Utilities.FileUtilities.OpenFileStream(String path)
+   at Microsoft.CodeAnalysis.MetadataReference.CreateFromFile(String path, MetadataReferenceProperties properties, DocumentationProvider documentation)
+   at Umbraco.ModelsBuilder.ReferencedAssemblies.<>c.<.cctor>b__2_2(String x) in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\ReferencedAssemblies.cs:line 24
+   at System.Linq.Enumerable.WhereSelectListIterator`2.MoveNext()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at Umbraco.ModelsBuilder.ReferencedAssemblies.<>c.<.cctor>b__2_1() in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\ReferencedAssemblies.cs:line 23
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.LazyInitValue()
+   at System.Lazy`1.get_Value()
+   at Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory.GenerateModelsCode(IDictionary`2 ourFiles, IList`1 typeModels) in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\Umbraco\PureLiveModelFactory.cs:line 345
+   at Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory.GetModelsAssembly(Boolean forceRebuild) in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\Umbraco\PureLiveModelFactory.cs:line 283
+   at Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory.EnsureModels() in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\Umbraco\PureLiveModelFactory.cs:line 152
+ 2017-07-07 14:38:15,292 [P9076/D2/T6] WARN  Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory - Running without models.
+ 2017-07-07 14:51:01,443 [P1736/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.5.7 application starting on CESAROBANDO
+ 2017-07-07 14:51:01,463 [P1736/D2/T1] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2017-07-07 14:51:01,495 [P1736/D2/T1] INFO  Umbraco.Core.PluginManager - Hash determined (took 31ms)
+ 2017-07-07 14:51:01,610 [P1736/D2/T1] INFO  Umbraco.Core.MainDom - Acquiring MainDom...
+ 2017-07-07 14:51:01,610 [P1736/D2/T1] INFO  Umbraco.Core.MainDom - Acquired MainDom.
+ 2017-07-07 14:51:01,626 [P1736/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+ 2017-07-07 14:51:02,214 [P1736/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 0 (took 590ms)
+ 2017-07-07 14:51:02,242 [P1736/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2017-07-07 14:51:02,254 [P1736/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 12ms)
+ 2017-07-07 14:51:02,258 [P1736/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2017-07-07 14:51:02,290 [P1736/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 0 (took 34ms)
+ 2017-07-07 14:51:02,314 [P1736/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+ 2017-07-07 14:51:02,358 [P1736/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 41ms)
+ 2017-07-07 14:51:02,358 [P1736/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+ 2017-07-07 14:51:02,382 [P1736/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 0 (took 26ms)
+ 2017-07-07 14:51:02,442 [P1736/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+ 2017-07-07 14:51:02,458 [P1736/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 0 (took 18ms)
+ 2017-07-07 14:51:02,458 [P1736/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+ 2017-07-07 14:51:02,482 [P1736/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 0 (took 21ms)
+ 2017-07-07 14:51:04,276 [P1736/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2017-07-07 14:51:04,828 [P1736/D2/T1] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2017-07-07 14:51:04,864 [P1736/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2017-07-07 14:51:05,212 [P1736/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2017-07-07 14:51:09,457 [P1736/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 8138ms)
+ 2017-07-07 14:51:09,661 [P1736/D2/T6] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:3617/umbraco (UmbracoModule request)
+ 2017-07-07 14:51:12,541 [P1736/D2/T6] INFO  umbraco.content - Load Xml from file...
+ 2017-07-07 14:51:12,545 [P1736/D2/T6] INFO  umbraco.content - Loaded Xml from file.
+ 2017-07-07 14:51:15,717 [P1736/D2/T6] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+ 2017-07-07 14:51:15,845 [P1736/D2/T6] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 130ms)
+ 2017-07-07 14:51:17,145 [P1736/D2/T6] ERROR Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory - Failed to build models.
+System.IO.IOException: The type initializer for 'File' threw an exception. ---> System.TypeInitializationException: The type initializer for 'File' threw an exception. ---> System.IO.FileLoadException: Could not load file or assembly 'System.IO.FileSystem, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+   at System.RuntimeTypeHandle.GetTypeByName(String name, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMarkHandle stackMark, IntPtr pPrivHostBinder, Boolean loadTypeFromPartialName, ObjectHandleOnStack type)
+   at System.RuntimeTypeHandle.GetTypeByName(String name, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean loadTypeFromPartialName)
+   at System.RuntimeType.GetType(String typeName, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMark& stackMark)
+   at System.Type.GetType(String typeName, Boolean throwOnError)
+   at Roslyn.Utilities.ReflectionUtil.GetTypeFromEither(String contractName, String desktopName)
+   at Roslyn.Utilities.PortableShim.File..cctor()
+   --- End of inner exception stack trace ---
+   at Roslyn.Utilities.FileUtilities.OpenFileStream(String path)
+   --- End of inner exception stack trace ---
+   at Roslyn.Utilities.FileUtilities.OpenFileStream(String path)
+   at Microsoft.CodeAnalysis.MetadataReference.CreateFromFile(String path, MetadataReferenceProperties properties, DocumentationProvider documentation)
+   at Umbraco.ModelsBuilder.ReferencedAssemblies.<>c.<.cctor>b__2_2(String x) in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\ReferencedAssemblies.cs:line 24
+   at System.Linq.Enumerable.WhereSelectListIterator`2.MoveNext()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at Umbraco.ModelsBuilder.ReferencedAssemblies.<>c.<.cctor>b__2_1() in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\ReferencedAssemblies.cs:line 23
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.LazyInitValue()
+   at System.Lazy`1.get_Value()
+   at Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory.GenerateModelsCode(IDictionary`2 ourFiles, IList`1 typeModels) in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\Umbraco\PureLiveModelFactory.cs:line 345
+   at Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory.GetModelsAssembly(Boolean forceRebuild) in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\Umbraco\PureLiveModelFactory.cs:line 283
+   at Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory.EnsureModels() in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\Umbraco\PureLiveModelFactory.cs:line 152
+ 2017-07-07 14:51:17,153 [P1736/D2/T6] WARN  Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory - Running without models.
+ 2017-07-07 15:58:42,268 [P1392/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.5.7 application starting on CESAROBANDO
+ 2017-07-07 15:58:42,288 [P1392/D2/T1] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2017-07-07 15:58:42,324 [P1392/D2/T1] INFO  Umbraco.Core.PluginManager - Hash determined (took 33ms)
+ 2017-07-07 15:58:42,408 [P1392/D2/T1] INFO  Umbraco.Core.MainDom - Acquiring MainDom...
+ 2017-07-07 15:58:42,408 [P1392/D2/T1] INFO  Umbraco.Core.MainDom - Acquired MainDom.
+ 2017-07-07 15:58:42,416 [P1392/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+ 2017-07-07 15:58:42,992 [P1392/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 0 (took 576ms)
+ 2017-07-07 15:58:43,020 [P1392/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2017-07-07 15:58:43,036 [P1392/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 14ms)
+ 2017-07-07 15:58:43,036 [P1392/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2017-07-07 15:58:43,076 [P1392/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 0 (took 38ms)
+ 2017-07-07 15:58:43,104 [P1392/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+ 2017-07-07 15:58:43,148 [P1392/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 45ms)
+ 2017-07-07 15:58:43,152 [P1392/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+ 2017-07-07 15:58:43,180 [P1392/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 0 (took 28ms)
+ 2017-07-07 15:58:43,236 [P1392/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+ 2017-07-07 15:58:43,260 [P1392/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 0 (took 22ms)
+ 2017-07-07 15:58:43,260 [P1392/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+ 2017-07-07 15:58:43,280 [P1392/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 0 (took 21ms)
+ 2017-07-07 15:58:45,079 [P1392/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2017-07-07 15:58:45,749 [P1392/D2/T1] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2017-07-07 15:58:45,793 [P1392/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2017-07-07 15:58:46,165 [P1392/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2017-07-07 15:58:50,638 [P1392/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 8479ms)
+ 2017-07-07 15:58:50,872 [P1392/D2/T6] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:3617/umbraco (UmbracoModule request)
+ 2017-07-07 15:58:54,110 [P1392/D2/T6] INFO  umbraco.content - Load Xml from file...
+ 2017-07-07 15:58:54,118 [P1392/D2/T6] INFO  umbraco.content - Loaded Xml from file.
+ 2017-07-07 15:58:57,291 [P1392/D2/T6] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+ 2017-07-07 15:58:57,427 [P1392/D2/T6] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 138ms)
+ 2017-07-07 15:58:58,919 [P1392/D2/T6] ERROR Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory - Failed to build models.
+System.IO.IOException: The type initializer for 'File' threw an exception. ---> System.TypeInitializationException: The type initializer for 'File' threw an exception. ---> System.IO.FileLoadException: Could not load file or assembly 'System.IO.FileSystem, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+   at System.RuntimeTypeHandle.GetTypeByName(String name, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMarkHandle stackMark, IntPtr pPrivHostBinder, Boolean loadTypeFromPartialName, ObjectHandleOnStack type)
+   at System.RuntimeTypeHandle.GetTypeByName(String name, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean loadTypeFromPartialName)
+   at System.RuntimeType.GetType(String typeName, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMark& stackMark)
+   at System.Type.GetType(String typeName, Boolean throwOnError)
+   at Roslyn.Utilities.ReflectionUtil.GetTypeFromEither(String contractName, String desktopName)
+   at Roslyn.Utilities.PortableShim.File..cctor()
+   --- End of inner exception stack trace ---
+   at Roslyn.Utilities.FileUtilities.OpenFileStream(String path)
+   --- End of inner exception stack trace ---
+   at Roslyn.Utilities.FileUtilities.OpenFileStream(String path)
+   at Microsoft.CodeAnalysis.MetadataReference.CreateFromFile(String path, MetadataReferenceProperties properties, DocumentationProvider documentation)
+   at Umbraco.ModelsBuilder.ReferencedAssemblies.<>c.<.cctor>b__2_2(String x) in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\ReferencedAssemblies.cs:line 24
+   at System.Linq.Enumerable.WhereSelectListIterator`2.MoveNext()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at Umbraco.ModelsBuilder.ReferencedAssemblies.<>c.<.cctor>b__2_1() in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\ReferencedAssemblies.cs:line 23
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.LazyInitValue()
+   at System.Lazy`1.get_Value()
+   at Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory.GenerateModelsCode(IDictionary`2 ourFiles, IList`1 typeModels) in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\Umbraco\PureLiveModelFactory.cs:line 345
+   at Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory.GetModelsAssembly(Boolean forceRebuild) in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\Umbraco\PureLiveModelFactory.cs:line 283
+   at Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory.EnsureModels() in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\Umbraco\PureLiveModelFactory.cs:line 152
+ 2017-07-07 15:58:58,935 [P1392/D2/T6] WARN  Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory - Running without models.
+ 2017-07-07 16:13:46,715 [P2104/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.5.7 application starting on CESAROBANDO
+ 2017-07-07 16:13:46,747 [P2104/D2/T1] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2017-07-07 16:13:46,779 [P2104/D2/T1] INFO  Umbraco.Core.PluginManager - Hash determined (took 33ms)
+ 2017-07-07 16:13:46,907 [P2104/D2/T1] INFO  Umbraco.Core.MainDom - Acquiring MainDom...
+ 2017-07-07 16:13:46,911 [P2104/D2/T1] INFO  Umbraco.Core.MainDom - Acquired MainDom.
+ 2017-07-07 16:13:46,919 [P2104/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+ 2017-07-07 16:13:47,607 [P2104/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 0 (took 685ms)
+ 2017-07-07 16:13:47,639 [P2104/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2017-07-07 16:13:47,651 [P2104/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 14ms)
+ 2017-07-07 16:13:47,655 [P2104/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2017-07-07 16:13:47,695 [P2104/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 0 (took 40ms)
+ 2017-07-07 16:13:47,719 [P2104/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+ 2017-07-07 16:13:47,763 [P2104/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 41ms)
+ 2017-07-07 16:13:47,763 [P2104/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+ 2017-07-07 16:13:47,791 [P2104/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 0 (took 28ms)
+ 2017-07-07 16:13:47,879 [P2104/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+ 2017-07-07 16:13:47,903 [P2104/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 0 (took 26ms)
+ 2017-07-07 16:13:47,907 [P2104/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+ 2017-07-07 16:13:47,931 [P2104/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 0 (took 26ms)
+ 2017-07-07 16:13:49,730 [P2104/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2017-07-07 16:13:50,279 [P2104/D2/T1] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2017-07-07 16:13:50,311 [P2104/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2017-07-07 16:13:50,673 [P2104/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2017-07-07 16:13:55,322 [P2104/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 8740ms)
+ 2017-07-07 16:13:55,550 [P2104/D2/T6] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:3617/umbraco (UmbracoModule request)
+ 2017-07-07 16:13:58,614 [P2104/D2/T6] INFO  umbraco.content - Load Xml from file...
+ 2017-07-07 16:13:58,618 [P2104/D2/T6] INFO  umbraco.content - Loaded Xml from file.
+ 2017-07-07 16:14:01,414 [P2104/D2/T6] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+ 2017-07-07 16:14:01,514 [P2104/D2/T6] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 99ms)
+ 2017-07-07 16:14:02,774 [P2104/D2/T6] ERROR Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory - Failed to build models.
+System.IO.IOException: The type initializer for 'File' threw an exception. ---> System.TypeInitializationException: The type initializer for 'File' threw an exception. ---> System.IO.FileLoadException: Could not load file or assembly 'System.IO.FileSystem, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+   at System.RuntimeTypeHandle.GetTypeByName(String name, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMarkHandle stackMark, IntPtr pPrivHostBinder, Boolean loadTypeFromPartialName, ObjectHandleOnStack type)
+   at System.RuntimeTypeHandle.GetTypeByName(String name, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean loadTypeFromPartialName)
+   at System.RuntimeType.GetType(String typeName, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMark& stackMark)
+   at System.Type.GetType(String typeName, Boolean throwOnError)
+   at Roslyn.Utilities.ReflectionUtil.GetTypeFromEither(String contractName, String desktopName)
+   at Roslyn.Utilities.PortableShim.File..cctor()
+   --- End of inner exception stack trace ---
+   at Roslyn.Utilities.FileUtilities.OpenFileStream(String path)
+   --- End of inner exception stack trace ---
+   at Roslyn.Utilities.FileUtilities.OpenFileStream(String path)
+   at Microsoft.CodeAnalysis.MetadataReference.CreateFromFile(String path, MetadataReferenceProperties properties, DocumentationProvider documentation)
+   at Umbraco.ModelsBuilder.ReferencedAssemblies.<>c.<.cctor>b__2_2(String x) in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\ReferencedAssemblies.cs:line 24
+   at System.Linq.Enumerable.WhereSelectListIterator`2.MoveNext()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at Umbraco.ModelsBuilder.ReferencedAssemblies.<>c.<.cctor>b__2_1() in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\ReferencedAssemblies.cs:line 23
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.LazyInitValue()
+   at System.Lazy`1.get_Value()
+   at Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory.GenerateModelsCode(IDictionary`2 ourFiles, IList`1 typeModels) in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\Umbraco\PureLiveModelFactory.cs:line 345
+   at Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory.GetModelsAssembly(Boolean forceRebuild) in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\Umbraco\PureLiveModelFactory.cs:line 283
+   at Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory.EnsureModels() in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\Umbraco\PureLiveModelFactory.cs:line 152
+ 2017-07-07 16:14:02,778 [P2104/D2/T6] WARN  Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory - Running without models.
+ 2017-07-07 16:57:54,096 [P1908/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.5.7 application starting on CESAROBANDO
+ 2017-07-07 16:57:54,176 [P1908/D2/T1] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2017-07-07 16:57:54,200 [P1908/D2/T1] INFO  Umbraco.Core.PluginManager - Hash determined (took 26ms)
+ 2017-07-07 16:57:54,396 [P1908/D2/T1] INFO  Umbraco.Core.MainDom - Acquiring MainDom...
+ 2017-07-07 16:57:54,400 [P1908/D2/T1] INFO  Umbraco.Core.MainDom - Acquired MainDom.
+ 2017-07-07 16:57:54,412 [P1908/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+ 2017-07-07 16:57:55,176 [P1908/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 0 (took 764ms)
+ 2017-07-07 16:57:55,260 [P1908/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2017-07-07 16:57:55,276 [P1908/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 14ms)
+ 2017-07-07 16:57:55,276 [P1908/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2017-07-07 16:57:55,308 [P1908/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 0 (took 31ms)
+ 2017-07-07 16:57:55,324 [P1908/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+ 2017-07-07 16:57:55,364 [P1908/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 43ms)
+ 2017-07-07 16:57:55,368 [P1908/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+ 2017-07-07 16:57:55,400 [P1908/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 0 (took 32ms)
+ 2017-07-07 16:57:55,480 [P1908/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+ 2017-07-07 16:57:55,500 [P1908/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 0 (took 22ms)
+ 2017-07-07 16:57:55,504 [P1908/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+ 2017-07-07 16:57:55,524 [P1908/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 0 (took 21ms)
+ 2017-07-07 16:57:57,284 [P1908/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2017-07-07 16:57:58,164 [P1908/D2/T1] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2017-07-07 16:57:58,216 [P1908/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2017-07-07 16:57:58,612 [P1908/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2017-07-07 16:58:03,059 [P1908/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 9108ms)
+ 2017-07-07 16:58:03,483 [P1908/D2/T6] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:3617/umbraco (UmbracoModule request)
+ 2017-07-07 16:58:06,682 [P1908/D2/T6] INFO  umbraco.content - Load Xml from file...
+ 2017-07-07 16:58:06,686 [P1908/D2/T6] INFO  umbraco.content - Loaded Xml from file.
+ 2017-07-07 16:58:09,769 [P1908/D2/T6] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+ 2017-07-07 16:58:09,913 [P1908/D2/T6] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 142ms)
+ 2017-07-07 16:58:11,293 [P1908/D2/T6] ERROR Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory - Failed to build models.
+System.IO.IOException: The type initializer for 'File' threw an exception. ---> System.TypeInitializationException: The type initializer for 'File' threw an exception. ---> System.IO.FileLoadException: Could not load file or assembly 'System.IO.FileSystem, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+   at System.RuntimeTypeHandle.GetTypeByName(String name, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMarkHandle stackMark, IntPtr pPrivHostBinder, Boolean loadTypeFromPartialName, ObjectHandleOnStack type)
+   at System.RuntimeTypeHandle.GetTypeByName(String name, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean loadTypeFromPartialName)
+   at System.RuntimeType.GetType(String typeName, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMark& stackMark)
+   at System.Type.GetType(String typeName, Boolean throwOnError)
+   at Roslyn.Utilities.ReflectionUtil.GetTypeFromEither(String contractName, String desktopName)
+   at Roslyn.Utilities.PortableShim.File..cctor()
+   --- End of inner exception stack trace ---
+   at Roslyn.Utilities.FileUtilities.OpenFileStream(String path)
+   --- End of inner exception stack trace ---
+   at Roslyn.Utilities.FileUtilities.OpenFileStream(String path)
+   at Microsoft.CodeAnalysis.MetadataReference.CreateFromFile(String path, MetadataReferenceProperties properties, DocumentationProvider documentation)
+   at Umbraco.ModelsBuilder.ReferencedAssemblies.<>c.<.cctor>b__2_2(String x) in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\ReferencedAssemblies.cs:line 24
+   at System.Linq.Enumerable.WhereSelectListIterator`2.MoveNext()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at Umbraco.ModelsBuilder.ReferencedAssemblies.<>c.<.cctor>b__2_1() in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\ReferencedAssemblies.cs:line 23
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.LazyInitValue()
+   at System.Lazy`1.get_Value()
+   at Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory.GenerateModelsCode(IDictionary`2 ourFiles, IList`1 typeModels) in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\Umbraco\PureLiveModelFactory.cs:line 345
+   at Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory.GetModelsAssembly(Boolean forceRebuild) in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\Umbraco\PureLiveModelFactory.cs:line 283
+   at Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory.EnsureModels() in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\Umbraco\PureLiveModelFactory.cs:line 152
+ 2017-07-07 16:58:11,321 [P1908/D2/T6] WARN  Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory - Running without models.
+ 2017-07-07 17:03:44,159 [P3492/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.5.7 application starting on CESAROBANDO
+ 2017-07-07 17:03:44,179 [P3492/D2/T1] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2017-07-07 17:03:44,211 [P3492/D2/T1] INFO  Umbraco.Core.PluginManager - Hash determined (took 29ms)
+ 2017-07-07 17:03:44,311 [P3492/D2/T1] INFO  Umbraco.Core.MainDom - Acquiring MainDom...
+ 2017-07-07 17:03:44,315 [P3492/D2/T1] INFO  Umbraco.Core.MainDom - Acquired MainDom.
+ 2017-07-07 17:03:44,323 [P3492/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+ 2017-07-07 17:03:44,911 [P3492/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 0 (took 585ms)
+ 2017-07-07 17:03:44,935 [P3492/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2017-07-07 17:03:44,947 [P3492/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 13ms)
+ 2017-07-07 17:03:44,947 [P3492/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2017-07-07 17:03:44,979 [P3492/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 0 (took 31ms)
+ 2017-07-07 17:03:45,003 [P3492/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+ 2017-07-07 17:03:45,051 [P3492/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 46ms)
+ 2017-07-07 17:03:45,051 [P3492/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+ 2017-07-07 17:03:45,083 [P3492/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 0 (took 34ms)
+ 2017-07-07 17:03:45,143 [P3492/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+ 2017-07-07 17:03:45,163 [P3492/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 0 (took 19ms)
+ 2017-07-07 17:03:45,163 [P3492/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+ 2017-07-07 17:03:45,187 [P3492/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 0 (took 21ms)
+ 2017-07-07 17:03:46,964 [P3492/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2017-07-07 17:03:47,502 [P3492/D2/T1] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2017-07-07 17:03:47,538 [P3492/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2017-07-07 17:03:47,874 [P3492/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2017-07-07 17:03:52,238 [P3492/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 8194ms)
+ 2017-07-07 17:03:52,514 [P3492/D2/T6] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:3617/umbraco (UmbracoModule request)
+ 2017-07-07 17:03:55,539 [P3492/D2/T6] INFO  umbraco.content - Load Xml from file...
+ 2017-07-07 17:03:55,543 [P3492/D2/T6] INFO  umbraco.content - Loaded Xml from file.
+ 2017-07-07 17:03:58,170 [P3492/D2/T6] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+ 2017-07-07 17:03:58,270 [P3492/D2/T6] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 101ms)
+ 2017-07-07 17:03:59,910 [P3492/D2/T6] ERROR Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory - Failed to build models.
+System.IO.IOException: The type initializer for 'File' threw an exception. ---> System.TypeInitializationException: The type initializer for 'File' threw an exception. ---> System.IO.FileLoadException: Could not load file or assembly 'System.IO.FileSystem, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+   at System.RuntimeTypeHandle.GetTypeByName(String name, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMarkHandle stackMark, IntPtr pPrivHostBinder, Boolean loadTypeFromPartialName, ObjectHandleOnStack type)
+   at System.RuntimeTypeHandle.GetTypeByName(String name, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean loadTypeFromPartialName)
+   at System.RuntimeType.GetType(String typeName, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMark& stackMark)
+   at System.Type.GetType(String typeName, Boolean throwOnError)
+   at Roslyn.Utilities.ReflectionUtil.GetTypeFromEither(String contractName, String desktopName)
+   at Roslyn.Utilities.PortableShim.File..cctor()
+   --- End of inner exception stack trace ---
+   at Roslyn.Utilities.FileUtilities.OpenFileStream(String path)
+   --- End of inner exception stack trace ---
+   at Roslyn.Utilities.FileUtilities.OpenFileStream(String path)
+   at Microsoft.CodeAnalysis.MetadataReference.CreateFromFile(String path, MetadataReferenceProperties properties, DocumentationProvider documentation)
+   at Umbraco.ModelsBuilder.ReferencedAssemblies.<>c.<.cctor>b__2_2(String x) in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\ReferencedAssemblies.cs:line 24
+   at System.Linq.Enumerable.WhereSelectListIterator`2.MoveNext()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at Umbraco.ModelsBuilder.ReferencedAssemblies.<>c.<.cctor>b__2_1() in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\ReferencedAssemblies.cs:line 23
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.LazyInitValue()
+   at System.Lazy`1.get_Value()
+   at Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory.GenerateModelsCode(IDictionary`2 ourFiles, IList`1 typeModels) in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\Umbraco\PureLiveModelFactory.cs:line 345
+   at Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory.GetModelsAssembly(Boolean forceRebuild) in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\Umbraco\PureLiveModelFactory.cs:line 283
+   at Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory.EnsureModels() in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\Umbraco\PureLiveModelFactory.cs:line 152
+ 2017-07-07 17:03:59,918 [P3492/D2/T6] WARN  Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory - Running without models.
+ 2017-07-07 17:10:44,100 [P12896/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco 7.5.7 application starting on CESAROBANDO
+ 2017-07-07 17:10:44,124 [P12896/D2/T1] INFO  Umbraco.Core.PluginManager - Determining hash of code files on disk
+ 2017-07-07 17:10:44,144 [P12896/D2/T1] INFO  Umbraco.Core.PluginManager - Hash determined (took 22ms)
+ 2017-07-07 17:10:44,244 [P12896/D2/T1] INFO  Umbraco.Core.MainDom - Acquiring MainDom...
+ 2017-07-07 17:10:44,248 [P12896/D2/T1] INFO  Umbraco.Core.MainDom - Acquired MainDom.
+ 2017-07-07 17:10:44,260 [P12896/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+ 2017-07-07 17:10:44,828 [P12896/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 0 (took 568ms)
+ 2017-07-07 17:10:44,852 [P12896/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+ 2017-07-07 17:10:44,868 [P12896/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 13ms)
+ 2017-07-07 17:10:44,868 [P12896/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyValueConverter
+ 2017-07-07 17:10:44,900 [P12896/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyValueConverter, found 0 (took 34ms)
+ 2017-07-07 17:10:44,924 [P12896/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+ 2017-07-07 17:10:44,964 [P12896/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 41ms)
+ 2017-07-07 17:10:44,964 [P12896/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+ 2017-07-07 17:10:45,000 [P12896/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 0 (took 33ms)
+ 2017-07-07 17:10:45,052 [P12896/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+ 2017-07-07 17:10:45,076 [P12896/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 0 (took 24ms)
+ 2017-07-07 17:10:45,080 [P12896/D2/T1] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+ 2017-07-07 17:10:45,104 [P12896/D2/T1] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 0 (took 25ms)
+ 2017-07-07 17:10:46,942 [P12896/D2/T1] INFO  Umbraco.Core.DatabaseContext - CanConnect = True
+ 2017-07-07 17:10:47,439 [P12896/D2/T1] INFO  Umbraco.Web.Cache.CacheRefresherEventHandler - Initializing Umbraco internal event handlers for cache refreshing
+ 2017-07-07 17:10:47,463 [P12896/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Initializing Examine and binding to business logic events
+ 2017-07-07 17:10:47,811 [P12896/D2/T1] INFO  Umbraco.Web.Search.ExamineEvents - Adding examine event handlers for index providers: 3
+ 2017-07-07 17:10:51,984 [P12896/D2/T1] INFO  Umbraco.Core.CoreBootManager - Umbraco application startup complete (took 7993ms)
+ 2017-07-07 17:10:52,144 [P12896/D2/T6] INFO  Umbraco.Core.Sync.ApplicationUrlHelper - ApplicationUrl: http://localhost:3617/umbraco (UmbracoModule request)
+ 2017-07-07 17:10:54,888 [P12896/D2/T6] INFO  umbraco.content - Load Xml from file...
+ 2017-07-07 17:10:54,892 [P12896/D2/T6] INFO  umbraco.content - Loaded Xml from file.
+ 2017-07-07 17:10:57,568 [P12896/D2/T6] INFO  Umbraco.Core.PluginManager - Starting resolution types of Umbraco.Core.PropertyEditors.IParameterEditor
+ 2017-07-07 17:10:57,680 [P12896/D2/T6] INFO  Umbraco.Core.PluginManager - Completed resolution of types of Umbraco.Core.PropertyEditors.IParameterEditor, found 0 (took 113ms)
+ 2017-07-07 17:10:58,828 [P12896/D2/T6] ERROR Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory - Failed to build models.
+System.IO.IOException: The type initializer for 'File' threw an exception. ---> System.TypeInitializationException: The type initializer for 'File' threw an exception. ---> System.IO.FileLoadException: Could not load file or assembly 'System.IO.FileSystem, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+   at System.RuntimeTypeHandle.GetTypeByName(String name, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMarkHandle stackMark, IntPtr pPrivHostBinder, Boolean loadTypeFromPartialName, ObjectHandleOnStack type)
+   at System.RuntimeTypeHandle.GetTypeByName(String name, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMark& stackMark, IntPtr pPrivHostBinder, Boolean loadTypeFromPartialName)
+   at System.RuntimeType.GetType(String typeName, Boolean throwOnError, Boolean ignoreCase, Boolean reflectionOnly, StackCrawlMark& stackMark)
+   at System.Type.GetType(String typeName, Boolean throwOnError)
+   at Roslyn.Utilities.ReflectionUtil.GetTypeFromEither(String contractName, String desktopName)
+   at Roslyn.Utilities.PortableShim.File..cctor()
+   --- End of inner exception stack trace ---
+   at Roslyn.Utilities.FileUtilities.OpenFileStream(String path)
+   --- End of inner exception stack trace ---
+   at Roslyn.Utilities.FileUtilities.OpenFileStream(String path)
+   at Microsoft.CodeAnalysis.MetadataReference.CreateFromFile(String path, MetadataReferenceProperties properties, DocumentationProvider documentation)
+   at Umbraco.ModelsBuilder.ReferencedAssemblies.<>c.<.cctor>b__2_2(String x) in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\ReferencedAssemblies.cs:line 24
+   at System.Linq.Enumerable.WhereSelectListIterator`2.MoveNext()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at Umbraco.ModelsBuilder.ReferencedAssemblies.<>c.<.cctor>b__2_1() in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\ReferencedAssemblies.cs:line 23
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.LazyInitValue()
+   at System.Lazy`1.get_Value()
+   at Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory.GenerateModelsCode(IDictionary`2 ourFiles, IList`1 typeModels) in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\Umbraco\PureLiveModelFactory.cs:line 345
+   at Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory.GetModelsAssembly(Boolean forceRebuild) in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\Umbraco\PureLiveModelFactory.cs:line 283
+   at Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory.EnsureModels() in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\Umbraco\PureLiveModelFactory.cs:line 152
+ 2017-07-07 17:10:58,836 [P12896/D2/T6] WARN  Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory - Running without models.
