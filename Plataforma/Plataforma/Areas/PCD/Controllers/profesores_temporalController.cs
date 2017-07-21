@@ -221,7 +221,7 @@ namespace Plataforma.Areas.PCD.Controllers
                     usuario.password = profesores_temporal.password;
                     usuario.telefono = profesores_temporal.telefono;
                     usuario.correo = profesores_temporal.correo;
-
+                    usuario.categoria_precio = 1;
                     colegio colegio = db.colegios.Where(c=>c.nombre.Equals(profesores_temporal.colegio)).FirstOrDefault();
                     if (colegio != null)
                     {

@@ -3,8 +3,9 @@
 
     <script>
         function Buscar() {
-            var nombre = document.getElementById('nombre').value;
-            $("#tabla-documento").load("/PCD/documentos/BusquedaGeneral/?nombre=" + nombre + " #tabla-documento");
+            //var nombre = document.getElementById('nombre').value;
+            //$("#tabla-documento").load("/PCD/documentos/BusquedaGeneral/?nombre=" + nombre + " #tabla-documento");
+            $("#loading").removeAttr('hidden');
             return false;
         }
         $(document).ready(function () {
@@ -54,6 +55,7 @@
             });
 
             $("#nombre").change(function () {
+
                 var nombre = document.getElementById('nombre').value;
                 var unidad = document.getElementById('unidad').value;
                 var curso = document.getElementById('curso').value;
@@ -121,7 +123,7 @@
 
     <div class="col-md-12 col-sm-12 col-xs-12 barra-busqueda form-group">
         @Html.Label("Buscar:", htmlAttributes: new { @class = "col-md-2", style = "top: 10px;" })
-        <input type="text" id="nombre" name="nombre" placeholder="Titulo del documento" class="form-control" />
+        <input type="text" id="nombre" name="nombre" placeholder="Titulo del documento" class="form-control" onchange="Buscar()" />
         @Html.Label("Filtrar por:", htmlAttributes: new { @class = "col-md-2", style = "top: 10px;" })
         <select id="categorias" name="categorias" class="form-control">
             <option value="">Seleccione una categoria...</option>
@@ -131,7 +133,7 @@
             <option value="tipo">Tipo</option>
         </select>
         <div id="buscar_unidad" hidden class="col-md-12" style="top: 5px; left: 15px; width:1150px;">
-            <select id="unidad" name="unidad" class="form-control">
+            <select id="unidad" name="unidad" class="form-control" onchange="Buscar()">
                 <option value="0">Seleccione una unidad...</option>
                 @foreach (var item in ViewBag.unidades)
                 {
@@ -142,7 +144,7 @@
             </select>
         </div>
         <div id="buscar_curso" hidden class="col-md-12" style="top: 5px; left: 15px; width:1150px;">
-            <select id="curso" name="curso" class="form-control" style="top: 50px;">
+            <select id="curso" name="curso" class="form-control" style="top: 50px;" onchange="Buscar()">
                 <option value="0">Seleccione un curso...</option>
                 @foreach (var item in ViewBag.cursos)
                 {
@@ -153,7 +155,7 @@
             </select>
         </div>
         <div id="buscar_nivel" hidden class="col-md-12" style="top: 5px; left: 15px; width:1150px;">
-            <select id="nivel" name="nivel" class="form-control" style="top: 50px;">
+            <select id="nivel" name="nivel" class="form-control" style="top: 50px;" onchange="Buscar()">
                 <option value="0">Seleccione un nivel...</option>
                 @foreach (var item in ViewBag.niveles)
                 {
@@ -164,7 +166,7 @@
             </select>
         </div>
         <div id="buscar_tipo" hidden class="col-md-12" style="top: 5px; left: 15px; width:1150px;">
-            <select id="tipo" name="tipo" class="form-control" style="top: 50px;">
+            <select id="tipo" name="tipo" class="form-control" style="top: 50px;" onchange="Buscar()">
                 <option value="0">Seleccione un tipo...</option>
                 @foreach (var item in ViewBag.tipos)
                 {
@@ -176,6 +178,7 @@
         </div>
     </div>
     <div id="tabla-documento">
+        <div hidden="hidden" class="col-md-7 col-md-offset-5" id="loading"><img src="~/Recursos/Aplicacion/Gray_circles_rotate.gif" height="45" width="45" /></div>
         @if (Model.Count() > 0 || ViewBag.documentosUsuario.Count > 0)
         {
             <h1 class="class-forms" style="text-align:center;">Documentos Matriculados</h1>
@@ -236,8 +239,10 @@
                             }
                             <div class="documento">
                                 <p>
-                                    <img src="@Url.Content(item.tipo_documento.icono)"><br />
-                                    @item.titulo
+                                    <a href="~/PCD/documentos/ComprarDocumento/@item.id">
+                                        <img src="@Url.Content(item.tipo_documento.icono)"><br />
+                                        @item.titulo
+                                    </a>
                                 </p>
                             </div>
                             if ((i < Model.Count() - 1) && (@item.unidad != Model.ElementAt(i + 1).unidad))
@@ -255,7 +260,7 @@
             }
             else
             {
-                <h5>No existen documentos que concuerden con los criterios de busqueda</h5>
+                <h5>No existen documentos que concuerden con los criterios de busqueda o ya los posees todos</h5>
             }
         }
     </div>

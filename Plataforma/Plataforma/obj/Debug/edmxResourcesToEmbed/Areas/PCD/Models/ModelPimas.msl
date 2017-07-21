@@ -57,6 +57,9 @@
     <EntitySetMapping Name="documentos">
       <EntityTypeMapping TypeName="pimasModel.documento">
         <MappingFragment StoreEntitySet="documentos">
+          <ScalarProperty Name="precio3" ColumnName="precio3" />
+          <ScalarProperty Name="precio2" ColumnName="precio2" />
+          <ScalarProperty Name="precio1" ColumnName="precio1" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="id_tipo" ColumnName="id_tipo" />
           <ScalarProperty Name="url" ColumnName="url" />
@@ -248,6 +251,8 @@
     <EntitySetMapping Name="usuarios">
       <EntityTypeMapping TypeName="pimasModel.usuario">
         <MappingFragment StoreEntitySet="usuarios">
+          <ScalarProperty Name="saldo" ColumnName="saldo" />
+          <ScalarProperty Name="categoria_precio" ColumnName="categoria_precio" />
           <ScalarProperty Name="fecha_vencimiento" ColumnName="fecha_vencimiento" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="nombre" ColumnName="nombre" />
@@ -386,5 +391,34 @@
         <ScalarProperty Name="id" ColumnName="id_grupo" />
       </EndProperty>
     </AssociationSetMapping>
+    <EntitySetMapping Name="documentos_relacionados">
+      <EntityTypeMapping TypeName="pimasModel.documentos_relacionados">
+        <MappingFragment StoreEntitySet="documentos_relacionados">
+          <ScalarProperty Name="documento_relacionado2" ColumnName="documento_relacionado2" />
+          <ScalarProperty Name="documento_relacionado1" ColumnName="documento_relacionado1" />
+          <ScalarProperty Name="id_documento" ColumnName="id_documento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="documentos_usuario">
+      <EntityTypeMapping TypeName="pimasModel.documentos_usuario">
+        <MappingFragment StoreEntitySet="documentos_usuario">
+          <ScalarProperty Name="fecha_vencimiento" ColumnName="fecha_vencimiento" />
+          <ScalarProperty Name="id_documento" ColumnName="id_documento" />
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="transacciones">
+      <EntityTypeMapping TypeName="pimasModel.transaccione">
+        <MappingFragment StoreEntitySet="transacciones">
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="especificacion" ColumnName="especificacion" />
+          <ScalarProperty Name="transaccion" ColumnName="transaccion" />
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+          <ScalarProperty Name="id_transaccion" ColumnName="id_transaccion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

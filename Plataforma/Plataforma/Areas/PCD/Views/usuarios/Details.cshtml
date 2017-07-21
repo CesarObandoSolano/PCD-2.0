@@ -84,7 +84,13 @@
             Fecha de vencimiento
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.fecha_vencimiento)
+            @if (Model.fecha_vencimiento != null)
+            {
+                @Html.DisplayFor(model => model.fecha_vencimiento)
+            }else
+            {
+                <p>--</p>
+            }
         </dd>
         <dt>
             Numero de visitas al sitio
@@ -119,6 +125,26 @@
                 <p>--</p>
             }
 
+        </dd>
+@if (Session["usuario"] != null)
+{
+    var usuario = (Plataforma.Areas.PCD.Models.usuario)Session["usuario"];
+    @if (usuario.roles.FirstOrDefault().rol.Equals(Plataforma.App_Start.Constantes.ADMINISTRADOR))
+    {
+        <dt>
+            Categoria de Usuario
+        </dt>
+        <dd>
+            Categoria @Model.categoria_precio
+        </dd>
+    }
+}
+
+        <dt>
+            Saldo
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.saldo)
         </dd>
     </dl>
 

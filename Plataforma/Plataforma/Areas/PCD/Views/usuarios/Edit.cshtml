@@ -131,6 +131,7 @@
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.id)
         @Html.HiddenFor(model => model.fecha_primer_ingreso)
+        @Html.HiddenFor(model => model.fecha_vencimiento)
         <input type="hidden" id="nombreUsuario" name="nombreUsuario" value="@ViewBag.nombreUsuario">
         <input type="hidden" id="correoUsuario" name="correoUsuario" value="@ViewBag.correoUsuario">
 
@@ -238,7 +239,19 @@
                 @Html.ValidationMessageFor(model => model.informacion_opcional, "", new { @class = "text-danger" })
             </div>
         </div>
-
+    @if (usuario.roles.FirstOrDefault().rol.Equals(Plataforma.App_Start.Constantes.ADMINISTRADOR))
+    {
+        <div class="form-group">
+            @Html.Label("Categoria de usuario", htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-10">
+                <select name="categoria_precio" id="categoria_precio" class="form-control">
+                    <option value="1" selected>Categoria 1</option>
+                    <option value="2">Categoria 2</option>
+                    <option value="3">Categoria 3</option>
+                </select>
+            </div>
+        </div>
+    }
         <div class="form-group">
             @Html.LabelFor(model => model.notificacione, "Notificaciones", htmlAttributes: new { @class = "control-label col-md-4" })
             <div class="col-md-10">

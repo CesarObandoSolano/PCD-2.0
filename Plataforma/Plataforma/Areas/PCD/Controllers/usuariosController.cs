@@ -32,50 +32,41 @@ namespace Plataforma.Areas.PCD.Controllers
                 if (usuarioSesion.roles.FirstOrDefault().rol.Equals(Constantes.ADMINISTRADOR))
                 {
 
-                    colegio colegioTemp = new colegio();
-                    colegioTemp.nombre = "zzz";
-                    nivele nivelTemp = new nivele();
-                    nivelTemp.nivel = "zzz";
-
                     List<usuario> usuarios = new List<usuario>();
                     if (nombre != null && nombre != "")
                     {
-                        usuarios = db.usuarios.Where(u => (u.nombre.Contains(nombre) || u.apellidos.Contains(nombre) || u.username.Contains(nombre) || u.informacion_opcional.Contains(nombre))).ToList();
+                        usuarios = db.usuarios.Where(u => (u.nombre.Contains(nombre) ||
+                                                            u.apellidos.Contains(nombre) ||
+                                                            u.username.Contains(nombre) ||
+                                                            u.correo.Contains(nombre) ||
+                                                            u.correo_2.Contains(nombre) ||
+                                                            u.informacion_opcional.Contains(nombre))
+                                                            ).OrderBy(u => u.roles.FirstOrDefault().rol).ThenBy(u => u.nombre + " " + u.apellidos).ToList();
                     }
                     else
                     {
-                        usuarios = db.usuarios.ToList();
+                        usuarios = db.usuarios.OrderBy(u => u.roles.FirstOrDefault().rol).ThenBy(u => u.nombre + " " + u.apellidos).ToList();
                     }
 
                     if (rol != null)
                     {
-                        usuarios = usuarios.Where(u => u.roles.Contains(db.roles.Find(rol))).ToList();
+                        role rolObj = db.roles.Find(rol);
+                        usuarios = usuarios.Where(u => u.roles.Contains(rolObj)).ToList();
                     }
-
-                    if (colegio != null)
+                    else if (colegio != null)
                     {
-                        usuarios = usuarios.Where(u => u.colegios.Contains(db.colegios.Find(colegio))).ToList();
+                        colegio colegioObj = db.colegios.Find(colegio);
+                        usuarios = usuarios.Where(u => u.colegios.Contains(colegioObj)).ToList();
                     }
-
-                    if (nivel != null)
+                    else if (nivel != null)
                     {
-                        usuarios = usuarios.Where(u => u.niveles.Contains(db.niveles.Find(nivel))).ToList();
+                        nivele nivelObj = db.niveles.Find(nivel);
+                        usuarios = usuarios.Where(u => u.niveles.Contains(nivelObj)).ToList();
                     }
 
-                    //foreach (usuario item in usuarios.Where(u => u.colegios == null || u.colegios.Count <= 0))
-                    //{
-                    //    usuarios.Where(u => u.id == item.id).FirstOrDefault().colegios.Add(colegioTemp);
-                    //}
-                    //foreach (usuario item in usuarios.Where(u => u.niveles == null || u.niveles.Count <= 0))
-                    //{
-                    //    usuarios.Where(u => u.id == item.id).FirstOrDefault().niveles.Add(nivelTemp);
-                    //}
-
-                    usuarios =
-                        usuarios.OrderBy(u => u.roles.FirstOrDefault().rol).
-                        ThenBy(u => u.nombre + " " + u.apellidos).ToList();
-                    //ThenBy(u => u.colegios.FirstOrDefault().nombre).
-                    //ThenBy(u => u.niveles.FirstOrDefault().nivel).ToList();
+                    //usuarios =
+                    //    usuarios.OrderBy(u => u.roles.FirstOrDefault().rol).
+                    //    ThenBy(u => u.nombre + " " + u.apellidos).ToList();
                     ViewBag.TotalVisitas = db.log_visitas.Count();
                     ViewBag.roles = db.roles;
                     ViewBag.colegios = db.colegios;
@@ -171,7 +162,7 @@ namespace Plataforma.Areas.PCD.Controllers
         [AllowAnonymous]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,nombre,apellidos,username,password,telefono,telefono_2,correo,correo_2,informacion_opcional,fecha_primer_ingreso")] usuario usuario, int roles, List<int> colegios, List<int> niveles, bool? notificacionCorreo, bool? notificacionTelefono, int? vencimiento, int? unidadTiempo)
+        public ActionResult Create([Bind(Include = "id,nombre,apellidos,username,password,telefono,telefono_2,correo,correo_2,informacion_opcional,fecha_primer_ingreso,categoria_precio")] usuario usuario, int roles, List<int> colegios, List<int> niveles, bool? notificacionCorreo, bool? notificacionTelefono, int? vencimiento, int? unidadTiempo)
         {
             if (ModelState.IsValid)
             {
@@ -286,7 +277,7 @@ namespace Plataforma.Areas.PCD.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,nombre,apellidos,username,password,telefono,telefono_2,correo,correo_2,informacion_opcional,fecha_primer_ingreso")] usuario usuario, int? roles, bool? notificacionCorreo, bool? notificacionTelefono, string nombreUsuario, string pass)
+        public ActionResult Edit([Bind(Include = "id,nombre,apellidos,username,password,telefono,telefono_2,correo,correo_2,informacion_opcional,fecha_primer_ingreso,fecha_vencimiento,categoria_precio")] usuario usuario, int? roles, bool? notificacionCorreo, bool? notificacionTelefono, string nombreUsuario, string pass)
         {
             if (ModelState.IsValid)
             {
@@ -1052,6 +1043,10 @@ namespace Plataforma.Areas.PCD.Controllers
             {
                 usuario usuario = db.usuarios.Find(id);
                 //fecha vencimiento
+                if(usuario.fecha_vencimiento == null)
+                {
+                    usuario.fecha_vencimiento = DateTime.Today;
+                }
                 if (vencimiento == null || unidadTiempo == null)
                 {
                     vencimiento = 1;

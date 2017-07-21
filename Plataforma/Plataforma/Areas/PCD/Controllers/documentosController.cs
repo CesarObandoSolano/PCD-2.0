@@ -24,6 +24,7 @@ namespace Plataforma.Areas.PCD.Controllers
                 usuario usuarioSesion = (usuario)HttpContext.Session["usuario"];
                 if (usuarioSesion.roles.FirstOrDefault().rol.Equals(Constantes.ADMINISTRADOR))
                 {
+
                     List<documento> documentos = new List<documento>();
                     if (nombre != null)
                     {
@@ -132,7 +133,7 @@ namespace Plataforma.Areas.PCD.Controllers
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,id_tipo,url,contador_visitas,titulo,descripcion_corta,descripcion_detallada,fecha_publicacion,status,imagen,historial_version,numero_version,unidad,capitulo")] documento documento, HttpPostedFileBase file, ICollection<int> nivel)
+        public ActionResult Create([Bind(Include = "id,id_tipo,url,contador_visitas,titulo,descripcion_corta,descripcion_detallada,fecha_publicacion,status,imagen,historial_version,numero_version,unidad,capitulo,precio1,precio2,precio3")] documento documento, HttpPostedFileBase file, ICollection<int> nivel)
         {
             if (ModelState.IsValid)
             {
@@ -215,7 +216,7 @@ namespace Plataforma.Areas.PCD.Controllers
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,id_tipo,url,contador_visitas,titulo,descripcion_corta,descripcion_detallada,fecha_publicacion,status,imagen,historial_version,numero_version,unidad,capitulo")] documento documento, HttpPostedFileBase file, int unidadAnterior, ICollection<int> nivel)
+        public ActionResult Edit([Bind(Include = "id,id_tipo,url,contador_visitas,titulo,descripcion_corta,descripcion_detallada,fecha_publicacion,status,imagen,historial_version,numero_version,unidad,capitulo,precio1,precio2,precio3")] documento documento, HttpPostedFileBase file, int unidadAnterior, ICollection<int> nivel)
         {
             if (ModelState.IsValid)
             {
@@ -533,12 +534,13 @@ namespace Plataforma.Areas.PCD.Controllers
                 if ((nombre != null && nombre != "") || curso != null || unidad != null || nivel != null || tipo != null)
                 {
                     usuario usuarioSesion = (usuario)HttpContext.Session["usuario"];
-                    
+
                     documentosUsuario = db.documentos_curso.SqlQuery("select distinct * from documentos_curso where id_documento in (" +
                                                                       "select id from documentos where " +
-                                                                      "titulo COLLATE Latin1_general_CI_AI like '%"+nombre+"%' COLLATE Latin1_general_CI_AI or " +
+                                                                      "titulo COLLATE Latin1_general_CI_AI like '%" + nombre + "%' COLLATE Latin1_general_CI_AI or " +
                                                                       "descripcion_corta COLLATE Latin1_general_CI_AI like '%" + nombre + "%' COLLATE Latin1_general_CI_AI or " +
-                                                                      "descripcion_detallada COLLATE Latin1_general_CI_AI like '%" + nombre + "%' COLLATE Latin1_general_CI_AI)"
+                                                                      "descripcion_detallada COLLATE Latin1_general_CI_AI like '%" + nombre + "%' COLLATE Latin1_general_CI_AI) and " +
+                                                                      "id_curso in (select id_curso from curso_usuario where id_usuario = " + usuarioSesion.id + ")"
                                                                      ).ToList();
 
                     documentos = db.documentos.SqlQuery("select * from documentos where " +
@@ -603,6 +605,183 @@ namespace Plataforma.Areas.PCD.Controllers
                 }
             }
             return RedirectToAction("../Account/Login/ReturnUrl=documentos");
+        }
+
+        [Authorize]
+        public ActionResult DocumentosRelacionados(int? id)
+        {
+            if (Session["usuario"] != null)
+            {
+                usuario usuarioSesion = (usuario)HttpContext.Session["usuario"];
+                if (usuarioSesion.roles.FirstOrDefault().rol.Equals(Constantes.ADMINISTRADOR))
+                {
+                    if (id == null)
+                    {
+                        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                    }
+                    documento documento = db.documentos.Find(id);
+                    if (documento == null)
+                    {
+                        return HttpNotFound();
+                    }
+                    List<documento> documentos = db.documentos.ToList();
+                    documentos.Remove(documento);
+                    List<documento> documentosRelacionados = new List<documento>();
+                    if (documento.documentos_relacionados != null && documento.documentos_relacionados.documento1 != null)
+                    {
+                        documentosRelacionados.Add(documento.documentos_relacionados.documento1);
+                    }
+                    if (documento.documentos_relacionados != null && documento.documentos_relacionados.documento2 != null)
+                    {
+                        documentosRelacionados.Add(documento.documentos_relacionados.documento2);
+                    }
+                    ViewBag.documentosRelacionados = documentosRelacionados;
+                    ViewBag.documentos = documentos;
+                    return View(documento);
+                }
+                else
+                {
+                    return RedirectToAction("../");
+                }
+            }
+            return RedirectToAction("../Account/Login/ReturnUrl=documentos");
+        }
+
+        [Authorize]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult DocumentosRelacionados(int id, List<int> documentosARelacionar)
+        {
+            if (Session["usuario"] != null)
+            {
+                usuario usuarioSesion = (usuario)HttpContext.Session["usuario"];
+                if (usuarioSesion.roles.FirstOrDefault().rol.Equals(Constantes.ADMINISTRADOR))
+                {
+                    documento documento = db.documentos.Find(id);
+                    documentos_relacionados documentos_relacionados = new documentos_relacionados();
+                    documentos_relacionados.id_documento = documento.id;
+                    if (documentosARelacionar != null && documentosARelacionar.Count == 2)
+                    {
+                        documentos_relacionados.documento_relacionado1 = documentosARelacionar[0];
+                        documentos_relacionados.documento_relacionado2 = documentosARelacionar[1];
+                        documento.documentos_relacionados = documentos_relacionados;
+                        db.SaveChanges();
+                        return RedirectToAction("Index");
+                    }
+                    else
+                    {
+                        List<documento> documentos = db.documentos.ToList();
+                        documentos.Remove(documento);
+                        List<documento> documentosRelacionados = new List<documento>();
+                        if (documento.documentos_relacionados != null && documento.documentos_relacionados.documento1 != null)
+                        {
+                            documentosRelacionados.Add(documento.documentos_relacionados.documento1);
+                        }
+                        if (documento.documentos_relacionados != null && documento.documentos_relacionados.documento2 != null)
+                        {
+                            documentosRelacionados.Add(documento.documentos_relacionados.documento2);
+                        }
+                        ViewBag.documentosRelacionados = documentosRelacionados;
+                        ViewBag.documentos = documentos;
+                        return View(documento);
+                    }
+                }
+                else
+                {
+                    return RedirectToAction("../");
+                }
+            }
+            return RedirectToAction("../Account/Login/ReturnUrl=documentos");
+        }
+
+        [Authorize]
+        public ActionResult ComprarDocumento(int? id)
+        {
+            if (Session["usuario"] != null)
+            {
+                usuario usuarioSesion = (usuario)HttpContext.Session["usuario"];
+                if (id == null)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+                documento documento = db.documentos.Find(id);
+                if (documento == null)
+                {
+                    return HttpNotFound();
+                }
+                string nombreArchivo = Path.GetFileName(documento.url);
+                string ruta = "~/Recursos/Documentos/" + nombreArchivo;
+                documento.url = ruta;
+
+                return View(documento);
+            }
+            return RedirectToAction("../Account/Login/ReturnUrl=documentos");
+        }
+
+        [Authorize]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ComprarDocumento(int id, int vencimiento, int unidadTiempo)
+        {
+            if (Session["usuario"] != null)
+            {
+                usuario usuarioSesion = (usuario)HttpContext.Session["usuario"];
+                documento documento = db.documentos.Find(id);
+                documentos_usuario du = new documentos_usuario();
+                transaccione transaccion = new transaccione();
+                decimal precio;
+
+                if (usuarioSesion.categoria_precio == null || usuarioSesion.categoria_precio == 1)
+                {
+                    precio = documento.precio1.Value;
+                }
+                else if (usuarioSesion.categoria_precio == 2)
+                {
+                    precio = documento.precio2.Value;
+                }
+                else
+                {
+                    precio = documento.precio3.Value;
+                }
+
+                du.id_documento = id;
+                du.id_usuario = usuarioSesion.id;
+
+                if (unidadTiempo == 2)
+                {
+                    vencimiento = vencimiento * 12;
+                }
+                du.fecha_vencimiento = DateTime.Today.AddMonths(vencimiento);
+                if (usuarioSesion.fecha_vencimiento > du.fecha_vencimiento)
+                {
+                    precio = precio * vencimiento;
+                    if (usuarioSesion.saldo >= precio)
+                    {
+                        transaccion.id_usuario = usuarioSesion.id;
+                        transaccion.transaccion = "Compra de documento digital por ₡" + precio;
+                        transaccion.especificacion = "Se compro el documento " + documento.titulo + " con el id " +
+                                                        documento.id + ", por el plazo de " + vencimiento + " meses. Se rebajaron ₡" + precio + " del saldo.";
+                        transaccion.fecha = DateTime.Now;
+                        db.documentos_usuario.Add(du);
+                        db.usuarios.Find(usuarioSesion.id).saldo -= precio;
+                        db.transacciones.Add(transaccion);
+                        db.SaveChanges();
+                        return RedirectToRoute("../");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", "No posees suficiente saldo para comprar este documento, prueba comprandolo por menos tiempo o solicita mas saldo");
+                        return View(documento);
+                    }
+                }
+                else
+                {
+                    ModelState.AddModelError("", "No puedes comprar el articulo por tanto tiempo o pide que te amplien el tiempo de tu membrecia");
+                    return View(documento);
+                }
+            }
+            return RedirectToAction("../Account/Login/ReturnUrl=documentos");
+
         }
 
         protected override void Dispose(bool disposing)

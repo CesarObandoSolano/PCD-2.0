@@ -396,6 +396,12 @@
     <Compile Include="Areas\PCD\Models\documentos_profe.cs">
       <DependentUpon>ModelPimas.tt</DependentUpon>
     </Compile>
+    <Compile Include="Areas\PCD\Models\documentos_relacionados.cs">
+      <DependentUpon>ModelPimas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\PCD\Models\documentos_usuario.cs">
+      <DependentUpon>ModelPimas.tt</DependentUpon>
+    </Compile>
     <Compile Include="Areas\PCD\Models\grupos.cs">
       <DependentUpon>ModelPimas.tt</DependentUpon>
     </Compile>
@@ -454,6 +460,9 @@
       <DependentUpon>ModelPimas.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\PCD\Models\tipo_documento.cs">
+      <DependentUpon>ModelPimas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\PCD\Models\transaccione.cs">
       <DependentUpon>ModelPimas.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\PCD\Models\unidade.cs">
@@ -549,6 +558,7 @@
     <Content Include="Global.asax" />
     <Content Include="Recursos\Aplicacion\check.png" />
     <Content Include="Recursos\Aplicacion\folder_gray_9787.png" />
+    <Content Include="Recursos\Aplicacion\Gray_circles_rotate.gif" />
     <Content Include="Recursos\Aplicacion\logo.png" />
     <Content Include="Recursos\Aplicacion\pdf-file_47192.png" />
     <Content Include="Recursos\Aplicacion\pdf-file_47192peq.png" />
@@ -618,6 +628,8 @@
     <Content Include="Areas\PCD\Views\usuarios\SolicitudInscripcion.cshtml" />
     <Content Include="Areas\PCD\Views\usuarios\RenovarSuscripcion.cshtml" />
     <Content Include="Areas\PCD\Views\documentos\BusquedaGeneral.cshtml" />
+    <Content Include="Areas\PCD\Views\documentos\DocumentosRelacionados.cshtml" />
+    <Content Include="Areas\PCD\Views\documentos\ComprarDocumento.cshtml" />
     <None Include="job_scheduling_data_2_0.xsd">
       <SubType>Designer</SubType>
     </None>
