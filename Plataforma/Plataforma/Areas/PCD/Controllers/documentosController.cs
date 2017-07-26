@@ -551,7 +551,7 @@ namespace Plataforma.Areas.PCD.Controllers
                         ).ToList();
 
                     documentosUsuario = documentosUsuario.GroupBy(du => du.id_documento).Select(d => d.FirstOrDefault()).OrderBy(d => d.documento.unidade.unidad).ThenBy(d => d.documento.titulo).ToList();
-                    documentos = documentos.Where(d => !documentosUsuario.Exists(du => du.id_documento == d.id)).ToList();
+                    documentos = documentos.Where(d => (!documentosUsuario.Exists(du => du.id_documento == d.id))).ToList();
 
                     if (unidad != null)
                     {
@@ -730,7 +730,7 @@ namespace Plataforma.Areas.PCD.Controllers
                 documentos_usuario du = new documentos_usuario();
                 transaccione transaccion = new transaccione();
                 decimal precio;
-
+                usuarioSesion = db.usuarios.Find(usuarioSesion.id);
                 if (usuarioSesion.categoria_precio == null || usuarioSesion.categoria_precio == 1)
                 {
                     precio = documento.precio1.Value;
@@ -743,7 +743,6 @@ namespace Plataforma.Areas.PCD.Controllers
                 {
                     precio = documento.precio3.Value;
                 }
-
                 du.id_documento = id;
                 du.id_usuario = usuarioSesion.id;
 
@@ -752,36 +751,111 @@ namespace Plataforma.Areas.PCD.Controllers
                     vencimiento = vencimiento * 12;
                 }
                 du.fecha_vencimiento = DateTime.Today.AddMonths(vencimiento);
-                if (usuarioSesion.fecha_vencimiento > du.fecha_vencimiento)
+                if (usuarioSesion.documentos_usuario.Where(u => u.id_documento == id && u.fecha_vencimiento > DateTime.Now).ToList().Count <= 0)
                 {
-                    precio = precio * vencimiento;
-                    if (usuarioSesion.saldo >= precio)
+                    if (usuarioSesion.fecha_vencimiento > du.fecha_vencimiento)
                     {
-                        transaccion.id_usuario = usuarioSesion.id;
-                        transaccion.transaccion = "Compra de documento digital por ₡" + precio;
-                        transaccion.especificacion = "Se compro el documento " + documento.titulo + " con el id " +
-                                                        documento.id + ", por el plazo de " + vencimiento + " meses. Se rebajaron ₡" + precio + " del saldo.";
-                        transaccion.fecha = DateTime.Now;
-                        db.documentos_usuario.Add(du);
-                        db.usuarios.Find(usuarioSesion.id).saldo -= precio;
-                        db.transacciones.Add(transaccion);
-                        db.SaveChanges();
-                        return RedirectToRoute("../");
+                        precio = precio * vencimiento;
+                        if (usuarioSesion.saldo >= precio)
+                        {
+                            transaccion.id_usuario = usuarioSesion.id;
+                            transaccion.transaccion = "Compra de documento digital por ₡" + precio;
+                            transaccion.especificacion = "Se compro el documento " + documento.titulo + " con el id " +
+                                                            documento.id + ", por el plazo de " + vencimiento + " meses. Se rebajaron ₡" + precio + " del saldo.";
+                            transaccion.fecha = DateTime.Now;
+                            if (db.documentos_usuario.Find(usuarioSesion.id, id) != null)
+                            {
+                                db.documentos_usuario.Find(usuarioSesion.id, id).fecha_vencimiento = DateTime.Today.AddMonths(vencimiento);
+                            }
+                            else
+                            {
+                                db.documentos_usuario.Add(du);
+                            }
+                            db.usuarios.Find(usuarioSesion.id).saldo -= precio;
+                            db.transacciones.Add(transaccion);
+                            db.SaveChanges();
+                            return RedirectToAction("../");
+                        }
+                        else
+                        {
+                            ModelState.AddModelError("", "No posees suficiente saldo para comprar este documento, prueba comprandolo por menos tiempo o solicita mas saldo");
+                            return View(documento);
+                        }
                     }
                     else
                     {
-                        ModelState.AddModelError("", "No posees suficiente saldo para comprar este documento, prueba comprandolo por menos tiempo o solicita mas saldo");
+                        ModelState.AddModelError("", "No puedes comprar el articulo por tanto tiempo o pide que te amplien el tiempo de tu membrecia");
                         return View(documento);
                     }
                 }
                 else
                 {
-                    ModelState.AddModelError("", "No puedes comprar el articulo por tanto tiempo o pide que te amplien el tiempo de tu membrecia");
+                    ModelState.AddModelError("", "Ya posees este articulo, y no se ha vencido el tiempo que compraste");
                     return View(documento);
                 }
             }
             return RedirectToAction("../Account/Login/ReturnUrl=documentos");
 
+        }
+        
+        public ActionResult VerDocumentoUsuario(int? id)
+        {
+            if (Session["usuario"] != null)
+            {
+                if (id == null)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+                usuario usuarioSesion = (usuario)HttpContext.Session["usuario"];
+                if (usuarioSesion.documentos_usuario.Where(c => c.id_documento == id && c.fecha_vencimiento > DateTime.Today).ToList().Count > 0)
+                {
+                    
+                    documento documento = db.documentos.Find(id);
+                    if (documento == null)
+                    {
+                        return HttpNotFound();
+                    }
+                    if (documento.contador_visitas == null)
+                    {
+                        documento.contador_visitas = 0;
+                    }
+                    documento.contador_visitas += 1;
+                    if (db.log_visitas_documentousuario.Find(documento.id, usuarioSesion.id) == null)
+                    {
+                        log_visitas_documentousuario log_visitas = new log_visitas_documentousuario();
+                        log_visitas.contador = 1;
+                        log_visitas.id_documento = documento.id;
+                        log_visitas.id_usuario = usuarioSesion.id;
+                        log_visitas.fecha = DateTime.Now;
+                        db.log_visitas_documentousuario.Add(log_visitas);
+                    }
+                    else
+                    {
+                        db.log_visitas_documentousuario.Find(documento.id, usuarioSesion.id).contador += 1;
+                    }
+                    db.SaveChanges();
+                        ViewBag.DocAnterior = null;
+                        ViewBag.DocSiguiente = null;
+                        
+                    string nombreArchivo = Path.GetFileName(documento.url);
+                    string ruta;
+                    if (documento.tipo_documento.tipo_documento1.Equals("pdf"))
+                    {
+                        ruta = "~/ViewerJS/#../Recursos/Documentos/" + documento.unidad + "/" + nombreArchivo;
+                    }
+                    else if (documento.tipo_documento.tipo_documento1.Equals("mp4"))
+                    {
+                        ruta = "~/Recursos/Documentos/" + documento.unidad + "/" + nombreArchivo;
+                    }
+                    else
+                    {
+                        ruta = "~/Recursos/Documentos/" + documento.unidad + "/" + nombreArchivo;
+                    }
+                    documento.url = ruta;
+                    return View(documento);
+                }
+            }
+            return RedirectToAction("../Documentos/ComprarDocumento/"+id);
         }
 
         protected override void Dispose(bool disposing)

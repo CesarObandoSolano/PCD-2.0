@@ -5,6 +5,7 @@
         function Buscar() {
             //var nombre = document.getElementById('nombre').value;
             //$("#tabla-documento").load("/PCD/documentos/BusquedaGeneral/?nombre=" + nombre + " #tabla-documento");
+            
             $("#loading").removeAttr('hidden');
             return false;
         }
@@ -120,7 +121,6 @@
 <h6>Listado de documentos</h6>
 <br><br>
 <div class="col-md-12 col-sm-12 col-xs-12">
-
     <div class="col-md-12 col-sm-12 col-xs-12 barra-busqueda form-group">
         @Html.Label("Buscar:", htmlAttributes: new { @class = "col-md-2", style = "top: 10px;" })
         <input type="text" id="nombre" name="nombre" placeholder="Titulo del documento" class="form-control" onchange="Buscar()" />
@@ -187,10 +187,10 @@
                 <div class="col-lg-12" id="documentos">
                     <div class="col-lg-12 vista">
                         @for (int i = 0; i < ViewBag.documentosUsuario.Count; i++)
-                    {
-                        Plataforma.Areas.PCD.Models.documentos_curso item = ViewBag.documentosUsuario[i];
-                        if (i == 0)
                         {
+                            Plataforma.Areas.PCD.Models.documentos_curso item = ViewBag.documentosUsuario[i];
+                            if (i == 0)
+                            {
                                 <div class="encabezado col-lg-10">
                                     <hr />
                                     <h3>@ViewBag.documentosUsuario[i].documento.unidade.unidad</h3>
@@ -228,10 +228,10 @@
                 <div class="col-lg-12" id="documentos">
                     <div class="col-lg-12 vista">
                         @for (int i = 0; i < Model.Count(); i++)
-                    {
-                        Plataforma.Areas.PCD.Models.documento item = Model.ElementAt(i);
-                        if (i == 0)
                         {
+                            Plataforma.Areas.PCD.Models.documento item = Model.ElementAt(i);
+                            if (i == 0)
+                            {
                                 <div class="encabezado col-lg-10">
                                     <hr />
                                     <h3>@item.unidade.unidad</h3>

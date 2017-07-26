@@ -129,7 +129,7 @@
 @if (Session["usuario"] != null)
 {
     var usuario = (Plataforma.Areas.PCD.Models.usuario)Session["usuario"];
-    @if (usuario.roles.FirstOrDefault().rol.Equals(Plataforma.App_Start.Constantes.ADMINISTRADOR))
+    if (usuario.roles.FirstOrDefault().rol.Equals(Plataforma.App_Start.Constantes.ADMINISTRADOR))
     {
         <dt>
             Categoria de Usuario
@@ -144,7 +144,7 @@
             Saldo
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.saldo)
+            ₡ @Html.DisplayFor(model => model.saldo)
         </dd>
     </dl>
 

@@ -167,13 +167,13 @@ namespace Plataforma.Areas.PCD.Controllers
             if (ModelState.IsValid)
             {
                 //fecha vencimiento
-                if(vencimiento == null || unidadTiempo == null)
+                if (vencimiento == null || unidadTiempo == null)
                 {
                     vencimiento = 1;
                     unidadTiempo = 1;
                 }
                 usuario.fecha_vencimiento = DateTime.Today;
-                if(unidadTiempo == 1)
+                if (unidadTiempo == 1)
                 {
                     usuario.fecha_vencimiento = usuario.fecha_vencimiento.Value.AddMonths(vencimiento.Value);
                 }
@@ -206,19 +206,19 @@ namespace Plataforma.Areas.PCD.Controllers
                 notificacion.id_usuario = usuario.id;
                 notificacion.fecha_hora = DateTime.Now;
                 usuario.notificacione = notificacion;
-                cuerpo = "Estimado/a " +usuario.nombre + " " + usuario.apellidos +
-                         "</br></br>Le informamos que ya está habilitado su usuario para ingresar a la Plataforma de Contenidos Digitales de la Editorial PIMAS."+
-                         "</br>Su información de acceso es la siguiente:"+
-                         "</br></br>Usuario: "+usuario.username+
-                         "</br>Contraseña: "+usuario.password+
-                         "</br></br>Para ingresar puede dirigirse al siguiente vínculo:</br>"+
+                cuerpo = "Estimado/a " + usuario.nombre + " " + usuario.apellidos +
+                         "</br></br>Le informamos que ya está habilitado su usuario para ingresar a la Plataforma de Contenidos Digitales de la Editorial PIMAS." +
+                         "</br>Su información de acceso es la siguiente:" +
+                         "</br></br>Usuario: " + usuario.username +
+                         "</br>Contraseña: " + usuario.password +
+                         "</br></br>Para ingresar puede dirigirse al siguiente vínculo:</br>" +
                          "<a href='https://www.pimas.co.cr/PCD'>https://www.pimas.co.cr/PCD</a>" +
                          "</br>Estamos para servirle.";
                 usuario.password = Utilitarios.EncodePassword(string.Concat(usuario.username, usuario.password));
                 db.usuarios.Add(usuario);
                 db.SaveChanges();
                 Utilitarios.EnviarCorreo(destinatarios, asunto, cuerpo);
-                if(usuario.roles.FirstOrDefault().rol.Equals("Perfil Libre"))
+                if (usuario.roles.FirstOrDefault().rol.Equals("Perfil Libre"))
                 {
                     return RedirectToAction("SolicitudInscripcion");
                 }
@@ -226,7 +226,7 @@ namespace Plataforma.Areas.PCD.Controllers
                 {
                     return RedirectToAction("Index");
                 }
-                
+
             }
 
             ViewBag.id = new SelectList(db.notificaciones, "id_usuario", "id_usuario", usuario.id);
@@ -371,7 +371,7 @@ namespace Plataforma.Areas.PCD.Controllers
         [HttpPost]
         public ActionResult validarUserName(String username)
         {
-            if (db.usuarios.Where(u => u.username.Equals(username)).ToList().Count > 0 || 
+            if (db.usuarios.Where(u => u.username.Equals(username)).ToList().Count > 0 ||
                 db.profesores_temporal.Where(p => p.username.Equals(username)).ToList().Count > 0)
             {
                 return Json("ocupado", JsonRequestBehavior.AllowGet);
@@ -530,7 +530,7 @@ namespace Plataforma.Areas.PCD.Controllers
                 usuario.roles.FirstOrDefault().rol.Equals(Constantes.PROFESOR) ||
                 usuario.roles.FirstOrDefault().rol.Equals(Constantes.PROFESOR_PREMIUM))
             {
-                if(usuario.fecha_vencimiento > DateTime.Today)
+                if (usuario.fecha_vencimiento > DateTime.Today)
                 {
                     return true;
                 }
@@ -751,7 +751,7 @@ namespace Plataforma.Areas.PCD.Controllers
             DateTime fechaVencimiento = DateTime.Today;
             if (unidadTiempo == 1)
             {
-               fechaVencimiento = fechaVencimiento.AddMonths(vencimiento.Value);
+                fechaVencimiento = fechaVencimiento.AddMonths(vencimiento.Value);
             }
             else
             {
@@ -857,7 +857,7 @@ namespace Plataforma.Areas.PCD.Controllers
                         ":\n\nAdjunto encontrará un documento PDF con los datos de acceso para los usuarios generados el dia "
                         + DateTime.Today.ToShortDateString().ToString() + " y las indicaciones necesarias.", s);
                     s.Close();
-                    
+
                     db.SaveChanges();
                     return RedirectToAction("Index");
                 }
@@ -978,7 +978,7 @@ namespace Plataforma.Areas.PCD.Controllers
             {
                 usuario usuario = db.usuarios.Where(u => u.username.Equals(username)).FirstOrDefault();
                 string password = Guid.NewGuid().ToString().Substring(0, 10);
-                db.usuarios.Find(usuario.id).password = 
+                db.usuarios.Find(usuario.id).password =
                     Utilitarios.EncodePassword(string.Concat(usuario.username, password));
                 db.SaveChanges();
                 List<string> destinatarios = new List<string>();
@@ -987,7 +987,7 @@ namespace Plataforma.Areas.PCD.Controllers
                 {
                     destinatarios.Add(usuario.correo_2);
                 }
-                string mensaje = "Estimado " + usuario.nombre + 
+                string mensaje = "Estimado " + usuario.nombre +
                     "<br /> Por medio de este mensaje deseamos darle a conocer que el cambio de su contraseña en el sitio Plataforma de Contenidos Digitales se realizo exitosamente, su nueva contraseña es: " + password +
                     "<br/> <br/> Saludos.";
                 Utilitarios.EnviarCorreo(destinatarios, "Cambio de contraseña", mensaje);
@@ -1043,7 +1043,7 @@ namespace Plataforma.Areas.PCD.Controllers
             {
                 usuario usuario = db.usuarios.Find(id);
                 //fecha vencimiento
-                if(usuario.fecha_vencimiento == null)
+                if (usuario.fecha_vencimiento == null)
                 {
                     usuario.fecha_vencimiento = DateTime.Today;
                 }
@@ -1068,6 +1068,24 @@ namespace Plataforma.Areas.PCD.Controllers
                 return RedirectToAction("Index");
             }
             return View();
+        }
+
+        public ActionResult CarpetaPersonal()
+        {
+            if (Session["usuario"] != null)
+            {
+                usuario usuarioSesion = (usuario)HttpContext.Session["usuario"];
+                usuarioSesion = db.usuarios.Find(usuarioSesion.id);
+                usuarioSesion.documentos_usuario = usuarioSesion.documentos_usuario.OrderBy(d => d.documento.unidade.unidad).ToList();
+                foreach (documentos_usuario documentoTemp in usuarioSesion.documentos_usuario)
+                {
+                    string nombreArchivo = Path.GetFileName(documentoTemp.documento.tipo_documento.icono);
+                    string ruta = "~/Recursos/Iconos/" + nombreArchivo;
+                    documentoTemp.documento.tipo_documento.icono = ruta;
+                }
+                return View(usuarioSesion);
+            }
+            return RedirectToAction("../Account/Login/ReturnUrl=usuarios");
         }
 
         protected override void Dispose(bool disposing)
