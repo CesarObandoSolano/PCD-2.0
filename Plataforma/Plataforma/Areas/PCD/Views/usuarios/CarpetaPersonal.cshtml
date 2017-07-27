@@ -1,0 +1,42 @@
+﻿@model Plataforma.Areas.PCD.Models.usuario
+
+@{
+    ViewBag.Title = "Carpeta Personal";
+}
+
+<h2>Carpeta Personal: @Model.nombre</h2>
+
+<div class="col-lg-12" id="documentos">
+
+    <div class="col-lg-12 vista">
+        @for (int i = 0; i < Model.documentos_usuario.Count; i++)
+        {
+            if (i == 0)
+            {
+                <div class="encabezado col-lg-10">
+                    <hr />
+                    <h3>@Model.documentos_usuario.ElementAt(0).documento.unidade.unidad</h3>
+                </div>
+            }
+            Plataforma.Areas.PCD.Models.documento item = Model.documentos_usuario.ElementAt(i).documento;
+
+            <div class="documento">
+                <a href="~/PCD/documentos/VerDocumentoUsuario/@item.id">
+                    <p>
+                        <img src="@Url.Content(item.tipo_documento.icono)"><br />
+                        @item.titulo
+                    </p>
+                </a>
+            </div>
+            if ((i < Model.documentos_usuario.Count - 1) && (@item.unidad != Model.documentos_usuario.ElementAt(i + 1).documento.unidad))
+            {
+                <br />
+                    <div class="encabezado col-lg-10">
+                        <hr />
+                        <h3>@Model.documentos_usuario.ElementAt(i + 1).documento.unidade.unidad</h3>
+                        <br />
+                    </div>
+            }
+        }
+    </div>
+</div>

@@ -88,6 +88,13 @@
     <NavigationProperty Name="libros" Relationship="Self.documentos_libro" FromRole="documentos" ToRole="libros" />
     <NavigationProperty Name="niveles" Relationship="Self.niveles_documento" FromRole="documentos" ToRole="niveles" />
     <NavigationProperty Name="documentos_curso" Relationship="pimasModel.FK_documentos_curso_documentos" FromRole="documento" ToRole="documentos_curso" />
+    <NavigationProperty Name="documentos_relacionados" Relationship="pimasModel.FK_documento_documento_relacionado" FromRole="documento" ToRole="documentos_relacionados" />
+    <NavigationProperty Name="documentos_relacionados1" Relationship="pimasModel.FK_documento_documento_relacionado1" FromRole="documento" ToRole="documentos_relacionados" />
+    <NavigationProperty Name="documentos_relacionados2" Relationship="pimasModel.FK_documento_documento_relacionado2" FromRole="documento" ToRole="documentos_relacionados" />
+    <Property Name="precio1" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="precio2" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="precio3" Type="Decimal" Precision="18" Scale="2" />
+    <NavigationProperty Name="documentos_usuario" Relationship="pimasModel.FK_documento_usuario" FromRole="documento" ToRole="documentos_usuario" />
   </EntityType>
   <EntityType Name="documentos_curso">
     <Key>
@@ -309,6 +316,10 @@
     <NavigationProperty Name="roles" Relationship="Self.roles_usuario" FromRole="usuarios" ToRole="roles" />
     <NavigationProperty Name="grupos" Relationship="Self.usuarios_grupo" FromRole="usuarios" ToRole="grupos" />
     <Property Name="fecha_vencimiento" Type="DateTime" Precision="3" />
+    <Property Name="categoria_precio" Type="Int32" />
+    <Property Name="saldo" Type="Decimal" Precision="18" Scale="2" />
+    <NavigationProperty Name="documentos_usuario" Relationship="pimasModel.FK_usuario_documento" FromRole="usuario" ToRole="documentos_usuario" />
+    <NavigationProperty Name="transacciones" Relationship="pimasModel.FK_usuario_transaccion" FromRole="usuario" ToRole="transaccione" />
   </EntityType>
   <EntityType Name="Venta">
     <Key>
@@ -796,6 +807,33 @@
       <End Role="documento" EntitySet="documentos" />
       <End Role="documentos_curso" EntitySet="documentos_curso" />
     </AssociationSet>
+    <EntitySet Name="documentos_relacionados" EntityType="pimasModel.documentos_relacionados" />
+    <AssociationSet Name="FK_documento_documento_relacionado" Association="pimasModel.FK_documento_documento_relacionado">
+      <End Role="documento" EntitySet="documentos" />
+      <End Role="documentos_relacionados" EntitySet="documentos_relacionados" />
+    </AssociationSet>
+    <AssociationSet Name="FK_documento_documento_relacionado1" Association="pimasModel.FK_documento_documento_relacionado1">
+      <End Role="documento" EntitySet="documentos" />
+      <End Role="documentos_relacionados" EntitySet="documentos_relacionados" />
+    </AssociationSet>
+    <AssociationSet Name="FK_documento_documento_relacionado2" Association="pimasModel.FK_documento_documento_relacionado2">
+      <End Role="documento" EntitySet="documentos" />
+      <End Role="documentos_relacionados" EntitySet="documentos_relacionados" />
+    </AssociationSet>
+    <EntitySet Name="documentos_usuario" EntityType="pimasModel.documentos_usuario" />
+    <AssociationSet Name="FK_documento_usuario" Association="pimasModel.FK_documento_usuario">
+      <End Role="documento" EntitySet="documentos" />
+      <End Role="documentos_usuario" EntitySet="documentos_usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_usuario_documento" Association="pimasModel.FK_usuario_documento">
+      <End Role="usuario" EntitySet="usuarios" />
+      <End Role="documentos_usuario" EntitySet="documentos_usuario" />
+    </AssociationSet>
+    <EntitySet Name="transacciones" EntityType="pimasModel.transaccione" />
+    <AssociationSet Name="FK_usuario_transaccion" Association="pimasModel.FK_usuario_transaccion">
+      <End Role="usuario" EntitySet="usuarios" />
+      <End Role="transaccione" EntitySet="transacciones" />
+    </AssociationSet>
   </EntityContainer>
   <Association Name="FK_documentos_curso_cursos">
     <End Type="pimasModel.curso" Role="curso" Multiplicity="1" />
@@ -818,6 +856,111 @@
       </Principal>
       <Dependent Role="documentos_curso">
         <PropertyRef Name="id_documento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="documentos_relacionados">
+    <Key>
+      <PropertyRef Name="id_documento" />
+    </Key>
+    <Property Name="id_documento" Type="Int32" Nullable="false" />
+    <Property Name="documento_relacionado1" Type="Int32" Nullable="false" />
+    <Property Name="documento_relacionado2" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="documento" Relationship="pimasModel.FK_documento_documento_relacionado" FromRole="documentos_relacionados" ToRole="documento" />
+    <NavigationProperty Name="documento1" Relationship="pimasModel.FK_documento_documento_relacionado1" FromRole="documentos_relacionados" ToRole="documento" />
+    <NavigationProperty Name="documento2" Relationship="pimasModel.FK_documento_documento_relacionado2" FromRole="documentos_relacionados" ToRole="documento" />
+  </EntityType>
+  <Association Name="FK_documento_documento_relacionado">
+    <End Type="pimasModel.documento" Role="documento" Multiplicity="1" />
+    <End Type="pimasModel.documentos_relacionados" Role="documentos_relacionados" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="documento">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="documentos_relacionados">
+        <PropertyRef Name="id_documento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_documento_documento_relacionado1">
+    <End Type="pimasModel.documento" Role="documento" Multiplicity="1" />
+    <End Type="pimasModel.documentos_relacionados" Role="documentos_relacionados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="documento">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="documentos_relacionados">
+        <PropertyRef Name="documento_relacionado1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_documento_documento_relacionado2">
+    <End Type="pimasModel.documento" Role="documento" Multiplicity="1" />
+    <End Type="pimasModel.documentos_relacionados" Role="documentos_relacionados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="documento">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="documentos_relacionados">
+        <PropertyRef Name="documento_relacionado2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="documentos_usuario">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+      <PropertyRef Name="id_documento" />
+    </Key>
+    <Property Name="id_usuario" Type="Int32" Nullable="false" />
+    <Property Name="id_documento" Type="Int32" Nullable="false" />
+    <Property Name="fecha_vencimiento" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="documento" Relationship="pimasModel.FK_documento_usuario" FromRole="documentos_usuario" ToRole="documento" />
+    <NavigationProperty Name="usuario" Relationship="pimasModel.FK_usuario_documento" FromRole="documentos_usuario" ToRole="usuario" />
+  </EntityType>
+  <Association Name="FK_documento_usuario">
+    <End Type="pimasModel.documento" Role="documento" Multiplicity="1" />
+    <End Type="pimasModel.documentos_usuario" Role="documentos_usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="documento">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="documentos_usuario">
+        <PropertyRef Name="id_documento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_usuario_documento">
+    <End Type="pimasModel.usuario" Role="usuario" Multiplicity="1" />
+    <End Type="pimasModel.documentos_usuario" Role="documentos_usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="documentos_usuario">
+        <PropertyRef Name="id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="transaccione">
+    <Key>
+      <PropertyRef Name="id_transaccion" />
+    </Key>
+    <Property Name="id_transaccion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_usuario" Type="Int32" Nullable="false" />
+    <Property Name="transaccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="especificacion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="fecha" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="usuario" Relationship="pimasModel.FK_usuario_transaccion" FromRole="transaccione" ToRole="usuario" />
+  </EntityType>
+  <Association Name="FK_usuario_transaccion">
+    <End Type="pimasModel.usuario" Role="usuario" Multiplicity="1" />
+    <End Type="pimasModel.transaccione" Role="transaccione" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="transaccione">
+        <PropertyRef Name="id_usuario" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

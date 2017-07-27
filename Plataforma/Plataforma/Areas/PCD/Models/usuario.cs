@@ -11,8 +11,7 @@ namespace Plataforma.Areas.PCD.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class usuario
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -31,22 +30,17 @@ namespace Plataforma.Areas.PCD.Models
             this.permisos = new HashSet<permiso>();
             this.roles = new HashSet<role>();
             this.grupos = new HashSet<grupos>();
+            this.documentos_usuario = new HashSet<documentos_usuario>();
+            this.transacciones = new HashSet<transaccione>();
         }
     
         public int id { get; set; }
-        [Required(ErrorMessage = "Ingresa un nombre para el usuario")]
         public string nombre { get; set; }
-        [Required(ErrorMessage = "Ingresa los apellidos del usuario")]
         public string apellidos { get; set; }
-        [Required(ErrorMessage = "Debes ingresar un nombre de usuario")]
         public string username { get; set; }
-        [MinLength(6, ErrorMessage = "La contraseña debe contener al menos 6 caracteres")]
-        [Required(ErrorMessage = "Debes ingresar una contraseña")]
         public string password { get; set; }
-        [Required(ErrorMessage = "Debes ingresar al menos un telefono")]
         public Nullable<int> telefono { get; set; }
         public Nullable<int> telefono_2 { get; set; }
-        [Required(ErrorMessage = "Debes ingresar al menos un correo electronico")]
         public string correo { get; set; }
         public string correo_2 { get; set; }
         public string informacion_opcional { get; set; }
@@ -54,6 +48,8 @@ namespace Plataforma.Areas.PCD.Models
         public Nullable<bool> bloqueado { get; set; }
         public Nullable<bool> logueado { get; set; }
         public Nullable<System.DateTime> fecha_vencimiento { get; set; }
+        public Nullable<int> categoria_precio { get; set; }
+        public Nullable<decimal> saldo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<comentario> comentarios { get; set; }
@@ -82,5 +78,9 @@ namespace Plataforma.Areas.PCD.Models
         public virtual ICollection<role> roles { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<grupos> grupos { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<documentos_usuario> documentos_usuario { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<transaccione> transacciones { get; set; }
     }
 }

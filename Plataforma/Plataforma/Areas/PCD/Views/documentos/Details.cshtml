@@ -123,7 +123,27 @@
                 <p>--</p>
             }
         </dd>
-        
+        <dt>
+            Precio
+        </dt>
+        <dd>
+        <p>Precio: ‎₡@Model.precio1</p>
+    
+        <p>Precio: ‎₡@Model.precio2</p>
+    
+        <p>Precio: ‎₡@Model.precio3</p>
+        </dd>
+        @if (Model.documentos_relacionados != null)
+        {
+            <dt>Documentos Relacionados</dt>
+            <dd>
+                <p>
+                    @Model.documentos_relacionados.documento1.titulo<br />
+                    @Model.documentos_relacionados.documento2.titulo
+                </p>
+        </dd>
+        }
+
     </dl>
     <div class="col-lg-9">
         <p>

@@ -55,6 +55,7 @@
     </Key>
     <Property Name="id_curso" Type="int" Nullable="false" />
     <Property Name="id_usuario" Type="int" Nullable="false" />
+    <Property Name="fecha_vencimiento" Type="datetime" />
   </EntityType>
   <EntityType Name="cursos">
     <Key>
@@ -90,6 +91,9 @@
     <Property Name="numero_version" Type="int" />
     <Property Name="unidad" Type="int" Nullable="false" />
     <Property Name="capitulo" Type="int" />
+    <Property Name="precio1" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="precio2" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="precio3" Type="decimal" Precision="18" Scale="2" />
   </EntityType>
   <EntityType Name="documentos_curso">
     <Key>
@@ -338,6 +342,8 @@
     <Property Name="fecha_vencimiento" Type="datetime" />
     <Property Name="bloqueado" Type="bit" />
     <Property Name="logueado" Type="bit" />
+    <Property Name="categoria_precio" Type="int" />
+    <Property Name="saldo" Type="decimal" Precision="18" Scale="2" />
   </EntityType>
   <EntityType Name="usuarios_grupo">
     <Key>
@@ -362,6 +368,33 @@
     <Property Name="cantidad" Type="int" Nullable="false" />
     <Property Name="tipo_entrega" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="forma_pago" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="documentos_relacionados">
+    <Key>
+      <PropertyRef Name="id_documento" />
+    </Key>
+    <Property Name="id_documento" Type="int" Nullable="false" />
+    <Property Name="documento_relacionado1" Type="int" Nullable="false" />
+    <Property Name="documento_relacionado2" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="documentos_usuario">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+      <PropertyRef Name="id_documento" />
+    </Key>
+    <Property Name="id_usuario" Type="int" Nullable="false" />
+    <Property Name="id_documento" Type="int" Nullable="false" />
+    <Property Name="fecha_vencimiento" Type="datetime" />
+  </EntityType>
+  <EntityType Name="transacciones">
+    <Key>
+      <PropertyRef Name="id_transaccion" />
+    </Key>
+    <Property Name="id_transaccion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_usuario" Type="int" Nullable="false" />
+    <Property Name="transaccion" Type="varchar" MaxLength="50" />
+    <Property Name="especificacion" Type="varchar" MaxLength="255" />
+    <Property Name="fecha" Type="datetime" />
   </EntityType>
   <Association Name="FK_Articulo_Venta">
     <End Role="Articulos" Type="Self.Articulos" Multiplicity="1" />
@@ -511,6 +544,42 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_documento_documento_relacionado">
+    <End Role="documentos" Type="Self.documentos" Multiplicity="1" />
+    <End Role="documentos_relacionados" Type="Self.documentos_relacionados" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="documentos">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="documentos_relacionados">
+        <PropertyRef Name="id_documento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_documento_documento_relacionado1">
+    <End Role="documentos" Type="Self.documentos" Multiplicity="1" />
+    <End Role="documentos_relacionados" Type="Self.documentos_relacionados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="documentos">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="documentos_relacionados">
+        <PropertyRef Name="documento_relacionado1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_documento_documento_relacionado2">
+    <End Role="documentos" Type="Self.documentos" Multiplicity="1" />
+    <End Role="documentos_relacionados" Type="Self.documentos_relacionados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="documentos">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="documentos_relacionados">
+        <PropertyRef Name="documento_relacionado2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_documento_profesor">
     <End Role="usuarios" Type="Self.usuarios" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -546,6 +615,18 @@
       </Principal>
       <Dependent Role="documentos">
         <PropertyRef Name="unidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_documento_usuario">
+    <End Role="documentos" Type="Self.documentos" Multiplicity="1" />
+    <End Role="documentos_usuario" Type="Self.documentos_usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="documentos">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="documentos_usuario">
+        <PropertyRef Name="id_documento" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -663,6 +744,30 @@
         <PropertyRef Name="id" />
       </Principal>
       <Dependent Role="respuestas">
+        <PropertyRef Name="id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_usuario_documento">
+    <End Role="usuarios" Type="Self.usuarios" Multiplicity="1" />
+    <End Role="documentos_usuario" Type="Self.documentos_usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuarios">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="documentos_usuario">
+        <PropertyRef Name="id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_usuario_transaccion">
+    <End Role="usuarios" Type="Self.usuarios" Multiplicity="1" />
+    <End Role="transacciones" Type="Self.transacciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuarios">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="transacciones">
         <PropertyRef Name="id_usuario" />
       </Dependent>
     </ReferentialConstraint>
@@ -1033,6 +1138,9 @@
     <EntitySet Name="usuarios" EntityType="Self.usuarios" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="usuarios_grupo" EntityType="Self.usuarios_grupo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Venta" EntityType="Self.Venta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="documentos_relacionados" EntityType="Self.documentos_relacionados" Schema="pcd" store:Type="Tables" />
+    <EntitySet Name="documentos_usuario" EntityType="Self.documentos_usuario" Schema="pcd" store:Type="Tables" />
+    <EntitySet Name="transacciones" EntityType="Self.transacciones" Schema="pcd" store:Type="Tables" />
     <AssociationSet Name="FK_Articulo_Venta" Association="Self.FK_Articulo_Venta">
       <End Role="Articulos" EntitySet="Articulos" />
       <End Role="Venta" EntitySet="Venta" />
@@ -1077,6 +1185,18 @@
       <End Role="usuarios" EntitySet="usuarios" />
       <End Role="log_visitas_cursousuario" EntitySet="log_visitas_cursousuario" />
     </AssociationSet>
+    <AssociationSet Name="FK_documento_documento_relacionado" Association="Self.FK_documento_documento_relacionado">
+      <End Role="documentos" EntitySet="documentos" />
+      <End Role="documentos_relacionados" EntitySet="documentos_relacionados" />
+    </AssociationSet>
+    <AssociationSet Name="FK_documento_documento_relacionado1" Association="Self.FK_documento_documento_relacionado1">
+      <End Role="documentos" EntitySet="documentos" />
+      <End Role="documentos_relacionados" EntitySet="documentos_relacionados" />
+    </AssociationSet>
+    <AssociationSet Name="FK_documento_documento_relacionado2" Association="Self.FK_documento_documento_relacionado2">
+      <End Role="documentos" EntitySet="documentos" />
+      <End Role="documentos_relacionados" EntitySet="documentos_relacionados" />
+    </AssociationSet>
     <AssociationSet Name="FK_documento_profesor" Association="Self.FK_documento_profesor">
       <End Role="usuarios" EntitySet="usuarios" />
       <End Role="documentos_profe" EntitySet="documentos_profe" />
@@ -1088,6 +1208,10 @@
     <AssociationSet Name="FK_documento_unidad" Association="Self.FK_documento_unidad">
       <End Role="unidades" EntitySet="unidades" />
       <End Role="documentos" EntitySet="documentos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_documento_usuario" Association="Self.FK_documento_usuario">
+      <End Role="documentos" EntitySet="documentos" />
+      <End Role="documentos_usuario" EntitySet="documentos_usuario" />
     </AssociationSet>
     <AssociationSet Name="FK_documentos_curso_cursos" Association="Self.FK_documentos_curso_cursos">
       <End Role="cursos" EntitySet="cursos" />
@@ -1124,6 +1248,14 @@
     <AssociationSet Name="FK_respuestas_usuarios" Association="Self.FK_respuestas_usuarios">
       <End Role="usuarios" EntitySet="usuarios" />
       <End Role="respuestas" EntitySet="respuestas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_usuario_documento" Association="Self.FK_usuario_documento">
+      <End Role="usuarios" EntitySet="usuarios" />
+      <End Role="documentos_usuario" EntitySet="documentos_usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_usuario_transaccion" Association="Self.FK_usuario_transaccion">
+      <End Role="usuarios" EntitySet="usuarios" />
+      <End Role="transacciones" EntitySet="transacciones" />
     </AssociationSet>
     <AssociationSet Name="FKcolegio_pr20282" Association="Self.FKcolegio_pr20282">
       <End Role="colegio" EntitySet="colegio" />

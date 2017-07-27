@@ -1,0 +1,80 @@
+﻿@model Plataforma.Areas.PCD.Models.documento
+@{
+    ViewBag.Title = "Documentos Relacionados";
+}
+
+<h1 class="class-forms"><i class="fa fa-graduation-cap" aria-hidden="true"></i>Documentos Relacionados</h1>
+<h6>Agregue o modifique los documentos relacionados al documento seleccionado</h6>
+<br />
+<head>
+    <script>
+        $(document).ready(function () {
+            $("#quitar").click(function () {
+                !$("#documentosARelacionar option:selected").appendTo("#documentosDisponibles");
+                !$("#documentosARelacionar option").prop("selected", true);
+                return false;
+            });
+
+            $("#agregar").click(function () {
+                !$("#documentosARelacionar option").prop("selected", true);
+                return !$("#documentosDisponibles option:selected").appendTo("#documentosARelacionar");
+
+            });
+        });
+    </script>
+</head>
+
+@using (Html.BeginForm())
+{
+
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal col-lg-9">
+        <h4>Documento: @Model.titulo</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.id)
+            <div class="col-md-12"><h4>Seleccione dos documentos:</h4></div><br />
+            <div class="col-md-12">
+                <select id="documentosDisponibles" class="form-control" name="documentosDisponibles" multiple size="10">
+                    @foreach (var item in ViewBag.documentos)
+                    {
+                        <option value="@item.id">
+                            @item.titulo
+                        </option>
+                    }
+                </select>
+            </div>
+
+        <div class="form-group col-md-12" style="padding:10px">
+            <a id="agregar" class="btn btn-default" onclick="return false;"> Agregar </a>
+            <a id="quitar" class="btn btn-default" onclick="return false;"> Quitar </a>
+        </div>
+
+        <div class="col-md-12"><h4>Documentos Seleccionados:</h4><br />
+        <p>Unicamente 2 archivos deben estar seleccionados</p>
+        </div>
+            <div class="col-md-12">
+                <select id="documentosARelacionar" class="form-control" name="documentosARelacionar" multiple size="2">
+                    @foreach (var item in ViewBag.documentosRelacionados)
+                    {
+                        <option selected value="@item.id">
+                            @item.titulo
+                        </option>
+                    }
+                </select>
+            </div>
+
+        <div class="form-group col-md-12" style="padding:10px">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Agregar Documentos" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

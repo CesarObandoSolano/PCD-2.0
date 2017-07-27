@@ -1,0 +1,141 @@
+﻿@model Plataforma.Areas.PCD.Models.documento
+
+@{
+    ViewBag.Title = "Comprar Documento";
+}
+
+<div class="col-lg-12">
+    <h1 class="class-forms">
+        <i class="fa fa-user-circle" aria-hidden="true"></i>
+        Detalles
+    </h1>
+    <h6>Información asociada al documento</h6>
+    <br />
+    <h4 class="class-forms">Comprar Documento</h4>
+    <dl class="dl-horizontal">
+        <dt>
+            Titulo
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.titulo)
+        </dd>
+        <dt>
+            Tipo de documento
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.tipo_documento.tipo_documento1)
+        </dd>
+
+        <dt>
+            Niveles
+        </dt>
+        <dd>
+            @foreach (var item in Model.niveles)
+            {
+                @item.nivel<br />
+            }
+        </dd>
+        <dt>
+            Unidad
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.unidade.unidad)
+        </dd>
+        <dt>
+            Capitulo
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.capitulo)
+        </dd>
+        <dt>
+            Descripción
+        </dt>
+        <dd>
+            @if (Model.descripcion_corta != null && Model.descripcion_corta != "")
+            {
+                @Html.DisplayFor(model => model.descripcion_corta)
+            }
+            else
+            {
+                <p>--</p>
+            }
+        </dd>
+        <dt>
+            Descripción Detallada
+        </dt>
+        <dd>
+            @if (Model.descripcion_detallada != null && Model.descripcion_detallada != "")
+            {
+                @Html.DisplayFor(model => model.descripcion_detallada)
+            }
+            else
+            {
+                <p>--</p>
+            }
+        </dd>
+        <dt>
+            Fecha de publicación
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.fecha_publicacion)
+        </dd>
+        @if (Model.documentos_relacionados != null)
+        {
+            <dt>Documentos Relacionados</dt>
+            <dd>
+                <p>
+                    @Model.documentos_relacionados.documento1.titulo<br />
+                    @Model.documentos_relacionados.documento2.titulo
+                </p>
+            </dd>
+        }
+        <dt>
+            Precio
+        </dt>
+        <dd>
+            @{
+                var usuario = (Plataforma.Areas.PCD.Models.usuario)Session["usuario"];
+                if (usuario != null)
+                {
+                    if (usuario.categoria_precio == null || usuario.categoria_precio == 1)
+                    {
+                        <p>Precio: ‎₡@Model.precio1 / mes</p>
+                    }
+                    else if (usuario.categoria_precio == 2)
+                    {
+                        <p>Precio: ‎₡@Model.precio2 / mes</p>
+                    }
+                    else if (usuario.categoria_precio == 3)
+                    {
+                        <p>Precio: ‎₡@Model.precio3 / mes</p>
+                    }
+                }
+            }
+        </dd>
+    </dl>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group" id="div-vencimiento">
+        @Html.Label("Tiempo de suscripción", htmlAttributes: new { @class = "control-label col-md-4" })
+        <div class="col-md-10">
+            <div class="col-md-7">
+                <input type="number" min="1" value="1" name="vencimiento" id="vencimiento" class="form-control" />
+            </div>
+            <div class="col-md-5">
+                <select name="unidadTiempo" id="unidadTiempo" class="form-control">
+                    <option value="1" selected>Meses</option>
+                    <option value="2">Años</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-9 col-md-4">
+            <input type="submit" value="Comprar" class="btn btn-primary" />
+        </div>
+    </div>
+}
+</div>

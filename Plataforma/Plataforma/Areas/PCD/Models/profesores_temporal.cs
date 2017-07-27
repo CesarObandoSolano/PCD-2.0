@@ -11,25 +11,16 @@ namespace Plataforma.Areas.PCD.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class profesores_temporal
     {
         public int id { get; set; }
-        [Required(ErrorMessage = "Selecciona un colegio por favor")]
         public string colegio { get; set; }
-        [Required(ErrorMessage = "Ingresa tu nombre")]
         public string nombre { get; set; }
-        [Required(ErrorMessage = "Ingresa tus apellidos")]
         public string apellidos { get; set; }
-        [Required(ErrorMessage = "Debes ingresar un nombre de usuario")]
         public string username { get; set; }
-        [MinLength(6, ErrorMessage = "La contraseña debe contener al menos 6 caracteres")]
-        [Required(ErrorMessage = "Debes ingresar una contraseña")]
         public string password { get; set; }
-        [Required(ErrorMessage = "Ingresa tu correo electronico")]
         public string correo { get; set; }
-        [Required(ErrorMessage = "Ingresa tu numero de telefono")]
         public Nullable<int> telefono { get; set; }
         public string informacion_opcional { get; set; }
     }

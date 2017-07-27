@@ -218,6 +218,25 @@
                 </div>
             </div>
         </div>
+@{
+    var usuario = (Plataforma.Areas.PCD.Models.usuario)Session["usuario"];
+    if (usuario!=null && usuario.roles.FirstOrDefault().rol.Equals(Plataforma.App_Start.Constantes.ADMINISTRADOR))
+    {
+        <div class="form-group">
+            @Html.Label("Categoria de usuario", htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-10">
+                    <select name="categoria_precio" id="categoria_precio" class="form-control">
+                        <option value="1" selected>Categoria 1</option>
+                        <option value="2">Categoria 2</option>
+                        <option value="3">Categoria 3</option>
+                    </select>
+            </div>
+        </div>
+    }else
+    {
+        <input type="hidden" name="categoria_precio" id="categoria_precio" value="1"/>
+    }
+    }
 
         <div class="form-group">
             @Html.LabelFor(model => model.notificacione, "Notificaciones", htmlAttributes: new { @class = "control-label col-md-4" })

@@ -51,5 +51,8 @@ namespace Plataforma.Areas.PCD.Models
         public virtual DbSet<unidade> unidades { get; set; }
         public virtual DbSet<usuario> usuarios { get; set; }
         public virtual DbSet<Venta> Ventas { get; set; }
+        public virtual DbSet<documentos_relacionados> documentos_relacionados { get; set; }
+        public virtual DbSet<documentos_usuario> documentos_usuario { get; set; }
+        public virtual DbSet<transaccione> transacciones { get; set; }
     }
 }
