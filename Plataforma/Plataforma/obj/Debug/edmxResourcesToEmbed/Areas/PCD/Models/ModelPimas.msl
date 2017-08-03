@@ -13,16 +13,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Articulos">
-      <EntityTypeMapping TypeName="pimasModel.Articulo">
-        <MappingFragment StoreEntitySet="Articulos">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="nombre" ColumnName="nombre" />
-          <ScalarProperty Name="detalle" ColumnName="detalle" />
-          <ScalarProperty Name="precio" ColumnName="precio" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="colegios">
       <EntityTypeMapping TypeName="pimasModel.colegio">
         <MappingFragment StoreEntitySet="colegio">
@@ -265,23 +255,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Ventas">
-      <EntityTypeMapping TypeName="pimasModel.Venta">
-        <MappingFragment StoreEntitySet="Venta">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="id_articulo" ColumnName="id_articulo" />
-          <ScalarProperty Name="nombre_comprador" ColumnName="nombre_comprador" />
-          <ScalarProperty Name="nombre_receptor" ColumnName="nombre_receptor" />
-          <ScalarProperty Name="numero_comprador" ColumnName="numero_comprador" />
-          <ScalarProperty Name="numero_receptor" ColumnName="numero_receptor" />
-          <ScalarProperty Name="direccion" ColumnName="direccion" />
-          <ScalarProperty Name="horario" ColumnName="horario" />
-          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
-          <ScalarProperty Name="tipo_entrega" ColumnName="tipo_entrega" />
-          <ScalarProperty Name="forma_pago" ColumnName="forma_pago" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <AssociationSetMapping Name="colegio_profesores" TypeName="pimasModel.colegio_profesores" StoreEntitySet="colegio_profesores">
       <EndProperty Name="colegio">
         <ScalarProperty Name="id" ColumnName="id_colegio" />
@@ -386,5 +359,97 @@
         <ScalarProperty Name="id" ColumnName="id_grupo" />
       </EndProperty>
     </AssociationSetMapping>
+    <EntitySetMapping Name="articulos">
+      <EntityTypeMapping TypeName="pimasModel.articulo">
+        <MappingFragment StoreEntitySet="articulos">
+          <ScalarProperty Name="id_estado_articulo" ColumnName="id_estado_articulo" />
+          <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
+          <ScalarProperty Name="url_imagen" ColumnName="url_imagen" />
+          <ScalarProperty Name="precio3" ColumnName="precio3" />
+          <ScalarProperty Name="precio2" ColumnName="precio2" />
+          <ScalarProperty Name="precio1" ColumnName="precio1" />
+          <ScalarProperty Name="detalle" ColumnName="detalle" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipos_pago">
+      <EntityTypeMapping TypeName="pimasModel.tipos_pago">
+        <MappingFragment StoreEntitySet="tipos_pago">
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="transportes">
+      <EntityTypeMapping TypeName="pimasModel.transporte">
+        <MappingFragment StoreEntitySet="transporte">
+          <ScalarProperty Name="precio" ColumnName="precio" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ventas">
+      <EntityTypeMapping TypeName="pimasModel.venta">
+        <MappingFragment StoreEntitySet="ventas">
+          <ScalarProperty Name="id_estado_venta" ColumnName="id_estado_venta" />
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+          <ScalarProperty Name="id_tipo_pago" ColumnName="id_tipo_pago" />
+          <ScalarProperty Name="id_transporte" ColumnName="id_transporte" />
+          <ScalarProperty Name="tiempo_estimado" ColumnName="tiempo_estimado" />
+          <ScalarProperty Name="horario_preferencia" ColumnName="horario_preferencia" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="numero_receptor" ColumnName="numero_receptor" />
+          <ScalarProperty Name="numero_comprador" ColumnName="numero_comprador" />
+          <ScalarProperty Name="nombre_receptor" ColumnName="nombre_receptor" />
+          <ScalarProperty Name="nombre_comprador" ColumnName="nombre_comprador" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="estado_venta">
+      <EntityTypeMapping TypeName="pimasModel.estado_venta">
+        <MappingFragment StoreEntitySet="estado_venta">
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="categoria_articulo">
+      <EntityTypeMapping TypeName="pimasModel.categoria_articulo">
+        <MappingFragment StoreEntitySet="categoria_articulo">
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="estado_articulo">
+      <EntityTypeMapping TypeName="pimasModel.estado_articulo">
+        <MappingFragment StoreEntitySet="estado_articulo">
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="carritoes">
+      <EntityTypeMapping TypeName="pimasModel.carrito">
+        <MappingFragment StoreEntitySet="carrito">
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="id_articulo" ColumnName="id_articulo" />
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ventas_articulos">
+      <EntityTypeMapping TypeName="pimasModel.ventas_articulos">
+        <MappingFragment StoreEntitySet="ventas_articulos">
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="id_venta" ColumnName="id_venta" />
+          <ScalarProperty Name="id_articulo" ColumnName="id_articulo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

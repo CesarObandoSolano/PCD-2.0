@@ -1,115 +1,162 @@
-﻿@model Plataforma.Areas.PCD.Models.Venta
+﻿@model Plataforma.Areas.PCD.Models.venta
 
 @{
-    ViewBag.Title = "Insertar";
+    ViewBag.Title = "Crear";
 }
+<head>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#quitar").click(function () {
+                !$("#articulos option:selected").appendTo("#articulosExistentes");
+                !$("#articulos option").prop("selected", true);
+                return false;
+            });
 
-<h2>Insertar</h2>
+            $("#agregar").click(function () {
+                !$("#articulos option").prop("selected", true);
+                return !$("#articulosExistentes option:selected").appendTo("#articulos");
+            });
+        });
+
+    </script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#tiempo_estimado").datepicker();
+        });
+    </script>
+</head>
+
+<h2 class="class-forms">Crear</h2>
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal col-lg-9">
-        <h4>Venta</h4>
-        <hr />
+        <h1 class="class-forms"><i class="fa fa-graduation-cap" aria-hidden="true"></i> &nbsp;Venta</h1>
+        <h6>Agregue la información correspondiente a la venta</h6>
+        <br><br>
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        
         <div class="form-group">
-            @Html.LabelFor(model => model.id_articulo, "Articulo", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.nombre_comprador,"Nombre del comprador", htmlAttributes: new { @class = "control-label col-md-4" })
             <div class="col-md-10">
-                @Html.DropDownList("id_articulo", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.id_articulo, "", new { @class = "text-danger" })
+               <input type="text" name="nombre_comprador" id="nombre_comprador" value="@ViewBag.nombre_usuario" readonly class="form-control text-box single-line" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAfBJREFUWAntVk1OwkAUZkoDKza4Utm61iP0AqyIDXahN2BjwiHYGU+gizap4QDuegWN7lyCbMSlCQjU7yO0TOlAi6GwgJc0fT/fzPfmzet0crmD7HsFBAvQbrcrw+Gw5fu+AfOYvgylJ4TwCoVCs1ardYTruqfj8fgV5OUMSVVT93VdP9dAzpVvm5wJHZFbg2LQ2pEYOlZ/oiDvwNcsFoseY4PBwMCrhaeCJyKWZU37KOJcYdi27QdhcuuBIb073BvTNL8ln4NeeR6NRi/wxZKQcGurQs5oNhqLshzVTMBewW/LMU3TTNlO0ieTiStjYhUIyi6DAp0xbEdgTt+LE0aCKQw24U4llsCs4ZRJrYopB6RwqnpA1YQ5NGFZ1YQ41Z5S8IQQdP5laEBRJcD4Vj5DEsW2gE6s6g3d/YP/g+BDnT7GNi2qCjTwGd6riBzHaaCEd3Js01vwCPIbmWBRx1nwAN/1ov+/drgFWIlfKpVukyYihtgkXNp4mABK+1GtVr+SBhJDbBIubVw+Cd/TDgKO2DPiN3YUo6y/nDCNEIsqTKH1en2tcwA9FKEItyDi3aIh8Gl1sRrVnSDzNFDJT1bAy5xpOYGn5fP5JuL95ZjMIn1ya7j5dPGfv0A5eAnpZUY3n5jXcoec5J67D9q+VuAPM47D3XaSeL4AAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;"/>
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.nombre_comprador, "Nombre del comprador", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.nombre_receptor,"Nombre del receptor", htmlAttributes: new { @class = "control-label col-md-4" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.nombre_comprador, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.nombre_comprador, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.nombre_receptor, "Nombre de quien recibe", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.nombre_receptor, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.nombre_receptor, new { htmlAttributes = new { @class = "form-control text-box single-line", style = "background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAfBJREFUWAntVk1OwkAUZkoDKza4Utm61iP0AqyIDXahN2BjwiHYGU+gizap4QDuegWN7lyCbMSlCQjU7yO0TOlAi6GwgJc0fT/fzPfmzet0crmD7HsFBAvQbrcrw+Gw5fu+AfOYvgylJ4TwCoVCs1ardYTruqfj8fgV5OUMSVVT93VdP9dAzpVvm5wJHZFbg2LQ2pEYOlZ/oiDvwNcsFoseY4PBwMCrhaeCJyKWZU37KOJcYdi27QdhcuuBIb073BvTNL8ln4NeeR6NRi/wxZKQcGurQs5oNhqLshzVTMBewW/LMU3TTNlO0ieTiStjYhUIyi6DAp0xbEdgTt+LE0aCKQw24U4llsCs4ZRJrYopB6RwqnpA1YQ5NGFZ1YQ41Z5S8IQQdP5laEBRJcD4Vj5DEsW2gE6s6g3d/YP/g+BDnT7GNi2qCjTwGd6riBzHaaCEd3Js01vwCPIbmWBRx1nwAN/1ov+/drgFWIlfKpVukyYihtgkXNp4mABK+1GtVr+SBhJDbBIubVw+Cd/TDgKO2DPiN3YUo6y/nDCNEIsqTKH1en2tcwA9FKEItyDi3aIh8Gl1sRrVnSDzNFDJT1bAy5xpOYGn5fP5JuL95ZjMIn1ya7j5dPGfv0A5eAnpZUY3n5jXcoec5J67D9q+VuAPM47D3XaSeL4AAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;" } })
                 @Html.ValidationMessageFor(model => model.nombre_receptor, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.numero_comprador, "Telefono del comprador", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.numero_comprador, "Número del comprador",htmlAttributes: new { @class = "control-label col-md-4" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.numero_comprador, new { htmlAttributes = new { @class = "form-control", @type = "tel" } })
+                @Html.EditorFor(model => model.numero_comprador, new { htmlAttributes = new { @class = "form-control text-box single-line", style = "background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAfBJREFUWAntVk1OwkAUZkoDKza4Utm61iP0AqyIDXahN2BjwiHYGU+gizap4QDuegWN7lyCbMSlCQjU7yO0TOlAi6GwgJc0fT/fzPfmzet0crmD7HsFBAvQbrcrw+Gw5fu+AfOYvgylJ4TwCoVCs1ardYTruqfj8fgV5OUMSVVT93VdP9dAzpVvm5wJHZFbg2LQ2pEYOlZ/oiDvwNcsFoseY4PBwMCrhaeCJyKWZU37KOJcYdi27QdhcuuBIb073BvTNL8ln4NeeR6NRi/wxZKQcGurQs5oNhqLshzVTMBewW/LMU3TTNlO0ieTiStjYhUIyi6DAp0xbEdgTt+LE0aCKQw24U4llsCs4ZRJrYopB6RwqnpA1YQ5NGFZ1YQ41Z5S8IQQdP5laEBRJcD4Vj5DEsW2gE6s6g3d/YP/g+BDnT7GNi2qCjTwGd6riBzHaaCEd3Js01vwCPIbmWBRx1nwAN/1ov+/drgFWIlfKpVukyYihtgkXNp4mABK+1GtVr+SBhJDbBIubVw+Cd/TDgKO2DPiN3YUo6y/nDCNEIsqTKH1en2tcwA9FKEItyDi3aIh8Gl1sRrVnSDzNFDJT1bAy5xpOYGn5fP5JuL95ZjMIn1ya7j5dPGfv0A5eAnpZUY3n5jXcoec5J67D9q+VuAPM47D3XaSeL4AAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;" } })
                 @Html.ValidationMessageFor(model => model.numero_comprador, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.numero_receptor, "Telefono de quien recibe", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.numero_receptor,"Número del receptor", htmlAttributes: new { @class = "control-label col-md-4" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.numero_receptor, new { htmlAttributes = new { @class = "form-control", @type = "tel" } })
+                @Html.EditorFor(model => model.numero_receptor, new { htmlAttributes = new { @class = "form-control text-box single-line", style = "background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAfBJREFUWAntVk1OwkAUZkoDKza4Utm61iP0AqyIDXahN2BjwiHYGU+gizap4QDuegWN7lyCbMSlCQjU7yO0TOlAi6GwgJc0fT/fzPfmzet0crmD7HsFBAvQbrcrw+Gw5fu+AfOYvgylJ4TwCoVCs1ardYTruqfj8fgV5OUMSVVT93VdP9dAzpVvm5wJHZFbg2LQ2pEYOlZ/oiDvwNcsFoseY4PBwMCrhaeCJyKWZU37KOJcYdi27QdhcuuBIb073BvTNL8ln4NeeR6NRi/wxZKQcGurQs5oNhqLshzVTMBewW/LMU3TTNlO0ieTiStjYhUIyi6DAp0xbEdgTt+LE0aCKQw24U4llsCs4ZRJrYopB6RwqnpA1YQ5NGFZ1YQ41Z5S8IQQdP5laEBRJcD4Vj5DEsW2gE6s6g3d/YP/g+BDnT7GNi2qCjTwGd6riBzHaaCEd3Js01vwCPIbmWBRx1nwAN/1ov+/drgFWIlfKpVukyYihtgkXNp4mABK+1GtVr+SBhJDbBIubVw+Cd/TDgKO2DPiN3YUo6y/nDCNEIsqTKH1en2tcwA9FKEItyDi3aIh8Gl1sRrVnSDzNFDJT1bAy5xpOYGn5fP5JuL95ZjMIn1ya7j5dPGfv0A5eAnpZUY3n5jXcoec5J67D9q+VuAPM47D3XaSeL4AAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;" } })
                 @Html.ValidationMessageFor(model => model.numero_receptor, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.direccion, "Dirección de entrega",  htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.direccion,"Dirección", htmlAttributes: new { @class = "control-label col-md-4" })
             <div class="col-md-10">
-                @Html.TextAreaFor(model => model.direccion, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.direccion, new { htmlAttributes = new { @class = "form-control text-box single-line", style = "background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAfBJREFUWAntVk1OwkAUZkoDKza4Utm61iP0AqyIDXahN2BjwiHYGU+gizap4QDuegWN7lyCbMSlCQjU7yO0TOlAi6GwgJc0fT/fzPfmzet0crmD7HsFBAvQbrcrw+Gw5fu+AfOYvgylJ4TwCoVCs1ardYTruqfj8fgV5OUMSVVT93VdP9dAzpVvm5wJHZFbg2LQ2pEYOlZ/oiDvwNcsFoseY4PBwMCrhaeCJyKWZU37KOJcYdi27QdhcuuBIb073BvTNL8ln4NeeR6NRi/wxZKQcGurQs5oNhqLshzVTMBewW/LMU3TTNlO0ieTiStjYhUIyi6DAp0xbEdgTt+LE0aCKQw24U4llsCs4ZRJrYopB6RwqnpA1YQ5NGFZ1YQ41Z5S8IQQdP5laEBRJcD4Vj5DEsW2gE6s6g3d/YP/g+BDnT7GNi2qCjTwGd6riBzHaaCEd3Js01vwCPIbmWBRx1nwAN/1ov+/drgFWIlfKpVukyYihtgkXNp4mABK+1GtVr+SBhJDbBIubVw+Cd/TDgKO2DPiN3YUo6y/nDCNEIsqTKH1en2tcwA9FKEItyDi3aIh8Gl1sRrVnSDzNFDJT1bAy5xpOYGn5fP5JuL95ZjMIn1ya7j5dPGfv0A5eAnpZUY3n5jXcoec5J67D9q+VuAPM47D3XaSeL4AAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;" } })
                 @Html.ValidationMessageFor(model => model.direccion, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.horario, "Horario de entrega", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.horario_preferencia,"Horario de preferencia", htmlAttributes: new { @class = "control-label col-md-4" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.horario, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.horario, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.horario_preferencia, new { htmlAttributes = new { @class = "form-control text-box single-line", style = "background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAfBJREFUWAntVk1OwkAUZkoDKza4Utm61iP0AqyIDXahN2BjwiHYGU+gizap4QDuegWN7lyCbMSlCQjU7yO0TOlAi6GwgJc0fT/fzPfmzet0crmD7HsFBAvQbrcrw+Gw5fu+AfOYvgylJ4TwCoVCs1ardYTruqfj8fgV5OUMSVVT93VdP9dAzpVvm5wJHZFbg2LQ2pEYOlZ/oiDvwNcsFoseY4PBwMCrhaeCJyKWZU37KOJcYdi27QdhcuuBIb073BvTNL8ln4NeeR6NRi/wxZKQcGurQs5oNhqLshzVTMBewW/LMU3TTNlO0ieTiStjYhUIyi6DAp0xbEdgTt+LE0aCKQw24U4llsCs4ZRJrYopB6RwqnpA1YQ5NGFZ1YQ41Z5S8IQQdP5laEBRJcD4Vj5DEsW2gE6s6g3d/YP/g+BDnT7GNi2qCjTwGd6riBzHaaCEd3Js01vwCPIbmWBRx1nwAN/1ov+/drgFWIlfKpVukyYihtgkXNp4mABK+1GtVr+SBhJDbBIubVw+Cd/TDgKO2DPiN3YUo6y/nDCNEIsqTKH1en2tcwA9FKEItyDi3aIh8Gl1sRrVnSDzNFDJT1bAy5xpOYGn5fP5JuL95ZjMIn1ya7j5dPGfv0A5eAnpZUY3n5jXcoec5J67D9q+VuAPM47D3XaSeL4AAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;" } })
+                @Html.ValidationMessageFor(model => model.horario_preferencia, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.cantidad, "Cantidad", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.tiempo_estimado,"Tiempo estimado de entrega", htmlAttributes: new { @class = "control-label col-md-4" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.cantidad, new { htmlAttributes = new { @class = "form-control", @type = "number", @min="1" } })
-                @Html.ValidationMessageFor(model => model.cantidad, "", new { @class = "text-danger" })
+                <input type='text' class="form-control dp" id="tiempo_estimado"/>
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.tipo_entrega, "Metodo de entrega", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.id_transporte, "Transporte", htmlAttributes: new { @class = "control-label col-md-4" })
             <div class="col-md-10">
-                <select id="tipo_entrega" name="tipo_entrega" class="form-control" required>
-                    <option value="">Seleccione un metodo...</option>
-                    <option value="Domicilio">A domicilio</option>
+                @Html.DropDownList("id_transporte", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.id_transporte, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.id_tipo_pago, "Tipo de pago", htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-10">
+                @Html.DropDownList("id_tipo_pago", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.id_tipo_pago, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <input type="hidden" name="id_usuario" id="id_usuario" value="@ViewBag.id_usuario"/>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.id_estado_venta, "Estado", htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-10">
+                @Html.DropDownList("id_estado_venta", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.id_estado_venta, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.articulos, "Artículos disponibles", htmlAttributes: new { @class = "control-label col-md-4" })
+            <div class="col-md-10">
+                <select id="articulos" class="form-control" name="articulos" multiple>
+                    @foreach (var item in ViewBag.id_articulo)
+                    {
+                        <option value="@item.id">
+                            @item.nombre
+                        </option>
+                    }
                 </select>
-                @Html.ValidationMessageFor(model => model.tipo_entrega, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.forma_pago, "Forma de pago", htmlAttributes: new { @class = "control-label col-md-2" })
+            <a class="col-md-4"> </a>
+            <a id="agregar" class="btn btn-default col-md-4" onclick="return false;"> Agregar </a>
+            <a id="quitar" class="btn btn-default col-md-4" onclick="return false;"> Quitar </a>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.articulos, "Articulos Seleccionados", htmlAttributes: new { @class = "control-label col-md-4" })
             <div class="col-md-10">
-                <select id="forma_pago" name="forma_pago" class="form-control" required>
-                    <option value="">Seleccione una forma de pago...</option>
-                    <option value="Contra Entrega">Contra Entrega</option>
+                <select id="articulos" class="form-control" name="articulos" multiple>
+                    
                 </select>
-                @Html.ValidationMessageFor(model => model.forma_pago, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Insertar" class="btn btn-default" />
+            <div class="col-md-offset-6 col-md-10">
+                <input type="submit" value="Enviar" class="btn btn-primary" />
             </div>
-        </div>
-
-        <div>
-            @Html.ActionLink("Volver al indice", "Index")
         </div>
     </div>
 }
 
+<div>
+    @Html.ActionLink("Volver al índice", "Index")
+</div>

@@ -1,44 +1,60 @@
-﻿@model Plataforma.Areas.PCD.Models.Articulo
+﻿@model Plataforma.Areas.PCD.Models.articulo
 
 @{
     ViewBag.Title = "Detalles";
 }
 
-<h2>Detalles</h2>
-
-<link rel="stylesheet" type="text/css" href="~/Content/custombootstrap.css" />
-<div class="col-lg-9">
-    <h4>Articulo</h4>
-    <hr />
+<div class="col-md-12">
+    <h1 class="class-forms">
+        <i class="fa fa-user-circle" aria-hidden="true"></i>
+        Detalles
+    </h1>
+    <h6>Información asociada al artículo</h6>
+    <br />
+    <h4 class="class-forms">Artículo</h4>
     <dl class="dl-horizontal">
         <dt>
             Nombre
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.nombre)
         </dd>
-
         <dt>
             Detalle
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.detalle)
         </dd>
 
         <dt>
-            Precio
+            Precio 1
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.precio)
+            @Html.DisplayFor(model => model.precio1)
+        </dd>
+
+        <dt>
+            Precio 2
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.precio2)
+        </dd>
+
+        <dt>
+            Precio 3
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.precio3)
         </dd>
 
     </dl>
 
-    <p>
-        @Html.ActionLink("Editar", "Edit", new { id = Model.id }) |
-        @Html.ActionLink("Volver al indice", "Index")
-    </p>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Volver al índice", "Index")
+</p>
+
 </div>

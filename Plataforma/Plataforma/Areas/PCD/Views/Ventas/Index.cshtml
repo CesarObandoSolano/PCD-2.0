@@ -1,53 +1,73 @@
-﻿@model IEnumerable<Plataforma.Areas.PCD.Models.Venta>
+﻿@model IEnumerable<Plataforma.Areas.PCD.Models.venta>
 
 @{
     ViewBag.Title = "Indice";
 }
 
-<h2>Indice</h2>
+<h1 class="class-forms"><i class="fa fa-graduation-cap" aria-hidden="true"></i> &nbsp;Ventas</h1>
+<h6>Listado de ventas</h6>
+<br><br>
+<div class="col-lg-12">
 
-<div class="col-lg-9">
     <p>
         @Html.ActionLink("Insertar una venta", "Create")
     </p>
-<table class="table">
-    <tr>
-        <th>
-            Comprador
-        </th>
-        <th>
-            Telefono
-        </th>
-        <th>
-            Articulo
-        </th>
-        <th>
-            Cantidad
-        </th>
-        <th></th>
-    </tr>
+    <table class="table">
+        <tr>
+            <th>
+                Nombre comprador
+            </th>
+            <th>
+                Número de comprador
+            </th>
+            <th>
+                Tiempo estimado
+            </th>
+            <th>
+                Tipo de pago
+            </th>
+            <th>
+                Transporte
+            </th>
+            <th>
+                Usuario
+            </th>
+            <th>
+                Estado
+            </th>
+            <th></th>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.nombre_comprador)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.numero_comprador)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Articulo.nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.cantidad)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Ver Detalles", "Details", new { id=item.id }) |
-            @Html.ActionLink("Eliminar", "Delete", new { id=item.id })
-        </td>
-    </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombre_comprador)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.numero_comprador)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tiempo_estimado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tipos_pago.nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.transporte.nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.usuario.nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.estado_venta.nombre)
+                </td>
+                <td>
+                    @Html.ActionLink(" ", "Edit", new { id = item.id }, new { @class = "enlace-tabla editar", @title = "Editar" })
+                    @Html.ActionLink(" ", "Details", new { id = item.id }, new { @class = "enlace-tabla detalles", @title = "Detalles" })
+                </td>
+            </tr>
+        }
 
-</table>
+    </table>
 </div>

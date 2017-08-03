@@ -1,16 +1,13 @@
-﻿@model Plataforma.Areas.PCD.Models.Articulo
+﻿@model Plataforma.Areas.PCD.Models.articulo
 
 @{
     ViewBag.Title = "Eliminar";
 }
 
-<h2>Eliminar</h2>
-<link rel="stylesheet" type="text/css" href="~/Content/custombootstrap.css" />
-
-<h3>¿Estas seguro de querer eliminar este articulo?</h3>
-<div class="col-lg-9">
-    <h4>Articulo</h4>
-    <hr />
+<h1 class="class-forms">Eliminar</h1>
+<h3 class="class-forms">¿Estas seguro de querer eliminar este artículo?</h3>
+<div class="col-md-12">
+    <h4 class="class-forms">Artículo</h4>
     <dl class="dl-horizontal">
         <dt>
             Nombre
@@ -29,21 +26,38 @@
         </dd>
 
         <dt>
-            Precio
+            Precio 1
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.precio)
+            @Html.DisplayFor(model => model.precio1)
+        </dd>
+
+        <dt>
+            Precio 2
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.precio2)
+        </dd>
+
+        <dt>
+            Precio 3
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.precio3)
         </dd>
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Eliminar" class="btn btn-default" /> |
-            @Html.ActionLink("Volver al indice", "Index")
+            <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+            @Html.ActionLink("Volver al índice", "Index")
         </div>
     }
 </div>

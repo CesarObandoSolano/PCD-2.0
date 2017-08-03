@@ -16,14 +16,35 @@
           <Property Name="password" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="correo" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <EntityType Name="Articulos">
+        <EntityType Name="articulos">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="nombre" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="150" Nullable="false" />
           <Property Name="detalle" Type="varchar" MaxLength="255" />
-          <Property Name="precio" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="precio1" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="precio2" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="precio3" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="url_imagen" Type="varchar" MaxLength="255" />
+          <Property Name="id_categoria" Type="int" />
+          <Property Name="id_estado_articulo" Type="int" />
+        </EntityType>
+        <EntityType Name="carrito">
+          <Key>
+            <PropertyRef Name="id_usuario" />
+            <PropertyRef Name="id_articulo" />
+          </Key>
+          <Property Name="id_usuario" Type="int" Nullable="false" />
+          <Property Name="id_articulo" Type="int" Nullable="false" />
+          <Property Name="cantidad" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="categoria_articulo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="80" Nullable="false" />
         </EntityType>
         <EntityType Name="colegio">
           <Key>
@@ -123,6 +144,20 @@
           <Property Name="url" Type="varchar" MaxLength="255" />
           <Property Name="titulo" Type="varchar" MaxLength="50" />
           <Property Name="visibilidad" Type="bit" />
+        </EntityType>
+        <EntityType Name="estado_articulo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <EntityType Name="estado_venta">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="grupos">
           <Key>
@@ -318,6 +353,21 @@
           <Property Name="tipo_documento" Type="varchar" MaxLength="30" />
           <Property Name="icono" Type="varchar" MaxLength="255" />
         </EntityType>
+        <EntityType Name="tipos_pago">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="transporte">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="precio" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
         <EntityType Name="unidades">
           <Key>
             <PropertyRef Name="id" />
@@ -352,31 +402,77 @@
           <Property Name="id_grupo" Type="int" Nullable="false" />
           <Property Name="id_usuario" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="Venta">
+        <EntityType Name="ventas">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="id_articulo" Type="int" Nullable="false" />
-          <Property Name="nombre_comprador" Type="varchar" MaxLength="150" Nullable="false" />
-          <Property Name="nombre_receptor" Type="varchar" MaxLength="150" Nullable="false" />
-          <Property Name="numero_comprador" Type="int" Nullable="false" />
-          <Property Name="numero_receptor" Type="int" Nullable="false" />
+          <Property Name="nombre_comprador" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="nombre_receptor" Type="varchar" MaxLength="100" />
+          <Property Name="numero_comprador" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="numero_receptor" Type="varchar" MaxLength="15" />
           <Property Name="direccion" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="horario" Type="varchar" MaxLength="150" />
-          <Property Name="cantidad" Type="int" Nullable="false" />
-          <Property Name="tipo_entrega" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="forma_pago" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="horario_preferencia" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="tiempo_estimado" Type="datetime" />
+          <Property Name="id_transporte" Type="int" />
+          <Property Name="id_tipo_pago" Type="int" Nullable="false" />
+          <Property Name="id_usuario" Type="int" Nullable="false" />
+          <Property Name="id_estado_venta" Type="int" Nullable="false" />
         </EntityType>
-        <Association Name="FK_Articulo_Venta">
-          <End Role="Articulos" Type="Self.Articulos" Multiplicity="1" />
-          <End Role="Venta" Type="Self.Venta" Multiplicity="*" />
+        <EntityType Name="ventas_articulos">
+          <Key>
+            <PropertyRef Name="id_articulo" />
+            <PropertyRef Name="id_venta" />
+          </Key>
+          <Property Name="id_articulo" Type="int" Nullable="false" />
+          <Property Name="id_venta" Type="int" Nullable="false" />
+          <Property Name="cantidad" Type="int" />
+        </EntityType>
+        <Association Name="FK_articulos_categoria_articulo">
+          <End Role="categoria_articulo" Type="Self.categoria_articulo" Multiplicity="0..1" />
+          <End Role="articulos" Type="Self.articulos" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Articulos">
+            <Principal Role="categoria_articulo">
               <PropertyRef Name="id" />
             </Principal>
-            <Dependent Role="Venta">
+            <Dependent Role="articulos">
+              <PropertyRef Name="id_categoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_articulos_estado_articulo">
+          <End Role="estado_articulo" Type="Self.estado_articulo" Multiplicity="0..1" />
+          <End Role="articulos" Type="Self.articulos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estado_articulo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="articulos">
+              <PropertyRef Name="id_estado_articulo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_carrito_articulo">
+          <End Role="articulos" Type="Self.articulos" Multiplicity="1" />
+          <End Role="carrito" Type="Self.carrito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="articulos">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="carrito">
               <PropertyRef Name="id_articulo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_carrito_usuario">
+          <End Role="usuarios" Type="Self.usuarios" Multiplicity="1" />
+          <End Role="carrito" Type="Self.carrito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuarios">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="carrito">
+              <PropertyRef Name="id_usuario" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -668,6 +764,78 @@
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="respuestas">
+              <PropertyRef Name="id_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ventas_articulos_articulos">
+          <End Role="articulos" Type="Self.articulos" Multiplicity="1" />
+          <End Role="ventas_articulos" Type="Self.ventas_articulos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="articulos">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ventas_articulos">
+              <PropertyRef Name="id_articulo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ventas_articulos_ventas">
+          <End Role="ventas" Type="Self.ventas" Multiplicity="1" />
+          <End Role="ventas_articulos" Type="Self.ventas_articulos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ventas">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ventas_articulos">
+              <PropertyRef Name="id_venta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ventas_estado_venta">
+          <End Role="estado_venta" Type="Self.estado_venta" Multiplicity="1" />
+          <End Role="ventas" Type="Self.ventas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estado_venta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ventas">
+              <PropertyRef Name="id_estado_venta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ventas_tipos_pago">
+          <End Role="tipos_pago" Type="Self.tipos_pago" Multiplicity="1" />
+          <End Role="ventas" Type="Self.ventas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipos_pago">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ventas">
+              <PropertyRef Name="id_tipo_pago" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ventas_transporte">
+          <End Role="transporte" Type="Self.transporte" Multiplicity="0..1" />
+          <End Role="ventas" Type="Self.ventas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="transporte">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ventas">
+              <PropertyRef Name="id_transporte" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ventas_usuarios">
+          <End Role="usuarios" Type="Self.usuarios" Multiplicity="1" />
+          <End Role="ventas" Type="Self.ventas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuarios">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ventas">
               <PropertyRef Name="id_usuario" />
             </Dependent>
           </ReferentialConstraint>
@@ -1000,7 +1168,9 @@
         </Association>
         <EntityContainer Name="pimasModelStoreContainer">
           <EntitySet Name="admin" EntityType="Self.admin" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Articulos" EntityType="Self.Articulos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="articulos" EntityType="Self.articulos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="carrito" EntityType="Self.carrito" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="categoria_articulo" EntityType="Self.categoria_articulo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="colegio" EntityType="Self.colegio" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="colegio_profesores" EntityType="Self.colegio_profesores" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="comentarios" EntityType="Self.comentarios" Schema="dbo" store:Type="Tables" />
@@ -1011,6 +1181,8 @@
           <EntitySet Name="documentos_curso" EntityType="Self.documentos_curso" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="documentos_libro" EntityType="Self.documentos_libro" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="documentos_profe" EntityType="Self.documentos_profe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="estado_articulo" EntityType="Self.estado_articulo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="estado_venta" EntityType="Self.estado_venta" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="grupos" EntityType="Self.grupos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="libros" EntityType="Self.libros" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="libros_colegio" EntityType="Self.libros_colegio" Schema="dbo" store:Type="Tables" />
@@ -1034,13 +1206,28 @@
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tipo_colegio" EntityType="Self.tipo_colegio" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tipo_documento" EntityType="Self.tipo_documento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tipos_pago" EntityType="Self.tipos_pago" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="transporte" EntityType="Self.transporte" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="unidades" EntityType="Self.unidades" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="usuarios" EntityType="Self.usuarios" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="usuarios_grupo" EntityType="Self.usuarios_grupo" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Venta" EntityType="Self.Venta" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_Articulo_Venta" Association="Self.FK_Articulo_Venta">
-            <End Role="Articulos" EntitySet="Articulos" />
-            <End Role="Venta" EntitySet="Venta" />
+          <EntitySet Name="ventas" EntityType="Self.ventas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ventas_articulos" EntityType="Self.ventas_articulos" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_articulos_categoria_articulo" Association="Self.FK_articulos_categoria_articulo">
+            <End Role="categoria_articulo" EntitySet="categoria_articulo" />
+            <End Role="articulos" EntitySet="articulos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_articulos_estado_articulo" Association="Self.FK_articulos_estado_articulo">
+            <End Role="estado_articulo" EntitySet="estado_articulo" />
+            <End Role="articulos" EntitySet="articulos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_carrito_articulo" Association="Self.FK_carrito_articulo">
+            <End Role="articulos" EntitySet="articulos" />
+            <End Role="carrito" EntitySet="carrito" />
+          </AssociationSet>
+          <AssociationSet Name="FK_carrito_usuario" Association="Self.FK_carrito_usuario">
+            <End Role="usuarios" EntitySet="usuarios" />
+            <End Role="carrito" EntitySet="carrito" />
           </AssociationSet>
           <AssociationSet Name="FK_colegio_tipo" Association="Self.FK_colegio_tipo">
             <End Role="tipo_colegio" EntitySet="tipo_colegio" />
@@ -1129,6 +1316,30 @@
           <AssociationSet Name="FK_respuestas_usuarios" Association="Self.FK_respuestas_usuarios">
             <End Role="usuarios" EntitySet="usuarios" />
             <End Role="respuestas" EntitySet="respuestas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ventas_articulos_articulos" Association="Self.FK_ventas_articulos_articulos">
+            <End Role="articulos" EntitySet="articulos" />
+            <End Role="ventas_articulos" EntitySet="ventas_articulos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ventas_articulos_ventas" Association="Self.FK_ventas_articulos_ventas">
+            <End Role="ventas" EntitySet="ventas" />
+            <End Role="ventas_articulos" EntitySet="ventas_articulos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ventas_estado_venta" Association="Self.FK_ventas_estado_venta">
+            <End Role="estado_venta" EntitySet="estado_venta" />
+            <End Role="ventas" EntitySet="ventas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ventas_tipos_pago" Association="Self.FK_ventas_tipos_pago">
+            <End Role="tipos_pago" EntitySet="tipos_pago" />
+            <End Role="ventas" EntitySet="ventas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ventas_transporte" Association="Self.FK_ventas_transporte">
+            <End Role="transporte" EntitySet="transporte" />
+            <End Role="ventas" EntitySet="ventas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ventas_usuarios" Association="Self.FK_ventas_usuarios">
+            <End Role="usuarios" EntitySet="usuarios" />
+            <End Role="ventas" EntitySet="ventas" />
           </AssociationSet>
           <AssociationSet Name="FKcolegio_pr20282" Association="Self.FKcolegio_pr20282">
             <End Role="colegio" EntitySet="colegio" />
@@ -1241,16 +1452,6 @@
           <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="password" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Articulo">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="detalle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="precio" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
-          <NavigationProperty Name="Ventas" Relationship="Self.FK_Articulo_Venta" FromRole="Articulos" ToRole="Venta" />
         </EntityType>
         <EntityType Name="colegio">
           <Key>
@@ -1540,36 +1741,9 @@
           <NavigationProperty Name="roles" Relationship="Self.roles_usuario" FromRole="usuarios" ToRole="roles" />
           <NavigationProperty Name="grupos" Relationship="Self.usuarios_grupo" FromRole="usuarios" ToRole="grupos" />
           <Property Name="fecha_vencimiento" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ventas" Relationship="pimasModel.FK_ventas_usuarios" FromRole="usuario" ToRole="venta" />
+          <NavigationProperty Name="carritoes" Relationship="pimasModel.FK_carrito_usuario" FromRole="usuario" ToRole="carrito" />
         </EntityType>
-        <EntityType Name="Venta">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="id_articulo" Type="Int32" Nullable="false" />
-          <Property Name="nombre_comprador" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="nombre_receptor" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="numero_comprador" Type="Int32" Nullable="false" />
-          <Property Name="numero_receptor" Type="Int32" Nullable="false" />
-          <Property Name="direccion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="horario" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-          <Property Name="cantidad" Type="Int32" Nullable="false" />
-          <Property Name="tipo_entrega" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="forma_pago" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Articulo" Relationship="Self.FK_Articulo_Venta" FromRole="Venta" ToRole="Articulos" />
-        </EntityType>
-        <Association Name="FK_Articulo_Venta">
-          <End Role="Articulos" Type="Self.Articulo" Multiplicity="1" />
-          <End Role="Venta" Type="Self.Venta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Articulos">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Venta">
-              <PropertyRef Name="id_articulo" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_colegio_tipo">
           <End Role="tipo_colegio" Type="Self.tipo_colegio" Multiplicity="1" />
           <End Role="colegio" Type="Self.colegio" Multiplicity="*" />
@@ -1866,7 +2040,6 @@
         </Association>
         <EntityContainer Name="pimasEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="admins" EntityType="Self.admin" />
-          <EntitySet Name="Articulos" EntityType="Self.Articulo" />
           <EntitySet Name="colegios" EntityType="Self.colegio" />
           <EntitySet Name="comentarios" EntityType="Self.comentario" />
           <EntitySet Name="cursos" EntityType="Self.curso" />
@@ -1890,11 +2063,6 @@
           <EntitySet Name="tipo_documento" EntityType="Self.tipo_documento" />
           <EntitySet Name="unidades" EntityType="Self.unidade" />
           <EntitySet Name="usuarios" EntityType="Self.usuario" />
-          <EntitySet Name="Ventas" EntityType="Self.Venta" />
-          <AssociationSet Name="FK_Articulo_Venta" Association="Self.FK_Articulo_Venta">
-            <End Role="Articulos" EntitySet="Articulos" />
-            <End Role="Venta" EntitySet="Ventas" />
-          </AssociationSet>
           <AssociationSet Name="FK_colegio_tipo" Association="Self.FK_colegio_tipo">
             <End Role="tipo_colegio" EntitySet="tipo_colegio" />
             <End Role="colegio" EntitySet="colegios" />
@@ -2027,7 +2195,56 @@
             <End Role="documento" EntitySet="documentos" />
             <End Role="documentos_curso" EntitySet="documentos_curso" />
           </AssociationSet>
-        </EntityContainer>
+          <EntitySet Name="articulos" EntityType="pimasModel.articulo" />
+          <EntitySet Name="tipos_pago" EntityType="pimasModel.tipos_pago" />
+          <EntitySet Name="transportes" EntityType="pimasModel.transporte" />
+          <EntitySet Name="ventas" EntityType="pimasModel.venta" />
+          <AssociationSet Name="FK_ventas_tipos_pago" Association="pimasModel.FK_ventas_tipos_pago">
+            <End Role="tipos_pago" EntitySet="tipos_pago" />
+            <End Role="venta" EntitySet="ventas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ventas_transporte" Association="pimasModel.FK_ventas_transporte">
+            <End Role="transporte" EntitySet="transportes" />
+            <End Role="venta" EntitySet="ventas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ventas_usuarios" Association="pimasModel.FK_ventas_usuarios">
+            <End Role="usuario" EntitySet="usuarios" />
+            <End Role="venta" EntitySet="ventas" />
+          </AssociationSet>
+          <EntitySet Name="estado_venta" EntityType="pimasModel.estado_venta" />
+          <AssociationSet Name="FK_ventas_estado_venta" Association="pimasModel.FK_ventas_estado_venta">
+            <End Role="estado_venta" EntitySet="estado_venta" />
+            <End Role="venta" EntitySet="ventas" />
+          </AssociationSet>
+          <EntitySet Name="categoria_articulo" EntityType="pimasModel.categoria_articulo" />
+          <AssociationSet Name="FK_articulos_categoria_articulo" Association="pimasModel.FK_articulos_categoria_articulo">
+            <End Role="categoria_articulo" EntitySet="categoria_articulo" />
+            <End Role="articulo" EntitySet="articulos" />
+          </AssociationSet>
+          <EntitySet Name="estado_articulo" EntityType="pimasModel.estado_articulo" />
+          <AssociationSet Name="FK_articulos_estado_articulo" Association="pimasModel.FK_articulos_estado_articulo">
+            <End Role="estado_articulo" EntitySet="estado_articulo" />
+            <End Role="articulo" EntitySet="articulos" />
+          </AssociationSet>
+          <EntitySet Name="carritoes" EntityType="pimasModel.carrito" />
+          <AssociationSet Name="FK_carrito_articulo" Association="pimasModel.FK_carrito_articulo">
+            <End Role="articulo" EntitySet="articulos" />
+            <End Role="carrito" EntitySet="carritoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_carrito_usuario" Association="pimasModel.FK_carrito_usuario">
+            <End Role="usuario" EntitySet="usuarios" />
+            <End Role="carrito" EntitySet="carritoes" />
+          </AssociationSet>
+          <EntitySet Name="ventas_articulos" EntityType="pimasModel.ventas_articulos" />
+          <AssociationSet Name="FK_ventas_articulos_articulos" Association="pimasModel.FK_ventas_articulos_articulos">
+            <End Role="articulo" EntitySet="articulos" />
+            <End Role="ventas_articulos" EntitySet="ventas_articulos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ventas_articulos_ventas" Association="pimasModel.FK_ventas_articulos_ventas">
+            <End Role="venta" EntitySet="ventas" />
+            <End Role="ventas_articulos" EntitySet="ventas_articulos" />
+          </AssociationSet>
+          </EntityContainer>
         <Association Name="FK_documentos_curso_cursos">
           <End Type="pimasModel.curso" Role="curso" Multiplicity="1" />
           <End Type="pimasModel.documentos_curso" Role="documentos_curso" Multiplicity="*" />
@@ -2052,7 +2269,230 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        <EntityType Name="articulo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="detalle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="precio1" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="precio2" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="precio3" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="url_imagen" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="id_categoria" Type="Int32" />
+          <NavigationProperty Name="categoria_articulo" Relationship="pimasModel.FK_articulos_categoria_articulo" FromRole="articulo" ToRole="categoria_articulo" />
+          <Property Name="id_estado_articulo" Type="Int32" />
+          <NavigationProperty Name="estado_articulo" Relationship="pimasModel.FK_articulos_estado_articulo" FromRole="articulo" ToRole="estado_articulo" />
+          <NavigationProperty Name="carritoes" Relationship="pimasModel.FK_carrito_articulo" FromRole="articulo" ToRole="carrito" />
+          <NavigationProperty Name="ventas_articulos" Relationship="pimasModel.FK_ventas_articulos_articulos" FromRole="articulo" ToRole="ventas_articulos" />
+        </EntityType>
+        <EntityType Name="tipos_pago">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ventas" Relationship="pimasModel.FK_ventas_tipos_pago" FromRole="tipos_pago" ToRole="venta" />
+        </EntityType>
+        <EntityType Name="transporte">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="precio" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <NavigationProperty Name="ventas" Relationship="pimasModel.FK_ventas_transporte" FromRole="transporte" ToRole="venta" />
+        </EntityType>
+        <EntityType Name="venta">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre_comprador" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="nombre_receptor" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="numero_comprador" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="numero_receptor" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="direccion" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="horario_preferencia" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="tiempo_estimado" Type="DateTime" Precision="3" />
+          <Property Name="id_transporte" Type="Int32" />
+          <Property Name="id_tipo_pago" Type="Int32" Nullable="false" />
+          <Property Name="id_usuario" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tipos_pago" Relationship="pimasModel.FK_ventas_tipos_pago" FromRole="venta" ToRole="tipos_pago" />
+          <NavigationProperty Name="transporte" Relationship="pimasModel.FK_ventas_transporte" FromRole="venta" ToRole="transporte" />
+          <NavigationProperty Name="usuario" Relationship="pimasModel.FK_ventas_usuarios" FromRole="venta" ToRole="usuario" />
+          <Property Name="id_estado_venta" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="estado_venta" Relationship="pimasModel.FK_ventas_estado_venta" FromRole="venta" ToRole="estado_venta" />
+          <NavigationProperty Name="ventas_articulos" Relationship="pimasModel.FK_ventas_articulos_ventas" FromRole="venta" ToRole="ventas_articulos" />
+        </EntityType>
+        <Association Name="FK_ventas_tipos_pago">
+          <End Type="pimasModel.tipos_pago" Role="tipos_pago" Multiplicity="1" />
+          <End Type="pimasModel.venta" Role="venta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipos_pago">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="venta">
+              <PropertyRef Name="id_tipo_pago" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ventas_transporte">
+          <End Type="pimasModel.transporte" Role="transporte" Multiplicity="0..1" />
+          <End Type="pimasModel.venta" Role="venta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="transporte">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="venta">
+              <PropertyRef Name="id_transporte" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ventas_usuarios">
+          <End Type="pimasModel.usuario" Role="usuario" Multiplicity="1" />
+          <End Type="pimasModel.venta" Role="venta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="venta">
+              <PropertyRef Name="id_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="estado_venta">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ventas" Relationship="pimasModel.FK_ventas_estado_venta" FromRole="estado_venta" ToRole="venta" />
+        </EntityType>
+        <Association Name="FK_ventas_estado_venta">
+          <End Type="pimasModel.estado_venta" Role="estado_venta" Multiplicity="1" />
+          <End Type="pimasModel.venta" Role="venta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estado_venta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="venta">
+              <PropertyRef Name="id_estado_venta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="categoria_articulo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="articulos" Relationship="pimasModel.FK_articulos_categoria_articulo" FromRole="categoria_articulo" ToRole="articulo" />
+        </EntityType>
+        <Association Name="FK_articulos_categoria_articulo">
+          <End Type="pimasModel.categoria_articulo" Role="categoria_articulo" Multiplicity="0..1" />
+          <End Type="pimasModel.articulo" Role="articulo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="categoria_articulo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="articulo">
+              <PropertyRef Name="id_categoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="estado_articulo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="articulos" Relationship="pimasModel.FK_articulos_estado_articulo" FromRole="estado_articulo" ToRole="articulo" />
+        </EntityType>
+        <Association Name="FK_articulos_estado_articulo">
+          <End Type="pimasModel.estado_articulo" Role="estado_articulo" Multiplicity="0..1" />
+          <End Type="pimasModel.articulo" Role="articulo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estado_articulo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="articulo">
+              <PropertyRef Name="id_estado_articulo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="carrito">
+          <Key>
+            <PropertyRef Name="id_usuario" />
+            <PropertyRef Name="id_articulo" />
+          </Key>
+          <Property Name="id_usuario" Type="Int32" Nullable="false" />
+          <Property Name="id_articulo" Type="Int32" Nullable="false" />
+          <Property Name="cantidad" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="articulo" Relationship="pimasModel.FK_carrito_articulo" FromRole="carrito" ToRole="articulo" />
+          <NavigationProperty Name="usuario" Relationship="pimasModel.FK_carrito_usuario" FromRole="carrito" ToRole="usuario" />
+        </EntityType>
+        <Association Name="FK_carrito_articulo">
+          <End Type="pimasModel.articulo" Role="articulo" Multiplicity="1" />
+          <End Type="pimasModel.carrito" Role="carrito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="articulo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="carrito">
+              <PropertyRef Name="id_articulo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_carrito_usuario">
+          <End Type="pimasModel.usuario" Role="usuario" Multiplicity="1" />
+          <End Type="pimasModel.carrito" Role="carrito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="carrito">
+              <PropertyRef Name="id_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ventas_articulos">
+          <Key>
+            <PropertyRef Name="id_articulo" />
+            <PropertyRef Name="id_venta" />
+          </Key>
+          <Property Name="id_articulo" Type="Int32" Nullable="false" />
+          <Property Name="id_venta" Type="Int32" Nullable="false" />
+          <Property Name="cantidad" Type="Int32" />
+          <NavigationProperty Name="articulo" Relationship="pimasModel.FK_ventas_articulos_articulos" FromRole="ventas_articulos" ToRole="articulo" />
+          <NavigationProperty Name="venta" Relationship="pimasModel.FK_ventas_articulos_ventas" FromRole="ventas_articulos" ToRole="venta" />
+        </EntityType>
+        <Association Name="FK_ventas_articulos_articulos">
+          <End Type="pimasModel.articulo" Role="articulo" Multiplicity="1" />
+          <End Type="pimasModel.ventas_articulos" Role="ventas_articulos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="articulo">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ventas_articulos">
+              <PropertyRef Name="id_articulo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ventas_articulos_ventas">
+          <End Type="pimasModel.venta" Role="venta" Multiplicity="1" />
+          <End Type="pimasModel.ventas_articulos" Role="ventas_articulos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="venta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ventas_articulos">
+              <PropertyRef Name="id_venta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -2067,16 +2507,6 @@
                 <ScalarProperty Name="username" ColumnName="username" />
                 <ScalarProperty Name="password" ColumnName="password" />
                 <ScalarProperty Name="correo" ColumnName="correo" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Articulos">
-            <EntityTypeMapping TypeName="pimasModel.Articulo">
-              <MappingFragment StoreEntitySet="Articulos">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="nombre" ColumnName="nombre" />
-                <ScalarProperty Name="detalle" ColumnName="detalle" />
-                <ScalarProperty Name="precio" ColumnName="precio" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2322,23 +2752,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Ventas">
-            <EntityTypeMapping TypeName="pimasModel.Venta">
-              <MappingFragment StoreEntitySet="Venta">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="id_articulo" ColumnName="id_articulo" />
-                <ScalarProperty Name="nombre_comprador" ColumnName="nombre_comprador" />
-                <ScalarProperty Name="nombre_receptor" ColumnName="nombre_receptor" />
-                <ScalarProperty Name="numero_comprador" ColumnName="numero_comprador" />
-                <ScalarProperty Name="numero_receptor" ColumnName="numero_receptor" />
-                <ScalarProperty Name="direccion" ColumnName="direccion" />
-                <ScalarProperty Name="horario" ColumnName="horario" />
-                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
-                <ScalarProperty Name="tipo_entrega" ColumnName="tipo_entrega" />
-                <ScalarProperty Name="forma_pago" ColumnName="forma_pago" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <AssociationSetMapping Name="colegio_profesores" TypeName="pimasModel.colegio_profesores" StoreEntitySet="colegio_profesores">
             <EndProperty Name="colegio">
               <ScalarProperty Name="id" ColumnName="id_colegio" />
@@ -2443,6 +2856,98 @@
               <ScalarProperty Name="id" ColumnName="id_grupo" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="articulos">
+            <EntityTypeMapping TypeName="pimasModel.articulo">
+              <MappingFragment StoreEntitySet="articulos">
+                <ScalarProperty Name="id_estado_articulo" ColumnName="id_estado_articulo" />
+                <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
+                <ScalarProperty Name="url_imagen" ColumnName="url_imagen" />
+                <ScalarProperty Name="precio3" ColumnName="precio3" />
+                <ScalarProperty Name="precio2" ColumnName="precio2" />
+                <ScalarProperty Name="precio1" ColumnName="precio1" />
+                <ScalarProperty Name="detalle" ColumnName="detalle" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tipos_pago">
+            <EntityTypeMapping TypeName="pimasModel.tipos_pago">
+              <MappingFragment StoreEntitySet="tipos_pago">
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="transportes">
+            <EntityTypeMapping TypeName="pimasModel.transporte">
+              <MappingFragment StoreEntitySet="transporte">
+                <ScalarProperty Name="precio" ColumnName="precio" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ventas">
+            <EntityTypeMapping TypeName="pimasModel.venta">
+              <MappingFragment StoreEntitySet="ventas">
+                <ScalarProperty Name="id_estado_venta" ColumnName="id_estado_venta" />
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+                <ScalarProperty Name="id_tipo_pago" ColumnName="id_tipo_pago" />
+                <ScalarProperty Name="id_transporte" ColumnName="id_transporte" />
+                <ScalarProperty Name="tiempo_estimado" ColumnName="tiempo_estimado" />
+                <ScalarProperty Name="horario_preferencia" ColumnName="horario_preferencia" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="numero_receptor" ColumnName="numero_receptor" />
+                <ScalarProperty Name="numero_comprador" ColumnName="numero_comprador" />
+                <ScalarProperty Name="nombre_receptor" ColumnName="nombre_receptor" />
+                <ScalarProperty Name="nombre_comprador" ColumnName="nombre_comprador" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="estado_venta">
+            <EntityTypeMapping TypeName="pimasModel.estado_venta">
+              <MappingFragment StoreEntitySet="estado_venta">
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="categoria_articulo">
+            <EntityTypeMapping TypeName="pimasModel.categoria_articulo">
+              <MappingFragment StoreEntitySet="categoria_articulo">
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="estado_articulo">
+            <EntityTypeMapping TypeName="pimasModel.estado_articulo">
+              <MappingFragment StoreEntitySet="estado_articulo">
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="carritoes">
+            <EntityTypeMapping TypeName="pimasModel.carrito">
+              <MappingFragment StoreEntitySet="carrito">
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="id_articulo" ColumnName="id_articulo" />
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ventas_articulos">
+            <EntityTypeMapping TypeName="pimasModel.ventas_articulos">
+              <MappingFragment StoreEntitySet="ventas_articulos">
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="id_venta" ColumnName="id_venta" />
+                <ScalarProperty Name="id_articulo" ColumnName="id_articulo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
