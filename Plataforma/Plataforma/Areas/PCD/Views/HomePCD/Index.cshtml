@@ -5,5 +5,7 @@
         @if (Session["usuario"] == null)
         {
             Response.Redirect("~/PCD/Account/LogIn");
+        }else
+        {
+            Response.Redirect("~/PCD/Documentos/BusquedaGeneral");
         }
-

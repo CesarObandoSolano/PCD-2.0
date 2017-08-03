@@ -5,7 +5,6 @@
 }
 
 <head>
-    <script src="~/Scripts/jquery-1.10.2.js"></script>
     <script>
 
         function CerrarSesiones() {
@@ -215,9 +214,6 @@
             <th>
                 Rol
             </th>
-            <th>
-                Visitas
-            </th>
             <th>Acciones</th>
         </tr>
 
@@ -225,20 +221,17 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.nombre)
-                    @Html.DisplayFor(modelItem => item.apellidos)
+                    <p>@item.nombre @item.apellidos</p>
+                    @*@Html.DisplayFor(modelItem => item.nombre)*@
+                    @*@Html.DisplayFor(modelItem => item.apellidos)*@
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.username)
+                    <p>@item.username</p>
+                    @*@Html.DisplayFor(modelItem => item.username)*@
                 </td>
                 <td>
-                    @foreach (var rol in @item.roles)
-                    {
-                        @rol.rol
-                    }
-                </td>
-                <td>
-                    @item.log_visitas.Count
+                    @item.roles.FirstOrDefault().rol
+                    @*@Html.DisplayFor(modelItem => item.roles.FirstOrDefault().rol)*@
                 </td>
                 <td id="@item.id">
                     @Html.ActionLink(" ", "Edit", new { id = item.id }, new { @class = "enlace-tabla editar", @title = "Editar" })

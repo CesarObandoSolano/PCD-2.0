@@ -22,6 +22,9 @@ namespace Plataforma.Areas.PCD.Models
             this.libros = new HashSet<libro>();
             this.niveles = new HashSet<nivele>();
             this.documentos_curso = new HashSet<documentos_curso>();
+            this.documentos_relacionados1 = new HashSet<documentos_relacionados>();
+            this.documentos_relacionados2 = new HashSet<documentos_relacionados>();
+            this.documentos_usuario = new HashSet<documentos_usuario>();
         }
     
         public int id { get; set; }
@@ -38,6 +41,9 @@ namespace Plataforma.Areas.PCD.Models
         public Nullable<int> numero_version { get; set; }
         public int unidad { get; set; }
         public Nullable<int> capitulo { get; set; }
+        public Nullable<decimal> precio1 { get; set; }
+        public Nullable<decimal> precio2 { get; set; }
+        public Nullable<decimal> precio3 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<comentario> comentarios { get; set; }
@@ -51,5 +57,12 @@ namespace Plataforma.Areas.PCD.Models
         public virtual ICollection<nivele> niveles { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<documentos_curso> documentos_curso { get; set; }
+        public virtual documentos_relacionados documentos_relacionados { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<documentos_relacionados> documentos_relacionados1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<documentos_relacionados> documentos_relacionados2 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<documentos_usuario> documentos_usuario { get; set; }
     }
 }

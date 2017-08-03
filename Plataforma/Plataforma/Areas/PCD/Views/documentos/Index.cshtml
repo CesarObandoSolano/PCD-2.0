@@ -12,9 +12,7 @@
         }
 
          $(document).ready(function () {
-
-            obtenerTabla("tabla-documento");
-
+             
             $("#categorias").change(function () {
                 var categoria = document.getElementById("categorias").value;
                 if (categoria != "") {
@@ -100,6 +98,8 @@
                 }
                 return false;
             });
+
+            obtenerTabla("tabla-documento");
         });
     </script>
 
