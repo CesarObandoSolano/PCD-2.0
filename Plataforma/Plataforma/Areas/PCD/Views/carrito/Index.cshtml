@@ -1,0 +1,153 @@
+﻿@model IEnumerable<Plataforma.Areas.PCD.Models.carrito>
+
+@{
+    ViewBag.Title = "Carrito de Compras";
+}
+<head>
+    <script>
+        function eliminarDeCarrito(id_articulo) {
+            var opcion = confirm("¿Desea eliminar el artículo de su carrito de compras?");
+            if (opcion == true) {
+                $.ajax({
+                    type: "DELETE",
+                    url: "/PCD/carrito/EliminarDelCarrito",
+                    data: '{"idArticulo":"' + id_articulo + '"}',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (data) {
+                        $("#tabla-carrito").load("/PCD/carrito/Index #tabla-carrito");
+                    },
+                    error: errores
+                });
+            }
+            function errores(msg) {
+                alert(msg);
+            }
+            return false;
+        }
+
+        function modificarCantidadArticulos(id_articulo, cantidad) {
+            $.ajax({
+                type: "POST",
+                url: "/PCD/carrito/ModificarCantidadArticulos",
+                data: '{"idArticulo":"' + id_articulo + '","cantidad":"' + cantidad + '"}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                },
+                error: errores
+            });
+            function errores(msg) {
+                alert(msg);
+            }
+            return false;
+        }
+
+        function modificacionCantidadArticulos(precioArticulo, idArticulo) {
+            var cantidad = document.getElementById("cantidadArticulos-" + idArticulo).value;
+            document.getElementById("precioArticulo-" + idArticulo).innerHTML = "" + precioArticulo * cantidad;
+            modificarCantidadArticulos(idArticulo, cantidad);
+            cambiarTotal();
+        }
+
+        function cambiarTotal() {
+            var total = 0;
+            $(".precio").each(function (index, value) {
+                total = total + (parseInt($(value).text()));
+            });
+            document.getElementById("precioTotal").innerHTML = "" + total;
+        }
+
+        $(document).ready(function () {
+            cambiarTotal();
+            $("#tabla-carrito").bind("DOMSubtreeModified", function () {
+                cambiarTotal();
+            });
+        });
+
+    </script>
+</head>
+
+<h1 class="class-forms"><i class="fa fa-shopping-cart" aria-hidden="true"></i> &nbsp;Carrito de compras</h1>
+<h6>Artículos en mi carrito de compras</h6>
+<br><br>
+
+<div class="col-lg-12">
+
+    <table class="table" id="tabla-carrito">
+        <tr>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Detalle
+            </th>
+            <th>
+                Precio
+            </th>
+            <th>
+                Cantidad
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.articulo.nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.articulo.detalle)
+                </td>
+                <td>
+                    @{if (Session["usuario"] != null)
+                        {
+                            var usuario = (Plataforma.Areas.PCD.Models.usuario)Session["usuario"];
+
+                            if (usuario.categoria_precio == null || usuario.categoria_precio == 1)
+                            {
+                                var precioCantidad = item.articulo.precio1 * item.cantidad;
+                                <p id="precioArticulo-@item.id_articulo" class="precio">@precioCantidad</p>
+                            }                           
+                            else if (usuario.categoria_precio == 2)
+                            {
+                                var precioCantidad = item.articulo.precio2 * item.cantidad;
+                                <p id="precioArticulo-@item.id_articulo" class="precio">@precioCantidad</p>
+                            }                       
+                            else if (usuario.categoria_precio == 3)
+                            {
+                                var precioCantidad = item.articulo.precio3 * item.cantidad;
+                                <p id="precioArticulo-@item.id_articulo" class="precio">@precioCantidad</p>
+                            }
+                        }
+                    }
+                        
+                </td>
+                <td>
+                    @Html.EditorFor(modelItem => item.cantidad, new { htmlAttributes = new { @id = "cantidadArticulos-" + item.id_articulo, @min = "1", @class = "form-control", onchange = "modificacionCantidadArticulos(" + item.articulo.precio1 + "," + item.id_articulo +")" } })
+                </td>
+                <td>
+                    <a onclick="eliminarDeCarrito(@item.id_articulo)" class="enlace-tabla eliminar" title="Eliminar" role="button"></a>
+                </td>
+            </tr>
+        }
+
+    </table>
+    <hr />
+    <div class="row table-warning">
+        <div class="col-md-10">
+            <h4>Total</h4>
+        </div>
+        <div class="col-md-2">
+            <h4 id="precioTotal">0</h4>
+        </div>
+    </div>
+    <br />
+    <div class="form-group">
+        <div class="col-md-offset-5 col-md-10">
+            <a href="~/PCD/ventas/CompraCliente" class="btn btn-primary">Pagar</a>
+        </div>
+    </div>
+
+</div>

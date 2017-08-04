@@ -1,4 +1,4 @@
-﻿@model Plataforma.Areas.PCD.Models.Venta
+﻿@model Plataforma.Areas.PCD.Models.venta
 
 @{
     ViewBag.Title = "Delete";
@@ -6,15 +6,13 @@
 
 <h2>Delete</h2>
 
-<link rel="stylesheet" type="text/css" href="~/Content/custombootstrap.css" />
-
-<h3>¿Estas seguro de querer eliminar esta venta?</h3>
-<div class="col-lg-9">
-    <h4>Venta</h4>
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>venta</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            Nombre Comprador
+            @Html.DisplayNameFor(model => model.nombre_comprador)
         </dt>
 
         <dd>
@@ -22,7 +20,7 @@
         </dd>
 
         <dt>
-            Nombre de quien recibe
+            @Html.DisplayNameFor(model => model.nombre_receptor)
         </dt>
 
         <dd>
@@ -30,7 +28,7 @@
         </dd>
 
         <dt>
-            Telefono del comprador
+            @Html.DisplayNameFor(model => model.numero_comprador)
         </dt>
 
         <dd>
@@ -38,7 +36,7 @@
         </dd>
 
         <dt>
-            Telefono de quien recibe
+            @Html.DisplayNameFor(model => model.numero_receptor)
         </dt>
 
         <dd>
@@ -46,7 +44,7 @@
         </dd>
 
         <dt>
-            Dirección
+            @Html.DisplayNameFor(model => model.direccion)
         </dt>
 
         <dd>
@@ -54,43 +52,43 @@
         </dd>
 
         <dt>
-            Horario de entrega
+            @Html.DisplayNameFor(model => model.horario_preferencia)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.horario)
+            @Html.DisplayFor(model => model.horario_preferencia)
         </dd>
 
         <dt>
-            Articulo
+            @Html.DisplayNameFor(model => model.tiempo_estimado)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Articulo.nombre)
+            @Html.DisplayFor(model => model.tiempo_estimado)
         </dd>
 
         <dt>
-            Cantidad de articulos
+            @Html.DisplayNameFor(model => model.tipos_pago.nombre)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.cantidad)
+            @Html.DisplayFor(model => model.tipos_pago.nombre)
         </dd>
 
         <dt>
-            Metodo de entrega
+            @Html.DisplayNameFor(model => model.transporte.nombre)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.tipo_entrega)
+            @Html.DisplayFor(model => model.transporte.nombre)
         </dd>
 
         <dt>
-            Forma de pago
+            @Html.DisplayNameFor(model => model.usuario.nombre)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.forma_pago)
+            @Html.DisplayFor(model => model.usuario.nombre)
         </dd>
 
     </dl>
@@ -99,8 +97,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Eliminar" class="btn btn-default" /> |
-            @Html.ActionLink("Volver al indice", "Index")
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
         </div>
     }
 </div>

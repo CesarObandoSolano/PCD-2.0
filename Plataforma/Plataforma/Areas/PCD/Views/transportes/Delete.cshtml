@@ -1,0 +1,39 @@
+﻿@model Plataforma.Areas.PCD.Models.transporte
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+
+<h1 class="class-forms">Eliminar</h1>
+<h3 class="class-forms">¿Estas seguro de querer eliminar este transporte?</h3>
+<div class="col-md-12">
+    <h4 class="class-forms">Transporte</h4>
+    <dl class="dl-horizontal">
+        <dt>
+            Nombre
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            Precio
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.precio)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+            @Html.ActionLink("Volver al índice", "Index")
+        </div>
+    }
+</div>

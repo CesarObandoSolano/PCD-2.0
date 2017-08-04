@@ -1,0 +1,31 @@
+﻿@model Plataforma.Areas.PCD.Models.tipos_pago
+
+@{
+    ViewBag.Title = "Elimanar";
+}
+
+<h1 class="class-forms">Eliminar</h1>
+<h3 class="class-forms">¿Estas seguro de querer eliminar este tipo de pago?</h3>
+<div class="col-md-12">
+    <h4 class="class-forms">Tipo de pago</h4>
+    <dl class="dl-horizontal">
+        <dt>
+            Nombre
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+            @Html.ActionLink("Volver al índice", "Index")
+        </div>
+    }
+</div>
