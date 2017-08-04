@@ -78,6 +78,13 @@
     <NavigationProperty Name="libros" Relationship="Self.documentos_libro" FromRole="documentos" ToRole="libros" />
     <NavigationProperty Name="niveles" Relationship="Self.niveles_documento" FromRole="documentos" ToRole="niveles" />
     <NavigationProperty Name="documentos_curso" Relationship="pimasModel.FK_documentos_curso_documentos" FromRole="documento" ToRole="documentos_curso" />
+    <Property Name="precio1" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="precio2" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="precio3" Type="Decimal" Precision="18" Scale="2" />
+    <NavigationProperty Name="documentos_relacionados" Relationship="pimasModel.FK_documento_documento_relacionado" FromRole="documento" ToRole="documentos_relacionados" />
+    <NavigationProperty Name="documentos_relacionados1" Relationship="pimasModel.FK_documento_documento_relacionado1" FromRole="documento" ToRole="documentos_relacionados" />
+    <NavigationProperty Name="documentos_relacionados2" Relationship="pimasModel.FK_documento_documento_relacionado2" FromRole="documento" ToRole="documentos_relacionados" />
+    <NavigationProperty Name="documentos_usuario" Relationship="pimasModel.FK_documento_usuario" FromRole="documento" ToRole="documentos_usuario" />
   </EntityType>
   <EntityType Name="documentos_curso">
     <Key>
@@ -299,8 +306,12 @@
     <NavigationProperty Name="roles" Relationship="Self.roles_usuario" FromRole="usuarios" ToRole="roles" />
     <NavigationProperty Name="grupos" Relationship="Self.usuarios_grupo" FromRole="usuarios" ToRole="grupos" />
     <Property Name="fecha_vencimiento" Type="DateTime" Precision="3" />
-    <NavigationProperty Name="ventas" Relationship="pimasModel.FK_ventas_usuarios" FromRole="usuario" ToRole="venta" />
+    <Property Name="categoria_precio" Type="Int32" />
+    <Property Name="saldo" Type="Decimal" Precision="18" Scale="2" />
+    <NavigationProperty Name="documentos_usuario" Relationship="pimasModel.FK_usuario_documento" FromRole="usuario" ToRole="documentos_usuario" />
+    <NavigationProperty Name="transacciones" Relationship="pimasModel.FK_usuario_transaccion" FromRole="usuario" ToRole="transaccione" />
     <NavigationProperty Name="carritoes" Relationship="pimasModel.FK_carrito_usuario" FromRole="usuario" ToRole="carrito" />
+    <NavigationProperty Name="ventas" Relationship="pimasModel.FK_ventas_usuario" FromRole="usuario" ToRole="venta" />
   </EntityType>
   <Association Name="FK_colegio_tipo">
     <End Role="tipo_colegio" Type="Self.tipo_colegio" Multiplicity="1" />
@@ -753,10 +764,70 @@
       <End Role="documento" EntitySet="documentos" />
       <End Role="documentos_curso" EntitySet="documentos_curso" />
     </AssociationSet>
-    <EntitySet Name="articulos" EntityType="pimasModel.articulo" />
+    <EntitySet Name="documentos_relacionados" EntityType="pimasModel.documentos_relacionados" />
+    <EntitySet Name="documentos_usuario" EntityType="pimasModel.documentos_usuario" />
+    <EntitySet Name="transacciones" EntityType="pimasModel.transaccione" />
+    <AssociationSet Name="FK_documento_documento_relacionado" Association="pimasModel.FK_documento_documento_relacionado">
+      <End Role="documento" EntitySet="documentos" />
+      <End Role="documentos_relacionados" EntitySet="documentos_relacionados" />
+    </AssociationSet>
+    <AssociationSet Name="FK_documento_documento_relacionado1" Association="pimasModel.FK_documento_documento_relacionado1">
+      <End Role="documento" EntitySet="documentos" />
+      <End Role="documentos_relacionados" EntitySet="documentos_relacionados" />
+    </AssociationSet>
+    <AssociationSet Name="FK_documento_documento_relacionado2" Association="pimasModel.FK_documento_documento_relacionado2">
+      <End Role="documento" EntitySet="documentos" />
+      <End Role="documentos_relacionados" EntitySet="documentos_relacionados" />
+    </AssociationSet>
+    <AssociationSet Name="FK_documento_usuario" Association="pimasModel.FK_documento_usuario">
+      <End Role="documento" EntitySet="documentos" />
+      <End Role="documentos_usuario" EntitySet="documentos_usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_usuario_documento" Association="pimasModel.FK_usuario_documento">
+      <End Role="usuario" EntitySet="usuarios" />
+      <End Role="documentos_usuario" EntitySet="documentos_usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_usuario_transaccion" Association="pimasModel.FK_usuario_transaccion">
+      <End Role="usuario" EntitySet="usuarios" />
+      <End Role="transaccione" EntitySet="transacciones" />
+    </AssociationSet>
+    <EntitySet Name="articuloes" EntityType="pimasModel.articulo" />
+    <EntitySet Name="carritoes" EntityType="pimasModel.carrito" />
+    <EntitySet Name="categoria_articulo" EntityType="pimasModel.categoria_articulo" />
+    <EntitySet Name="estado_articulo" EntityType="pimasModel.estado_articulo" />
+    <EntitySet Name="estado_venta" EntityType="pimasModel.estado_venta" />
     <EntitySet Name="tipos_pago" EntityType="pimasModel.tipos_pago" />
     <EntitySet Name="transportes" EntityType="pimasModel.transporte" />
     <EntitySet Name="ventas" EntityType="pimasModel.venta" />
+    <EntitySet Name="ventas_articulos" EntityType="pimasModel.ventas_articulos" />
+    <AssociationSet Name="FK_carrito_usuario" Association="pimasModel.FK_carrito_usuario">
+      <End Role="usuario" EntitySet="usuarios" />
+      <End Role="carrito" EntitySet="carritoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ventas_usuario" Association="pimasModel.FK_ventas_usuario">
+      <End Role="usuario" EntitySet="usuarios" />
+      <End Role="venta" EntitySet="ventas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_articulo_estado_articulo" Association="pimasModel.FK_articulo_estado_articulo">
+      <End Role="estado_articulo" EntitySet="estado_articulo" />
+      <End Role="articulo" EntitySet="articuloes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_articulos_categoria_articulo" Association="pimasModel.FK_articulos_categoria_articulo">
+      <End Role="categoria_articulo" EntitySet="categoria_articulo" />
+      <End Role="articulo" EntitySet="articuloes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_carrito_articulo" Association="pimasModel.FK_carrito_articulo">
+      <End Role="articulo" EntitySet="articuloes" />
+      <End Role="carrito" EntitySet="carritoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ventas_articulos_articulos" Association="pimasModel.FK_ventas_articulos_articulos">
+      <End Role="articulo" EntitySet="articuloes" />
+      <End Role="ventas_articulos" EntitySet="ventas_articulos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ventas_estado_venta" Association="pimasModel.FK_ventas_estado_venta">
+      <End Role="estado_venta" EntitySet="estado_venta" />
+      <End Role="venta" EntitySet="ventas" />
+    </AssociationSet>
     <AssociationSet Name="FK_ventas_tipos_pago" Association="pimasModel.FK_ventas_tipos_pago">
       <End Role="tipos_pago" EntitySet="tipos_pago" />
       <End Role="venta" EntitySet="ventas" />
@@ -764,39 +835,6 @@
     <AssociationSet Name="FK_ventas_transporte" Association="pimasModel.FK_ventas_transporte">
       <End Role="transporte" EntitySet="transportes" />
       <End Role="venta" EntitySet="ventas" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ventas_usuarios" Association="pimasModel.FK_ventas_usuarios">
-      <End Role="usuario" EntitySet="usuarios" />
-      <End Role="venta" EntitySet="ventas" />
-    </AssociationSet>
-    <EntitySet Name="estado_venta" EntityType="pimasModel.estado_venta" />
-    <AssociationSet Name="FK_ventas_estado_venta" Association="pimasModel.FK_ventas_estado_venta">
-      <End Role="estado_venta" EntitySet="estado_venta" />
-      <End Role="venta" EntitySet="ventas" />
-    </AssociationSet>
-    <EntitySet Name="categoria_articulo" EntityType="pimasModel.categoria_articulo" />
-    <AssociationSet Name="FK_articulos_categoria_articulo" Association="pimasModel.FK_articulos_categoria_articulo">
-      <End Role="categoria_articulo" EntitySet="categoria_articulo" />
-      <End Role="articulo" EntitySet="articulos" />
-    </AssociationSet>
-    <EntitySet Name="estado_articulo" EntityType="pimasModel.estado_articulo" />
-    <AssociationSet Name="FK_articulos_estado_articulo" Association="pimasModel.FK_articulos_estado_articulo">
-      <End Role="estado_articulo" EntitySet="estado_articulo" />
-      <End Role="articulo" EntitySet="articulos" />
-    </AssociationSet>
-    <EntitySet Name="carritoes" EntityType="pimasModel.carrito" />
-    <AssociationSet Name="FK_carrito_articulo" Association="pimasModel.FK_carrito_articulo">
-      <End Role="articulo" EntitySet="articulos" />
-      <End Role="carrito" EntitySet="carritoes" />
-    </AssociationSet>
-    <AssociationSet Name="FK_carrito_usuario" Association="pimasModel.FK_carrito_usuario">
-      <End Role="usuario" EntitySet="usuarios" />
-      <End Role="carrito" EntitySet="carritoes" />
-    </AssociationSet>
-    <EntitySet Name="ventas_articulos" EntityType="pimasModel.ventas_articulos" />
-    <AssociationSet Name="FK_ventas_articulos_articulos" Association="pimasModel.FK_ventas_articulos_articulos">
-      <End Role="articulo" EntitySet="articulos" />
-      <End Role="ventas_articulos" EntitySet="ventas_articulos" />
     </AssociationSet>
     <AssociationSet Name="FK_ventas_articulos_ventas" Association="pimasModel.FK_ventas_articulos_ventas">
       <End Role="venta" EntitySet="ventas" />
@@ -827,6 +865,111 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="documentos_relacionados">
+    <Key>
+      <PropertyRef Name="id_documento" />
+    </Key>
+    <Property Name="id_documento" Type="Int32" Nullable="false" />
+    <Property Name="documento_relacionado1" Type="Int32" Nullable="false" />
+    <Property Name="documento_relacionado2" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="documento" Relationship="pimasModel.FK_documento_documento_relacionado" FromRole="documentos_relacionados" ToRole="documento" />
+    <NavigationProperty Name="documento1" Relationship="pimasModel.FK_documento_documento_relacionado1" FromRole="documentos_relacionados" ToRole="documento" />
+    <NavigationProperty Name="documento2" Relationship="pimasModel.FK_documento_documento_relacionado2" FromRole="documentos_relacionados" ToRole="documento" />
+  </EntityType>
+  <EntityType Name="documentos_usuario">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+      <PropertyRef Name="id_documento" />
+    </Key>
+    <Property Name="id_usuario" Type="Int32" Nullable="false" />
+    <Property Name="id_documento" Type="Int32" Nullable="false" />
+    <Property Name="fecha_vencimiento" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="documento" Relationship="pimasModel.FK_documento_usuario" FromRole="documentos_usuario" ToRole="documento" />
+    <NavigationProperty Name="usuario" Relationship="pimasModel.FK_usuario_documento" FromRole="documentos_usuario" ToRole="usuario" />
+  </EntityType>
+  <EntityType Name="transaccione">
+    <Key>
+      <PropertyRef Name="id_transaccion" />
+    </Key>
+    <Property Name="id_transaccion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_usuario" Type="Int32" Nullable="false" />
+    <Property Name="transaccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="especificacion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="fecha" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="usuario" Relationship="pimasModel.FK_usuario_transaccion" FromRole="transaccione" ToRole="usuario" />
+  </EntityType>
+  <Association Name="FK_documento_documento_relacionado">
+    <End Type="pimasModel.documento" Role="documento" Multiplicity="1" />
+    <End Type="pimasModel.documentos_relacionados" Role="documentos_relacionados" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="documento">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="documentos_relacionados">
+        <PropertyRef Name="id_documento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_documento_documento_relacionado1">
+    <End Type="pimasModel.documento" Role="documento" Multiplicity="1" />
+    <End Type="pimasModel.documentos_relacionados" Role="documentos_relacionados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="documento">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="documentos_relacionados">
+        <PropertyRef Name="documento_relacionado1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_documento_documento_relacionado2">
+    <End Type="pimasModel.documento" Role="documento" Multiplicity="1" />
+    <End Type="pimasModel.documentos_relacionados" Role="documentos_relacionados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="documento">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="documentos_relacionados">
+        <PropertyRef Name="documento_relacionado2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_documento_usuario">
+    <End Type="pimasModel.documento" Role="documento" Multiplicity="1" />
+    <End Type="pimasModel.documentos_usuario" Role="documentos_usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="documento">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="documentos_usuario">
+        <PropertyRef Name="id_documento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_usuario_documento">
+    <End Type="pimasModel.usuario" Role="usuario" Multiplicity="1" />
+    <End Type="pimasModel.documentos_usuario" Role="documentos_usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="documentos_usuario">
+        <PropertyRef Name="id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_usuario_transaccion">
+    <End Type="pimasModel.usuario" Role="usuario" Multiplicity="1" />
+    <End Type="pimasModel.transaccione" Role="transaccione" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="transaccione">
+        <PropertyRef Name="id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityType Name="articulo">
     <Key>
       <PropertyRef Name="id" />
@@ -838,19 +981,54 @@
     <Property Name="precio2" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
     <Property Name="precio3" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
     <Property Name="url_imagen" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-    <Property Name="id_categoria" Type="Int32" />
+    <Property Name="id_categoria" Type="Int32" Nullable="false" />
+    <Property Name="id_estado_articulo" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="estado_articulo" Relationship="pimasModel.FK_articulo_estado_articulo" FromRole="articulo" ToRole="estado_articulo" />
     <NavigationProperty Name="categoria_articulo" Relationship="pimasModel.FK_articulos_categoria_articulo" FromRole="articulo" ToRole="categoria_articulo" />
-    <Property Name="id_estado_articulo" Type="Int32" />
-    <NavigationProperty Name="estado_articulo" Relationship="pimasModel.FK_articulos_estado_articulo" FromRole="articulo" ToRole="estado_articulo" />
     <NavigationProperty Name="carritoes" Relationship="pimasModel.FK_carrito_articulo" FromRole="articulo" ToRole="carrito" />
     <NavigationProperty Name="ventas_articulos" Relationship="pimasModel.FK_ventas_articulos_articulos" FromRole="articulo" ToRole="ventas_articulos" />
+  </EntityType>
+  <EntityType Name="carrito">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+      <PropertyRef Name="id_articulo" />
+    </Key>
+    <Property Name="id_usuario" Type="Int32" Nullable="false" />
+    <Property Name="id_articulo" Type="Int32" Nullable="false" />
+    <Property Name="cantidad" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="usuario" Relationship="pimasModel.FK_carrito_usuario" FromRole="carrito" ToRole="usuario" />
+    <NavigationProperty Name="articulo" Relationship="pimasModel.FK_carrito_articulo" FromRole="carrito" ToRole="articulo" />
+  </EntityType>
+  <EntityType Name="categoria_articulo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="articuloes" Relationship="pimasModel.FK_articulos_categoria_articulo" FromRole="categoria_articulo" ToRole="articulo" />
+  </EntityType>
+  <EntityType Name="estado_articulo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="articuloes" Relationship="pimasModel.FK_articulo_estado_articulo" FromRole="estado_articulo" ToRole="articulo" />
+  </EntityType>
+  <EntityType Name="estado_venta">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ventas" Relationship="pimasModel.FK_ventas_estado_venta" FromRole="estado_venta" ToRole="venta" />
   </EntityType>
   <EntityType Name="tipos_pago">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="ventas" Relationship="pimasModel.FK_ventas_tipos_pago" FromRole="tipos_pago" ToRole="venta" />
   </EntityType>
   <EntityType Name="transporte">
@@ -858,8 +1036,8 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="precio" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="precio" Type="Decimal" Precision="18" Scale="2" />
     <NavigationProperty Name="ventas" Relationship="pimasModel.FK_ventas_transporte" FromRole="transporte" ToRole="venta" />
   </EntityType>
   <EntityType Name="venta">
@@ -874,16 +1052,112 @@
     <Property Name="direccion" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
     <Property Name="horario_preferencia" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
     <Property Name="tiempo_estimado" Type="DateTime" Precision="3" />
-    <Property Name="id_transporte" Type="Int32" />
+    <Property Name="id_transporte" Type="Int32" Nullable="false" />
     <Property Name="id_tipo_pago" Type="Int32" Nullable="false" />
     <Property Name="id_usuario" Type="Int32" Nullable="false" />
+    <Property Name="id_estado_venta" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="usuario" Relationship="pimasModel.FK_ventas_usuario" FromRole="venta" ToRole="usuario" />
+    <NavigationProperty Name="estado_venta" Relationship="pimasModel.FK_ventas_estado_venta" FromRole="venta" ToRole="estado_venta" />
     <NavigationProperty Name="tipos_pago" Relationship="pimasModel.FK_ventas_tipos_pago" FromRole="venta" ToRole="tipos_pago" />
     <NavigationProperty Name="transporte" Relationship="pimasModel.FK_ventas_transporte" FromRole="venta" ToRole="transporte" />
-    <NavigationProperty Name="usuario" Relationship="pimasModel.FK_ventas_usuarios" FromRole="venta" ToRole="usuario" />
-    <Property Name="id_estado_venta" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="estado_venta" Relationship="pimasModel.FK_ventas_estado_venta" FromRole="venta" ToRole="estado_venta" />
     <NavigationProperty Name="ventas_articulos" Relationship="pimasModel.FK_ventas_articulos_ventas" FromRole="venta" ToRole="ventas_articulos" />
+    <Property Name="total" Type="Decimal" Precision="18" Scale="2" />
   </EntityType>
+  <EntityType Name="ventas_articulos">
+    <Key>
+      <PropertyRef Name="id_articulo" />
+      <PropertyRef Name="id_venta" />
+    </Key>
+    <Property Name="id_articulo" Type="Int32" Nullable="false" />
+    <Property Name="id_venta" Type="Int32" Nullable="false" />
+    <Property Name="cantidad" Type="Int32" />
+    <NavigationProperty Name="articulo" Relationship="pimasModel.FK_ventas_articulos_articulos" FromRole="ventas_articulos" ToRole="articulo" />
+    <NavigationProperty Name="venta" Relationship="pimasModel.FK_ventas_articulos_ventas" FromRole="ventas_articulos" ToRole="venta" />
+  </EntityType>
+  <Association Name="FK_carrito_usuario">
+    <End Type="pimasModel.usuario" Role="usuario" Multiplicity="1" />
+    <End Type="pimasModel.carrito" Role="carrito" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="carrito">
+        <PropertyRef Name="id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ventas_usuario">
+    <End Type="pimasModel.usuario" Role="usuario" Multiplicity="1" />
+    <End Type="pimasModel.venta" Role="venta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="venta">
+        <PropertyRef Name="id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_articulo_estado_articulo">
+    <End Type="pimasModel.estado_articulo" Role="estado_articulo" Multiplicity="1" />
+    <End Type="pimasModel.articulo" Role="articulo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="estado_articulo">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="articulo">
+        <PropertyRef Name="id_estado_articulo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_articulos_categoria_articulo">
+    <End Type="pimasModel.categoria_articulo" Role="categoria_articulo" Multiplicity="1" />
+    <End Type="pimasModel.articulo" Role="articulo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="categoria_articulo">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="articulo">
+        <PropertyRef Name="id_categoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_carrito_articulo">
+    <End Type="pimasModel.articulo" Role="articulo" Multiplicity="1" />
+    <End Type="pimasModel.carrito" Role="carrito" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="articulo">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="carrito">
+        <PropertyRef Name="id_articulo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ventas_articulos_articulos">
+    <End Type="pimasModel.articulo" Role="articulo" Multiplicity="1" />
+    <End Type="pimasModel.ventas_articulos" Role="ventas_articulos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="articulo">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ventas_articulos">
+        <PropertyRef Name="id_articulo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ventas_estado_venta">
+    <End Type="pimasModel.estado_venta" Role="estado_venta" Multiplicity="1" />
+    <End Type="pimasModel.venta" Role="venta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="estado_venta">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="venta">
+        <PropertyRef Name="id_estado_venta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_ventas_tipos_pago">
     <End Type="pimasModel.tipos_pago" Role="tipos_pago" Multiplicity="1" />
     <End Type="pimasModel.venta" Role="venta" Multiplicity="*" />
@@ -897,7 +1171,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_ventas_transporte">
-    <End Type="pimasModel.transporte" Role="transporte" Multiplicity="0..1" />
+    <End Type="pimasModel.transporte" Role="transporte" Multiplicity="1" />
     <End Type="pimasModel.venta" Role="venta" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="transporte">
@@ -905,136 +1179,6 @@
       </Principal>
       <Dependent Role="venta">
         <PropertyRef Name="id_transporte" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ventas_usuarios">
-    <End Type="pimasModel.usuario" Role="usuario" Multiplicity="1" />
-    <End Type="pimasModel.venta" Role="venta" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="usuario">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="venta">
-        <PropertyRef Name="id_usuario" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="estado_venta">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="ventas" Relationship="pimasModel.FK_ventas_estado_venta" FromRole="estado_venta" ToRole="venta" />
-  </EntityType>
-  <Association Name="FK_ventas_estado_venta">
-    <End Type="pimasModel.estado_venta" Role="estado_venta" Multiplicity="1" />
-    <End Type="pimasModel.venta" Role="venta" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="estado_venta">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="venta">
-        <PropertyRef Name="id_estado_venta" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="categoria_articulo">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="nombre" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="articulos" Relationship="pimasModel.FK_articulos_categoria_articulo" FromRole="categoria_articulo" ToRole="articulo" />
-  </EntityType>
-  <Association Name="FK_articulos_categoria_articulo">
-    <End Type="pimasModel.categoria_articulo" Role="categoria_articulo" Multiplicity="0..1" />
-    <End Type="pimasModel.articulo" Role="articulo" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="categoria_articulo">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="articulo">
-        <PropertyRef Name="id_categoria" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="estado_articulo">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="nombre" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="articulos" Relationship="pimasModel.FK_articulos_estado_articulo" FromRole="estado_articulo" ToRole="articulo" />
-  </EntityType>
-  <Association Name="FK_articulos_estado_articulo">
-    <End Type="pimasModel.estado_articulo" Role="estado_articulo" Multiplicity="0..1" />
-    <End Type="pimasModel.articulo" Role="articulo" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="estado_articulo">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="articulo">
-        <PropertyRef Name="id_estado_articulo" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="carrito">
-    <Key>
-      <PropertyRef Name="id_usuario" />
-      <PropertyRef Name="id_articulo" />
-    </Key>
-    <Property Name="id_usuario" Type="Int32" Nullable="false" />
-    <Property Name="id_articulo" Type="Int32" Nullable="false" />
-    <Property Name="cantidad" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="articulo" Relationship="pimasModel.FK_carrito_articulo" FromRole="carrito" ToRole="articulo" />
-    <NavigationProperty Name="usuario" Relationship="pimasModel.FK_carrito_usuario" FromRole="carrito" ToRole="usuario" />
-  </EntityType>
-  <Association Name="FK_carrito_articulo">
-    <End Type="pimasModel.articulo" Role="articulo" Multiplicity="1" />
-    <End Type="pimasModel.carrito" Role="carrito" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="articulo">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="carrito">
-        <PropertyRef Name="id_articulo" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_carrito_usuario">
-    <End Type="pimasModel.usuario" Role="usuario" Multiplicity="1" />
-    <End Type="pimasModel.carrito" Role="carrito" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="usuario">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="carrito">
-        <PropertyRef Name="id_usuario" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="ventas_articulos">
-    <Key>
-      <PropertyRef Name="id_articulo" />
-      <PropertyRef Name="id_venta" />
-    </Key>
-    <Property Name="id_articulo" Type="Int32" Nullable="false" />
-    <Property Name="id_venta" Type="Int32" Nullable="false" />
-    <Property Name="cantidad" Type="Int32" />
-    <NavigationProperty Name="articulo" Relationship="pimasModel.FK_ventas_articulos_articulos" FromRole="ventas_articulos" ToRole="articulo" />
-    <NavigationProperty Name="venta" Relationship="pimasModel.FK_ventas_articulos_ventas" FromRole="ventas_articulos" ToRole="venta" />
-  </EntityType>
-  <Association Name="FK_ventas_articulos_articulos">
-    <End Type="pimasModel.articulo" Role="articulo" Multiplicity="1" />
-    <End Type="pimasModel.ventas_articulos" Role="ventas_articulos" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="articulo">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="ventas_articulos">
-        <PropertyRef Name="id_articulo" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

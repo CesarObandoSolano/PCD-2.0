@@ -22,7 +22,7 @@ namespace Plataforma.Areas.PCD.Models
     
         public int id { get; set; }
         public string nombre { get; set; }
-        public decimal precio { get; set; }
+        public Nullable<decimal> precio { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<venta> ventas { get; set; }

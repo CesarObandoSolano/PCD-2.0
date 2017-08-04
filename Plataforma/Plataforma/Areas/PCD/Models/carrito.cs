@@ -18,7 +18,7 @@ namespace Plataforma.Areas.PCD.Models
         public int id_articulo { get; set; }
         public int cantidad { get; set; }
     
-        public virtual articulo articulo { get; set; }
         public virtual usuario usuario { get; set; }
+        public virtual articulo articulo { get; set; }
     }
 }

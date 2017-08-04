@@ -48,11 +48,18 @@ namespace Plataforma.Areas.PCD.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "id,nombre")] estado_articulo estado_articulo)
         {
-            if (ModelState.IsValid)
+            if (Session["usuario"] != null)
             {
-                db.estado_articulo.Add(estado_articulo);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                usuario usuarioSesion = (usuario)HttpContext.Session["usuario"];
+                if (usuarioSesion.roles.FirstOrDefault().rol.Equals(Constantes.ADMINISTRADOR))
+                {
+                    if (ModelState.IsValid)
+                    {
+                        db.estado_articulo.Add(estado_articulo);
+                        db.SaveChanges();
+                        return RedirectToAction("Index");
+                    }
+                }
             }
 
             return View(estado_articulo);
@@ -80,11 +87,18 @@ namespace Plataforma.Areas.PCD.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "id,nombre")] estado_articulo estado_articulo)
         {
-            if (ModelState.IsValid)
+            if (Session["usuario"] != null)
             {
-                db.Entry(estado_articulo).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                usuario usuarioSesion = (usuario)HttpContext.Session["usuario"];
+                if (usuarioSesion.roles.FirstOrDefault().rol.Equals(Constantes.ADMINISTRADOR))
+                {
+                    if (ModelState.IsValid)
+                    {
+                        db.Entry(estado_articulo).State = EntityState.Modified;
+                        db.SaveChanges();
+                        return RedirectToAction("Index");
+                    }
+                }
             }
             return View(estado_articulo);
         }
@@ -109,9 +123,16 @@ namespace Plataforma.Areas.PCD.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            estado_articulo estado_articulo = db.estado_articulo.Find(id);
-            db.estado_articulo.Remove(estado_articulo);
-            db.SaveChanges();
+            if (Session["usuario"] != null)
+            {
+                usuario usuarioSesion = (usuario)HttpContext.Session["usuario"];
+                if (usuarioSesion.roles.FirstOrDefault().rol.Equals(Constantes.ADMINISTRADOR))
+                {
+                    estado_articulo estado_articulo = db.estado_articulo.Find(id);
+                    db.estado_articulo.Remove(estado_articulo);
+                    db.SaveChanges();
+                }
+            }
             return RedirectToAction("Index");
         }
 

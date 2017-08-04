@@ -49,14 +49,17 @@ namespace Plataforma.Areas.PCD.Models
         public virtual DbSet<tipo_documento> tipo_documento { get; set; }
         public virtual DbSet<unidade> unidades { get; set; }
         public virtual DbSet<usuario> usuarios { get; set; }
+        public virtual DbSet<documentos_relacionados> documentos_relacionados { get; set; }
+        public virtual DbSet<documentos_usuario> documentos_usuario { get; set; }
+        public virtual DbSet<transaccione> transacciones { get; set; }
         public virtual DbSet<articulo> articulos { get; set; }
+        public virtual DbSet<carrito> carrito { get; set; }
+        public virtual DbSet<categoria_articulo> categoria_articulo { get; set; }
+        public virtual DbSet<estado_articulo> estado_articulo { get; set; }
+        public virtual DbSet<estado_venta> estado_venta { get; set; }
         public virtual DbSet<tipos_pago> tipos_pago { get; set; }
         public virtual DbSet<transporte> transportes { get; set; }
         public virtual DbSet<venta> ventas { get; set; }
-        public virtual DbSet<estado_venta> estado_venta { get; set; }
-        public virtual DbSet<categoria_articulo> categoria_articulo { get; set; }
-        public virtual DbSet<estado_articulo> estado_articulo { get; set; }
-        public virtual DbSet<carrito> carrito { get; set; }
         public virtual DbSet<ventas_articulos> ventas_articulos { get; set; }
     }
 }

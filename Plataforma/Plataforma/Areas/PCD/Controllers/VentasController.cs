@@ -175,7 +175,7 @@ namespace Plataforma.Areas.PCD.Controllers
             base.Dispose(disposing);
         }
         [Authorize]
-        public ActionResult CompraCliente(venta venta)
+        public ActionResult CompraCliente()
         {
             if (Session["usuario"] != null)
             {
@@ -184,25 +184,10 @@ namespace Plataforma.Areas.PCD.Controllers
                 ViewBag.id_usuario = usuarioSesion.id;
                 ViewBag.nombre_usuario = usuarioSesion.nombre + " " + usuarioSesion.apellidos;
                 List<carrito> carrito = db.carrito.Where(c => c.id_usuario == usuarioSesion.id).ToList();
-                List<articulo> articulosCliente = new List<articulo>();
-                if (ModelState.IsValid)
-                {
-                    //Agregar los articulos a la venta
-                    if (carrito != null && carrito.Count != 0)
-                    {
-                        foreach (var carritoTemp in carrito)
-                        {
-                            if (carritoTemp.id_articulo > 0)
-                            {
-                                articulo articuloObj = db.articulos.Find(carritoTemp.id_articulo);
-                                articulosCliente.Add(articuloObj);
-                            }
-                        }
-                    }
-                }
-                ViewBag.id_tipo_pago = new SelectList(db.tipos_pago, "id", "nombre", venta.id_tipo_pago);
-                ViewBag.id_transporte = new SelectList(db.transportes, "id", "nombre", venta.id_transporte);
-                ViewBag.id_articulo = articulosCliente;
+                
+                ViewBag.id_tipo_pago = new SelectList(db.tipos_pago, "id", "nombre");
+                ViewBag.id_transporte = new SelectList(db.transportes, "id", "nombre");
+                ViewBag.carrito = carrito;
             }
             return View();
         }
@@ -210,47 +195,56 @@ namespace Plataforma.Areas.PCD.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CompraCliente([Bind(Include = "id,nombre_comprador,nombre_receptor,numero_comprador,numero_receptor,direccion,horario_preferencia,tiempo_estimado,id_transporte,id_tipo_pago,id_usuario, id_estado_venta")] venta venta, List<int> articulosCliente)
+        public ActionResult CompraCliente([Bind(Include = "id,nombre_comprador,nombre_receptor,numero_comprador,numero_receptor,direccion,horario_preferencia,tiempo_estimado,id_transporte,id_tipo_pago,id_usuario, id_estado_venta")] venta venta)
         {
             if (Session["usuario"] != null)
             {
                 usuario usuarioSesion = (usuario)HttpContext.Session["usuario"];
-
+                List<carrito> carrito = db.carrito.Where(c => c.id_usuario == usuarioSesion.id).ToList();
 
                 if (ModelState.IsValid)
                 {
-                    //Agregar los articulos a la venta
-                    if (articulosCliente != null && articulosCliente.Count != 0)
-                    {
-                        
-                        foreach (int articuloTemp in articulosCliente)
-                        {
-                            if (articuloTemp > 0)
-                            {
-                                articulo articuloObj = db.articulos.Find(articuloTemp);//El articulo que viene en la lista
-                                ventas_articulos articuloVenta = new ventas_articulos();//Se crea el objeto articuloVenta para guardar el id del articulo, el id del usuario y la cantidad de dicho articulo
-                                carrito carrito = db.carrito.Where(c => c.id_usuario == usuarioSesion.id && c.id_articulo == articuloObj.id).First();//Se busca el articulo y el usuario al que pertenece el articulo para extraer la cantidad
-                                articuloVenta.articulo = articuloObj;//Se agrega el articulo a la venta
-                                articuloVenta.venta = venta;//Se agrega la venta a la venta articulos
-                                articuloVenta.cantidad = carrito.cantidad;//Se toma la cantidad del articulo del carrito de compras
-                                venta.ventas_articulos.Add(articuloVenta);
-                            }
-                        }
-                    }
+                    
                     venta.id_estado_venta = 1;
                     string s = "2017-01-01";
                     DateTime dt = DateTime.Parse(s);
                     venta.tiempo_estimado = dt;
+                    venta.total = 0;
 
+
+                    for (int i = carrito.Count-1; i >= 0; i--)
+                    {
+                        ventas_articulos ventaTemp = new ventas_articulos();
+                        ventaTemp.id_articulo = carrito[i].id_articulo;
+                        ventaTemp.id_venta = venta.id;
+                        ventaTemp.cantidad = carrito[i].cantidad;
+
+                        if (usuarioSesion.categoria_precio == null || usuarioSesion.categoria_precio == 1)
+                        {
+                            venta.total += carrito[i].cantidad * carrito[i].articulo.precio1;
+                        }
+                        else if(usuarioSesion.categoria_precio == 2)
+                        {
+                            venta.total += carrito[i].cantidad * carrito[i].articulo.precio2;
+                        }
+                        else if(usuarioSesion.categoria_precio == 3)
+                        {
+                            venta.total += carrito[i].cantidad * carrito[i].articulo.precio3;
+                        }
+
+                        db.ventas_articulos.Add(ventaTemp);
+                        db.carrito.Remove(carrito[i]);
+                    }
                     db.ventas.Add(venta);
+                    
                     db.SaveChanges();
-                    //return RedirectToAction("Index");                  
+                    return RedirectToAction("Index");
                 }
                 ViewBag.id_usuario = usuarioSesion.id;
                 ViewBag.nombre_usuario = usuarioSesion.nombre + " " + usuarioSesion.apellidos;
                 ViewBag.id_tipo_pago = new SelectList(db.tipos_pago, "id", "nombre", venta.id_tipo_pago);
                 ViewBag.id_transporte = new SelectList(db.transportes, "id", "nombre", venta.id_transporte);
-                //ViewBag.id_articulo = articulosCliente;
+                ViewBag.carrito = carrito;
             }
             return View();
         }

@@ -30,8 +30,10 @@ namespace Plataforma.Areas.PCD.Models
             this.permisos = new HashSet<permiso>();
             this.roles = new HashSet<role>();
             this.grupos = new HashSet<grupos>();
-            this.ventas = new HashSet<venta>();
+            this.documentos_usuario = new HashSet<documentos_usuario>();
+            this.transacciones = new HashSet<transaccione>();
             this.carritoes = new HashSet<carrito>();
+            this.ventas = new HashSet<venta>();
         }
     
         public int id { get; set; }
@@ -48,6 +50,8 @@ namespace Plataforma.Areas.PCD.Models
         public Nullable<bool> bloqueado { get; set; }
         public Nullable<bool> logueado { get; set; }
         public Nullable<System.DateTime> fecha_vencimiento { get; set; }
+        public Nullable<int> categoria_precio { get; set; }
+        public Nullable<decimal> saldo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<comentario> comentarios { get; set; }
@@ -77,8 +81,12 @@ namespace Plataforma.Areas.PCD.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<grupos> grupos { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<venta> ventas { get; set; }
+        public virtual ICollection<documentos_usuario> documentos_usuario { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<transaccione> transacciones { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<carrito> carritoes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<venta> ventas { get; set; }
     }
 }

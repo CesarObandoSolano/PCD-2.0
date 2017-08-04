@@ -101,7 +101,28 @@
                     @Html.DisplayFor(modelItem => item.articulo.detalle)
                 </td>
                 <td>
-                    @{var precioCantidad = item.articulo.precio1 * item.cantidad;<p id="precioArticulo-@item.id_articulo" class="precio">@precioCantidad</p>}
+                    @{if (Session["usuario"] != null)
+                        {
+                            var usuario = (Plataforma.Areas.PCD.Models.usuario)Session["usuario"];
+
+                            if (usuario.categoria_precio == null || usuario.categoria_precio == 1)
+                            {
+                                var precioCantidad = item.articulo.precio1 * item.cantidad;
+                                <p id="precioArticulo-@item.id_articulo" class="precio">@precioCantidad</p>
+                            }                           
+                            else if (usuario.categoria_precio == 2)
+                            {
+                                var precioCantidad = item.articulo.precio2 * item.cantidad;
+                                <p id="precioArticulo-@item.id_articulo" class="precio">@precioCantidad</p>
+                            }                       
+                            else if (usuario.categoria_precio == 3)
+                            {
+                                var precioCantidad = item.articulo.precio3 * item.cantidad;
+                                <p id="precioArticulo-@item.id_articulo" class="precio">@precioCantidad</p>
+                            }
+                        }
+                    }
+                        
                 </td>
                 <td>
                     @Html.EditorFor(modelItem => item.cantidad, new { htmlAttributes = new { @id = "cantidadArticulos-" + item.id_articulo, @min = "1", @class = "form-control", onchange = "modificacionCantidadArticulos(" + item.articulo.precio1 + "," + item.id_articulo +")" } })

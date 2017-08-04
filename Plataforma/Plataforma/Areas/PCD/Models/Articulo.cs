@@ -28,11 +28,11 @@ namespace Plataforma.Areas.PCD.Models
         public decimal precio2 { get; set; }
         public decimal precio3 { get; set; }
         public string url_imagen { get; set; }
-        public Nullable<int> id_categoria { get; set; }
-        public Nullable<int> id_estado_articulo { get; set; }
+        public int id_categoria { get; set; }
+        public int id_estado_articulo { get; set; }
     
-        public virtual categoria_articulo categoria_articulo { get; set; }
         public virtual estado_articulo estado_articulo { get; set; }
+        public virtual categoria_articulo categoria_articulo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<carrito> carritoes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

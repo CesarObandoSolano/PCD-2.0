@@ -28,15 +28,16 @@ namespace Plataforma.Areas.PCD.Models
         public string direccion { get; set; }
         public string horario_preferencia { get; set; }
         public Nullable<System.DateTime> tiempo_estimado { get; set; }
-        public Nullable<int> id_transporte { get; set; }
+        public int id_transporte { get; set; }
         public int id_tipo_pago { get; set; }
         public int id_usuario { get; set; }
         public int id_estado_venta { get; set; }
+        public Nullable<decimal> total { get; set; }
     
-        public virtual tipos_pago tipos_pago { get; set; }
-        public virtual transporte transporte { get; set; }
         public virtual usuario usuario { get; set; }
         public virtual estado_venta estado_venta { get; set; }
+        public virtual tipos_pago tipos_pago { get; set; }
+        public virtual transporte transporte { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ventas_articulos> ventas_articulos { get; set; }
     }

@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Plataforma.Areas.PCD.Models;
 using System.IO;
+using Plataforma.App_Start;
 
 namespace Plataforma.Areas.PCD.Controllers
 {
@@ -91,23 +92,30 @@ namespace Plataforma.Areas.PCD.Controllers
         public ActionResult Create([Bind(Include = "id,nombre,detalle,precio1,precio2,precio3,url_imagen,id_categoria, id_estado_articulo")] articulo articulo, 
             HttpPostedFileBase file)
         {
-            if (ModelState.IsValid)
+            if (Session["usuario"] != null)
             {
-                if (file.ContentLength > 0)
+                usuario usuarioSesion = (usuario)HttpContext.Session["usuario"];
+                if (usuarioSesion.roles.FirstOrDefault().rol.Equals(Constantes.ADMINISTRADOR))
                 {
-                    string ruta = Path.Combine(Request.PhysicalApplicationPath, "Recursos", "Articulos","" + articulo.id_categoria);
-                    string archivo = Path.GetFileName(file.FileName);
-                    string ruta_final = Path.Combine(ruta, archivo);
-                    articulo.url_imagen = ruta_final;
-                    if (!Directory.Exists(ruta))
+                    if (ModelState.IsValid)
                     {
-                        Directory.CreateDirectory(ruta);
+                        if (file.ContentLength > 0)
+                        {
+                            string ruta = Path.Combine(Request.PhysicalApplicationPath, "Recursos", "Articulos", "" + articulo.id_categoria);
+                            string archivo = Path.GetFileName(file.FileName);
+                            string ruta_final = Path.Combine(ruta, archivo);
+                            articulo.url_imagen = ruta_final;
+                            if (!Directory.Exists(ruta))
+                            {
+                                Directory.CreateDirectory(ruta);
+                            }
+                            file.SaveAs(ruta_final);
+                        }
+                        db.articulos.Add(articulo);
+                        db.SaveChanges();
+                        return RedirectToAction("Index");
                     }
-                    file.SaveAs(ruta_final);
                 }
-                db.articulos.Add(articulo);
-                db.SaveChanges();
-                return RedirectToAction("Index");
             }
             //ViewBag.id_categoria = new SelectList(db.categoria_articulo, "id", "nombre", articulo.id_categoria);
             return View(articulo);
@@ -137,49 +145,56 @@ namespace Plataforma.Areas.PCD.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "id,nombre,detalle,precio1,precio2,precio3, url_imagen, id_categoria, id_estado_articulo")] articulo articulo, HttpPostedFileBase file, int categoriaAnterior)
         {
-            if (ModelState.IsValid)
+            if (Session["usuario"] != null)
             {
-                db.Entry(articulo).State = EntityState.Modified;
-                if (file != null)
+                usuario usuarioSesion = (usuario)HttpContext.Session["usuario"];
+                if (usuarioSesion.roles.FirstOrDefault().rol.Equals(Constantes.ADMINISTRADOR))
                 {
-                    try
+                    if (ModelState.IsValid)
                     {
-                        System.IO.File.Delete(articulo.url_imagen);
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex.Message);
-                    }
-                    string ruta = Path.Combine(Request.PhysicalApplicationPath, "Recursos", "Articulos", "" + articulo.id_categoria);
-                    string archivo = Path.GetFileName(file.FileName);
-                    string ruta_final = Path.Combine(ruta, archivo);
-                    articulo.url_imagen = ruta_final;
-                    if (!Directory.Exists(ruta))
-                    {
-                        Directory.CreateDirectory(ruta);
-                    }
-                    file.SaveAs(ruta_final);
-                }
-                else if (categoriaAnterior != 0)
-                {
-                    if (categoriaAnterior != articulo.id_categoria)
-                    {
-                        string ruta = Path.Combine(Request.PhysicalApplicationPath, "Recursos", "Articulos", "" + articulo.id_categoria);
-                        string archivo = Path.GetFileName(articulo.url_imagen);
-                        string ruta_final = Path.Combine(ruta, archivo);
-                        try
+                        db.Entry(articulo).State = EntityState.Modified;
+                        if (file != null)
                         {
-                            System.IO.File.Move(articulo.url_imagen, ruta_final);
+                            try
+                            {
+                                System.IO.File.Delete(articulo.url_imagen);
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine(ex.Message);
+                            }
+                            string ruta = Path.Combine(Request.PhysicalApplicationPath, "Recursos", "Articulos", "" + articulo.id_categoria);
+                            string archivo = Path.GetFileName(file.FileName);
+                            string ruta_final = Path.Combine(ruta, archivo);
                             articulo.url_imagen = ruta_final;
+                            if (!Directory.Exists(ruta))
+                            {
+                                Directory.CreateDirectory(ruta);
+                            }
+                            file.SaveAs(ruta_final);
                         }
-                        catch (Exception ex)
+                        else if (categoriaAnterior != 0)
                         {
-                            Console.WriteLine(ex.Message);
+                            if (categoriaAnterior != articulo.id_categoria)
+                            {
+                                string ruta = Path.Combine(Request.PhysicalApplicationPath, "Recursos", "Articulos", "" + articulo.id_categoria);
+                                string archivo = Path.GetFileName(articulo.url_imagen);
+                                string ruta_final = Path.Combine(ruta, archivo);
+                                try
+                                {
+                                    System.IO.File.Move(articulo.url_imagen, ruta_final);
+                                    articulo.url_imagen = ruta_final;
+                                }
+                                catch (Exception ex)
+                                {
+                                    Console.WriteLine(ex.Message);
+                                }
+                            }
                         }
+                        db.SaveChanges();
+                        return RedirectToAction("Index");
                     }
-                }              
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                }
             }
             ViewBag.id_categoria = new SelectList(db.categoria_articulo, "id", "nombre", articulo.id_categoria);
             ViewBag.id_estado_articulo = new SelectList(db.estado_articulo, "id", "nombre");
@@ -206,9 +221,16 @@ namespace Plataforma.Areas.PCD.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            articulo articulo = db.articulos.Find(id);
-            db.articulos.Remove(articulo);
-            db.SaveChanges();
+            if (Session["usuario"] != null)
+            {
+                usuario usuarioSesion = (usuario)HttpContext.Session["usuario"];
+                if (usuarioSesion.roles.FirstOrDefault().rol.Equals(Constantes.ADMINISTRADOR))
+                {
+                    articulo articulo = db.articulos.Find(id);
+                    db.articulos.Remove(articulo);
+                    db.SaveChanges();
+                }
+            }
             return RedirectToAction("Index");
         }
 

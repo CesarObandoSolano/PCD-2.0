@@ -11,36 +11,6 @@
     <Property Name="password" Type="varchar" MaxLength="30" Nullable="false" />
     <Property Name="correo" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
-  <EntityType Name="articulos">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="nombre" Type="varchar" MaxLength="150" Nullable="false" />
-    <Property Name="detalle" Type="varchar" MaxLength="255" />
-    <Property Name="precio1" Type="numeric" Precision="18" Scale="2" Nullable="false" />
-    <Property Name="precio2" Type="numeric" Precision="18" Scale="2" Nullable="false" />
-    <Property Name="precio3" Type="numeric" Precision="18" Scale="2" Nullable="false" />
-    <Property Name="url_imagen" Type="varchar" MaxLength="255" />
-    <Property Name="id_categoria" Type="int" />
-    <Property Name="id_estado_articulo" Type="int" />
-  </EntityType>
-  <EntityType Name="carrito">
-    <Key>
-      <PropertyRef Name="id_usuario" />
-      <PropertyRef Name="id_articulo" />
-    </Key>
-    <Property Name="id_usuario" Type="int" Nullable="false" />
-    <Property Name="id_articulo" Type="int" Nullable="false" />
-    <Property Name="cantidad" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="categoria_articulo">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="nombre" Type="varchar" MaxLength="80" Nullable="false" />
-  </EntityType>
   <EntityType Name="colegio">
     <Key>
       <PropertyRef Name="id" />
@@ -76,6 +46,7 @@
     </Key>
     <Property Name="id_curso" Type="int" Nullable="false" />
     <Property Name="id_usuario" Type="int" Nullable="false" />
+    <Property Name="fecha_vencimiento" Type="datetime" />
   </EntityType>
   <EntityType Name="cursos">
     <Key>
@@ -111,6 +82,9 @@
     <Property Name="numero_version" Type="int" />
     <Property Name="unidad" Type="int" Nullable="false" />
     <Property Name="capitulo" Type="int" />
+    <Property Name="precio1" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="precio2" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="precio3" Type="decimal" Precision="18" Scale="2" />
   </EntityType>
   <EntityType Name="documentos_curso">
     <Key>
@@ -139,20 +113,6 @@
     <Property Name="url" Type="varchar" MaxLength="255" />
     <Property Name="titulo" Type="varchar" MaxLength="50" />
     <Property Name="visibilidad" Type="bit" />
-  </EntityType>
-  <EntityType Name="estado_articulo">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="nombre" Type="varchar" MaxLength="25" Nullable="false" />
-  </EntityType>
-  <EntityType Name="estado_venta">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="grupos">
     <Key>
@@ -348,21 +308,6 @@
     <Property Name="tipo_documento" Type="varchar" MaxLength="30" />
     <Property Name="icono" Type="varchar" MaxLength="255" />
   </EntityType>
-  <EntityType Name="tipos_pago">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
-  </EntityType>
-  <EntityType Name="transporte">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="precio" Type="numeric" Precision="18" Scale="2" Nullable="false" />
-  </EntityType>
   <EntityType Name="unidades">
     <Key>
       <PropertyRef Name="id" />
@@ -388,6 +333,8 @@
     <Property Name="fecha_vencimiento" Type="datetime" />
     <Property Name="bloqueado" Type="bit" />
     <Property Name="logueado" Type="bit" />
+    <Property Name="categoria_precio" Type="int" />
+    <Property Name="saldo" Type="decimal" Precision="18" Scale="2" />
   </EntityType>
   <EntityType Name="usuarios_grupo">
     <Key>
@@ -396,6 +343,92 @@
     </Key>
     <Property Name="id_grupo" Type="int" Nullable="false" />
     <Property Name="id_usuario" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="articulo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="detalle" Type="varchar" MaxLength="255" />
+    <Property Name="precio1" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="precio2" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="precio3" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="url_imagen" Type="varchar" MaxLength="255" />
+    <Property Name="id_categoria" Type="int" Nullable="false" />
+    <Property Name="id_estado_articulo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="carrito">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+      <PropertyRef Name="id_articulo" />
+    </Key>
+    <Property Name="id_usuario" Type="int" Nullable="false" />
+    <Property Name="id_articulo" Type="int" Nullable="false" />
+    <Property Name="cantidad" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="categoria_articulo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="80" />
+  </EntityType>
+  <EntityType Name="documentos_relacionados">
+    <Key>
+      <PropertyRef Name="id_documento" />
+    </Key>
+    <Property Name="id_documento" Type="int" Nullable="false" />
+    <Property Name="documento_relacionado1" Type="int" Nullable="false" />
+    <Property Name="documento_relacionado2" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="documentos_usuario">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+      <PropertyRef Name="id_documento" />
+    </Key>
+    <Property Name="id_usuario" Type="int" Nullable="false" />
+    <Property Name="id_documento" Type="int" Nullable="false" />
+    <Property Name="fecha_vencimiento" Type="datetime" />
+  </EntityType>
+  <EntityType Name="estado_articulo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="estado_venta">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tipos_pago">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="transacciones">
+    <Key>
+      <PropertyRef Name="id_transaccion" />
+    </Key>
+    <Property Name="id_transaccion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_usuario" Type="int" Nullable="false" />
+    <Property Name="transaccion" Type="varchar" MaxLength="50" />
+    <Property Name="especificacion" Type="varchar" MaxLength="255" />
+    <Property Name="fecha" Type="datetime" />
+  </EntityType>
+  <EntityType Name="transporte">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" />
+    <Property Name="precio" Type="numeric" Precision="18" Scale="2" />
   </EntityType>
   <EntityType Name="ventas">
     <Key>
@@ -409,10 +442,11 @@
     <Property Name="direccion" Type="varchar" MaxLength="255" Nullable="false" />
     <Property Name="horario_preferencia" Type="varchar" MaxLength="255" Nullable="false" />
     <Property Name="tiempo_estimado" Type="datetime" />
-    <Property Name="id_transporte" Type="int" />
+    <Property Name="id_transporte" Type="int" Nullable="false" />
     <Property Name="id_tipo_pago" Type="int" Nullable="false" />
     <Property Name="id_usuario" Type="int" Nullable="false" />
     <Property Name="id_estado_venta" Type="int" Nullable="false" />
+    <Property Name="total" Type="numeric" Precision="18" Scale="2" />
   </EntityType>
   <EntityType Name="ventas_articulos">
     <Key>
@@ -423,35 +457,35 @@
     <Property Name="id_venta" Type="int" Nullable="false" />
     <Property Name="cantidad" Type="int" />
   </EntityType>
-  <Association Name="FK_articulos_categoria_articulo">
-    <End Role="categoria_articulo" Type="Self.categoria_articulo" Multiplicity="0..1" />
-    <End Role="articulos" Type="Self.articulos" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="categoria_articulo">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="articulos">
-        <PropertyRef Name="id_categoria" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_articulos_estado_articulo">
-    <End Role="estado_articulo" Type="Self.estado_articulo" Multiplicity="0..1" />
-    <End Role="articulos" Type="Self.articulos" Multiplicity="*" />
+  <Association Name="FK_articulo_estado_articulo">
+    <End Role="estado_articulo" Type="Self.estado_articulo" Multiplicity="1" />
+    <End Role="articulo" Type="Self.articulo" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="estado_articulo">
         <PropertyRef Name="id" />
       </Principal>
-      <Dependent Role="articulos">
+      <Dependent Role="articulo">
         <PropertyRef Name="id_estado_articulo" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_articulos_categoria_articulo">
+    <End Role="categoria_articulo" Type="Self.categoria_articulo" Multiplicity="1" />
+    <End Role="articulo" Type="Self.articulo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="categoria_articulo">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="articulo">
+        <PropertyRef Name="id_categoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_carrito_articulo">
-    <End Role="articulos" Type="Self.articulos" Multiplicity="1" />
+    <End Role="articulo" Type="Self.articulo" Multiplicity="1" />
     <End Role="carrito" Type="Self.carrito" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="articulos">
+      <Principal Role="articulo">
         <PropertyRef Name="id" />
       </Principal>
       <Dependent Role="carrito">
@@ -607,6 +641,42 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_documento_documento_relacionado">
+    <End Role="documentos" Type="Self.documentos" Multiplicity="1" />
+    <End Role="documentos_relacionados" Type="Self.documentos_relacionados" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="documentos">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="documentos_relacionados">
+        <PropertyRef Name="id_documento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_documento_documento_relacionado1">
+    <End Role="documentos" Type="Self.documentos" Multiplicity="1" />
+    <End Role="documentos_relacionados" Type="Self.documentos_relacionados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="documentos">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="documentos_relacionados">
+        <PropertyRef Name="documento_relacionado1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_documento_documento_relacionado2">
+    <End Role="documentos" Type="Self.documentos" Multiplicity="1" />
+    <End Role="documentos_relacionados" Type="Self.documentos_relacionados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="documentos">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="documentos_relacionados">
+        <PropertyRef Name="documento_relacionado2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_documento_profesor">
     <End Role="usuarios" Type="Self.usuarios" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -642,6 +712,18 @@
       </Principal>
       <Dependent Role="documentos">
         <PropertyRef Name="unidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_documento_usuario">
+    <End Role="documentos" Type="Self.documentos" Multiplicity="1" />
+    <End Role="documentos_usuario" Type="Self.documentos_usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="documentos">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="documentos_usuario">
+        <PropertyRef Name="id_documento" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -763,11 +845,35 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_usuario_documento">
+    <End Role="usuarios" Type="Self.usuarios" Multiplicity="1" />
+    <End Role="documentos_usuario" Type="Self.documentos_usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuarios">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="documentos_usuario">
+        <PropertyRef Name="id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_usuario_transaccion">
+    <End Role="usuarios" Type="Self.usuarios" Multiplicity="1" />
+    <End Role="transacciones" Type="Self.transacciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuarios">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="transacciones">
+        <PropertyRef Name="id_usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_ventas_articulos_articulos">
-    <End Role="articulos" Type="Self.articulos" Multiplicity="1" />
+    <End Role="articulo" Type="Self.articulo" Multiplicity="1" />
     <End Role="ventas_articulos" Type="Self.ventas_articulos" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="articulos">
+      <Principal Role="articulo">
         <PropertyRef Name="id" />
       </Principal>
       <Dependent Role="ventas_articulos">
@@ -812,7 +918,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_ventas_transporte">
-    <End Role="transporte" Type="Self.transporte" Multiplicity="0..1" />
+    <End Role="transporte" Type="Self.transporte" Multiplicity="1" />
     <End Role="ventas" Type="Self.ventas" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="transporte">
@@ -823,7 +929,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_ventas_usuarios">
+  <Association Name="FK_ventas_usuario">
     <End Role="usuarios" Type="Self.usuarios" Multiplicity="1" />
     <End Role="ventas" Type="Self.ventas" Multiplicity="*" />
     <ReferentialConstraint>
@@ -1163,9 +1269,6 @@
   </Association>
   <EntityContainer Name="pimasModelStoreContainer">
     <EntitySet Name="admin" EntityType="Self.admin" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="articulos" EntityType="Self.articulos" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="carrito" EntityType="Self.carrito" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="categoria_articulo" EntityType="Self.categoria_articulo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="colegio" EntityType="Self.colegio" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="colegio_profesores" EntityType="Self.colegio_profesores" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="comentarios" EntityType="Self.comentarios" Schema="dbo" store:Type="Tables" />
@@ -1176,8 +1279,6 @@
     <EntitySet Name="documentos_curso" EntityType="Self.documentos_curso" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="documentos_libro" EntityType="Self.documentos_libro" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="documentos_profe" EntityType="Self.documentos_profe" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="estado_articulo" EntityType="Self.estado_articulo" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="estado_venta" EntityType="Self.estado_venta" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="grupos" EntityType="Self.grupos" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="libros" EntityType="Self.libros" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="libros_colegio" EntityType="Self.libros_colegio" Schema="dbo" store:Type="Tables" />
@@ -1201,23 +1302,31 @@
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tipo_colegio" EntityType="Self.tipo_colegio" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tipo_documento" EntityType="Self.tipo_documento" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="tipos_pago" EntityType="Self.tipos_pago" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="transporte" EntityType="Self.transporte" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="unidades" EntityType="Self.unidades" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="usuarios" EntityType="Self.usuarios" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="usuarios_grupo" EntityType="Self.usuarios_grupo" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ventas" EntityType="Self.ventas" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ventas_articulos" EntityType="Self.ventas_articulos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="articulo" EntityType="Self.articulo" Schema="pcd" store:Type="Tables" />
+    <EntitySet Name="carrito" EntityType="Self.carrito" Schema="pcd" store:Type="Tables" />
+    <EntitySet Name="categoria_articulo" EntityType="Self.categoria_articulo" Schema="pcd" store:Type="Tables" />
+    <EntitySet Name="documentos_relacionados" EntityType="Self.documentos_relacionados" Schema="pcd" store:Type="Tables" />
+    <EntitySet Name="documentos_usuario" EntityType="Self.documentos_usuario" Schema="pcd" store:Type="Tables" />
+    <EntitySet Name="estado_articulo" EntityType="Self.estado_articulo" Schema="pcd" store:Type="Tables" />
+    <EntitySet Name="estado_venta" EntityType="Self.estado_venta" Schema="pcd" store:Type="Tables" />
+    <EntitySet Name="tipos_pago" EntityType="Self.tipos_pago" Schema="pcd" store:Type="Tables" />
+    <EntitySet Name="transacciones" EntityType="Self.transacciones" Schema="pcd" store:Type="Tables" />
+    <EntitySet Name="transporte" EntityType="Self.transporte" Schema="pcd" store:Type="Tables" />
+    <EntitySet Name="ventas" EntityType="Self.ventas" Schema="pcd" store:Type="Tables" />
+    <EntitySet Name="ventas_articulos" EntityType="Self.ventas_articulos" Schema="pcd" store:Type="Tables" />
+    <AssociationSet Name="FK_articulo_estado_articulo" Association="Self.FK_articulo_estado_articulo">
+      <End Role="estado_articulo" EntitySet="estado_articulo" />
+      <End Role="articulo" EntitySet="articulo" />
+    </AssociationSet>
     <AssociationSet Name="FK_articulos_categoria_articulo" Association="Self.FK_articulos_categoria_articulo">
       <End Role="categoria_articulo" EntitySet="categoria_articulo" />
-      <End Role="articulos" EntitySet="articulos" />
-    </AssociationSet>
-    <AssociationSet Name="FK_articulos_estado_articulo" Association="Self.FK_articulos_estado_articulo">
-      <End Role="estado_articulo" EntitySet="estado_articulo" />
-      <End Role="articulos" EntitySet="articulos" />
+      <End Role="articulo" EntitySet="articulo" />
     </AssociationSet>
     <AssociationSet Name="FK_carrito_articulo" Association="Self.FK_carrito_articulo">
-      <End Role="articulos" EntitySet="articulos" />
+      <End Role="articulo" EntitySet="articulo" />
       <End Role="carrito" EntitySet="carrito" />
     </AssociationSet>
     <AssociationSet Name="FK_carrito_usuario" Association="Self.FK_carrito_usuario">
@@ -1264,6 +1373,18 @@
       <End Role="usuarios" EntitySet="usuarios" />
       <End Role="log_visitas_cursousuario" EntitySet="log_visitas_cursousuario" />
     </AssociationSet>
+    <AssociationSet Name="FK_documento_documento_relacionado" Association="Self.FK_documento_documento_relacionado">
+      <End Role="documentos" EntitySet="documentos" />
+      <End Role="documentos_relacionados" EntitySet="documentos_relacionados" />
+    </AssociationSet>
+    <AssociationSet Name="FK_documento_documento_relacionado1" Association="Self.FK_documento_documento_relacionado1">
+      <End Role="documentos" EntitySet="documentos" />
+      <End Role="documentos_relacionados" EntitySet="documentos_relacionados" />
+    </AssociationSet>
+    <AssociationSet Name="FK_documento_documento_relacionado2" Association="Self.FK_documento_documento_relacionado2">
+      <End Role="documentos" EntitySet="documentos" />
+      <End Role="documentos_relacionados" EntitySet="documentos_relacionados" />
+    </AssociationSet>
     <AssociationSet Name="FK_documento_profesor" Association="Self.FK_documento_profesor">
       <End Role="usuarios" EntitySet="usuarios" />
       <End Role="documentos_profe" EntitySet="documentos_profe" />
@@ -1275,6 +1396,10 @@
     <AssociationSet Name="FK_documento_unidad" Association="Self.FK_documento_unidad">
       <End Role="unidades" EntitySet="unidades" />
       <End Role="documentos" EntitySet="documentos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_documento_usuario" Association="Self.FK_documento_usuario">
+      <End Role="documentos" EntitySet="documentos" />
+      <End Role="documentos_usuario" EntitySet="documentos_usuario" />
     </AssociationSet>
     <AssociationSet Name="FK_documentos_curso_cursos" Association="Self.FK_documentos_curso_cursos">
       <End Role="cursos" EntitySet="cursos" />
@@ -1312,8 +1437,16 @@
       <End Role="usuarios" EntitySet="usuarios" />
       <End Role="respuestas" EntitySet="respuestas" />
     </AssociationSet>
+    <AssociationSet Name="FK_usuario_documento" Association="Self.FK_usuario_documento">
+      <End Role="usuarios" EntitySet="usuarios" />
+      <End Role="documentos_usuario" EntitySet="documentos_usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_usuario_transaccion" Association="Self.FK_usuario_transaccion">
+      <End Role="usuarios" EntitySet="usuarios" />
+      <End Role="transacciones" EntitySet="transacciones" />
+    </AssociationSet>
     <AssociationSet Name="FK_ventas_articulos_articulos" Association="Self.FK_ventas_articulos_articulos">
-      <End Role="articulos" EntitySet="articulos" />
+      <End Role="articulo" EntitySet="articulo" />
       <End Role="ventas_articulos" EntitySet="ventas_articulos" />
     </AssociationSet>
     <AssociationSet Name="FK_ventas_articulos_ventas" Association="Self.FK_ventas_articulos_ventas">
@@ -1332,7 +1465,7 @@
       <End Role="transporte" EntitySet="transporte" />
       <End Role="ventas" EntitySet="ventas" />
     </AssociationSet>
-    <AssociationSet Name="FK_ventas_usuarios" Association="Self.FK_ventas_usuarios">
+    <AssociationSet Name="FK_ventas_usuario" Association="Self.FK_ventas_usuario">
       <End Role="usuarios" EntitySet="usuarios" />
       <End Role="ventas" EntitySet="ventas" />
     </AssociationSet>

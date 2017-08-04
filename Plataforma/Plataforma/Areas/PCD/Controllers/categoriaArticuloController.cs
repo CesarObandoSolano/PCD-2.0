@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Plataforma.Areas.PCD.Models;
+using Plataforma.App_Start;
 
 namespace Plataforma.Areas.PCD.Controllers
 {
@@ -48,11 +49,18 @@ namespace Plataforma.Areas.PCD.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "id,nombre")] categoria_articulo categoria_articulo)
         {
-            if (ModelState.IsValid)
+            if (Session["usuario"] != null)
             {
-                db.categoria_articulo.Add(categoria_articulo);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                usuario usuarioSesion = (usuario)HttpContext.Session["usuario"];
+                if (usuarioSesion.roles.FirstOrDefault().rol.Equals(Constantes.ADMINISTRADOR))
+                {
+                    if (ModelState.IsValid)
+                    {
+                        db.categoria_articulo.Add(categoria_articulo);
+                        db.SaveChanges();
+                        return RedirectToAction("Index");
+                    }
+                }
             }
 
             return View(categoria_articulo);
@@ -80,11 +88,18 @@ namespace Plataforma.Areas.PCD.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "id,nombre")] categoria_articulo categoria_articulo)
         {
-            if (ModelState.IsValid)
+            if (Session["usuario"] != null)
             {
-                db.Entry(categoria_articulo).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                usuario usuarioSesion = (usuario)HttpContext.Session["usuario"];
+                if (usuarioSesion.roles.FirstOrDefault().rol.Equals(Constantes.ADMINISTRADOR))
+                {
+                    if (ModelState.IsValid)
+                    {
+                        db.Entry(categoria_articulo).State = EntityState.Modified;
+                        db.SaveChanges();
+                        return RedirectToAction("Index");
+                    }
+                }
             }
             return View(categoria_articulo);
         }
@@ -109,9 +124,16 @@ namespace Plataforma.Areas.PCD.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            categoria_articulo categoria_articulo = db.categoria_articulo.Find(id);
-            db.categoria_articulo.Remove(categoria_articulo);
-            db.SaveChanges();
+            if (Session["usuario"] != null)
+            {
+                usuario usuarioSesion = (usuario)HttpContext.Session["usuario"];
+                if (usuarioSesion.roles.FirstOrDefault().rol.Equals(Constantes.ADMINISTRADOR))
+                {
+                    categoria_articulo categoria_articulo = db.categoria_articulo.Find(id);
+                    db.categoria_articulo.Remove(categoria_articulo);
+                    db.SaveChanges();
+                }
+            }
             return RedirectToAction("Index");
         }
 

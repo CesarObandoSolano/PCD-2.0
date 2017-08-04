@@ -17,13 +17,13 @@ namespace Plataforma.Areas.PCD.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public estado_articulo()
         {
-            this.articulos = new HashSet<articulo>();
+            this.articuloes = new HashSet<articulo>();
         }
     
         public int id { get; set; }
         public string nombre { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<articulo> articulos { get; set; }
+        public virtual ICollection<articulo> articuloes { get; set; }
     }
 }

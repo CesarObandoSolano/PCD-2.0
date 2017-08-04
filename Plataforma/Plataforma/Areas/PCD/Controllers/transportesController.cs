@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Plataforma.Areas.PCD.Models;
+using Plataforma.App_Start;
 
 namespace Plataforma.Areas.PCD.Controllers
 {
@@ -48,11 +49,18 @@ namespace Plataforma.Areas.PCD.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "id,nombre,precio")] transporte transporte)
         {
-            if (ModelState.IsValid)
+            if (Session["usuario"] != null)
             {
-                db.transportes.Add(transporte);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                usuario usuarioSesion = (usuario)HttpContext.Session["usuario"];
+                if (usuarioSesion.roles.FirstOrDefault().rol.Equals(Constantes.ADMINISTRADOR))
+                {
+                    if (ModelState.IsValid)
+                    {
+                        db.transportes.Add(transporte);
+                        db.SaveChanges();
+                        return RedirectToAction("Index");
+                    }
+                }
             }
 
             return View(transporte);
@@ -61,6 +69,7 @@ namespace Plataforma.Areas.PCD.Controllers
         // GET: PCD/transportes/Edit/5
         public ActionResult Edit(int? id)
         {
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -80,11 +89,18 @@ namespace Plataforma.Areas.PCD.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "id,nombre,precio")] transporte transporte)
         {
-            if (ModelState.IsValid)
+            if (Session["usuario"] != null)
             {
-                db.Entry(transporte).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                usuario usuarioSesion = (usuario)HttpContext.Session["usuario"];
+                if (usuarioSesion.roles.FirstOrDefault().rol.Equals(Constantes.ADMINISTRADOR))
+                {
+                    if (ModelState.IsValid)
+                    {
+                        db.Entry(transporte).State = EntityState.Modified;
+                        db.SaveChanges();
+                        return RedirectToAction("Index");
+                    }
+                }
             }
             return View(transporte);
         }
@@ -92,6 +108,7 @@ namespace Plataforma.Areas.PCD.Controllers
         // GET: PCD/transportes/Delete/5
         public ActionResult Delete(int? id)
         {
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -109,9 +126,16 @@ namespace Plataforma.Areas.PCD.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            transporte transporte = db.transportes.Find(id);
-            db.transportes.Remove(transporte);
-            db.SaveChanges();
+            if (Session["usuario"] != null)
+            {
+                usuario usuarioSesion = (usuario)HttpContext.Session["usuario"];
+                if (usuarioSesion.roles.FirstOrDefault().rol.Equals(Constantes.ADMINISTRADOR))
+                {
+                    transporte transporte = db.transportes.Find(id);
+                    db.transportes.Remove(transporte);
+                    db.SaveChanges();
+                }
+            }
             return RedirectToAction("Index");
         }
 

@@ -1338,7 +1338,6 @@ C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma\Plataforma\bin\es\M
 C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma\Plataforma\obj\Debug\Plataforma.dll
 C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma\Plataforma\obj\Debug\Plataforma.pdb
 C:\Users\Cesar\Desktop\PCD-CesarObando\Con tienda\Plataforma\Plataforma\obj\Debug\Plataforma.csprojResolveAssemblyReference.cache
-C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\EntityFramework.xml
 C:\Users\Cesar\Documents\Trabajo\PCD-2.0\PCD-2.0\Plataforma\Plataforma\bin\roslyn\csc.exe
 C:\Users\Cesar\Documents\Trabajo\PCD-2.0\PCD-2.0\Plataforma\Plataforma\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 C:\Users\Cesar\Documents\Trabajo\PCD-2.0\PCD-2.0\Plataforma\Plataforma\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -1528,6 +1527,7 @@ C:\Users\Cesar\Documents\Trabajo\PCD-2.0\PCD-2.0\Plataforma\Plataforma\bin\es\Mi
 C:\Users\Cesar\Documents\Trabajo\PCD-2.0\PCD-2.0\Plataforma\Plataforma\obj\Debug\Plataforma.csprojResolveAssemblyReference.cache
 C:\Users\Cesar\Documents\Trabajo\PCD-2.0\PCD-2.0\Plataforma\Plataforma\obj\Debug\Plataforma.dll
 C:\Users\Cesar\Documents\Trabajo\PCD-2.0\PCD-2.0\Plataforma\Plataforma\obj\Debug\Plataforma.pdb
+C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\AutoMapper.Net4.dll
 C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\roslyn\csc.exe
 C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -1540,7 +1540,6 @@ C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\r
 C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\roslyn\vbc.exe
 C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\roslyn\VBCSCompiler.exe
 C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\AutoMapper.Net4.dll
 C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\Plataforma.dll.config
 C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\Plataforma.dll
 C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\Plataforma.pdb
@@ -1664,6 +1663,7 @@ C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\u
 C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\Umbraco.Web.UI.xml
 C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\UmbracoExamine.xml
 C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\Antlr3.Runtime.pdb
+C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\EntityFramework.xml
 C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\EntityFramework.SqlServer.xml
 C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\Microsoft.AspNet.Identity.Core.xml
 C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\Microsoft.AspNet.Identity.Owin.xml

@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Plataforma.Areas.PCD.Models;
+using Plataforma.App_Start;
 
 namespace Plataforma.Areas.PCD.Controllers
 {
@@ -48,11 +49,18 @@ namespace Plataforma.Areas.PCD.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "id,nombre")] estado_venta estado_venta)
         {
-            if (ModelState.IsValid)
+            if (Session["usuario"] != null)
             {
-                db.estado_venta.Add(estado_venta);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                usuario usuarioSesion = (usuario)HttpContext.Session["usuario"];
+                if (usuarioSesion.roles.FirstOrDefault().rol.Equals(Constantes.ADMINISTRADOR))
+                {
+                    if (ModelState.IsValid)
+                    {
+                        db.estado_venta.Add(estado_venta);
+                        db.SaveChanges();
+                        return RedirectToAction("Index");
+                    }
+                }
             }
 
             return View(estado_venta);
@@ -80,11 +88,18 @@ namespace Plataforma.Areas.PCD.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "id,nombre")] estado_venta estado_venta)
         {
-            if (ModelState.IsValid)
+            if (Session["usuario"] != null)
             {
-                db.Entry(estado_venta).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                usuario usuarioSesion = (usuario)HttpContext.Session["usuario"];
+                if (usuarioSesion.roles.FirstOrDefault().rol.Equals(Constantes.ADMINISTRADOR))
+                {
+                    if (ModelState.IsValid)
+                    {
+                        db.Entry(estado_venta).State = EntityState.Modified;
+                        db.SaveChanges();
+                        return RedirectToAction("Index");
+                    }
+                }
             }
             return View(estado_venta);
         }
@@ -109,9 +124,16 @@ namespace Plataforma.Areas.PCD.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            estado_venta estado_venta = db.estado_venta.Find(id);
-            db.estado_venta.Remove(estado_venta);
-            db.SaveChanges();
+            if (Session["usuario"] != null)
+            {
+                usuario usuarioSesion = (usuario)HttpContext.Session["usuario"];
+                if (usuarioSesion.roles.FirstOrDefault().rol.Equals(Constantes.ADMINISTRADOR))
+                {
+                    estado_venta estado_venta = db.estado_venta.Find(id);
+                    db.estado_venta.Remove(estado_venta);
+                    db.SaveChanges();
+                }
+            }
             return RedirectToAction("Index");
         }
 

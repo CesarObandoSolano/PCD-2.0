@@ -62,24 +62,33 @@
         <AssociationConnector Association="pimasModel.usuarios_grupo" ManuallyRouted="false" />
         <AssociationConnector Association="pimasModel.FK_documentos_curso_cursos" />
         <AssociationConnector Association="pimasModel.FK_documentos_curso_documentos" />
-        <EntityTypeShape EntityType="pimasModel.articulo" Width="1.5" PointX="10.75" PointY="0.5" />
-        <EntityTypeShape EntityType="pimasModel.tipos_pago" Width="1.5" PointX="15.75" PointY="4.5" />
-        <EntityTypeShape EntityType="pimasModel.transporte" Width="1.5" PointX="15.75" PointY="6.375" />
-        <EntityTypeShape EntityType="pimasModel.venta" Width="1.5" PointX="12.75" PointY="6" />
+        <EntityTypeShape EntityType="pimasModel.documentos_relacionados" Width="1.5" PointX="6" PointY="27.5" />
+        <EntityTypeShape EntityType="pimasModel.documentos_usuario" Width="1.5" PointX="15.125" PointY="16.375" />
+        <EntityTypeShape EntityType="pimasModel.transaccione" Width="1.5" PointX="11.125" PointY="26.375" />
+        <AssociationConnector Association="pimasModel.FK_documento_documento_relacionado" />
+        <AssociationConnector Association="pimasModel.FK_documento_documento_relacionado1" />
+        <AssociationConnector Association="pimasModel.FK_documento_documento_relacionado2" />
+        <AssociationConnector Association="pimasModel.FK_documento_usuario" />
+        <AssociationConnector Association="pimasModel.FK_usuario_documento" />
+        <AssociationConnector Association="pimasModel.FK_usuario_transaccion" />
+        <EntityTypeShape EntityType="pimasModel.articulo" Width="1.5" PointX="11.875" PointY="1.25" />
+        <EntityTypeShape EntityType="pimasModel.carrito" Width="1.5" PointX="14.125" PointY="6.125" />
+        <EntityTypeShape EntityType="pimasModel.categoria_articulo" Width="1.5" PointX="9.625" PointY="0.75" />
+        <EntityTypeShape EntityType="pimasModel.estado_articulo" Width="1.5" PointX="9.625" PointY="3.375" />
+        <EntityTypeShape EntityType="pimasModel.estado_venta" Width="1.5" PointX="8.875" PointY="33.75" />
+        <EntityTypeShape EntityType="pimasModel.tipos_pago" Width="1.5" PointX="8.875" PointY="31.375" />
+        <EntityTypeShape EntityType="pimasModel.transporte" Width="1.5" PointX="8.875" PointY="28.875" />
+        <EntityTypeShape EntityType="pimasModel.venta" Width="1.5" PointX="11.125" PointY="6.875" />
+        <EntityTypeShape EntityType="pimasModel.ventas_articulos" Width="1.5" PointX="13.375" PointY="9.125" />
+        <AssociationConnector Association="pimasModel.FK_carrito_usuario" />
+        <AssociationConnector Association="pimasModel.FK_ventas_usuario" />
+        <AssociationConnector Association="pimasModel.FK_articulo_estado_articulo" />
+        <AssociationConnector Association="pimasModel.FK_articulos_categoria_articulo" />
+        <AssociationConnector Association="pimasModel.FK_carrito_articulo" />
+        <AssociationConnector Association="pimasModel.FK_ventas_articulos_articulos" />
+        <AssociationConnector Association="pimasModel.FK_ventas_estado_venta" />
         <AssociationConnector Association="pimasModel.FK_ventas_tipos_pago" />
         <AssociationConnector Association="pimasModel.FK_ventas_transporte" />
-        <AssociationConnector Association="pimasModel.FK_ventas_usuarios" />
-        <EntityTypeShape EntityType="pimasModel.estado_venta" Width="1.5" PointX="12.75" PointY="2.75" />
-        <AssociationConnector Association="pimasModel.FK_ventas_estado_venta" />
-        <EntityTypeShape EntityType="pimasModel.categoria_articulo" Width="1.5" PointX="12.75" PointY="0.75" />
-        <AssociationConnector Association="pimasModel.FK_articulos_categoria_articulo" />
-        <EntityTypeShape EntityType="pimasModel.estado_articulo" Width="1.5" PointX="7.5" PointY="1" />
-        <AssociationConnector Association="pimasModel.FK_articulos_estado_articulo" />
-        <EntityTypeShape EntityType="pimasModel.carrito" Width="1.5" PointX="14.75" PointY="1.375" />
-        <AssociationConnector Association="pimasModel.FK_carrito_articulo" />
-        <AssociationConnector Association="pimasModel.FK_carrito_usuario" />
-        <EntityTypeShape EntityType="pimasModel.ventas_articulos" Width="1.5" PointX="10.75" PointY="4.625" />
-        <AssociationConnector Association="pimasModel.FK_ventas_articulos_articulos" />
         <AssociationConnector Association="pimasModel.FK_ventas_articulos_ventas" />
         </Diagram>
     </edmx:Diagrams>

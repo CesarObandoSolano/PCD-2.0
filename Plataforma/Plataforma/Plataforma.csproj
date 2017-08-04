@@ -408,6 +408,12 @@
     <Compile Include="Areas\PCD\Models\documentos_profe.cs">
       <DependentUpon>ModelPimas.tt</DependentUpon>
     </Compile>
+    <Compile Include="Areas\PCD\Models\documentos_relacionados.cs">
+      <DependentUpon>ModelPimas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\PCD\Models\documentos_usuario.cs">
+      <DependentUpon>ModelPimas.tt</DependentUpon>
+    </Compile>
     <Compile Include="Areas\PCD\Models\estado_articulo.cs">
       <DependentUpon>ModelPimas.tt</DependentUpon>
     </Compile>
@@ -475,6 +481,9 @@
       <DependentUpon>ModelPimas.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\PCD\Models\tipo_documento.cs">
+      <DependentUpon>ModelPimas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\PCD\Models\transaccione.cs">
       <DependentUpon>ModelPimas.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\PCD\Models\transporte.cs">

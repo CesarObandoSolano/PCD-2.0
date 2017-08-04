@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Plataforma.Areas.PCD.Models;
+using Plataforma.App_Start;
 
 namespace Plataforma.Areas.PCD.Controllers
 {
@@ -48,11 +49,18 @@ namespace Plataforma.Areas.PCD.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "id,nombre")] tipos_pago tipos_pago)
         {
-            if (ModelState.IsValid)
+            if (Session["usuario"] != null)
             {
-                db.tipos_pago.Add(tipos_pago);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                usuario usuarioSesion = (usuario)HttpContext.Session["usuario"];
+                if (usuarioSesion.roles.FirstOrDefault().rol.Equals(Constantes.ADMINISTRADOR))
+                {
+                    if (ModelState.IsValid)
+                    {
+                        db.tipos_pago.Add(tipos_pago);
+                        db.SaveChanges();
+                        return RedirectToAction("Index");
+                    }
+                }
             }
 
             return View(tipos_pago);
@@ -80,11 +88,18 @@ namespace Plataforma.Areas.PCD.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "id,nombre")] tipos_pago tipos_pago)
         {
-            if (ModelState.IsValid)
+            if (Session["usuario"] != null)
             {
-                db.Entry(tipos_pago).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                usuario usuarioSesion = (usuario)HttpContext.Session["usuario"];
+                if (usuarioSesion.roles.FirstOrDefault().rol.Equals(Constantes.ADMINISTRADOR))
+                {
+                    if (ModelState.IsValid)
+                    {
+                        db.Entry(tipos_pago).State = EntityState.Modified;
+                        db.SaveChanges();
+                        return RedirectToAction("Index");
+                    }
+                }
             }
             return View(tipos_pago);
         }
@@ -109,9 +124,16 @@ namespace Plataforma.Areas.PCD.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            tipos_pago tipos_pago = db.tipos_pago.Find(id);
-            db.tipos_pago.Remove(tipos_pago);
-            db.SaveChanges();
+            if (Session["usuario"] != null)
+            {
+                usuario usuarioSesion = (usuario)HttpContext.Session["usuario"];
+                if (usuarioSesion.roles.FirstOrDefault().rol.Equals(Constantes.ADMINISTRADOR))
+                {
+                    tipos_pago tipos_pago = db.tipos_pago.Find(id);
+                    db.tipos_pago.Remove(tipos_pago);
+                    db.SaveChanges();
+                }
+            }
             return RedirectToAction("Index");
         }
 
