@@ -1,18 +1,20 @@
-﻿@model Plataforma.Areas.PCD.Models.Venta
+﻿@model Plataforma.Areas.PCD.Models.venta
 
 @{
     ViewBag.Title = "Detalles";
 }
 
-<h2>Detalles</h2>
-<link rel="stylesheet" type="text/css" href="~/Content/custombootstrap.css" />
-
-<div class="col-lg-9">
-    <h4>Venta</h4>
-    <hr />
+<div class="col-md-12">
+    <h1 class="class-forms">
+        <i class="fa fa-user-circle" aria-hidden="true"></i>
+        Detalles
+    </h1>
+    <h6>Información asociada al transporte</h6>
+    <br />
+    <h4 class="class-forms">Transporte</h4>
     <dl class="dl-horizontal">
         <dt>
-            Nombre Comprador
+            Nombre del comprador
         </dt>
 
         <dd>
@@ -20,7 +22,7 @@
         </dd>
 
         <dt>
-            Nombre de quien recibe
+            Nombre del receptor
         </dt>
 
         <dd>
@@ -28,7 +30,7 @@
         </dd>
 
         <dt>
-            Telefono del comprador
+            Número del comprador
         </dt>
 
         <dd>
@@ -36,7 +38,7 @@
         </dd>
 
         <dt>
-            Telefono de quien recibe
+            Número del receptor
         </dt>
 
         <dd>
@@ -52,49 +54,57 @@
         </dd>
 
         <dt>
-            Horario de entrega
+            Horario de preferencia
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.horario)
+            @Html.DisplayFor(model => model.horario_preferencia)
         </dd>
 
         <dt>
-            Articulo
+            Tiempo estimado de entrega
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Articulo.nombre)
+            @Html.DisplayFor(model => model.tiempo_estimado)
         </dd>
 
         <dt>
-            Cantidad de articulos
+            Tipo de pago
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.cantidad)
+            @Html.DisplayFor(model => model.tipos_pago.nombre)
         </dd>
 
         <dt>
-            Metodo de entrega
+            Transporte
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.tipo_entrega)
+            @Html.DisplayFor(model => model.transporte.nombre)
         </dd>
 
         <dt>
-            Forma de pago
+            Usuario
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.forma_pago)
+            @Html.DisplayFor(model => model.usuario.nombre)
+        </dd>
+
+        <dt>
+            Estado
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado_venta.nombre)
         </dd>
 
     </dl>
 
     <p>
         @Html.ActionLink("Editar", "Edit", new { id = Model.id }) |
-        @Html.ActionLink("Volver al indice", "Index")
+        @Html.ActionLink("Volver al índice", "Index")
     </p>
 </div>

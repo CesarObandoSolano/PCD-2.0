@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "Carrito de Compras";
+}
+
+<h1 class="class-forms"><i class="fa fa-shopping-cart" aria-hidden="true"></i> &nbsp;Carrito de Compras</h1>
+<h6>Listado de artículos en el carrito de compras</h6>
+<br><br>
+
+<div class="col-lg-12">
+
+    <table class="table" id="table-articulos">
+        <tr>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Detalle
+            </th>
+            <th>
+                Precio
+            </th>
+            <th></th>
+        </tr>
+
+            <tr>
+                <td>
+                    Matemáticas elemental
+                </td>
+                <td>
+                    Libro de prácticas para bachillerato
+                </td>
+                <td>
+                    ₡1200
+                </td>
+                <td>
+                    @Html.ActionLink("Eliminar ", " ", new { @class = "enlace-tabla eliminar", @title = "Eliminar" })
+                </td>
+            </tr>
+
+    </table>
+    <hr />
+    <div class="row table-warning">
+        <div class="col-md-10">
+            <h4>&nbsp&nbsp&nbspTotal</h4>
+        </div>
+        <div class="col-md-2">
+            <h4>₡2500</h4>
+        </div>
+    </div>
+</div>

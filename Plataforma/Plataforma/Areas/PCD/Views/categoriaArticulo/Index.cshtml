@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Plataforma.Areas.PCD.Models.categoria_articulo>
+
+@{
+    ViewBag.Title = "Indice";
+}
+
+<h1 class="class-forms"><i class="fa fa-graduation-cap" aria-hidden="true"></i> &nbsp;Categoría de articulos</h1>
+<h6>Listado de Categorías de artículos</h6>
+<br><br>
+<div class="col-lg-12">
+    <p>
+        @Html.ActionLink("Insertar una categoría de artículos", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                Nombre
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombre)
+                </td>
+                <td>
+                    @Html.ActionLink(" ", "Edit", new { id = item.id }, new { @class = "enlace-tabla editar", @title = "Editar" })
+                    @Html.ActionLink(" ", "Details", new { id = item.id }, new { @class = "enlace-tabla detalles", @title = "Detalles" })
+                    @Html.ActionLink(" ", "Delete", new { id = item.id }, new { @class = "enlace-tabla eliminar", @title = "Eliminar" })
+                </td>
+            </tr>
+        }
+    </table>
+</div>

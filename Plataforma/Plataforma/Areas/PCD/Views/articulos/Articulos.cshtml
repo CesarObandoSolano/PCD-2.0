@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Plataforma.Areas.PCD.Models.articulo>
+
+@{
+    ViewBag.Title = "Articulos";
+}
+<head>
+    <script>
+        function agregarACarrito(idArticulo) {
+            $.ajax({
+                type: "POST",
+                url: "/PCD/articulos/AgregarAlCarrito",
+                data: '{"idArticulo":"' + idArticulo + '"}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    alert("El artículo ha sido agregado al carrito de compras");
+                },
+                error: errores
+            });
+            function errores(msg) {
+                alert(msg);
+            }
+            return false;
+        }
+    </script>
+</head>
+
+<h2>Articulos</h2>
+
+@foreach (var item in Model)
+{
+    <div>
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <img src="@Url.Content(item.url_imagen)" alt="..." style="width: 200px; height: 200px;">
+                <div class="caption">
+                    <h5 style="overflow:hidden; white-space:nowrap;text-overflow: ellipsis;">
+                        @Html.DisplayFor(modelItem => item.nombre)
+                    </h5>
+                    <p style="overflow:hidden; white-space:nowrap;text-overflow: ellipsis;">
+                        @Html.DisplayFor(modelItem => item.detalle)
+                    </p>
+                    <h5>@Html.DisplayFor(modelItem => item.precio1)</h5>
+
+                    <p><a onclick="agregarACarrito(@item.id)" class="btn btn-primary" role="button">Agregar al carrito</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
