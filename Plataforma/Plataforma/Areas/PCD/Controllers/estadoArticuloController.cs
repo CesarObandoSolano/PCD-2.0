@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Plataforma.Areas.PCD.Models;
+using Plataforma.App_Start;
 
 namespace Plataforma.Areas.PCD.Controllers
 {
