@@ -41,10 +41,10 @@ namespace Plataforma.Areas.PCD.Controllers
 
                     db.carrito.Remove(carrito);
                     db.SaveChanges();
+                    return Json("exito", JsonRequestBehavior.AllowGet);
                 }
             }
-
-            return Json("exito", JsonRequestBehavior.AllowGet);
+            return Json("error", JsonRequestBehavior.AllowGet);
         }
 
         [Authorize]

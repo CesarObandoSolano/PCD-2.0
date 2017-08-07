@@ -35,20 +35,25 @@ namespace Plataforma.Areas.PCD.Controllers
                 return View(articulosTemp);
         }
 
+        [Authorize]
         [HttpPost]
         public ActionResult AgregarAlCarrito(int idArticulo)
         {
-            usuario usuarioSesion = (usuario)HttpContext.Session["usuario"];
+            if (Session["usuario"] != null)
+            {
+                usuario usuarioSesion = (usuario)HttpContext.Session["usuario"];
 
-            carrito carrito = new carrito();
-            carrito.id_usuario = usuarioSesion.id;
-            carrito.id_articulo = idArticulo;
-            carrito.cantidad = 1;
+                carrito carrito = new carrito();
+                carrito.id_usuario = usuarioSesion.id;
+                carrito.id_articulo = idArticulo;
+                carrito.cantidad = 1;
 
-            db.carrito.Add(carrito);
-            db.SaveChanges();
-            
-            return Json("exito", JsonRequestBehavior.AllowGet);
+                db.carrito.Add(carrito);
+                db.SaveChanges();
+
+                return Json("exito", JsonRequestBehavior.AllowGet);
+            }
+            return Json("error", JsonRequestBehavior.AllowGet);
         }
 
         /*public ActionResult CarritoCompras()

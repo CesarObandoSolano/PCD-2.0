@@ -41,8 +41,15 @@
                         @Html.DisplayFor(modelItem => item.detalle)
                     </p>
                     <h5>@Html.DisplayFor(modelItem => item.precio1)</h5>
-
-                    <p><a onclick="agregarACarrito(@item.id)" class="btn btn-primary" role="button">Agregar al carrito</a></p>
+                    @{  if (Session["usuario"] != null)
+                        {
+                          <p><a onclick="agregarACarrito(@item.id)" class="btn btn-primary" role="button">Agregar al carrito</a></p>
+                        }
+                        else
+                        {
+                          <p><a href="../Account/Login/" class="btn btn-primary" role="button">Agregar al carrito</a></p>
+                        }
+                    }             
                 </div>
             </div>
         </div>
