@@ -3,14 +3,14 @@ The type initializer for 'File' threw an exception.
 
    at Roslyn.Utilities.FileUtilities.OpenFileStream(String path)
    at Microsoft.CodeAnalysis.MetadataReference.CreateFromFile(String path, MetadataReferenceProperties properties, DocumentationProvider documentation)
-   at Umbraco.ModelsBuilder.ReferencedAssemblies.<>c.<.cctor>b__2_2(String x) in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\ReferencedAssemblies.cs:line 24
+   at Umbraco.ModelsBuilder.ReferencedAssemblies.<>c.<.cctor>b__2_2(String x) in X:\Projects\Umbraco\ModelsBuilder\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\ReferencedAssemblies.cs:line 24
    at System.Linq.Enumerable.WhereSelectListIterator`2.MoveNext()
    at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
    at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
-   at Umbraco.ModelsBuilder.ReferencedAssemblies.<>c.<.cctor>b__2_1() in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\ReferencedAssemblies.cs:line 23
+   at Umbraco.ModelsBuilder.ReferencedAssemblies.<>c.<.cctor>b__2_1() in X:\Projects\Umbraco\ModelsBuilder\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\ReferencedAssemblies.cs:line 23
    at System.Lazy`1.CreateValue()
    at System.Lazy`1.LazyInitValue()
    at System.Lazy`1.get_Value()
-   at Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory.GenerateModelsCode(IDictionary`2 ourFiles, IList`1 typeModels) in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\Umbraco\PureLiveModelFactory.cs:line 345
-   at Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory.GetModelsAssembly(Boolean forceRebuild) in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\Umbraco\PureLiveModelFactory.cs:line 283
-   at Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory.EnsureModels() in C:\Users\Stéphane\Documents\Development\Umbraco\Zbu\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\Umbraco\PureLiveModelFactory.cs:line 152
+   at Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory.GenerateModelsCode(IDictionary`2 ourFiles, IList`1 typeModels) in X:\Projects\Umbraco\ModelsBuilder\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\Umbraco\PureLiveModelFactory.cs:line 432
+   at Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory.GetModelsAssembly(Boolean forceRebuild) in X:\Projects\Umbraco\ModelsBuilder\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\Umbraco\PureLiveModelFactory.cs:line 370
+   at Umbraco.ModelsBuilder.Umbraco.PureLiveModelFactory.EnsureModels() in X:\Projects\Umbraco\ModelsBuilder\Zbu.ModelsBuilder\Umbraco.ModelsBuilder\Umbraco\PureLiveModelFactory.cs:line 221

@@ -1699,3 +1699,12 @@ C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\bin\e
 C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\obj\Debug\Plataforma.dll
 C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\obj\Debug\Plataforma.pdb
 C:\Users\allan\Documents\Sinertica\Proyectos\PCD-2.0\Plataforma\Plataforma\obj\Debug\Plataforma.csprojResolveAssemblyReference.cache
+C:\Users\Cesar\Documents\Trabajo\PCD-2.0\PCD-2.0\Plataforma\Plataforma\bin\GreenPay.Core.dll
+C:\Users\Cesar\Documents\Trabajo\PCD-2.0\PCD-2.0\Plataforma\Plataforma\bin\RestSharp.dll
+C:\Users\Cesar\Documents\Trabajo\PCD-2.0\PCD-2.0\Plataforma\Plataforma\bin\GreenPay.Core.pdb
+C:\Users\Cesar\Documents\Trabajo\PCD-2.0\PCD-2.0\Plataforma\Plataforma\bin\RestSharp.xml
+C:\Users\Cesar\Documents\Trabajo\PCD-2.0\PCD-2.0\Plataforma\Plataforma\bin\Log4Net.Async.dll
+C:\Users\Cesar\Documents\Trabajo\PCD-2.0\PCD-2.0\Plataforma\Plataforma\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\Cesar\Documents\Trabajo\PCD-2.0\PCD-2.0\Plataforma\Plataforma\bin\System.Threading.Tasks.Dataflow.dll
+C:\Users\Cesar\Documents\Trabajo\PCD-2.0\PCD-2.0\Plataforma\Plataforma\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Users\Cesar\Documents\Trabajo\PCD-2.0\PCD-2.0\Plataforma\Plataforma\bin\System.Threading.Tasks.Dataflow.xml
