@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Actions>
+  <!-- BEGIN Clean web.config for depricated configurations -->
+  <Action runat="install" alias="MergeConfig" targetConfig="~/web.config">
+    <Transformation virtualPath="~/umbraco/ucommerce/install/CleanConfig.config" />
+  </Action>
+  <!-- END Clean web.config for depricated configurations -->
+  <!-- Initialize the IOC container, so we do not run the
+	     risk of having it initialize AFTER the config files have been upgraded. -->
+  <!-- Download all the files needed first. To make the time spend after overriding files as short as possible. -->
+  <Action runat="install" alias="DownloadFile" webResource="https://www.nuget.org/api/v2/package/uCommerce.Core/7.5.0.17040" targetFile="~/Umbraco/ucommerce/uCommerce.core.7.5.0.17040.zip" />
+  <Action runat="install" alias="DownloadFile" webResource="https://www.nuget.org/api/v2/package/Iesi.Collections/4.0.1.4000" targetFile="~/Umbraco/ucommerce/Iesi.Collections.4.0.1.4000.zip" />
+  <Action runat="install" alias="DownloadFile" webResource="https://www.nuget.org/api/v2/package/FluentNHibernate/2.0.1" targetFile="~/Umbraco/ucommerce/FluentNHibernate.2.0.1.zip" />
+  <Action runat="install" alias="DownloadFile" webResource="https://www.nuget.org/api/v2/package/NHibernate/4.0.0.4000" targetFile="~/Umbraco/ucommerce/NHibernate.4.0.0.4000.zip" />
+  <Action runat="install" alias="DownloadFile" webResource="https://www.nuget.org/api/v2/package/Castle.Windsor/3.3.0" targetFile="~/Umbraco/ucommerce/Castle.Windsor.3.3.0.zip" />
+  <Action runat="install" alias="DownloadFile" webResource="https://www.nuget.org/api/v2/package/Castle.Core/3.3.3" targetFile="~/Umbraco/ucommerce/Castle.Core.3.3.3.zip" />
+  <Action runat="install" alias="DownloadFile" webResource="https://www.nuget.org/api/v2/package/log4net/2.0.0" targetFile="~/Umbraco/ucommerce/log4net.2.0.0.zip" />
+  <Action runat="install" alias="DownloadFile" webResource="https://www.nuget.org/api/v2/package/ServiceStack.Text/3.9.55" targetFile="~/Umbraco/ucommerce/ServiceStack.Text.3.9.55.zip" />
+  <Action runat="install" alias="DownloadFile" webResource="https://www.nuget.org/api/v2/package/ServiceStack.Common/3.9.55" targetFile="~/Umbraco/ucommerce/ServiceStack.Common.3.9.55.zip" />
+  <Action runat="install" alias="DownloadFile" webResource="https://www.nuget.org/api/v2/package/ServiceStack/3.9.55" targetFile="~/Umbraco/ucommerce/ServiceStack.3.9.55.zip" />
+  <Action runat="install" alias="DownloadFile" webResource="https://www.nuget.org/api/v2/package/AuthorizeNet/1.8.3" targetFile="~/Umbraco/ucommerce/AuthorizeNet.1.8.3.zip" />
+  <Action runat="install" alias="DownloadFile" webResource="https://www.nuget.org/api/v2/package/Braintree/2.22.0" targetFile="~/Umbraco/ucommerce/Braintree.2.22.0.zip" />
+  <Action runat="install" alias="DownloadFile" webResource="https://www.nuget.org/api/v2/package/FontAwesome/4.2.0" targetFile="~/Umbraco/ucommerce/FontAwsome.4.2.0.zip" />
+  <Action runat="install" alias="DownloadFile" webResource="https://www.nuget.org/api/v2/package/RavenDB.Database/2.5.2874" targetFile="~/Umbraco/ucommerce/RavenDB.Database.2.5.2874.zip" />
+  <Action runat="install" alias="DownloadFile" webResource="https://www.nuget.org/api/v2/package/RavenDB.Client/2.5.2874" targetFile="~/Umbraco/ucommerce/RavenDB.Client.2.5.2874.zip" />
+  <Action runat="install" alias="DownloadFile" webResource="https://www.nuget.org/api/v2/package/Microsoft.CompilerServices.AsyncTargetingPack/1.0.0" targetFile="~/Umbraco/ucommerce/Microsoft.CompilerServices.AsyncTargetingPack.1.0.0.zip" />
+  <Action runat="install" alias="DownloadFile" webResource="https://www.nuget.org/api/v2/package/RavenDB.Embedded/2.5.2874" targetFile="~/Umbraco/ucommerce/RavenDB.Embedded.2.5.2874.zip" />
+  <Action runat="install" alias="InitializeObjectFactory" />
+  <!-- Start by downloading the dependencies from NuGet. It is important to download them,
+	     before doing anything that could start an app recycle. -->
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/Iesi.Collections.4.0.1.4000.zip" sourceFile="Iesi.Collections.dll" targetFile="~/bin/ucommerce/Iesi.Collections.dll" />
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/FluentNHibernate.2.0.1.zip" sourceFile="FluentNHibernate.dll" targetFile="~/bin/ucommerce/FluentNHibernate.dll" />
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/NHibernate.4.0.0.4000.zip" sourceFile="NHibernate.dll" targetFile="~/bin/ucommerce/NHibernate.dll" />
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/Castle.Windsor.3.3.0.zip" sourceFile="net40/Castle.Windsor.dll" targetFile="~/bin/ucommerce/Castle.Windsor.dll" />
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/Castle.Core.3.3.3.zip" sourceFile="net40-client/Castle.Core.dll" targetFile="~/bin/ucommerce/Castle.Core.dll" />
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/log4net.2.0.0.zip" sourceFile="net40-full/log4net.dll" targetFile="~/bin/ucommerce/log4net.dll" />
+  <!-- ServiceStack START -->
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/ServiceStack.Text.3.9.55.zip" sourceFile="net35/ServiceStack.Text.dll" targetFile="~/bin/ServiceStack.Text.dll" />
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/ServiceStack.Common.3.9.55.zip" sourceFile="net35/ServiceStack.Interfaces.dll" targetFile="~/bin/ServiceStack.Interfaces.dll" />
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/ServiceStack.Common.3.9.55.zip" sourceFile="net35/ServiceStack.Common.dll" targetFile="~/bin/ServiceStack.Common.dll" />
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/ServiceStack.3.9.55.zip" sourceFile="ServiceStack.ServiceInterface.dll" targetFile="~/bin/ServiceStack.ServiceInterface.dll" />
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/ServiceStack.3.9.55.zip" sourceFile="ServiceStack.dll" targetFile="~/bin/ServiceStack.dll" />
+  <!-- ServiceStack END -->
+  <!-- AuthorizeNet -->
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/AuthorizeNet.1.8.3.zip" sourceFile="AuthorizeNet.dll" targetFile="~/bin/uCommerce/AuthorizeNet.dll" />
+  <!-- Braintree -->
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/Braintree.2.22.0.zip" sourceFile="Braintree-2.22.0.dll" targetFile="~/bin/uCommerce/Braintree-2.22.0.dll" />
+  <!-- FontAwesome BEGIN-->
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/FontAwsome.4.2.0.zip" sourceFile="FontAwesome.otf" targetFile="~/Umbraco/ucommerce/css/fonts/fonts/FontAwesome.otf" />
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/FontAwsome.4.2.0.zip" sourceFile="fontawesome-webfont.eot" targetFile="~/Umbraco/ucommerce/css/fonts/fonts/fontawesome-webfont.eot" />
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/FontAwsome.4.2.0.zip" sourceFile="fontawesome-webfont.svg" targetFile="~/Umbraco/ucommerce/css/fonts/fonts/fontawesome-webfont.svg" />
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/FontAwsome.4.2.0.zip" sourceFile="fontawesome-webfont.ttf" targetFile="~/Umbraco/ucommerce/css/fonts/fonts/fontawesome-webfont.ttf" />
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/FontAwsome.4.2.0.zip" sourceFile="fontawesome-webfont.woff" targetFile="~/Umbraco/ucommerce/css/fonts/fonts/fontawesome-webfont.woff" />
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/FontAwsome.4.2.0.zip" sourceFile="fontawesome-webfont.woff" targetFile="~/Umbraco/ucommerce/css/fonts/fonts/fontawesome-webfont.woff2" />
+  <!-- FontAwesome END-->
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/RavenDB.Database.2.5.2874.zip" sourceFile="Lucene.Net.dll" targetFile="~/bin/ucommerce/Lucene.Net.dll" />
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/RavenDB.Database.2.5.2874.zip" sourceFile="Lucene.Net.Contrib.Spatial.NTS.dll" targetFile="~/bin/ucommerce/Lucene.Net.Contrib.Spatial.NTS.dll" />
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/RavenDB.Database.2.5.2874.zip" sourceFile="ICSharpCode.NRefactory.CSharp.dll" targetFile="~/bin/ucommerce/ICSharpCode.NRefactory.CSharp.dll" />
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/RavenDB.Database.2.5.2874.zip" sourceFile="ICSharpCode.NRefactory.dll" targetFile="~/bin/ucommerce/ICSharpCode.NRefactory.dll" />
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/RavenDB.Database.2.5.2874.zip" sourceFile="Esent.Interop.dll" targetFile="~/bin/ucommerce/Esent.Interop.dll" />
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/RavenDB.Database.2.5.2874.zip" sourceFile="Spatial4n.Core.NTS.dll" targetFile="~/bin/ucommerce/Spatial4n.Core.NTS.dll" />
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/RavenDB.Database.2.5.2874.zip" sourceFile="Raven.Abstractions.dll" targetFile="~/bin/ucommerce/Raven.Abstractions.dll" />
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/RavenDB.Database.2.5.2874.zip" sourceFile="Raven.Database.dll" targetFile="~/bin/ucommerce/Raven.Database.dll" />
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/RavenDB.Database.2.5.2874.zip" sourceFile="Jint.Raven.dll" targetFile="~/bin/ucommerce/Jint.Raven.dll" />
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/RavenDB.Client.2.5.2874.zip" sourceFile="Raven.Client.Lightweight.dll" targetFile="~/bin/ucommerce/Raven.Client.Lightweight.dll" />
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/Microsoft.CompilerServices.AsyncTargetingPack.1.0.0.zip" sourceFile="Microsoft.CompilerServices.AsyncTargetingPack.Net4.dll" targetFile="~/bin/ucommerce/Microsoft.CompilerServices.AsyncTargetingPack.Net4.dll" />
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/RavenDB.Embedded.2.5.2874.zip" sourceFile="Raven.Client.Embedded.dll" targetFile="~/bin/ucommerce/Raven.Client.Embedded.dll" />
+  <!-- BEGIN: Rename Apps folder -->
+  <!-- END: Rename Apps folder -->
+  <!-- BEGIN: Move files in the pipelines folder -->
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Pipelines/Admin/Catalogs.Category.Delete.config.default" targetFile="~/Umbraco/ucommerce/Pipelines/Admin/Catalogs.Category.Delete.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Pipelines/Admin/Catalogs.Category.Save.config.default" targetFile="~/Umbraco/ucommerce/Pipelines/Admin/Catalogs.Category.Save.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Pipelines/Admin/Catalogs.Product.Delete.config.default" targetFile="~/Umbraco/ucommerce/Pipelines/Admin/Catalogs.Product.Delete.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Pipelines/Admin/Catalogs.Variant.Delete.config.default" targetFile="~/Umbraco/ucommerce/Pipelines/Admin/Catalogs.Variant.Delete.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Pipelines/Admin/Catalogs.Product.Save.config.default" targetFile="~/Umbraco/ucommerce/Pipelines/Admin/Catalogs.Product.Save.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Pipelines/Admin/Catalogs.ProductCatalog.Delete.config.default" targetFile="~/Umbraco/ucommerce/Pipelines/Admin/Catalogs.ProductCatalog.Delete.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Pipelines/Admin/Catalogs.ProductCatalog.Save.config.default" targetFile="~/Umbraco/ucommerce/Pipelines/Admin/Catalogs.ProductCatalog.Save.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Pipelines/Admin/Catalogs.ProductCatalogGroup.Delete.config.default" targetFile="~/Umbraco/ucommerce/Pipelines/Admin/Catalogs.ProductCatalogGroup.Delete.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Pipelines/Admin/Catalogs.ProductCatalogGroup.Save.config.default" targetFile="~/Umbraco/ucommerce/Pipelines/Admin/Catalogs.ProductCatalogGroup.Save.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Pipelines/Admin/Definitions.DataType.Delete.config.default" targetFile="~/Umbraco/ucommerce/Pipelines/Admin/Definitions.DataType.Delete.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Pipelines/Admin/Definitions.DataType.Save.config.default" targetFile="~/Umbraco/ucommerce/Pipelines/Admin/Definitions.DataType.Save.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Pipelines/Admin/Definitions.Definition.Delete.config.default" targetFile="~/Umbraco/ucommerce/Pipelines/Admin/Definitions.Definition.Delete.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Pipelines/Admin/Definitions.Definition.Save.config.default" targetFile="~/Umbraco/ucommerce/Pipelines/Admin/Definitions.Definition.Save.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Pipelines/Admin/Definitions.DefinitionField.Save.config.default" targetFile="~/Umbraco/ucommerce/Pipelines/Admin/Definitions.DefinitionField.Save.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Pipelines/Admin/Definitions.ProductDefinitionField.Delete.config.default" targetFile="~/Umbraco/ucommerce/Pipelines/Admin/Definitions.ProductDefinitionField.Delete.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Pipelines/Admin/Definitions.ProductDefinitionField.Save.config.default" targetFile="~/Umbraco/ucommerce/Pipelines/Admin/Definitions.ProductDefinitionField.Save.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Pipelines/Admin/Globalization.Language.Delete.config.default" targetFile="~/Umbraco/ucommerce/Pipelines/Admin/Globalization.Language.Delete.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Pipelines/Admin/Globalization.Language.Save.config.default" targetFile="~/Umbraco/ucommerce/Pipelines/Admin/Globalization.Language.Save.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Pipelines/Admin/Marketing.CampaignItem.Delete.config.default" targetFile="~/Umbraco/ucommerce/Pipelines/Admin/Marketing.CampaignItem.Delete.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Pipelines/Admin/Orders.Order.Save.config.default" targetFile="~/Umbraco/ucommerce/Pipelines/Admin/Orders.Order.Save.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Pipelines/Admin/Settings.Roles.SaveUser.config.default" targetFile="~/Umbraco/ucommerce/Pipelines/Admin/Settings.Roles.SaveUser.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Pipelines/Admin/Settings.Roles.SaveUserGroup.config.default" targetFile="~/Umbraco/ucommerce/Pipelines/Admin/Settings.Roles.SaveUserGroup.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Pipelines/System/Initialize.config.default" targetFile="~/Umbraco/ucommerce/Pipelines/System/Initialize.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Pipelines/UI/PageBuilder.config.default" targetFile="~/Umbraco/ucommerce/Pipelines/UI/PageBuilder.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/umbraco/ucommerce/Pipelines/Baskets.AddAddress.config.default" targetFile="~/umbraco/ucommerce/Pipelines/Baskets.AddAddress.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Pipelines/Baskets.AddToBasket.config.default" targetFile="~/Umbraco/ucommerce/Pipelines/Baskets.AddToBasket.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Pipelines/Baskets.Basket.config.default" targetFile="~/Umbraco/ucommerce/Pipelines/Baskets.Basket.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Pipelines/Baskets.Checkout.config.default" targetFile="~/Umbraco/ucommerce/Pipelines/Baskets.Checkout.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Pipelines/Baskets.CreateBasket.config.default" targetFile="~/Umbraco/ucommerce/Pipelines/Baskets.CreateBasket.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Pipelines/Baskets.CreateShipment.config.default" targetFile="~/Umbraco/ucommerce/Pipelines/Baskets.CreateShipment.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Pipelines/Baskets.GetBasket.config.default" targetFile="~/Umbraco/ucommerce/Pipelines/Baskets.GetBasket.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/umbraco/ucommerce/Pipelines/Baskets.RemoveShipment.config.default" targetFile="~/umbraco/ucommerce/Pipelines/Baskets.RemoveShipment.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Pipelines/Baskets.UpdateLineItem.config.default" targetFile="~/Umbraco/ucommerce/Pipelines/Baskets.UpdateLineItem.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Pipelines/Catalogs.GetProduct.config.default" targetFile="~/Umbraco/ucommerce/Pipelines/Catalogs.GetProduct.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Pipelines/Catalogs.ProductReview.config.default" targetFile="~/Umbraco/ucommerce/Pipelines/Catalogs.ProductReview.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Pipelines/Catalogs.ProductReviewComment.config.default" targetFile="~/Umbraco/ucommerce/Pipelines/Catalogs.ProductReviewComment.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Pipelines/Customers.CreateCustomer.config.default" targetFile="~/Umbraco/ucommerce/Pipelines/Customers.CreateCustomer.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Pipelines/Customers.CreateMember.config.default" targetFile="~/Umbraco/ucommerce/Pipelines/Customers.CreateMember.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Pipelines/Orders.Processing.config.default" targetFile="~/Umbraco/ucommerce/Pipelines/Orders.Processing.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Pipelines/Orders.ToCancelled.config.default" targetFile="~/Umbraco/ucommerce/Pipelines/Orders.ToCancelled.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Pipelines/Orders.ToCompletedOrder.config.default" targetFile="~/Umbraco/ucommerce/Pipelines/Orders.ToCompletedOrder.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Pipelines/Admin/Apps.GetInstalledAppManifests.config.default" targetFile="~/Umbraco/ucommerce/Pipelines/Admin/Apps.GetInstalledAppManifests.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Pipelines/Admin/Apps.Install.config.default" targetFile="~/Umbraco/ucommerce/Pipelines/Admin/Apps.Install.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Pipelines/Admin/Apps.Uninstall.config.default" targetFile="~/Umbraco/ucommerce/Pipelines/Admin/Apps.Uninstall.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Pipelines/Admin/Apps.Upload.config.default" targetFile="~/Umbraco/ucommerce/Pipelines/Admin/Apps.Upload.config" />
+  <!-- END: Move files in the pipelines folder -->
+  <!-- BEGIN: Move files in the configuration folder -->
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/configuration/Payments/BraintreePaymentForm.htm.default" targetFile="~/Umbraco/ucommerce/configuration/Payments/BraintreePaymentForm.htm" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/configuration/Settings/Settings.config.default" targetFile="~/Umbraco/ucommerce/configuration/Settings/Settings.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/configuration/Core.config.default" targetFile="~/Umbraco/ucommerce/configuration/Core.config" />
+  <Action runat="install" alias="MoveFileIfDoesntExist" sourceFile="~/Umbraco/ucommerce/configuration/Custom.config.default" targetFile="~/Umbraco/ucommerce/configuration/Custom.config" />
+  <Action runat="install" undo="false" alias="DeleteFile" file="~/Umbraco/ucommerce/configuration/Custom.config.default" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/configuration/DataTypes.config.default" targetFile="~/Umbraco/ucommerce/configuration/DataTypes.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/configuration/Marketing.config.default" targetFile="~/Umbraco/ucommerce/configuration/Marketing.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/configuration/Payments.config.default" targetFile="~/Umbraco/ucommerce/configuration/Payments.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/configuration/Presenters.config.default" targetFile="~/Umbraco/ucommerce/configuration/Presenters.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/configuration/Search.config.default" targetFile="~/Umbraco/ucommerce/configuration/Search.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/configuration/Shell.config.default" targetFile="~/Umbraco/ucommerce/configuration/Shell.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/configuration/Shipping.config.default" targetFile="~/Umbraco/ucommerce/configuration/Shipping.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/configuration/XmlRenderings.config.default" targetFile="~/Umbraco/ucommerce/configuration/XmlRenderings.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Configuration/Components.config.default" targetFile="~/Umbraco/ucommerce/Configuration/Components.config" backupTargetFile="false" />
+  <!-- END: Move files in the configuration folder -->
+  <!-- BEGIN: Rename widget config files -->
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Apps/Widgets/DefaultDashboards.config.default" targetFile="~/Umbraco/ucommerce/Apps/Widgets/DefaultDashboards.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Apps/Widgets/AnalyticsDataChart/AnalyticsWidgets.config.default" targetFile="~/Umbraco/ucommerce/Apps/Widgets/AnalyticsDataChart/AnalyticsWidgets.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Apps/Widgets/CatalogSearch/CatalogSearch.config.default" targetFile="~/Umbraco/ucommerce/Apps/Widgets/CatalogSearch/CatalogSearch.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Apps/Widgets/MarketingTimeline/MarketingTimeline.config.default" targetFile="~/Umbraco/ucommerce/Apps/Widgets/MarketingTimeline/MarketingTimeline.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Apps/Widgets/OrderList/OrderList.config.default" targetFile="~/Umbraco/ucommerce/Apps/Widgets/OrderList/OrderList.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Apps/Widgets/OrdersCount/OrdersCount.config.default" targetFile="~/Umbraco/ucommerce/Apps/Widgets/OrdersCount/OrdersCount.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Apps/Widgets/OrdersByDates/OrdersByDates.config.default" targetFile="~/Umbraco/ucommerce/Apps/Widgets/OrdersByDates/OrdersByDates.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Apps/Widgets/turnoverByCurrency/turnoverByCurrency.config.default" targetFile="~/Umbraco/ucommerce/Apps/Widgets/turnoverByCurrency/turnoverByCurrency.config" />
+  <!-- END: Rename widget config files -->
+  <!-- BEGIN: SimpleInvetory -->
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Apps/SimpleInventory.disabled/InventoryOnHand.config.default" targetFile="~/Umbraco/ucommerce/Apps/SimpleInventory.disabled/InventoryOnHand.config" />
+  <Action runat="install" undo="false" alias="MoveDirectoryIfTargetExists" sourceDirectory="~/Umbraco/ucommerce/Apps/SimpleInventory.disabled" targetDirectory="~/Umbraco/ucommerce/Apps/SimpleInventory" />
+  <!-- END: SimpleInvetory -->
+  <!-- BEGIN: AcquireAndCancelPayments -->
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Apps/Acquire and Cancel Payments.disabled/AcquirePayments.config.default" targetFile="~/Umbraco/ucommerce/Apps/Acquire and Cancel Payments.disabled/AcquirePayments.config" />
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/Umbraco/ucommerce/Apps/Acquire and Cancel Payments.disabled/CancelPayments.config.default" targetFile="~/Umbraco/ucommerce/Apps/Acquire and Cancel Payments.disabled/CancelPayments.config" />
+  <Action runat="install" undo="false" alias="MoveDirectoryIfTargetExists" sourceDirectory="~/Umbraco/ucommerce/Apps/Acquire and Cancel Payments.disabled" targetDirectory="~/Umbraco/ucommerce/Apps/Acquire and Cancel Payments" />
+  <!-- END: AcquireAndCancelPayments -->
+  <!-- BEGIN: Backup and remove old configs -->
+  <Action runat="install" undo="false" alias="FileBackup" sourceFile="~/Umbraco/ucommerce/Pipelines/Basket.config" />
+  <Action runat="install" undo="false" alias="DeleteFile" file="~/Umbraco/ucommerce/Pipelines/Basket.config" />
+  <Action runat="install" undo="false" alias="FileBackup" sourceFile="~/Umbraco/ucommerce/Pipelines/Checkout.config" />
+  <Action runat="install" undo="false" alias="DeleteFile" file="~/Umbraco/ucommerce/Pipelines/Checkout.config" />
+  <Action runat="install" undo="false" alias="FileBackup" sourceFile="~/Umbraco/ucommerce/Pipelines/DeleteCampaignItem.config" />
+  <Action runat="install" undo="false" alias="DeleteFile" file="~/Umbraco/ucommerce/Pipelines/DeleteCampaignItem.config" />
+  <Action runat="install" undo="false" alias="FileBackup" sourceFile="~/Umbraco/ucommerce/Pipelines/DeleteCategory.config" />
+  <Action runat="install" undo="false" alias="DeleteFile" file="~/Umbraco/ucommerce/Pipelines/DeleteCategory.config" />
+  <Action runat="install" undo="false" alias="FileBackup" sourceFile="~/Umbraco/ucommerce/Pipelines/DeleteDataType.config" />
+  <Action runat="install" undo="false" alias="DeleteFile" file="~/Umbraco/ucommerce/Pipelines/DeleteDataType.config" />
+  <Action runat="install" undo="false" alias="FileBackup" sourceFile="~/Umbraco/ucommerce/Pipelines/DeleteDefinition.config" />
+  <Action runat="install" undo="false" alias="DeleteFile" file="~/Umbraco/ucommerce/Pipelines/DeleteDefinition.config" />
+  <Action runat="install" undo="false" alias="FileBackup" sourceFile="~/Umbraco/ucommerce/Pipelines/DeleteLanguage.config" />
+  <Action runat="install" undo="false" alias="DeleteFile" file="~/Umbraco/ucommerce/Pipelines/DeleteLanguage.config" />
+  <Action runat="install" undo="false" alias="FileBackup" sourceFile="~/Umbraco/ucommerce/Pipelines/DeleteProduct.config" />
+  <Action runat="install" undo="false" alias="DeleteFile" file="~/Umbraco/ucommerce/Pipelines/DeleteProduct.config" />
+  <Action runat="install" undo="false" alias="FileBackup" sourceFile="~/Umbraco/ucommerce/Pipelines/DeleteProductCatalog.config" />
+  <Action runat="install" undo="false" alias="DeleteFile" file="~/Umbraco/ucommerce/Pipelines/DeleteProductCatalog.config" />
+  <Action runat="install" undo="false" alias="FileBackup" sourceFile="~/Umbraco/ucommerce/Pipelines/DeleteProductCatalogGroup.config" />
+  <Action runat="install" undo="false" alias="DeleteFile" file="~/Umbraco/ucommerce/Pipelines/DeleteProductCatalogGroup.config" />
+  <Action runat="install" undo="false" alias="FileBackup" sourceFile="~/Umbraco/ucommerce/Pipelines/DeleteProductDefinitionField.config" />
+  <Action runat="install" undo="false" alias="DeleteFile" file="~/Umbraco/ucommerce/Pipelines/DeleteProductDefinitionField.config" />
+  <Action runat="install" undo="false" alias="FileBackup" sourceFile="~/Umbraco/ucommerce/Pipelines/Processing.config" />
+  <Action runat="install" undo="false" alias="DeleteFile" file="~/Umbraco/ucommerce/Pipelines/Processing.config" />
+  <Action runat="install" undo="false" alias="FileBackup" sourceFile="~/Umbraco/ucommerce/Pipelines/ProductReview.config" />
+  <Action runat="install" undo="false" alias="DeleteFile" file="~/Umbraco/ucommerce/Pipelines/ProductReview.config" />
+  <Action runat="install" undo="false" alias="FileBackup" sourceFile="~/Umbraco/ucommerce/Pipelines/ProductReview.config" />
+  <Action runat="install" undo="false" alias="DeleteFile" file="~/Umbraco/ucommerce/Pipelines/ProductReview.config" />
+  <Action runat="install" undo="false" alias="FileBackup" sourceFile="~/Umbraco/ucommerce/Pipelines/ProductReviewComment.config" />
+  <Action runat="install" undo="false" alias="DeleteFile" file="~/Umbraco/ucommerce/Pipelines/ProductReviewComment.config" />
+  <Action runat="install" undo="false" alias="FileBackup" sourceFile="~/Umbraco/ucommerce/Pipelines/SaveCategory.config" />
+  <Action runat="install" undo="false" alias="DeleteFile" file="~/Umbraco/ucommerce/Pipelines/SaveCategory.config" />
+  <Action runat="install" undo="false" alias="FileBackup" sourceFile="~/Umbraco/ucommerce/Pipelines/SaveDataType.config" />
+  <Action runat="install" undo="false" alias="DeleteFile" file="~/Umbraco/ucommerce/Pipelines/SaveDataType.config" />
+  <Action runat="install" undo="false" alias="FileBackup" sourceFile="~/Umbraco/ucommerce/Pipelines/SaveDefinitionField.config" />
+  <Action runat="install" undo="false" alias="DeleteFile" file="~/Umbraco/ucommerce/Pipelines/SaveDefinitionField.config" />
+  <Action runat="install" undo="false" alias="FileBackup" sourceFile="~/Umbraco/ucommerce/Pipelines/SaveDefinition.config" />
+  <Action runat="install" undo="false" alias="DeleteFile" file="~/Umbraco/ucommerce/Pipelines/SaveDefinition.config" />
+  <Action runat="install" undo="false" alias="FileBackup" sourceFile="~/Umbraco/ucommerce/Pipelines/SaveLanguage.config" />
+  <Action runat="install" undo="false" alias="DeleteFile" file="~/Umbraco/ucommerce/Pipelines/SaveLanguage.config" />
+  <Action runat="install" undo="false" alias="FileBackup" sourceFile="~/Umbraco/ucommerce/Pipelines/SaveOrder.config" />
+  <Action runat="install" undo="false" alias="DeleteFile" file="~/Umbraco/ucommerce/Pipelines/SaveOrder.config" />
+  <Action runat="install" undo="false" alias="FileBackup" sourceFile="~/Umbraco/ucommerce/Pipelines/SaveProduct.config" />
+  <Action runat="install" undo="false" alias="DeleteFile" file="~/Umbraco/ucommerce/Pipelines/SaveProduct.config" />
+  <Action runat="install" undo="false" alias="FileBackup" sourceFile="~/Umbraco/ucommerce/Pipelines/SaveProductCatalog.config" />
+  <Action runat="install" undo="false" alias="DeleteFile" file="~/Umbraco/ucommerce/Pipelines/SaveProductCatalog.config" />
+  <Action runat="install" undo="false" alias="FileBackup" sourceFile="~/Umbraco/ucommerce/Pipelines/SaveProductCatalogGroup.config" />
+  <Action runat="install" undo="false" alias="DeleteFile" file="~/Umbraco/ucommerce/Pipelines/SaveProductCatalogGroup.config" />
+  <Action runat="install" undo="false" alias="FileBackup" sourceFile="~/Umbraco/ucommerce/Pipelines/SaveProductDefinitionField.config" />
+  <Action runat="install" undo="false" alias="DeleteFile" file="~/Umbraco/ucommerce/Pipelines/SaveProductDefinitionField.config" />
+  <Action runat="install" undo="false" alias="FileBackup" sourceFile="~/Umbraco/ucommerce/Pipelines/ToCancelled.config" />
+  <Action runat="install" undo="false" alias="DeleteFile" file="~/Umbraco/ucommerce/Pipelines/ToCancelled.config" />
+  <Action runat="install" undo="false" alias="FileBackup" sourceFile="~/Umbraco/ucommerce/Pipelines/ToCompletedOrder.config" />
+  <Action runat="install" undo="false" alias="DeleteFile" file="~/Umbraco/ucommerce/Pipelines/ToCompletedOrder.config" />
+  <!-- END: Backup and remove old configs -->
+  <!-- BEGIN Move uCommerce binaries to bin -->
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/uCommerce.core.7.5.0.17040.zip" sourceFile="UCommerce.Web.Api.dll" targetFile="~/bin/UCommerce.Web.Api.dll" />
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/uCommerce.core.7.5.0.17040.zip" sourceFile="UCommerce.Web.Api.xml" targetFile="~/bin/UCommerce.Web.Api.xml" />
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/uCommerce.core.7.5.0.17040.zip" sourceFile="UCommerce.Infrastructure.dll" targetFile="~/bin/UCommerce.Infrastructure.dll" />
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/uCommerce.core.7.5.0.17040.zip" sourceFile="UCommerce.Infrastructure.xml" targetFile="~/bin/UCommerce.Infrastructure.xml" />
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/uCommerce.core.7.5.0.17040.zip" sourceFile="UCommerce.dll" targetFile="~/bin/UCommerce.dll" />
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/uCommerce.core.7.5.0.17040.zip" sourceFile="UCommerce.XML" targetFile="~/bin/UCommerce.XML" />
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/uCommerce.core.7.5.0.17040.zip" sourceFile="UCommerce.Admin.dll" targetFile="~/bin/UCommerce.Admin.dll" />
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/uCommerce.core.7.5.0.17040.zip" sourceFile="UCommerce.Admin.XML" targetFile="~/bin/UCommerce.Admin.XML" />
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/uCommerce.core.7.5.0.17040.zip" sourceFile="UCommerce.Pipelines.dll" targetFile="~/bin/UCommerce.Pipelines.dll" />
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/uCommerce.core.7.5.0.17040.zip" sourceFile="UCommerce.Pipelines.xml" targetFile="~/bin/UCommerce.Pipelines.xml" />
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/uCommerce.core.7.5.0.17040.zip" sourceFile="UCommerce.Presentation.dll" targetFile="~/bin/UCommerce.Presentation.dll" />
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/uCommerce.core.7.5.0.17040.zip" sourceFile="UCommerce.Presentation.xml" targetFile="~/bin/UCommerce.Presentation.xml" />
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/uCommerce.core.7.5.0.17040.zip" sourceFile="UCommerce.Transactions.Payments.dll" targetFile="~/bin/UCommerce.Transactions.Payments.dll" />
+  <Action runat="install" alias="ExtractFileFromArchive" sourceArchive="~/Umbraco/ucommerce/uCommerce.core.7.5.0.17040.zip" sourceFile="UCommerce.Transactions.Payments.xml" targetFile="~/bin/UCommerce.Transactions.Payments.xml" />
+  <!--~/bin/UCommerce.Umbraco7.dll must be the last file, else change UCommerce.Installer.UCommerceCanInstallOrUpdate-->
+  <Action runat="install" alias="uCommMoveFile" sourceFile="~/bin/ucommerce/UCommerce.Umbraco7.dll" targetFile="~/bin/UCommerce.Umbraco7.dll" backupTargetFile="false" />
+  <!-- END Move uCommerce binaries to bin -->
+</Actions>

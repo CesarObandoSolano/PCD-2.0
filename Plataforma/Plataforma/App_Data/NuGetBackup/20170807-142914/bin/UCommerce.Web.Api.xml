@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UCommerce.Web.Api</name>
+    </assembly>
+    <members>
+        <member name="T:UCommerce.Web.Api.IContainsWebservices">
+            <summary>
+            Marker interface for getting assemblies to register within ServiceStack AppHost.
+            </summary>
+        </member>
+        <member name="T:UCommerce.Web.Api.UCommerceAppHost">
+            <summary>
+            Default web service app host.
+            </summary>
+            <remarks>
+            Receives assemblies containing web services via the <see cref="T:UCommerce.Web.Api.IContainsWebservices"/> interface
+            via constructor injection.
+            </remarks>
+        </member>
+        <member name="T:UCommerce.Web.Api.AuthenticateAttributes.AuthenticateAttributeExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:UCommerce.Web.Api.AuthenticateAttributes.AuthenticateAttributeExtensions.AbortRequest(ServiceStack.ServiceInterface.AuthenticateAttribute,ServiceStack.ServiceHost.IHttpResponse,System.Int32,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="authenticateAttribute"></param>
+            <param name="res"></param>
+        </member>
+        <member name="T:UCommerce.Web.Api.AuthenticateAttributes.CanDeleteProductAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:UCommerce.Web.Api.AuthenticateAttributes.CanDeleteProductAttribute.Execute(ServiceStack.ServiceHost.IHttpRequest,ServiceStack.ServiceHost.IHttpResponse,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="req"></param>
+            <param name="res"></param>
+            <param name="requestDto"></param>
+        </member>
+        <member name="T:UCommerce.Web.Api.AuthenticateAttributes.CanDeleteProductCatalogGroupAttribute">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:UCommerce.Web.Api.AuthenticateAttributes.CanDeleteProductCatalogGroupAttribute.Execute(ServiceStack.ServiceHost.IHttpRequest,ServiceStack.ServiceHost.IHttpResponse,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="req"></param>
+            <param name="res"></param>
+            <param name="requestDto"></param>
+        </member>
+        <member name="T:UCommerce.Web.Api.Services.Nodes.ITreeNodeContentToTreeNodeConverter">
+            <summary>
+            The main interface for the tree node converter.
+            This converts from the internal node type to <see cref="T:UCommerce.Web.NodeItem"/>
+            used in the web service.
+            </summary>
+        </member>
+        <member name="T:UCommerce.Web.Api.Services.Nodes.Impl.TreeNodeContentToTreeNodeConverter">
+            <summary>
+            The default implementation of the tree node converter.
+            
+            This implementation goes thru the list of converters injected, and uses the first valid
+            converter for the tree node type.
+            </summary>
+        </member>
+        <member name="T:UCommerce.Web.Api.WindsorContainerAdapter">
+            <summary>
+            IoC container bridge from ServiceStack to Castle Windsor.
+            </summary>
+            <remarks>
+            Used for bringing components from Castle Windsor into
+            ServiceStack, which has its own internal mini container.
+            </remarks>
+        </member>
+    </members>
+</doc>
