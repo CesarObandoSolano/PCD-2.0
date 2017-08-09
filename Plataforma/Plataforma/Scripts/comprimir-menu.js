@@ -8,4 +8,7 @@
 	$("#mostrarMenuCursos").click(function(){
        	$("#menuLateralCursos").toggle();
     });
+    $("#mostrarMenuTienda").click(function () {
+        $("#menuLateralTienda").toggle();
+    });
 });
