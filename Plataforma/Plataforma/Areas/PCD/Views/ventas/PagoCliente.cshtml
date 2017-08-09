@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "PagoCliente";
+}
+
+
+<h2 class="class-forms">Realizar Pago</h2>
+
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal col-lg-9">
+        <h1 class="class-forms"><i class="fa fa-credit-card" aria-hidden="true"></i> &nbsp;Pago</h1>
+        <h6>Elija su método de pago, si no tiene uno por favor agréguelo</h6>
+        <br><br>
+        
+        <input class="class-forms" type="checkbox" name="vehicle" value="Bike">Tarjeta BNCR<br>
+        <input class="class-forms" type="checkbox" name="vehicle" value="Bike">Tarjeta BCR<br>
+        <input class="class-forms" type="checkbox" name="vehicle" value="Bike">Tarjeta Scotiabank<br>
+        <br><br>
+        <div class="form-group">
+            <div class="col-md-offset-4 col-md-10">
+                <input type="submit" value="Agregar método de pago" class="btn btn-primary" />
+            </div>
+        </div>
+        <br><br>
+        <div class="form-group">
+            <div class="col-md-offset-6 col-md-10">
+                <input type="submit" value="Pagar" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+
