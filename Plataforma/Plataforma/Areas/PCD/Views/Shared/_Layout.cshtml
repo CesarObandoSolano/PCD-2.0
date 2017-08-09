@@ -253,6 +253,56 @@
                                                     </span>
                                                 </a>
                                             </li>
+
+                                        }
+                                        else if (usuario.roles.FirstOrDefault().rol.Equals(Plataforma.App_Start.Constantes.PROFESOR_PREMIUM))
+                                        {
+                                                <li>
+                                                    <a href="~/PCD/cursos/IndiceCursos">
+                                                        <span>
+                                                            <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                                            &nbsp;Administrar Cursos
+                                                        </span>
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="~/PCD/documentos_profe/Index">
+                                                        <span>
+                                                            <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                                            &nbsp;Documentos
+                                                        </span>
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="~/PCD/libros/Index">
+                                                        <span>
+                                                            <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                                                            &nbsp;Libros
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                }
+                                            </div>
+                                    <li>
+                                        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                                        {
+                                            @Html.AntiForgeryToken()
+                                            <a class="cerrar" href="javascript:document.getElementById('logoutForm').submit()">
+                                                <span>
+                                                    <i class="fa fa-window-close" aria-hidden="true"></i>
+                                                    &nbsp;Cerrar Sesión
+                                                </span>
+                                            </a>
+                                        }
+                                    </li>
+                                </ul>
+                                @if (usuario.roles.FirstOrDefault().rol.Equals(Plataforma.App_Start.Constantes.ADMINISTRADOR))
+                                {
+                                    <h4>Tienda&nbsp;&nbsp;<input id="mostrarMenuTienda" class="mostrarmenu" type="button"></h4>
+                                    <div id='menuLateralTienda'>
+                                        <ul class="plataforma">
                                             <li>
                                                 <a href="~/PCD/articulos/Index">
                                                     <span>
@@ -317,51 +367,9 @@
                                                     </span>
                                                 </a>
                                             </li>
-                                        }
-                                        else if (usuario.roles.FirstOrDefault().rol.Equals(Plataforma.App_Start.Constantes.PROFESOR_PREMIUM))
-                                        {
-                                            <li>
-                                                <a href="~/PCD/cursos/IndiceCursos">
-                                                    <span>
-                                                        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
-                                                        &nbsp;Administrar Cursos
-                                                    </span>
-                                                </a>
-                                            </li>
-
-                                            <li>
-                                                <a href="~/PCD/documentos_profe/Index">
-                                                    <span>
-                                                        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
-                                                        &nbsp;Documentos
-                                                    </span>
-                                                </a>
-                                            </li>
-
-                                            <li>
-                                                <a href="~/PCD/libros/Index">
-                                                    <span>
-                                                        <i class="fa fa-unlock-alt" aria-hidden="true"></i>
-                                                        &nbsp;Libros
-                                                    </span>
-                                                </a>
-                                            </li>
-                                        }
-                                    </div>
-                                    <li>
-                                        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
-                                        {
-                                            @Html.AntiForgeryToken()
-                                            <a class="cerrar" href="javascript:document.getElementById('logoutForm').submit()">
-                                                <span>
-                                                    <i class="fa fa-window-close" aria-hidden="true"></i>
-                                                    &nbsp;Cerrar Sesión
-                                                </span>
-                                            </a>
-                                        }
-                                    </li>
-                                </ul>
-
+                                            </ul>
+                                </div>
+                                }
 
                                 @if (usuario.roles.FirstOrDefault().rol.Equals(Plataforma.App_Start.Constantes.PROFESOR_PREMIUM) || usuario.roles.FirstOrDefault().rol.Equals(Plataforma.App_Start.Constantes.ESTUDIANTE_PREMIUM))
                                 {
