@@ -184,7 +184,7 @@ namespace Plataforma.Areas.PCD.Controllers
                 ViewBag.id_usuario = usuarioSesion.id;
                 ViewBag.nombre_usuario = usuarioSesion.nombre + " " + usuarioSesion.apellidos;
                 List<carrito> carrito = db.carrito.Where(c => c.id_usuario == usuarioSesion.id).ToList();
-                
+
                 ViewBag.id_tipo_pago = new SelectList(db.tipos_pago, "id", "nombre");
                 ViewBag.id_transporte = new SelectList(db.transportes, "id", "nombre");
                 ViewBag.carrito = carrito;
@@ -204,7 +204,7 @@ namespace Plataforma.Areas.PCD.Controllers
 
                 if (ModelState.IsValid)
                 {
-                    
+
                     venta.id_estado_venta = 1;
                     string s = "2017-01-01";
                     DateTime dt = DateTime.Parse(s);
@@ -212,7 +212,7 @@ namespace Plataforma.Areas.PCD.Controllers
                     venta.total = 0;
 
 
-                    for (int i = carrito.Count-1; i >= 0; i--)
+                    for (int i = carrito.Count - 1; i >= 0; i--)
                     {
                         ventas_articulos ventaTemp = new ventas_articulos();
                         ventaTemp.id_articulo = carrito[i].id_articulo;
@@ -223,11 +223,11 @@ namespace Plataforma.Areas.PCD.Controllers
                         {
                             venta.total += carrito[i].cantidad * carrito[i].articulo.precio1;
                         }
-                        else if(usuarioSesion.categoria_precio == 2)
+                        else if (usuarioSesion.categoria_precio == 2)
                         {
                             venta.total += carrito[i].cantidad * carrito[i].articulo.precio2;
                         }
-                        else if(usuarioSesion.categoria_precio == 3)
+                        else if (usuarioSesion.categoria_precio == 3)
                         {
                             venta.total += carrito[i].cantidad * carrito[i].articulo.precio3;
                         }
@@ -236,7 +236,7 @@ namespace Plataforma.Areas.PCD.Controllers
                         db.carrito.Remove(carrito[i]);
                     }
                     db.ventas.Add(venta);
-                    
+
                     db.SaveChanges();
                     return RedirectToAction("Index");
                 }
@@ -249,5 +249,22 @@ namespace Plataforma.Areas.PCD.Controllers
             return View();
         }
 
+        [Authorize]
+        public ActionResult PagoCliente()
+        {
+            return View();
+        }
+
+        [Authorize]
+        public ActionResult AgregarCliente()
+        {
+            return View();
+        }
+
+        [Authorize]
+        public ActionResult AgregarTarjeta()
+        {
+            return View();
+        }
     }
 }
