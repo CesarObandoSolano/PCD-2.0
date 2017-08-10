@@ -52,6 +52,7 @@ namespace Plataforma.Areas.PCD.Models
         public Nullable<System.DateTime> fecha_vencimiento { get; set; }
         public Nullable<int> categoria_precio { get; set; }
         public Nullable<decimal> saldo { get; set; }
+        public Nullable<long> id_gp { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<comentario> comentarios { get; set; }

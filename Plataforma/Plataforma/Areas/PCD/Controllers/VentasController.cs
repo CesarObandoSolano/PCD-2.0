@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Plataforma.Areas.PCD.Models;
+using GreenPay.Core.Model;
 
 namespace Plataforma.Areas.PCD.Controllers
 {
@@ -252,19 +253,102 @@ namespace Plataforma.Areas.PCD.Controllers
         [Authorize]
         public ActionResult PagoCliente()
         {
-            return View();
+            if (Session["usuario"] != null)
+            {
+                usuario usuarioSesion = (usuario)HttpContext.Session["usuario"];
+                usuarioSesion = db.usuarios.Find(usuarioSesion.id);
+
+                Pagos pagos = new Pagos();
+                string bearer = pagos.Login();
+
+                GPCreditCardList tarjetasCliente = new GPCreditCardList();
+                tarjetasCliente = pagos.ListCreditCards(bearer,usuarioSesion.id_gp.Value);
+
+                if(tarjetasCliente == null || tarjetasCliente.List.Count == 0)
+                {
+                    return RedirectToAction("AgregarTarjeta");
+                }
+                ViewBag.tarjetas = tarjetasCliente.List;
+                return View();
+            }
+            return RedirectToAction("../Account/Login/");
+        }
+
+        [Authorize]
+        [HttpPost]
+        public ActionResult PagoCliente(int idTarjeta)
+        {
+            if (Session["usuario"] != null)
+            {
+                
+            }
+            return RedirectToAction("../Account/Login/");
         }
 
         [Authorize]
         public ActionResult AgregarCliente()
         {
+            if (Session["usuario"] != null)
+            {
+                usuario usuarioSesion = (usuario)HttpContext.Session["usuario"];
+                usuarioSesion = db.usuarios.Find(usuarioSesion.id);
+                /*if(usuarioSesion.id_gp == null)
+                {
+                    return RedirectToAction("PagoCliente");
+                }*/
+            }
             return View();
+        }
+
+        
+        [Authorize]
+        [HttpPost]
+        public ActionResult AgregarCliente(string identificacion, int tipoIdentificacion, int pin)
+        {
+            if (Session["usuario"] != null)
+            {
+                usuario usuarioSesion = (usuario)HttpContext.Session["usuario"];
+                usuarioSesion = db.usuarios.Find(usuarioSesion.id);
+
+                Pagos pagos = new Pagos();
+                string bearer = pagos.Login();
+                long id_gp = pagos.CreateCustomer(bearer, usuarioSesion, identificacion, tipoIdentificacion, pin);
+                if(id_gp != 0)
+                {
+                   usuarioSesion.id_gp = id_gp;
+                    db.SaveChanges();
+                }
+                RedirectToAction("PagoCliente");
+            }
+            return RedirectToAction("../Account/Login/");
         }
 
         [Authorize]
         public ActionResult AgregarTarjeta()
         {
             return View();
+        }
+
+        [Authorize]
+        [HttpPost]
+        public ActionResult AgregarTarjeta(string nombreTarjeta, string numeroTarjeta, int tipoTarjeta, string ccv, string fechaCaducidad, bool? favorita, string nickname)
+        {
+            if (Session["usuario"] != null)
+            {
+                usuario usuarioSesion = (usuario)HttpContext.Session["usuario"];
+                usuarioSesion = db.usuarios.Find(usuarioSesion.id);
+
+                Pagos pagos = new Pagos();
+                string bearer = pagos.Login();
+
+                if(favorita == null)
+                {
+                    favorita = false;
+                }
+                pagos.CreateCreditCard(bearer, usuarioSesion.id_gp.Value, nombreTarjeta, numeroTarjeta, tipoTarjeta, ccv, fechaCaducidad, favorita.Value, nickname);
+                RedirectToAction("PagoCliente");
+            }
+            return RedirectToAction("../Account/Login/");
         }
     }
 }
