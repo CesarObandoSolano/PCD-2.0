@@ -792,6 +792,9 @@
     <Content Include="config\EmbeddedMedia.config" />
     <Content Include="config\BaseRestExtensions.config" />
     <Content Include="config\404handlers.config" />
+    <Content Include="Areas\PCD\Views\ventas\PagoCliente.cshtml" />
+    <Content Include="Areas\PCD\Views\ventas\AgregarCliente.cshtml" />
+    <Content Include="Areas\PCD\Views\ventas\AgregarTarjeta.cshtml" />
     <None Include="job_scheduling_data_2_0.xsd">
       <SubType>Designer</SubType>
     </None>
