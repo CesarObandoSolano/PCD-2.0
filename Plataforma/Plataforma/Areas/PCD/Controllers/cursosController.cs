@@ -464,19 +464,26 @@ namespace Plataforma.Areas.PCD.Controllers
             curso curso = db.cursos.Find(id);
             if (usuariosMatricular != null)
             {
+                foreach (int idUsuario in usuariosMatricular)
+                {
+                    usuario usuarioTemporal = db.usuarios.Find(idUsuario);
+                    if (!usuarioTemporal.cursos.Contains(curso))
+                    {
+                        List<string> destinatarios = new List<string>();
+                        destinatarios.Add(usuarioTemporal.correo);
+                        Utilitarios.EnviarCorreo(destinatarios, "PCD: Solicitud Aceptada",
+                            "Estimado " + usuarioTemporal.nombre + " " + usuarioTemporal.apellidos +
+                            "<br /><br />Le informamos que ha sido matriculado en el curso “" + curso.curso1 + "” de nuestra Plataforma de Contenidos Digitales PIMAS," +
+                            " el cual debe aparecerle ahora en la sección “Cursos” del Menú." +
+                            "<br />Gracias por utilizar nuestros productos."
+                            );
+                    }
+                }
                 curso.usuarios.Clear();
                 foreach (int idUsuario in usuariosMatricular)
                 {
                     usuario usuarioTemporal = db.usuarios.Find(idUsuario);
                     usuarioTemporal.cursos.Add(curso);
-                    List<string> destinatarios = new List<string>();
-                    destinatarios.Add(usuarioTemporal.correo);
-                    Utilitarios.EnviarCorreo(destinatarios, "PCD: Solicitud Aceptada",
-                        "Estimado " + usuarioTemporal.nombre + " " + usuarioTemporal.apellidos +
-                        "<br /><br />Le informamos que ha sido matriculado en el curso “"+curso.curso1+"” de nuestra Plataforma de Contenidos Digitales PIMAS," +
-                        " el cual debe aparecerle ahora en la sección “Cursos” del Menú." +
-                        "<br />Gracias por utilizar nuestros productos."
-                        );
                 }
             }
             db.SaveChanges();
