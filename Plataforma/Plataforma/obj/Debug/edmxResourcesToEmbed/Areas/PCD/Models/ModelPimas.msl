@@ -241,6 +241,7 @@
     <EntitySetMapping Name="usuarios">
       <EntityTypeMapping TypeName="pimasModel.usuario">
         <MappingFragment StoreEntitySet="usuarios">
+          <ScalarProperty Name="id_gp" ColumnName="id_gp" />
           <ScalarProperty Name="saldo" ColumnName="saldo" />
           <ScalarProperty Name="categoria_precio" ColumnName="categoria_precio" />
           <ScalarProperty Name="fecha_vencimiento" ColumnName="fecha_vencimiento" />

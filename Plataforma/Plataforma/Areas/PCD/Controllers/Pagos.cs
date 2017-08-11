@@ -12,7 +12,7 @@ namespace Plataforma.Areas.PCD.Controllers
     public class Pagos
     {
 
-        public static string Login()
+        public string Login()
         {
             ApiClient client = new ApiClient();
             UserApi userApi = new UserApi();
@@ -22,7 +22,7 @@ namespace Plataforma.Areas.PCD.Controllers
             return completAccessToken;
         }
 
-        public static long CreateCustomer(String accessToken, usuario usuario, string identficacion, int tipoIdentificacion, int pin )
+        public long CreateCustomer(String accessToken, usuario usuario, string identficacion, int tipoIdentificacion, int pin )
         {
             CustomerApi customerApi = new CustomerApi();
             GPCompany company = new GPCompany(9);
@@ -43,7 +43,7 @@ namespace Plataforma.Areas.PCD.Controllers
             }
         }
 
-        public static GPCreditCardList ListCreditCards(String accessToken, long customerId)
+        public GPCreditCardList ListCreditCards(String accessToken, long customerId)
         {
             CreditcardApi creditCardApi = new CreditcardApi();
             GPCreditCardList creditCardList = creditCardApi.ListCreditCards(accessToken, customerId);
@@ -54,7 +54,7 @@ namespace Plataforma.Areas.PCD.Controllers
             return null;
         }
 
-        public static void CreateCreditCard(String accessToken, long customerId, string cardHolderName, 
+        public void CreateCreditCard(String accessToken, long customerId, string cardHolderName, 
                         string cardNumber, int cardVendor, string ccv, string expirationDate, Boolean favorite, string nickname)
         {
             CreditcardApi creditCardApi = new CreditcardApi();
@@ -63,7 +63,7 @@ namespace Plataforma.Areas.PCD.Controllers
             GPCreditCard creditCard = creditCardApi.SaveCreditCard(accessToken, customerId, newCreditCard);
         }
 
-        public static GPTransactionList ListTransactions(String accessToken, long customerId, int numberOfTransactions = 0)
+        public GPTransactionList ListTransactions(String accessToken, long customerId, int numberOfTransactions = 0)
         {
             TransactionApi transactionApi = new TransactionApi();
             GPTransactionList transactionsList;
@@ -82,7 +82,7 @@ namespace Plataforma.Areas.PCD.Controllers
             return null;
         }
 
-        public static GPTransaction CreateTrasaction(String accessToken, venta venta, int creditCardID)
+        public GPTransaction CreateTrasaction(String accessToken, venta venta, int creditCardID)
         {
             TransactionApi transactionApi = new TransactionApi();
 

@@ -335,6 +335,7 @@
     <Property Name="logueado" Type="bit" />
     <Property Name="categoria_precio" Type="int" />
     <Property Name="saldo" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="id_gp" Type="bigint" />
   </EntityType>
   <EntityType Name="usuarios_grupo">
     <Key>

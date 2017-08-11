@@ -312,6 +312,7 @@
     <NavigationProperty Name="transacciones" Relationship="pimasModel.FK_usuario_transaccion" FromRole="usuario" ToRole="transaccione" />
     <NavigationProperty Name="carritoes" Relationship="pimasModel.FK_carrito_usuario" FromRole="usuario" ToRole="carrito" />
     <NavigationProperty Name="ventas" Relationship="pimasModel.FK_ventas_usuario" FromRole="usuario" ToRole="venta" />
+    <Property Name="id_gp" Type="Int64" />
   </EntityType>
   <Association Name="FK_colegio_tipo">
     <End Role="tipo_colegio" Type="Self.tipo_colegio" Multiplicity="1" />

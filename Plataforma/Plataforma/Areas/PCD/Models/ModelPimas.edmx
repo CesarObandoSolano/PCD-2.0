@@ -340,6 +340,7 @@
           <Property Name="logueado" Type="bit" />
           <Property Name="categoria_precio" Type="int" />
           <Property Name="saldo" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="id_gp" Type="bigint" />
         </EntityType>
         <EntityType Name="usuarios_grupo">
           <Key>
@@ -1887,6 +1888,7 @@
           <NavigationProperty Name="transacciones" Relationship="pimasModel.FK_usuario_transaccion" FromRole="usuario" ToRole="transaccione" />
           <NavigationProperty Name="carritoes" Relationship="pimasModel.FK_carrito_usuario" FromRole="usuario" ToRole="carrito" />
           <NavigationProperty Name="ventas" Relationship="pimasModel.FK_ventas_usuario" FromRole="usuario" ToRole="venta" />
+          <Property Name="id_gp" Type="Int64" />
         </EntityType>
         <Association Name="FK_colegio_tipo">
           <End Role="tipo_colegio" Type="Self.tipo_colegio" Multiplicity="1" />
@@ -3015,6 +3017,7 @@
           <EntitySetMapping Name="usuarios">
             <EntityTypeMapping TypeName="pimasModel.usuario">
               <MappingFragment StoreEntitySet="usuarios">
+                <ScalarProperty Name="id_gp" ColumnName="id_gp" />
                 <ScalarProperty Name="saldo" ColumnName="saldo" />
                 <ScalarProperty Name="categoria_precio" ColumnName="categoria_precio" />
                 <ScalarProperty Name="fecha_vencimiento" ColumnName="fecha_vencimiento" />
