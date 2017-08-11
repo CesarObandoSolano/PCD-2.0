@@ -462,6 +462,7 @@
     <EntitySetMapping Name="ventas">
       <EntityTypeMapping TypeName="pimasModel.venta">
         <MappingFragment StoreEntitySet="ventas">
+          <ScalarProperty Name="id_transaccion" ColumnName="id_transaccion" />
           <ScalarProperty Name="total" ColumnName="total" />
           <ScalarProperty Name="id_estado_venta" ColumnName="id_estado_venta" />
           <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />

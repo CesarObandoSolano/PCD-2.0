@@ -82,23 +82,23 @@ namespace Plataforma.Areas.PCD.Controllers
             return null;
         }
 
-        public GPTransaction CreateTrasaction(String accessToken, venta venta, int creditCardID)
+        public long CreateTrasaction(String accessToken, venta venta, int creditCardID)
         {
             TransactionApi transactionApi = new TransactionApi();
 
             List<GPStatus> statusList = new List<GPStatus>
             {
-                new GPStatus(Code: GPStatus.CodeEnum.NUMBER_1, Timestamp: DateTime.Now.ToString())
+                new GPStatus(Id:1,Code: GPStatus.CodeEnum.NUMBER_1, Timestamp: DateTime.Now.ToString())
             };
             GPTransaction newTransaction = new GPTransaction(Amount: (double)venta.total, AuthorizationCode: 12345, 
-                Channel: GPTransaction.ChannelEnum.WEB, CreditCard: creditCardID, Description: "Compra en PIMÁS", 
+                Channel: GPTransaction.ChannelEnum.MOBILE, CreditCard: creditCardID, Description: "Compra en PIMÁS", 
                 Status: statusList);
             GPTransaction transaction = transactionApi.SaveTransaction(accessToken, newTransaction);
             if (transaction != null)
             {
-                return transaction;
+                return transaction.Id.Value;
             }
-            return null;
+            return 0;
         }
 
     }
