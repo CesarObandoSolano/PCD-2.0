@@ -5,31 +5,87 @@
 
 
 <h2 class="class-forms">Realizar Pago</h2>
+@using (Html.BeginForm())
+{
 
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal col-lg-9">
         <h1 class="class-forms"><i class="fa fa-credit-card" aria-hidden="true"></i> &nbsp;Pago</h1>
         <h6>Elija su método de pago, si no tiene uno por favor agréguelo</h6>
-        <br><br>
-             @foreach (var item in ViewBag.tarjetas)
-             {
-                <label id="tarjeta" for="tarjeta">@item.Nickname</label>
-                <input class="class-forms" type="checkbox" value="@item.Id" id="tarjeta" name="tarjeta"/><br />                
-             }
-        
+        <br>
+        <div class="col-md-12">
+            <dl class="dl-horizontal">
+                <dt>
+                    Comprador
+                </dt>
 
-        <br><br>
-        <div class="form-group">
-            <div class="col-md-offset-4 col-md-10">
+                <dd>
+                    @ViewBag.venta.nombre_comprador
+                </dd>
+                <dt>
+                    Telefono
+                </dt>
+
+                <dd>
+                    @ViewBag.venta.numero_comprador
+                </dd>
+                <dt>
+                    Fecha
+                </dt>
+
+                <dd>
+                    @ViewBag.venta.tiempo_estimado
+                </dd>
+                <dt>
+                    Artículos
+                </dt>
+
+                <dd>
+                    <ul>
+                        @foreach (var item in ViewBag.venta.ventas_articulos)
+                        {
+                            <li>
+                                @item.articulo.nombre
+                            </li>
+                        }
+                    </ul>    
+                </dd>
+                <dt>
+                    Total
+                </dt>
+
+                <dd>
+                    @ViewBag.venta.total
+                </dd>
+            </dl>
+        </div>
+        <div class="col-md-12 form-group">
+            <label class="col-md-4" id="idTarjeta" for="idTarjeta">Tarjeta seleccionada</label>
+            <div class="col-md-7">
+                <select id="idTarjeta" class="form-control" name="idTarjeta">
+                    @foreach (var item in ViewBag.idTarjeta)
+                {
+                        <option value="@item.Id">
+                            @item.Nickname
+                        </option>
+                    }
+                </select>
+            </div>
+        </div>
+        <br>
+        <div class="form-group col-md-12">
+            <div class="col-md-4"></div>
+            <div class="col-md-7">
                 <input type="submit" value="Agregar método de pago" class="btn btn-primary" />
             </div>
         </div>
-        <br><br>
-        <div class="form-group">
-            <div class="col-md-offset-6 col-md-10">
+        <br>
+        <div class="form-group col-md-12">
+            <div class="col-md-offset-6">
                 <input type="submit" value="Pagar" class="btn btn-primary" />
             </div>
         </div>
     </div>
 
+}

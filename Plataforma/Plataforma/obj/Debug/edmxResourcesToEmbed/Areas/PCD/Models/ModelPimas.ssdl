@@ -448,6 +448,7 @@
     <Property Name="id_usuario" Type="int" Nullable="false" />
     <Property Name="id_estado_venta" Type="int" Nullable="false" />
     <Property Name="total" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="id_transaccion" Type="int" />
   </EntityType>
   <EntityType Name="ventas_articulos">
     <Key>

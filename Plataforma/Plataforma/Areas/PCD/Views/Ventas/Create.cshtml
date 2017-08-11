@@ -121,7 +121,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.articulos, "Artículos disponibles", htmlAttributes: new { @class = "control-label col-md-4" })
+            @Html.LabelFor(model => model.ventas_articulos, "Artículos disponibles", htmlAttributes: new { @class = "control-label col-md-4" })
             <div class="col-md-10">
                 <select id="articulos" class="form-control" name="articulos" multiple>
                     @foreach (var item in ViewBag.id_articulo)
@@ -141,7 +141,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.articulos, "Articulos Seleccionados", htmlAttributes: new { @class = "control-label col-md-4" })
+            @Html.LabelFor(model => model.ventas_articulos, "Articulos Seleccionados", htmlAttributes: new { @class = "control-label col-md-4" })
             <div class="col-md-10">
                 <select id="articulos" class="form-control" name="articulos" multiple>
                     

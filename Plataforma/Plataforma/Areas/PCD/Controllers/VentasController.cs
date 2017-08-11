@@ -181,6 +181,12 @@ namespace Plataforma.Areas.PCD.Controllers
             if (Session["usuario"] != null)
             {
                 usuario usuarioSesion = (usuario)HttpContext.Session["usuario"];
+                usuarioSesion = db.usuarios.Find(usuarioSesion.id);
+
+                if(usuarioSesion.ventas.Where(c => c.id_estado_venta == 1).FirstOrDefault() != null)
+                {
+                    return RedirectToAction("PagoCliente");
+                }
 
                 ViewBag.id_usuario = usuarioSesion.id;
                 ViewBag.nombre_usuario = usuarioSesion.nombre + " " + usuarioSesion.apellidos;
@@ -258,6 +264,11 @@ namespace Plataforma.Areas.PCD.Controllers
                 usuario usuarioSesion = (usuario)HttpContext.Session["usuario"];
                 usuarioSesion = db.usuarios.Find(usuarioSesion.id);
 
+                if (usuarioSesion.id_gp == null)
+                {
+                    return RedirectToAction("AgregarCliente");
+                }
+
                 Pagos pagos = new Pagos();
                 string bearer = pagos.Login();
 
@@ -268,7 +279,16 @@ namespace Plataforma.Areas.PCD.Controllers
                 {
                     return RedirectToAction("AgregarTarjeta");
                 }
-                ViewBag.tarjetas = tarjetasCliente.List;
+
+                venta venta = db.ventas.Where(c => c.id_usuario == usuarioSesion.id && c.id_estado_venta == 1).FirstOrDefault();
+
+                if(venta == null)
+                {
+                    return RedirectToRoute("/PCD/carrito/Index");
+                }
+
+                ViewBag.venta = venta;
+                ViewBag.idTarjeta = tarjetasCliente.List;
                 return View();
             }
             return RedirectToAction("../Account/Login/");
@@ -280,7 +300,23 @@ namespace Plataforma.Areas.PCD.Controllers
         {
             if (Session["usuario"] != null)
             {
-                
+                usuario usuarioSesion = (usuario)HttpContext.Session["usuario"];
+                usuarioSesion = db.usuarios.Find(usuarioSesion.id);
+
+                Pagos pagos = new Pagos();
+                string bearer = pagos.Login();
+
+                venta venta = db.ventas.Where(c => c.id_usuario == usuarioSesion.id && c.id_estado_venta == 1).FirstOrDefault();
+
+                long transaccion = pagos.CreateTrasaction(bearer, venta, idTarjeta);
+
+                if(transaccion != 0)
+                {
+                    venta.id_transaccion = (int)transaccion;
+                    db.SaveChanges();
+                }
+
+                RedirectToRoute("/PCD");
             }
             return RedirectToAction("../Account/Login/");
         }
@@ -292,10 +328,10 @@ namespace Plataforma.Areas.PCD.Controllers
             {
                 usuario usuarioSesion = (usuario)HttpContext.Session["usuario"];
                 usuarioSesion = db.usuarios.Find(usuarioSesion.id);
-                /*if(usuarioSesion.id_gp == null)
+                if(usuarioSesion.id_gp != null)
                 {
                     return RedirectToAction("PagoCliente");
-                }*/
+                }
             }
             return View();
         }

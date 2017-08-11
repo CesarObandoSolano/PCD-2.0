@@ -1063,6 +1063,7 @@
     <NavigationProperty Name="transporte" Relationship="pimasModel.FK_ventas_transporte" FromRole="venta" ToRole="transporte" />
     <NavigationProperty Name="ventas_articulos" Relationship="pimasModel.FK_ventas_articulos_ventas" FromRole="venta" ToRole="ventas_articulos" />
     <Property Name="total" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="id_transaccion" Type="Int32" />
   </EntityType>
   <EntityType Name="ventas_articulos">
     <Key>

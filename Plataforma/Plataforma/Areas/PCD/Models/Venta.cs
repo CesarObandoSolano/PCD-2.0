@@ -33,6 +33,7 @@ namespace Plataforma.Areas.PCD.Models
         public int id_usuario { get; set; }
         public int id_estado_venta { get; set; }
         public Nullable<decimal> total { get; set; }
+        public Nullable<int> id_transaccion { get; set; }
     
         public virtual usuario usuario { get; set; }
         public virtual estado_venta estado_venta { get; set; }
