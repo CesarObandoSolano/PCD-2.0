@@ -7,11 +7,15 @@
 <h2 class="class-forms">Realizar Pago</h2>
 @using (Html.BeginForm())
 {
-
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal col-lg-9">
         <h1 class="class-forms"><i class="fa fa-credit-card" aria-hidden="true"></i> &nbsp;Pago</h1>
+        @if(@ViewBag.alerta != null || @ViewBag.alerta != "")
+        {
+            <h2 class="text-danger">@ViewBag.alerta</h2>
+        }
         <h6>Elija su método de pago, si no tiene uno por favor agréguelo</h6>
         <br>
         <div class="col-md-12">
@@ -35,7 +39,7 @@
                 </dt>
 
                 <dd>
-                    @ViewBag.venta.tiempo_estimado
+                    @ViewBag.venta.tiempo_estimado.ToString("dd/MM/yyyy")
                 </dd>
                 <dt>
                     Artículos
@@ -72,20 +76,25 @@
                     }
                 </select>
             </div>
+            <div class="col-md-1"></div> 
         </div>
         <br>
         <div class="form-group col-md-12">
             <div class="col-md-4"></div>
-            <div class="col-md-7">
-                <input type="submit" value="Agregar método de pago" class="btn btn-primary" />
+            <div class="col-md-8">
+                &nbsp;&nbsp;<a href="../PCD/ventas/AgregarTarjeta" class="btn btn-primary">Agregar método de pago</a>
             </div>
         </div>
         <br>
         <div class="form-group col-md-12">
-            <div class="col-md-offset-6">
-                <input type="submit" value="Pagar" class="btn btn-primary" />
+            <div class="col-md-4"></div> 
+            <div class="col-md-4">
+                <a href="../ventas/Delete/@ViewBag.venta.id" class="btn btn-danger">Cancelar</a>
             </div>
-        </div>
+                <div class="col-md-3">
+                    <input type="submit" value="Pagar" class="btn btn-success" />
+                </div>
+           </div>
     </div>
 
 }

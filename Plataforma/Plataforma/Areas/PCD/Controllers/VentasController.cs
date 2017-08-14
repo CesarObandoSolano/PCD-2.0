@@ -185,6 +185,7 @@ namespace Plataforma.Areas.PCD.Controllers
 
                 if(usuarioSesion.ventas.Where(c => c.id_estado_venta == 1).FirstOrDefault() != null)
                 {
+                    TempData["alertaEventoPendiente"] = "Tienes una compra pendiente de pagar, ¿quieres pagar tu compra o deseas cancelarla para realizar tu nueva compra?";
                     return RedirectToAction("PagoCliente");
                 }
 
@@ -213,8 +214,7 @@ namespace Plataforma.Areas.PCD.Controllers
                 {
 
                     venta.id_estado_venta = 1;
-                    string s = "2017-01-01";
-                    DateTime dt = DateTime.Parse(s);
+                    DateTime dt = DateTime.Now.AddDays(3);
                     venta.tiempo_estimado = dt;
                     venta.total = 0;
 
@@ -245,7 +245,7 @@ namespace Plataforma.Areas.PCD.Controllers
                     db.ventas.Add(venta);
 
                     db.SaveChanges();
-                    return RedirectToAction("Index");
+                    return RedirectToAction("PagoCliente");
                 }
                 ViewBag.id_usuario = usuarioSesion.id;
                 ViewBag.nombre_usuario = usuarioSesion.nombre + " " + usuarioSesion.apellidos;
@@ -284,9 +284,12 @@ namespace Plataforma.Areas.PCD.Controllers
 
                 if(venta == null)
                 {
-                    return RedirectToRoute("/PCD/carrito/Index");
+                    return RedirectToAction("../carrito/Index");
                 }
-
+                if (TempData["alertaEventoPendiente"] != null)
+                {
+                    ViewBag.alerta = TempData["alertaEventoPendiente"].ToString();
+                }
                 ViewBag.venta = venta;
                 ViewBag.idTarjeta = tarjetasCliente.List;
                 return View();
@@ -313,10 +316,25 @@ namespace Plataforma.Areas.PCD.Controllers
                 if(transaccion != 0)
                 {
                     venta.id_transaccion = (int)transaccion;
+                    venta.id_estado_venta = 2;
                     db.SaveChanges();
                 }
+                else
+                {
+                    GPCreditCardList tarjetasCliente = new GPCreditCardList();
+                    tarjetasCliente = pagos.ListCreditCards(bearer, usuarioSesion.id_gp.Value);
 
-                RedirectToRoute("/PCD");
+                    if (tarjetasCliente == null || tarjetasCliente.List.Count == 0)
+                    {
+                        return RedirectToAction("AgregarTarjeta");
+                    }
+                    ViewBag.venta = venta;
+                    ViewBag.idTarjeta = tarjetasCliente.List;
+                    ModelState.AddModelError("", "Ha ocurrido un error al realizar el pago");
+                    return View();
+                }
+
+                return RedirectToAction("../");
             }
             return RedirectToAction("../Account/Login/");
         }
