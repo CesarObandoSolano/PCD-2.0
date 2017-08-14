@@ -277,7 +277,7 @@ namespace Plataforma.Areas.PCD.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,nombre,apellidos,username,password,telefono,telefono_2,correo,correo_2,informacion_opcional,fecha_primer_ingreso,fecha_vencimiento,categoria_precio")] usuario usuario, int? roles, bool? notificacionCorreo, bool? notificacionTelefono, string nombreUsuario, string pass)
+        public ActionResult Edit([Bind(Include = "id,nombre,apellidos,username,password,telefono,telefono_2,correo,correo_2,informacion_opcional,fecha_primer_ingreso,fecha_vencimiento,categoria_precio,id_gp,saldo,bloqueado")] usuario usuario, int? roles, bool? notificacionCorreo, bool? notificacionTelefono, string nombreUsuario, string pass)
         {
             if (ModelState.IsValid)
             {
