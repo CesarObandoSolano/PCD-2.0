@@ -93,6 +93,7 @@ namespace Plataforma.Areas.PCD.Controllers
             GPTransaction newTransaction = new GPTransaction(Amount: (double)venta.total, AuthorizationCode: 12345, 
                 Channel: GPTransaction.ChannelEnum.MOBILE, CreditCard: creditCardID, Description: "Compra en PIMÁS", 
                 Status: statusList);
+            
             GPTransaction transaction = transactionApi.SaveTransaction(accessToken, newTransaction);
             if (transaction != null)
             {
