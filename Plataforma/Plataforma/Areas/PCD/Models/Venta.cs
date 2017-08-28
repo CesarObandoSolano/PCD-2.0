@@ -11,7 +11,8 @@ namespace Plataforma.Areas.PCD.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class venta
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,6 +24,7 @@ namespace Plataforma.Areas.PCD.Models
         public int id { get; set; }
         public string nombre_comprador { get; set; }
         public string nombre_receptor { get; set; }
+        [Required(ErrorMessage = "Ingresa un número de teléfono para el comprador")]
         public string numero_comprador { get; set; }
         public string numero_receptor { get; set; }
         public string direccion { get; set; }

@@ -40,7 +40,28 @@
                     <p style="overflow:hidden; white-space:nowrap;text-overflow: ellipsis;">
                         @Html.DisplayFor(modelItem => item.detalle)
                     </p>
-                    <h5>@Html.DisplayFor(modelItem => item.precio1)</h5>
+                    @{if (Session["usuario"] != null)
+                        {
+                            var usuario = (Plataforma.Areas.PCD.Models.usuario)Session["usuario"];
+                            
+                            if (usuario.categoria_precio == 1)
+                            {
+                                <h5>₡@Html.DisplayFor(modelItem => item.precio1)</h5>
+                            }
+                            else if (usuario.categoria_precio == 2)
+                            {
+                                <h5>₡@Html.DisplayFor(modelItem => item.precio2)</h5>
+                            }
+                            else if (usuario.categoria_precio == 3)
+                            {
+                                <h5>₡@Html.DisplayFor(modelItem => item.precio3)</h5>
+                            }
+                        }
+                        else
+                        {
+                            <h5>₡@Html.DisplayFor(modelItem => item.precio1)</h5>
+                        }
+                    }
                     @{  if (Session["usuario"] != null)
                         {
                           <p><a onclick="agregarACarrito(@item.id)" class="btn btn-primary" role="button">Agregar al carrito</a></p>
