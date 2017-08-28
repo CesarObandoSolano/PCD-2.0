@@ -317,6 +317,24 @@ namespace Plataforma.Areas.PCD.Controllers
                 {
                     venta.id_transaccion = (int)transaccion;
                     venta.id_estado_venta = 2;
+
+
+                    //Agregar saldo al usuario en caso de que compre saldo
+                    for (int i = 0; i < venta.ventas_articulos.Count; i++)
+                    {
+                        if(venta.ventas_articulos.ElementAt(i).articulo.id_categoria == 3)
+                        {
+                            if(usuarioSesion.saldo == null)
+                            {
+                                usuarioSesion.saldo = venta.ventas_articulos.ElementAt(i).articulo.precio1;
+                            }
+                            else
+                            {
+                                usuarioSesion.saldo = usuarioSesion.saldo + venta.ventas_articulos.ElementAt(i).articulo.precio1;
+                            }
+                        }
+                    }
+                    
                     db.SaveChanges();
                 }
                 else

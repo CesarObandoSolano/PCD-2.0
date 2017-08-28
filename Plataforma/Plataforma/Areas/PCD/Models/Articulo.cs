@@ -11,7 +11,8 @@ namespace Plataforma.Areas.PCD.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class articulo
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,10 +23,15 @@ namespace Plataforma.Areas.PCD.Models
         }
     
         public int id { get; set; }
+        [Required(ErrorMessage = "Ingresa un nombre para el artículo")]
         public string nombre { get; set; }
+        [Required(ErrorMessage = "Ingresa un detalle para el artículo")]
         public string detalle { get; set; }
+        [Required(ErrorMessage = "Ingresa un precio 1 para el artículo")]
         public decimal precio1 { get; set; }
+        [Required(ErrorMessage = "Ingresa un precio 2 para el artículo")]
         public decimal precio2 { get; set; }
+        [Required(ErrorMessage = "Ingresa un precio 3 para el artículo")]
         public decimal precio3 { get; set; }
         public string url_imagen { get; set; }
         public int id_categoria { get; set; }

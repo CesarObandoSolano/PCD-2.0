@@ -11,7 +11,8 @@ namespace Plataforma.Areas.PCD.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class libro
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,6 +24,7 @@ namespace Plataforma.Areas.PCD.Models
         }
     
         public int id { get; set; }
+        [Required(ErrorMessage = "Ingresa una descripción para el libro")]
         public string descripcion { get; set; }
         public bool solicitado { get; set; }
     

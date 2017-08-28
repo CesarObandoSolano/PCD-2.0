@@ -56,16 +56,6 @@ namespace Plataforma.Areas.PCD.Controllers
             return Json("error", JsonRequestBehavior.AllowGet);
         }
 
-        /*public ActionResult CarritoCompras()
-        {
-            usuario usuarioSesion = (usuario)HttpContext.Session["usuario"];
-            List<carrito> carrito = new List<carrito>();
-            carrito = db.carrito.Where(c => c.id_usuario == usuarioSesion.id).ToList();
-            return View();
-        }*/
-
-
-
         // GET: PCD/articulos/Details/5
         public ActionResult Details(int? id)
         {

@@ -11,7 +11,8 @@ namespace Plataforma.Areas.PCD.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class usuario
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -37,12 +38,19 @@ namespace Plataforma.Areas.PCD.Models
         }
     
         public int id { get; set; }
+        [Required(ErrorMessage = "Ingresa un nombre para el usuario")]
         public string nombre { get; set; }
+        [Required(ErrorMessage = "Ingresa los apellidos para el usuario")]
         public string apellidos { get; set; }
+        [Required(ErrorMessage = "Ingresa un nombre de usuario para el usuario")]
         public string username { get; set; }
+        [MinLength(6, ErrorMessage = "La contraseña debe contener al menos 6 caracteres")]
+        [Required(ErrorMessage = "Ingresa una contaseña para el usuario")]
         public string password { get; set; }
+        [Required(ErrorMessage = "Ingresa al menos un número de teléfono para el usuario")]
         public Nullable<int> telefono { get; set; }
         public Nullable<int> telefono_2 { get; set; }
+        [Required(ErrorMessage = "Ingresa al menos un correo electrónico para el usuario")]
         public string correo { get; set; }
         public string correo_2 { get; set; }
         public string informacion_opcional { get; set; }
